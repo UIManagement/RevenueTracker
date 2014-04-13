@@ -1,0 +1,329 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<title>Home Page </title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    
+</head>
+<body>
+<!-- Header -->
+<div id="header">
+	<div class="shell">
+	<br/>
+	<br/>
+	<span class="right"><font face="Times New Roman"  size="5" color="SteelBlue"> Revenue Tracker</font></span>
+	<span class="right"><a href="search.jsp"  ><img src="css/images/home.png"></img></a></span>
+		<!-- Logo + Top Nav -->
+		<div id="top">
+		
+			<table>
+		   <tr>
+				<td>
+					<a href="https://ul-dqs.in/" target="_blank"><img src="css/images/small.png"></img></a>
+							
+				</td>
+						
+		  </tr>
+		</table>
+       </div>	
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>		
+	
+</div>
+</div>
+        <br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+
+		<br/>
+		<br/>
+<f:view>
+
+<h:form id="select">
+
+
+
+ <tr><td><b>
+ <h:outputLabel value="Customer Name::-" for="customer_Name" /></b>
+ <h:message id="customerNameMessage" for="customer_Name" />
+ <h:inputText id="customer_Name"    value="#{customer.searchName}" />
+ </td></tr>
+ 
+
+ 
+
+
+ <h:commandButton value="Search" action="#{customer.ResultCustomer}" rendered="true"/>
+ <h:commandButton value="reset" type="reset" />
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <h:commandLink value="All" action="#{customer.ResultAll}"  />
+ 
+ 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  
+<tr><td><b>
+ <h:outputLabel value="Customer Type"  for="customer_Type"/></b></td><td>
+  
+ <h:selectOneMenu value="#{customer.searchName1}" >
+ <f:selectItem itemValue="" itemLabel="" />
+    <f:selectItem itemValue="New" itemLabel="New" />
+    
+    <f:selectItem itemValue="Existing" itemLabel="Existing" />
+    <f:selectItem itemValue="InterCompany" itemLabel="InterCompany" />   
+</h:selectOneMenu>
+ <h:message id="customerTypeMessage" for="customer_Type"/>
+ </td></tr>
+ 
+ <tr><td><b>
+ <h:outputLabel value="Region"  for="region"/></b></td><td>
+ 
+ <h:selectOneMenu value="#{customer.searchName2}" >
+ <f:selectItem itemValue="" itemLabel="" />
+    <f:selectItem itemValue="Aerospace" itemLabel="Aerospace" />
+    <f:selectItem itemValue="C&amp;I(R)" itemLabel="C&amp;I(R)" />
+    <f:selectItem itemValue="Gujarat" itemLabel="Gujarat" />
+    <f:selectItem itemValue="Maharashtra" itemLabel="Maharashtra" />
+    <f:selectItem itemValue="North &amp; East" itemLabel="North &amp; East" />
+    <f:selectItem itemValue="South-1" itemLabel="South-1" />
+    <f:selectItem itemValue="South-2" itemLabel="South-2" />    
+</h:selectOneMenu>
+ <h:message id="regionMessage" for="region"/>
+ </td></tr>
+  
+ <tr><td><b>
+ <h:outputLabel value="Start Month"  for="start_month"/></b></td><td>
+ 
+ <h:selectManyCheckbox value="#{customer.selectedItems}" layout="pageDirection" >
+   	<f:selectItem itemValue="Oct" itemLabel="Oct" />
+    <f:selectItem itemValue="Nov" itemLabel="Nov" />
+    <f:selectItem itemValue="Dec" itemLabel="Dec" />
+    <f:selectItem itemValue="Jan" itemLabel="Jan" />
+    <f:selectItem itemValue="Feb" itemLabel="Feb" />
+    
+</h:selectManyCheckbox>
+
+ <h:message id="start_monthMessage" for="start_month"/>
+ 
+ </td></tr>
+ 
+ <h:commandButton value="Go" action="#{customer.Twocustomer}" /> 
+ 
+   
+ 
+ <br/>
+ <br/>
+ <br/>
+ 
+ <h:dataTable value="#{customer.custInfoAll}" var="custInfo"  styleClass="order-table"
+headerClass="order-table-header"
+border="5"
+rowClasses="order-table-odd-row,order-table-even-row">
+ <h:column>
+ <f:facet name="header">
+ <h:outputText value="customer Name" />
+ </f:facet>
+ <h:outputText value="#{custInfo.customerName}" >
+ </h:outputText>
+ </h:column>
+ <h:column>
+ <f:facet name="header">
+ <h:outputText value="customer Type" />
+ </f:facet>
+ <h:outputText value="#{custInfo.customerType}" >
+ </h:outputText>
+ </h:column>
+ <h:column>
+ <f:facet name="header">      
+ <h:outputText value="Region" />
+ </f:facet>
+ <h:outputText value="#{custInfo.region}"  >
+  </h:outputText>
+ </h:column>
+
+
+ 
+ <h:column>
+ <f:facet name="header">      
+ <h:outputText value="Vertical" />
+ </f:facet>
+ <h:outputText value="#{custInfo.vertical}"  >
+ 
+ </h:outputText>
+ 
+ </h:column>
+  <h:column>
+ <f:facet name="header">      
+ <h:outputText value="Industry" />
+ </f:facet>
+ <h:outputText value="#{custInfo.industry}"  >
+ 
+ </h:outputText>
+ 
+ </h:column>
+ 
+ <h:column>
+ <f:facet name="header">      
+ <h:outputText value="Service" />
+ </f:facet>
+ <h:outputText value="#{custInfo.service}"  >
+ 
+ </h:outputText>
+ 
+ </h:column>
+ 
+ <h:column>
+ <f:facet name="header">      
+ <h:outputText value="Product" />
+ </f:facet>
+ <h:outputText value="#{custInfo.product}"  >
+ 
+ </h:outputText>
+ </h:column>
+ <h:column>
+ <f:facet name="header">      
+ <h:outputText value="Stage" />
+ </f:facet>
+ <h:outputText value="#{custInfo.stage}"  >
+ 
+ </h:outputText>
+ 
+</h:column>
+ 
+ <h:column>
+ <f:facet name="header">      
+ <h:outputText value="Designation" />
+ </f:facet>
+ <h:outputText value="#{custInfo.designation}"  >
+ 
+ </h:outputText>
+ 
+ </h:column>
+ 
+ <h:column>
+ <f:facet name="header">      
+ <h:outputText value="Order Booked By" />
+ </f:facet>
+ <h:outputText value="#{custInfo.order_Booked_By}"  >
+ 
+ </h:outputText>
+ 
+ </h:column>
+ 
+ <h:column>
+ <f:facet name="header">      
+ <h:outputText value="work OrderDate" />
+ </f:facet>
+ <h:outputText value="#{custInfo.work_Order_Date}"  >
+ 
+ </h:outputText>
+ 
+ 
+ </h:column>
+ 
+ <h:column>
+ <f:facet name="header">      
+ <h:outputText value="Currency" />
+ </f:facet>
+ <h:outputText value="#{custInfo.currency}"  > 
+ </h:outputText>
+ </h:column>
+ 
+ <h:column>
+ <f:facet name="header">      
+ <h:outputText value="work Order Value" />
+ </f:facet>
+ <h:outputText value="#{custInfo.work_Order_Value}"  > 
+ </h:outputText>
+ </h:column>
+ 
+ <h:column>
+ <f:facet name="header">      
+ <h:outputText value="Exchange Rate" />
+ </f:facet>
+ <h:outputText value="#{custInfo.exchange_Rate}"  > 
+ </h:outputText>
+ </h:column>
+ 
+ <h:column>
+ <f:facet name="header">      
+ <h:outputText value="Updated Work Order Value" />
+ </f:facet>
+ <h:outputText value="#{custInfo.updated_Work_Order}"  > 
+ </h:outputText>
+ <f:facet name="footer">   
+ <h:outputText value="#{customer.so}" /> 
+     
+  </f:facet>
+ </h:column>
+ 
+<h:column>
+ <f:facet name="header">      
+ <h:outputText value="Start Month " />
+ </f:facet>
+ <h:outputText value="#{custInfo.start_month}"  > 
+ </h:outputText>
+ </h:column>
+ 
+ <h:column>
+ <f:facet name="header">      
+ <h:outputText value="Work Order " />
+ </f:facet>
+ <h:outputText value="#{custInfo.workOrder}"  > 
+ </h:outputText>
+ 
+ </h:column>
+ 
+  <h:column>
+
+<f:facet name="header">
+
+<h:outputLabel value="Edit" />
+
+</f:facet>
+
+ <h:commandButton value="edit" action="#{customer.EditCustomer}" image="css/images/edit.gif">
+<f:setPropertyActionListener target="#{customer}" value="#{custInfo}" />
+
+
+</h:commandButton>
+
+</h:column> 
+ </h:dataTable>
+ <br/> 
+
+ <h:panelGroup style="display:block; text-align:right">
+ <h:commandButton value="edit" action="#{customer.EditCustomer}" image="css/images/edit.gif"/>
+ </h:panelGroup >
+
+  
+</h:form>
+</f:view>
+
+
+<br/>
+
+<div id="footer">
+	<div class="shell">
+		<span class="left"><font face="Times New Roman" color="SteelBlue">&copy; UL DQS India,Bangalore</font></span>
+		<br/>
+		
+	</div>
+</div>
+<!-- End Footer -->
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+
+	<managed-bean>
+		<managed-bean-name>customer</managed-bean-name>
+		<managed-bean-class>bean.Customer</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+
+	<managed-bean>
+		<managed-bean-name>customer1</managed-bean-name>
+		<managed-bean-class>bean.Customer1</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<navigation-rule>
+		<from-view-id>/search.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{customer.addCustomer}</from-action>
+			<from-outcome>add</from-outcome>
+			<to-view-id>/insert.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-action>#{customer.ResultCustomer}</from-action>
+			<from-outcome>result</from-outcome>
+			<to-view-id>/search.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-action>#{customer.Month}</from-action>
+			<from-outcome>mon</from-outcome>
+			<to-view-id>/search.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-action>#{customer.EditCustomer}</from-action>
+			<from-outcome>result1</from-outcome>
+			<to-view-id>/insert.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-action>#{customer.Dropcustomer}</from-action>
+			<from-outcome>three</from-outcome>
+			<to-view-id>/insert2.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-action>#{customer.ResultAll}</from-action>
+			<from-outcome>all</from-outcome>
+			<to-view-id>/search.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-action>#{customer.Twocustomer}</from-action>
+			<from-outcome>two</from-outcome>
+			<to-view-id>/search.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/search.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{customer1.EditCustomer}</from-action>
+			<from-outcome>result1</from-outcome>
+			<to-view-id>/insert1.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/insert.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{customer.addAction}</from-action>
+			<from-outcome>insert</from-outcome>
+			<to-view-id>/search.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+</faces-config>

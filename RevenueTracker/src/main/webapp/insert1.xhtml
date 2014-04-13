@@ -1,0 +1,402 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<title>Home Page </title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    
+</head>
+<body>
+<!-- Header -->
+<div id="header">
+	<div class="shell">
+	<br/>
+	<br/>
+	<span class="right"><font face="Times New Roman"  size="5" color="SteelBlue"> Revenue Tracker</font></span>
+	
+	
+		<!-- Logo + Top Nav -->
+		<div id="top">
+		
+			<table>
+		   <tr>
+				<td>
+					<a href="https://ul-dqs.in/" target="_blank"><img src="css/images/small.png"></img></a>		
+					<span class="centre"><a href="search.jsp"><img src="css/images/home.png"></img></a></span>
+				</td>
+						
+		  </tr>
+		</table>
+       </div>	
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>		
+<!-- End Logo + Top Nav -->		
+</div>
+</div>
+        <br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+<!-- End Header -->
+<br/>
+		<br/>
+		<br/>
+
+
+<f:view>
+<h:form id="insert">
+ <table>
+
+<tr><td><b>
+ <h:outputLabel value="customer1 Name::"  for="customer1_Name" /></b>
+ </td><td>
+ <h:message id="customer1IDMessage" for="customer1_Name"/>
+ <h:inputText id="customer1_Name" value="#{customer1.customerName}" required="true"/></td></tr>
+
+<tr><td><b>
+ <h:outputLabel value="customer1 Type::"  for="customer1_Type"/></b></td><td>
+ <h:message id="customer1TypeMessage" for="customer1_Type"/>
+ <h:inputText id="customer1_Type" value="#{customer1.customerType}" required="true" rendered="#{customer1.region == 'seven'}" />
+ <h:selectOneMenu value="#{customer1.customerType}" >
+    <f:selectItem itemValue="New" itemLabel="New" />
+    <f:selectItem itemValue="Existing" itemLabel="Existing" />
+    <f:selectItem itemValue="InterCompany" itemLabel="InterCompany" />   
+    <f:selectItem itemValue="please select any one of the values from the drop down here " itemLabel="please select any one of the values from the drop down here " />
+</h:selectOneMenu>
+ </td></tr>
+ 
+ <tr><td><b>
+ <h:outputLabel value="Region::"  for="region"/></b></td><td>
+ <h:message id="customer1AddressMessage" for="region"/>
+ <h:inputText id="region" value="#{customer1.region}" required="true" rendered="#{customer1.region == 'seven'}" />
+ <h:selectOneMenu value="#{customer1.region}" >
+    <f:selectItem itemValue="Aerospace" itemLabel="Aerospace" />
+    <f:selectItem itemValue="C&I(R)" itemLabel="C&I(R)" />
+    <f:selectItem itemValue="Gujarat" itemLabel="Gujarat" />
+    <f:selectItem itemValue="Maharashtra" itemLabel="Maharashtra" />
+    <f:selectItem itemValue="North & East" itemLabel="North & East" />
+    <f:selectItem itemValue="South-1" itemLabel="South-1" />
+    <f:selectItem itemValue="South-2" itemLabel="South-2" />    
+      <f:selectItem itemValue="please select any one of the values from the drop down here " itemLabel="please select any one of the values from the drop down here " />
+</h:selectOneMenu>
+  </td></tr>
+
+ 
+ 
+ <tr><td><b>
+ <h:outputLabel value="vertical::"  for="vertical"/></b></td><td>
+ <h:message id="customer1verticalMessage" for="vertical"/>
+ <h:inputText id="vertical" value="#{customer1.vertical}" required="true" rendered="#{customer1.vertical == 'seven'}" />
+ <h:selectOneMenu value="#{customer1.vertical}" >
+    <f:selectItem itemValue="Aerospace" itemLabel="Aerospace" />
+    <f:selectItem itemValue="Medical & Healthcare" itemLabel="Medical & Healthcare" />
+    <f:selectItem itemValue="Energy" itemLabel="Energy" />
+    <f:selectItem itemValue="RC 14001" itemLabel="RC 14001" />
+    <f:selectItem itemValue="C&I (V)" itemLabel="C&I (V)" />
+    <f:selectItem itemValue="Others" itemLabel="Others" /> 
+       <f:selectItem itemValue="please select any one of the values from the drop down here" itemLabel="please select any one of the values from the drop down here" />
+  </h:selectOneMenu>
+  </td></tr>
+ 
+ 
+ <tr><td><b>
+ <h:outputLabel value="Industry::"  for="industry"/></b></td><td>
+ <h:message id="customer1industryMessage" for="industry"/>
+ <h:inputText id="industry" value="#{customer1.industry}" required="true" rendered="#{customer1.industry == 'seven'}" />
+ <h:selectOneMenu value="#{customer1.industry}" >
+    <f:selectItem itemValue="Aerospace" itemLabel="Aerospace" />
+    <f:selectItem itemValue="Automotive" itemLabel="Automotive" />
+    <f:selectItem itemValue="Banking, Financial Services & Insurance" itemLabel="Banking, Financial Services & Insurance" />
+    <f:selectItem itemValue="Chemical & Fertilizers" itemLabel="Chemical & Fertilizers" />
+    <f:selectItem itemValue="Consumer Durables & Non-Durables" itemLabel="Consumer Durables & Non-Durables" />
+    <f:selectItem itemValue="Clinical Research" itemLabel="Clinical Researchhers" /> 
+    <f:selectItem itemValue="Defence" itemLabel="Defence" /> 
+    <f:selectItem itemValue="Educational Institutions" itemLabel="Educational Institutions" /> 
+    <f:selectItem itemValue="Engineering" itemLabel="Engineering" /> 
+    <f:selectItem itemValue="Food & Water" itemLabel="Food & Water" /> 
+    <f:selectItem itemValue="Healthcare" itemLabel="Healthcare" /> 
+    <f:selectItem itemValue="Hospitality" itemLabel="Hospitality" />
+  <f:selectItem itemValue="Infrastructure & Cement" itemLabel="Infrastructure & Cement" />   
+    <f:selectItem itemValue="IT &ITES" itemLabel="IT &ITES" /> 
+    <f:selectItem itemValue="Medical Devices" itemLabel="Medical Devices" />  
+    <f:selectItem itemValue="Oil & Gas" itemLabel="Oil & Gas" />  
+    <f:selectItem itemValue="Pharmaceutical" itemLabel="Pharmaceutical" />
+    <f:selectItem itemValue="Power & Energy" itemLabel="Power & Energy" />
+    <f:selectItem itemValue="Retail" itemLabel="Retail" />
+    <f:selectItem itemValue="Railways" itemLabel="Railways" />
+    <f:selectItem itemValue="Steel" itemLabel="Steel" />
+    <f:selectItem itemValue="Supply Chain & Logistics" itemLabel="Supply Chain & Logistics" />
+    <f:selectItem itemValue="Textiles" itemLabel="Textiles" />
+    <f:selectItem itemValue="Electrical & Electronics" itemLabel="Electrical & Electronics" />
+    <f:selectItem itemValue="Others" itemLabel="Others" />
+     <f:selectItem itemValue="please select any one of the values from the drop down here" itemLabel="please select any one of the values from the drop down here" />
+  </h:selectOneMenu>
+  </td></tr>
+ 
+ 
+ <tr><td><b>
+ <h:outputLabel value="Product::"  for="product"/></b></td><td>
+ <h:message id="customer1productMessage" for="product"/>
+ <h:inputText id="product" value="#{customer1.product}" required="true" rendered="#{customer1.product == 'seven'}" />
+ <h:selectOneMenu value="#{customer1.product}" >
+    <f:selectItem itemValue="ANSI/ESD S 20.20" itemLabel="ANSI/ESD S 20.20" />
+    <f:selectItem itemValue="AS 9100" itemLabel="AS 9100" />
+    <f:selectItem itemValue="AS 9100 Rev.C Internal Auditor Training Program" itemLabel="AS 9100 Rev.C Internal Auditor Training Program" />
+    <f:selectItem itemValue="customer1 SPECIFIC REQUIREMENT" itemLabel="customer1 SPECIFIC REQUIREMENT" />
+    <f:selectItem itemValue="EHS Internal Auditor Program" itemLabel="EHS Internal Auditor Program" />
+    <f:selectItem itemValue="EHS Legal Requirements" itemLabel="EHS Legal Requirements" /> 
+    <f:selectItem itemValue="ENERGY AUDIT" itemLabel="ENERGY AUDIT" /> 
+    <f:selectItem itemValue="GC Mark" itemLabel="GC Mark" /> 
+    <f:selectItem itemValue="IRIS" itemLabel="IRIS" /> 
+    <f:selectItem itemValue="ISO 13485" itemLabel="ISO 13485" /> 
+    <f:selectItem itemValue="ISO 14001" itemLabel="ISO 14001" /> 
+    <f:selectItem itemValue="ISO 14001 & OHSAS 18001" itemLabel="ISO 14001 & OHSAS 18001" /> 
+     <f:selectItem itemValue="ISO 20001" itemLabel="ISO 20001" /> 
+      <f:selectItem itemValue="ISO 27000" itemLabel="ISO 27000" /> 
+       <f:selectItem itemValue="ISO 29001" itemLabel="ISO 29001" /> 
+        <f:selectItem itemValue="ISO 50001" itemLabel="ISO 50001" /> 
+         <f:selectItem itemValue="ISO 9000, ISO 14000 & ISO 18000" itemLabel="ISO 9000, ISO 14000 & ISO 18000" />
+          <f:selectItem itemValue="ISO 9001 / TS 16949" itemLabel="ISO 9001 / TS 16949" />
+         <f:selectItem itemValue="ISO 9001/ ISO 27001" itemLabel="ISO 9001/ ISO 27001" />
+          <f:selectItem itemValue="ISO/TS 16949 Internal Auditor Training Program" itemLabel="ISO/TS 16949 Internal Auditor Training Program" />
+           <f:selectItem itemValue="ISO9001 & ISO14001 & OHSAS18001" itemLabel="ISO9001 & ISO14001 & OHSAS18001" />
+            <f:selectItem itemValue="ISO9001 & ISO14001& OHSAS18001 & RC" itemLabel="ISO9001 & ISO14001& OHSAS18001 & RC" />  
+            <f:selectItem itemValue="OHSAS 18001" itemLabel="OHSAS 18001" />
+            <f:selectItem itemValue="RC 14001" itemLabel="RC 14001" />  
+            <f:selectItem itemValue="Safety Excellence" itemLabel="Safety Excellence" />
+            <f:selectItem itemValue="Statistical Process Control (SPC)" itemLabel="Statistical Process Control (SPC)" />  
+            <f:selectItem itemValue="Third Party Inspections" itemLabel="Third Party Inspections" />  
+            <f:selectItem itemValue="TL 9000" itemLabel="TL 9000" />  
+            <f:selectItem itemValue="TS 16949" itemLabel="TS 16949" /> 
+             <f:selectItem itemValue="please select any one of the values from the drop down here" itemLabel="please select any one of the values from the drop down here" /> 
+  </h:selectOneMenu>
+  </td></tr>
+ 
+ 
+ <tr><td><b>
+ <h:outputLabel value="Service::"  for="service"/></b></td><td>
+ <h:message id="customer1serviceMessage" for="service"/>
+ <h:inputText id="service" value="#{customer1.service}" required="true" rendered="#{customer1.service == 'seven'}" />
+ <h:selectOneMenu value="#{customer1.service}" >
+    <f:selectItem itemValue="RA" itemLabel="RA" />
+    <f:selectItem itemValue="GC Mark" itemLabel="GC Mark" />
+    <f:selectItem itemValue="CA" itemLabel="CA" />
+    <f:selectItem itemValue="TRA" itemLabel="TRA" />
+    <f:selectItem itemValue="KSC Inhouse" itemLabel="KSC Inhouse" />
+    <f:selectItem itemValue="KSC Openhouse" itemLabel="KSC Openhouse" />
+    <f:selectItem itemValue="KSC Special assessment" itemLabel="KSC Special assessment" />
+    <f:selectItem itemValue="KSC Solution" itemLabel="KSC Solution" />
+     <f:selectItem itemValue="KSC MTS" itemLabel="KSC MTS" />
+     <f:selectItem itemValue="PPP" itemLabel="PPP" />
+      <f:selectItem itemValue="Safety" itemLabel="Safety" />
+         <f:selectItem itemValue="please select any one of the values from the drop down here" itemLabel="please select any one of the values from the drop down here" />
+  </h:selectOneMenu>
+  </td></tr>
+ 
+ <tr><td><b>
+ <h:outputLabel value="Stage::"  for="stage"/></b></td><td>
+ <h:message id="customer1sstageMessage" for="stage"/>
+ <h:inputText id="stage" value="#{customer1.stage}" required="true" rendered="#{customer1.stage == 'seven'}" />
+ <h:selectOneMenu value="#{customer1.service}" >
+    <f:selectItem itemValue="1st Annual Assessment" itemLabel="1st Annual Assessment" />
+    <f:selectItem itemValue="1st Annual Assessment & Registration Assessment" itemLabel="1st Annual Assessment & Registration AssessmentGC Mark" />
+    <f:selectItem itemValue="1st Bi-Annual Assessment" itemLabel="1st Bi-Annual Assessment" />
+    <f:selectItem itemValue="2nd Annual Assessment & name change" itemLabel="2nd Annual Assessment & name change" />
+    <f:selectItem itemValue="2nd Annual Assessment & scope expansion" itemLabel="2nd Annual Assessment & scope expansion" />
+    <f:selectItem itemValue="2nd Annual Assessment & site relocation" itemLabel="2nd Annual Assessment & site relocation" />
+    <f:selectItem itemValue="KSC Special assessment" itemLabel="KSC Special assessment" />
+    <f:selectItem itemValue="2nd Annual Assessment & site relocation" itemLabel="2nd Annual Assessment & site relocation" />
+     <f:selectItem itemValue="2nd Bi-Annual Assessment" itemLabel="2nd Bi-Annual Assessment" />
+     <f:selectItem itemValue="3rd Bi-Annual Assessment" itemLabel="3rd Bi-Annual Assessment" />
+      <f:selectItem itemValue="4th Bi-Annual Assessment" itemLabel="4th Bi-Annual Assessment" />
+      <f:selectItem itemValue="5th Bi-Annual Assessment" itemLabel="5th Bi-Annual Assessment" />
+      <f:selectItem itemValue="RA" itemLabel="RA" />
+      <f:selectItem itemValue="Audit Planning" itemLabel="Audit Planning" />
+         <f:selectItem itemValue="On site verification" itemLabel="On site verification" />
+            <f:selectItem itemValue="Preliminary Evaluation" itemLabel="Preliminary Evaluation" />
+               <f:selectItem itemValue="Registration Assessment" itemLabel="Registration Assessment" />
+                  <f:selectItem itemValue="Stage 1 for new site" itemLabel="Stage 1 for new site" />
+              <f:selectItem itemValue="Stage 1 for upgradation to TS" itemLabel="Stage 1 for upgradation to TS" />
+                  <f:selectItem itemValue="Stage1" itemLabel="Stage1" />    
+              <f:selectItem itemValue="Stage1 & Stage 2" itemLabel="Stage1 & Stage 2" />
+                  <f:selectItem itemValue="Stage1 (TRA)" itemLabel="Stage1 (TRA)" />   
+                  <f:selectItem itemValue="Tri-Annual Assessment" itemLabel="Tri-Annual Assessment" />
+                  <f:selectItem itemValue="Tri-Annual Assessment & Scope expansion" itemLabel="Tri-Annual Assessment & Scope expansion" />      
+                    <f:selectItem itemValue="Tri-Annual Assessment & transfer audit" itemLabel="Tri-Annual Assessment & transfer audit" />
+                  <f:selectItem itemValue="Tri-Annual Assessment & transfer audit" itemLabel="Tri-Annual Assessment & transfer audit" />      
+                    <f:selectItem itemValue="Gap Assessment" itemLabel="Gap Assessment" />
+                  <f:selectItem itemValue="NA" itemLabel="NA" />     
+                   <f:selectItem itemValue="please select any one of the values from the drop down here" itemLabel="please select any one of the values from the drop down here" />    
+  </h:selectOneMenu>
+  </td></tr>
+ 
+ 
+ <tr><td><b>
+ <h:outputLabel value="Order Booked By::"  for="order_Booked_By"/></b></td><td>
+ <h:message id="customer1order_Booked_ByMessage" for="order_Booked_By"/>
+ <h:inputText id="order_Booked_By" value="#{customer1.order_Booked_By}" required="true" rendered="#{customer1.order_Booked_By == 'seven'}" />
+ <h:selectOneMenu value="#{customer1.order_Booked_By}" >
+    <f:selectItem itemValue="Subhendu" itemLabel="Subhendu" />
+    <f:selectItem itemValue="Avijit Choudary" itemLabel="Avijit Choudary" />
+    <f:selectItem itemValue="Girish" itemLabel="Girish" />
+    <f:selectItem itemValue="Hema" itemLabel="RC Hema" />
+    <f:selectItem itemValue="Jawahar" itemLabel="Jawahar" />
+    <f:selectItem itemValue="Manik" itemLabel="Manik" /> 
+    <f:selectItem itemValue="Rajesh" itemLabel="Rajesh" /> 
+    <f:selectItem itemValue="Ravi" itemLabel="Ravi" /> 
+    <f:selectItem itemValue="Shilpa" itemLabel="Shilpa" /> 
+    <f:selectItem itemValue="Amit Tiwari" itemLabel="Amit Tiwari" /> 
+     <f:selectItem itemValue="Pramod" itemLabel="Pramod" /> 
+      <f:selectItem itemValue="Venkat" itemLabel="Venkat" /> 
+       <f:selectItem itemValue="Sreeja" itemLabel="Sreeja" />
+         <f:selectItem itemValue="Ajit" itemLabel="Ajit" />
+           <f:selectItem itemValue="Arpit" itemLabel="Arpit" />
+             <f:selectItem itemValue="Balram Singla" itemLabel="Balram Singla" /> 
+        <f:selectItem itemValue="Parag" itemLabel="Parag" /> 
+         <f:selectItem itemValue="Rohit" itemLabel="Rohit" /> 
+          <f:selectItem itemValue="Subhash" itemLabel="Subhash" /> 
+           <f:selectItem itemValue="Vinayak" itemLabel="Vinayak" />      
+              <f:selectItem itemValue="Naveen" itemLabel="Naveen" />     
+                 <f:selectItem itemValue="Rashmi" itemLabel="Rashmi" />     
+                    <f:selectItem itemValue="Amit Jani" itemLabel="Amit Jani" />
+         <f:selectItem itemValue="Bharathi" itemLabel="Bharathi" />
+          <f:selectItem itemValue="Juhi" itemLabel="Juhi" />
+           <f:selectItem itemValue="Madhura Joshi" itemLabel="Madhura Joshi" />
+            <f:selectItem itemValue="Vibha" itemLabel="Vibha" />                  
+                <f:selectItem itemValue="Baldau Ji" itemLabel="Baldau Ji" />
+                    <f:selectItem itemValue="G Ramanathan" itemLabel="G Ramanathan" />
+                        <f:selectItem itemValue="Sunil Korde" itemLabel="Sunil Korde" />
+                            <f:selectItem itemValue="Varun Kamble" itemLabel="Varun Kamble" />
+                            <f:selectItem itemValue="Dhanalakshmi " itemLabel="Dhanalakshmi " />
+                            <f:selectItem itemValue="Anil" itemLabel="Anil" />
+                            <f:selectItem itemValue="Dwarakanath" itemLabel="Dwarakanath" />
+                            <f:selectItem itemValue="Mukesh" itemLabel="Mukesh" />
+                             <f:selectItem itemValue="Anisha" itemLabel="Anisha" />
+                              <f:selectItem itemValue="Sumanth Kulkarni" itemLabel="Sumanth Kulkarni" />
+                               <f:selectItem itemValue="please select any one of the values from the drop down here" itemLabel="please select any one of the values from the drop down here" />
+                            
+  </h:selectOneMenu>
+  </td></tr>
+ 
+ 
+ <tr><td><b>
+ <h:outputLabel value="Designation::"  for="designation"/></b></td><td>
+ <h:message id="customer1designationMessage" for="designation"/>
+ <h:inputText id="designation" value="#{customer1.designation}" required="true" rendered="#{customer1.designation == 'seven'}" />
+ <h:selectOneMenu value="#{customer1.designation}" >
+    <f:selectItem itemValue="Sales Executive - Existing" itemLabel="Sales Executive - Existing" />
+    <f:selectItem itemValue="CSP" itemLabel="CSP" />
+    <f:selectItem itemValue="SRH" itemLabel="SRH" />
+    <f:selectItem itemValue="TRA" itemLabel="TRA" />
+    <f:selectItem itemValue="Auditor" itemLabel="Auditor" />
+    <f:selectItem itemValue="Business Head" itemLabel="Business Head" />
+    <f:selectItem itemValue="Vertical Head" itemLabel="Vertical Head" />
+    <f:selectItem itemValue="RSH" itemLabel="RSH" />
+     <f:selectItem itemValue="SE - T & S" itemLabel="SE - T & S" />
+     <f:selectItem itemValue="Sales Executive - New" itemLabel="Sales Executive - New" />
+      <f:selectItem itemValue="Sales Support" itemLabel="Sales Support" />
+         <f:selectItem itemValue="TL-New" itemLabel="TL-New" />
+            <f:selectItem itemValue="TL-Existing" itemLabel="TL-Existing" />
+             <f:selectItem itemValue="please select any one of the values from the drop down here" itemLabel="please select any one of the values from the drop down here" />
+  </h:selectOneMenu>
+  </td></tr>
+ 
+ 
+ <tr><td><b>
+ <h:outputLabel value="work Order Date::"  for="work_Order_Date"/></b></td><td>
+ <h:message id="customer1work_Order_DateMessage" for="work_Order_Date"/> 
+ 
+ </td></tr>
+ 
+ <tr><td><b>
+ <h:outputLabel value="work Order ::"  for="work_Order"/></b></td><td>
+ <h:message id="work_OrderMessage" for="work_Order"/>
+ <h:inputText id="work_Order" value="#{customer1.workOrder}" required="true" />
+ </td></tr>
+ 
+ 
+ <tr><td><b>
+ <h:outputLabel value="currency::"  for="currency"/></b></td><td>
+ <h:message id="customer1currencyMessage" for="currency"/>
+ <h:inputText id="currency" value="#{customer1.currency}" required="true" rendered="#{customer1.currency == 'seven'}" />
+ <h:selectOneMenu value="#{customer1.currency}" >
+    <f:selectItem itemValue="INR" itemLabel="INR" />
+    <f:selectItem itemValue="USD" itemLabel="USD" />
+    <f:selectItem itemValue="EUR" itemLabel="EUR" />
+    <f:selectItem itemValue="GBP" itemLabel="GBP" />
+    <f:selectItem itemValue="JBY" itemLabel="JBY" />
+    
+       <f:selectItem itemValue="please select any one of the values from the drop down here" itemLabel="please select any one of the values from the drop down here" />
+  </h:selectOneMenu>
+  </td></tr>
+ 
+  <tr><td><b>
+ <h:outputLabel value="Work Order Value::"  for="work_Order_Value"/></b></td><td>
+ <h:message id="customer1work_Order_ValueMessage" for="work_Order_Value"/>
+ <h:inputText id="work_Order_Value" value="#{customer1.work_Order_Value}" required="true"  />
+  </td></tr>
+
+ 
+ <tr><td><b>
+ <h:outputLabel value="Exchange Rate::"  for="exchange_Rate"/></b></td><td>
+ <h:message id="exchange_RateMessage" for="exchange_Rate"/>
+ <h:inputText id="exchange_Rate" value="#{customer1.exchange_Rate}" required="true"  />
+  </td></tr>
+ 
+ 
+ <tr><td><b>
+ <h:outputLabel value="Updated Work ::"  for="updated_Work_Order"/></b></td><td>
+ <h:message id="updated_Work_OrderMessage" for="updated_Work_Order"/>
+ <h:inputText id="updated_Work_Order" value="#{customer1.updated_Work_Order}" required="true"  />
+  </td></tr>
+ 
+ <tr><td><b>
+ <h:outputLabel value="StartMonth::"  for="start_month"/></b></td><td>
+ <h:message id="start_monthMessage" for="start_month"/>
+ <h:inputText id="start_month" value="#{customer1.start_month}" required="true" rendered="#{customer1.start_month == 'seven'}" />
+ <h:selectOneMenu value="#{customer1.start_month}" >
+    <f:selectItem itemValue="Oct" itemLabel="Oct" />
+    <f:selectItem itemValue="Nov" itemLabel="Nov" />
+    <f:selectItem itemValue="Dec" itemLabel="Dec" />
+    <f:selectItem itemValue="Jan" itemLabel="Jan" />
+    <f:selectItem itemValue="Feb" itemLabel="Feb" />
+    
+       <f:selectItem itemValue="please select any one of the values from the drop down here" itemLabel="please select any one of the values from the drop down here" />
+  </h:selectOneMenu>
+  </td></tr>
+ 
+ 
+ </table>
+ <h:commandButton action="#{customer1.addAction}" value="Add customer1" />
+  &nbsp;&nbsp;
+ <h:commandButton value="reset" type="reset"  />
+ 
+ 
+ </h:form>
+</f:view>
+
+
+<br/>
+<!-- Footer -->
+<div id="footer">
+	<div class="shell">
+		<span class="left"><font face="Times New Roman" color="SteelBlue">&copy; UL DQS India,Bangalore</font></span>
+		<br/>
+		
+	</div>
+</div>
+<!-- End Footer -->
+
+</body>
+
+</html>
