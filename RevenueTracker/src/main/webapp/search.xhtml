@@ -131,10 +131,8 @@
 
 			<h:commandButton value="Search" action="#{customer.ResultCustomer}"
 				rendered="true" />
-			<%--  <h:commandButton value="reset" type="reset" /> --%>
-
+			
 			<!--  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-			<%--  <h:commandLink value="All" action="#{customer.ResultAll}"  /> --%>
  
  
    &nbsp;&nbsp;&nbsp;
@@ -161,10 +159,10 @@
 				<td><h:selectOneMenu value="#{customer.searchName2}">
 						<f:selectItem itemValue="" itemLabel="" />
 						<f:selectItem itemValue="Aerospace" itemLabel="Aerospace" />
-						<f:selectItem itemValue="C&I(R)" itemLabel="C&I(R)" />
+						<f:selectItem itemValue="C&amp;I(R)" itemLabel="C&amp;I(R)" />
 						<f:selectItem itemValue="Gujarat" itemLabel="Gujarat" />
 						<f:selectItem itemValue="Maharashtra" itemLabel="Maharashtra" />
-						<f:selectItem itemValue="North & East" itemLabel="North & East" />
+						<f:selectItem itemValue="North &amp; East" itemLabel="North &amp; East" />
 						<f:selectItem itemValue="South-1" itemLabel="South-1" />
 						<f:selectItem itemValue="South-2" itemLabel="South-2" />
 					</h:selectOneMenu> <h:message id="regionMessage" for="region" /></td>
@@ -205,13 +203,7 @@
 			<h:dataTable value="#{customer.custInfoAll}" var="custInfo"
 				styleClass="order-table" headerClass="order-table-header" border="5"
 				rowClasses="order-table-odd-row,order-table-even-row">
-				<%--  <h:column> --%>
-				<%--  <f:facet name="header"> --%>
-				<%--  <h:outputText value="ID " /> --%>
-				<%--  </f:facet> --%>
-				<%--  <h:outputText value="#{custInfo.newtableid}" > --%>
-				<%--  </h:outputText> --%>
-				<%--  </h:column> --%>
+				
 				<h:column>
 					<f:facet name="header">
 						<h:outputText value="BR " />
@@ -463,7 +455,7 @@
 				</h:column>
 				<h:column>
 					<f:facet name="header">
-						<h:outputText value="T&L " />
+						<h:outputText value="T&amp;L " />
 					</f:facet>
 					<h:outputText value="#{custInfo.t_L}">
 					</h:outputText>
