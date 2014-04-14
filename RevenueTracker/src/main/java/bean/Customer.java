@@ -503,7 +503,7 @@ public class Customer {
 						+ dbcusttl + "',period_Mandays='" + dbcustsum_pmr
 						+ "',workOrder='" + dbcustwrk + "' where workOrder='"
 						+ dbcustwrk + "' ";
-				System.out.println("Update in SearchCustomer Table–" + query);
+				System.out.println("Update in SearchCustomer Tableï¿½" + query);
 				stmt.executeUpdate(query);// rs=stmt.executeQuery(strSql);
 			}
 
@@ -534,7 +534,7 @@ public class Customer {
 						+ dbcusttl + "',period_Mandays='" + dbcustsum_pmr
 						+ "',workOrder='" + dbcustwrk + "' where workOrder='"
 						+ dbcustwrk + "' ";
-				System.out.println("Update in SearchCustomer Table–" + query);
+				System.out.println("Update in SearchCustomer Tableï¿½" + query);
 				stmt.executeUpdate(query);// rs=stmt.executeQuery(strSql);
 			}
 
@@ -553,14 +553,13 @@ public class Customer {
 			Labcon lc = new Labcon();
 			MySQLcon = lc.getLocalConnection();
 			stmt = MySQLcon.createStatement();
-		
+
 			String dbcustmnd = this.mandayvalue;
-			
 
 			String query = "UPDATE revenue.manday_table SET mandayvalue = '"
 					+ dbcustmnd + "' where  datec='" + datec
 					+ "'   and master_masterid='" + masterid + "' ";
-			System.out.println("Update in SearchCustomer Table–" + query);
+			System.out.println("Update in SearchCustomer Tableï¿½" + query);
 			stmt.executeUpdate(query);// rs=stmt.executeQuery(strSql);
 
 		} catch (Exception ex) {
@@ -572,7 +571,7 @@ public class Customer {
 	}
 
 	public List<Customer> getAllCustomer() {
-		
+
 		Labcon lc = new Labcon();
 		MySQLcon = lc.getLocalConnection();
 		try {
@@ -635,13 +634,15 @@ public class Customer {
 				this.order_Booked_By = rs.getString("order_Booked_By");
 				this.work_Order_Date = rs.getString("work_Order_Date");
 				this.currency = rs.getString("currency");
-				this.work_Order_Assessment_fee = rs.getString("work_Order_Assessment_fee");
+				this.work_Order_Assessment_fee = rs
+						.getString("work_Order_Assessment_fee");
 				this.work_Order_Logo_fee = rs.getString("work_Order_Logo_fee");
 				this.shared_Revenue = rs.getString("shared_Revenue");
 				this.work_Order_Value = rs.getString("work_Order_Value");
 				this.exchange_Rate = rs.getString("exchange_Rate");
 				this.updated_Work_Order = rs.getString("updated_Work_Order");
-				this.updated_WO_Assessment_fee = rs.getString("updated_WO_Assessment_fee");
+				this.updated_WO_Assessment_fee = rs
+						.getString("updated_WO_Assessment_fee");
 				this.work_Order_Mandays = rs.getString("work_Order_Mandays");
 				this.startDate = rs.getString("startDate");
 				this.start_month = rs.getString("start_month");
@@ -665,14 +666,13 @@ public class Customer {
 	}
 
 	public List<Customer> getCustomerDetail() {
-		
+
 		this.custInfoAll.clear();
 		Labcon lc = new Labcon();
 		MySQLcon = lc.getLocalConnection();
 		try {
 			stmt = MySQLcon.createStatement();
 
-			
 			String sql1 = "Select masterid from revenue.master where  customer_Name like '"
 					+ searchName + "%'   ";
 			System.out.println(sql1);
@@ -790,20 +790,21 @@ public class Customer {
 				cust.setstartDate(rs.getString("startDate"));
 				System.out.println(rs.getString("endDate") + "custname");
 				cust.setendDate(rs.getString("endDate"));
-				System.out.println(rs.getString("delivered_Mandays")+ "custname");
+				System.out.println(rs.getString("delivered_Mandays")
+						+ "custname");
 				cust.setdelivered_Mandays(rs.getString("delivered_Mandays"));
 				System.out.println(rs.getString("invoice") + "custname");
 				cust.setinvoice(rs.getString("invoice"));
 				System.out.println(rs.getString("invoice_Date") + "custname");
 				cust.setinvoice_Date(rs.getString("invoice_Date"));
-				System.out.println(rs.getString("assessment_Fees") + "custname");
+				System.out
+						.println(rs.getString("assessment_Fees") + "custname");
 				cust.setassessment_Fees(rs.getString("assessment_Fees"));
-				System.out.println(rs.getString("logo_Fee_Database")	+ "custname");
+				System.out.println(rs.getString("logo_Fee_Database")
+						+ "custname");
 				cust.setLogo_Fee_Database(rs.getString("logo_Fee_Database"));
 				System.out.println(rs.getString("t_L") + "custname");
 				cust.sett_L(rs.getString("t_L"));
-
-				
 
 				this.custInfoAll.add(cust);
 			}
@@ -816,7 +817,7 @@ public class Customer {
 	}
 
 	public ArrayList<Customer> getCalendarDetail() {
-		
+
 		this.custInfoAll.clear();
 		Labcon lc = new Labcon();
 		MySQLcon = lc.getLocalConnection();
@@ -841,13 +842,12 @@ public class Customer {
 				}
 			}
 
-			
 			for (int i = 0; i < arrl.size(); i++) {
 				String strSql = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,period_Mandays,workOrder from revenue.master where masterid='"
 						+ arrl.get(i) + "'  ";
 				System.err.println("Search2 query:-" + strSql);
 				rs = stmt.executeQuery(strSql);//
-				
+
 				System.out.println(strSql);
 				while (rs.next()) {
 					Customer cust = new Customer();
@@ -972,7 +972,7 @@ public class Customer {
 		MySQLcon = lc.getLocalConnection();
 		try {
 			stmt = MySQLcon.createStatement();
-			
+
 			String strSql = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,period_Mandays,workOrder from revenue.master where customer_Name like '"
 					+ searchName + "%'";
 			System.err.println("Search query:-" + strSql);
@@ -2320,6 +2320,8 @@ public class Customer {
 				masterid = rs.getString("masterid");
 				System.out.println(masterid);
 			}
+			
+			
 
 			String strSql = "select  date_ID,datec,mandayvalue from revenue.manday_table where datec  BETWEEN '"
 					+ datea
@@ -2356,7 +2358,7 @@ public class Customer {
 		return this.custInfoAll;
 	}
 
-	// over 
+	// over
 
 	public void getEditDetail() {
 
@@ -2386,7 +2388,6 @@ public class Customer {
 
 	}
 
-	
 	public String addCustomer() throws SQLException {
 		try {
 			System.out.println("in add customer");
@@ -2397,15 +2398,14 @@ public class Customer {
 		}
 		return "add";
 	}
-	
-//Search method	
+
+	// Search method
 	public String ResultCustomer() {
 		getCustomerDetail();
 		return "result";
 	}
 
-	
-//Edit method for edit button 
+	// Edit method for edit button
 	public String EditCustomer() {
 		getEditDetail();
 		return "edit";
@@ -2415,22 +2415,26 @@ public class Customer {
 		getAllDetail();
 		return "all";
 	}
-//Method for drop downs of Customer type, region ,month
+
+	// Method for drop downs of Customer type, region ,month
 	public String DropDowns() {
 		getDropDownDetail();
 		return "values";
 	}
-//Start and end date method
+
+	// Start and end date method
 	public String Calendarcustomer() {
 		getCalendarDetail();
 		return "calendar";
 	}
-//Getting Customer Name instance
+
+	// Getting Customer Name instance
 	public String MandayEntryCustomer() {
 		getCompanyDetail();
 		return "company";
 	}
-//Method for Report button in mandatEntry.jsp
+
+	// Method for Report button in mandatEntry.jsp
 	public String Entrycustomer() {
 		getEntryDetail();
 		return "entry";
