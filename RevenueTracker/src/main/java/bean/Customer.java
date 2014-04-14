@@ -3,11 +3,10 @@ package bean;
 import java.sql.*;
 
 import java.util.*;
-import java.util.List;
 
 public class Customer {
-	private String customerName;
-	private String customerType;
+	private String customer_Name;
+	private String customer_Type;
 	private String region;
 	private String workOrder;
 	private String vertical;
@@ -23,50 +22,223 @@ public class Customer {
 	private String exchange_Rate;
 	private String updated_Work_Order;
 	private String start_month;
-	private long so;
-
-	private List<Customer> custInfoAll = new ArrayList<Customer>();
-
+	private String shared_Revenue;
+	private String work_Order_Assessment_fee;
+	private String work_Order_Logo_fee;
+	private String updated_WO_Assessment_fee;
+	private String work_Order_Mandays;
+	private String delivered_Mandays;
+	private String startDate;
+	private String endDate;
+	private String datec;
+	private String dateb;
+	private String datea;
+	private String invoice;
+	private String assessment_Fees;
+	private String logo_Fee_Database;
+	private long sum_dm;
+	private long sum_pm;
+	private long sum_Del;
+	private String invoice_Date;
+	private String t_L;
+	private String bR;
+	private String mandayvalue;
+	private String foreign;
+	private String masterid;
+	private String period_Mandays;
+	private String date_ID;
 	private String searchName;
 	private String searchName1;
 	private String searchName2;
 	private String searchName3;
-	// private String data;
 
-	private List<Customer> selectedItems;
+	private List<Customer> custInfoAll = new ArrayList<Customer>();
 
-	public List<Customer> getSelectedItems() {
+	public String getNewtableid() {
+		return masterid;
+	}
 
-		return selectedItems;
+	public void setNewtableid(String masterid) {
+		this.masterid = masterid;
+	}
+
+	public String getwork_Order_Mandays() {
+		return work_Order_Mandays;
+	}
+
+	public void setwork_Order_Mandays(String work_Order_Mandays) {
+		this.work_Order_Mandays = work_Order_Mandays;
+	}
+
+	public String getLogo_Fee_Database() {
+
+		return logo_Fee_Database;
+	}
+
+	public void setLogo_Fee_Database(String logo_Fee_Database) {
+		this.logo_Fee_Database = logo_Fee_Database;
 
 	}
 
-	public void setSelectedItems(List<Customer> selectedItems) {
-
-		this.selectedItems = selectedItems;
+	public String getassessment_Fees() {
+		return assessment_Fees;
 	}
 
-	public String submit() {
-
-		System.out.println("List : " + this.selectedItems);
-
-		return "selectManyCheckBox";
+	public void setassessment_Fees(String assessment_Fees) {
+		this.assessment_Fees = assessment_Fees;
 	}
 
-	public String getCustomerName() {
-		return customerName;
+	public String gett_L() {
+		return t_L;
 	}
 
-	public void setCustomerName(String customerName) {
-		this.customerName = customerName;
+	public void sett_L(String t_L) {
+		this.t_L = t_L;
 	}
 
-	public String getCustomerType() {
-		return customerType;
+	public String getdate_ID() {
+		return date_ID;
 	}
 
-	public void setCustomerType(String customerType) {
-		this.customerType = customerType;
+	public void setdate_ID(String date_ID) {
+		this.date_ID = date_ID;
+	}
+
+	public String getbR() {
+		return bR;
+	}
+
+	public void setbR(String bR) {
+		this.bR = bR;
+	}
+
+	public String getperiod_Mandays() {
+		return period_Mandays;
+	}
+
+	public void setperiod_Mandays(String period_Mandays) {
+		this.period_Mandays = period_Mandays;
+	}
+
+	public String getdatea() {
+		return datea;
+	}
+
+	public void setdatea(String datea) {
+		this.datea = datea;
+	}
+
+	public String getmandayvalue() {
+		return mandayvalue;
+	}
+
+	public void setmandayvalue(String mandayvalue) {
+		this.mandayvalue = mandayvalue;
+	}
+
+	public String getdatec() {
+		return datec;
+	}
+
+	public void setdatec(String datec) {
+		this.datec = datec;
+	}
+
+	public String getforeign() {
+		return foreign;
+	}
+
+	public void setforeign(String foreign) {
+		this.foreign = foreign;
+	}
+
+	public String getInvoice_Date() {
+		return invoice_Date;
+	}
+
+	public void setinvoice_Date(String invoice_Date) {
+		this.invoice_Date = invoice_Date;
+
+	}
+
+	public String getInvoice() {
+		return invoice;
+	}
+
+	public void setinvoice(String invoice) {
+		this.invoice = invoice;
+	}
+
+	public String getcustomer_Name() {
+		return customer_Name;
+	}
+
+	public void setcustomer_Name(String customer_Name) {
+		this.customer_Name = customer_Name;
+	}
+
+	public String getdelivered_Mandays() {
+		return delivered_Mandays;
+	}
+
+	public void setdelivered_Mandays(String delivered_Mandays) {
+		this.delivered_Mandays = delivered_Mandays;
+	}
+
+	public String getstartDate() {
+		return startDate;
+	}
+
+	public void setstartDate(String startDate) {
+		this.startDate = startDate;
+	}
+
+	public String getendDate() {
+		return endDate;
+	}
+
+	public void setendDate(String endDate) {
+		this.endDate = endDate;
+	}
+
+	public String getdateb() {
+		return dateb;
+	}
+
+	public void setdateb(String dateb) {
+		this.dateb = dateb;
+	}
+
+	public String getwork_Order_Assessment_fee() {
+		return work_Order_Assessment_fee;
+	}
+
+	public void setwork_Order_Assessment_fee(String work_Order_Assessment_fee) {
+		this.work_Order_Assessment_fee = work_Order_Assessment_fee;
+	}
+
+	public String getupdated_WO_Assessment_fee() {
+		return updated_WO_Assessment_fee;
+	}
+
+	public void setupdated_WO_Assessment_fee(String updated_WO_Assessment_fee) {
+		this.updated_WO_Assessment_fee = updated_WO_Assessment_fee;
+	}
+
+	public String getwork_Order_Logo_fee() {
+		return work_Order_Logo_fee;
+	}
+
+	public void setwork_Order_Logo_fee(String work_Order_Logo_fee) {
+		this.work_Order_Logo_fee = work_Order_Logo_fee;
+	}
+
+	public String getcustomer_Type() {
+		return customer_Type;
+	}
+
+	public void setcustomer_Type(String customer_Type) {
+		this.customer_Type = customer_Type;
 	}
 
 	public String getSearchName() {
@@ -125,12 +297,28 @@ public class Customer {
 		this.vertical = vertical;
 	}
 
-	public long getso() {
-		return so;
+	public long getsum_dm() {
+		return sum_dm;
 	}
 
-	public void setso(long so) {
-		this.so = so;
+	public void setsum_dm(long sum_dm) {
+		this.sum_dm = sum_dm;
+	}
+
+	public long getsum_pm() {
+		return sum_pm;
+	}
+
+	public void setsum_pm(long sum_pm) {
+		this.sum_pm = sum_pm;
+	}
+
+	public long getsum_Del() {
+		return sum_Del;
+	}
+
+	public void setsum_Del(long sum_Del) {
+		this.sum_Del = sum_Del;
 	}
 
 	public String getindustry() {
@@ -197,6 +385,14 @@ public class Customer {
 		this.currency = currency;
 	}
 
+	public String getshared_Revenue() {
+		return shared_Revenue;
+	}
+
+	public void setshared_Revenue(String shared_Revenue) {
+		this.shared_Revenue = shared_Revenue;
+	}
+
 	public String getwork_Order_Value() {
 		return work_Order_Value;
 	}
@@ -248,8 +444,8 @@ public class Customer {
 			Labcon lc = new Labcon();
 			MySQLcon = lc.getLocalConnection();
 			stmt = MySQLcon.createStatement();
-			String dbcustid = this.customerName;
-			String dbcustname = this.customerType;
+			String dbcustid = this.customer_Name;
+			String dbcustname = this.customer_Type;
 			String dbcustadd = this.region;
 			String dbcustwrk = this.workOrder;
 			String dbcustver = this.vertical;
@@ -263,23 +459,85 @@ public class Customer {
 			String dbcustcurr = this.currency;
 			String dbcustwo = this.work_Order_Value;
 			String dbcuster = this.exchange_Rate;
-			String dbcustupr = this.updated_Work_Order;
 			String dbcustsm = this.start_month;
+			String dbcustsrv = this.shared_Revenue;
+			String dbcustwoas = this.work_Order_Assessment_fee;
+			String dbcustwls = this.work_Order_Logo_fee;
+			String dbcustuws = this.updated_WO_Assessment_fee;
+			String dbcustwomd = this.work_Order_Mandays;
+			String dbcustdm = this.delivered_Mandays;
+			String dbcustsdat = this.startDate;
+			String dbcusten = this.endDate;
+			String dbcustinv = this.invoice;
+			String dbcustivd = this.invoice_Date;
+			String dbcustass = this.assessment_Fees;
+			String dbcustlog = this.logo_Fee_Database;
+			String dbcusttl = this.t_L;
+			String dbcustbr = this.bR;
+			String dbcustsum_pmr = this.period_Mandays;
+			String c = "INR";
+			if (dbcustcurr.equals(c)) {
+				String query = "UPDATE revenue.master SET bR = '" + dbcustbr
+						+ "',customer_Name = '" + dbcustid
+						+ "',customer_Type = '" + dbcustname + "',region='"
+						+ dbcustadd + "',vertical='" + dbcustver
+						+ "',industry='" + dbcustind + "',service='"
+						+ dbcustser + "',product='" + dbcustpro + "',stage='"
+						+ dbcuststa + "',designation='" + dbcustdes
+						+ "',order_Booked_By='" + dbcustoby
+						+ "',work_Order_Date='" + dbcustwod + "',currency='"
+						+ dbcustcurr + "',work_Order_Assessment_fee='"
+						+ dbcustwoas + "',work_Order_Logo_fee='" + dbcustwls
+						+ "',shared_Revenue='" + dbcustsrv
+						+ "',work_Order_Value='" + dbcustwo
+						+ "',exchange_Rate='" + dbcuster
+						+ "',updated_Work_Order='" + dbcustwo
+						+ "',updated_WO_Assessment_fee='" + dbcustuws
+						+ "',work_Order_Mandays='" + dbcustwomd
+						+ "',start_month='" + dbcustsm
+						+ "',delivered_Mandays='" + dbcustdm + "',startDate='"
+						+ dbcustsdat + "',endDate='" + dbcusten + "',invoice='"
+						+ dbcustinv + "',invoice_Date='" + dbcustivd
+						+ "',assessment_Fees='" + dbcustass
+						+ "',logo_Fee_Database='" + dbcustlog + "',t_L='"
+						+ dbcusttl + "',period_Mandays='" + dbcustsum_pmr
+						+ "',workOrder='" + dbcustwrk + "' where workOrder='"
+						+ dbcustwrk + "' ";
+				System.out.println("Update in SearchCustomer Table–" + query);
+				stmt.executeUpdate(query);// rs=stmt.executeQuery(strSql);
+			}
 
-			String query = "UPDATE revenue.chek SET Customer_Name = '"
-					+ dbcustid + "',Customer_Type = '" + dbcustname
-					+ "',region='" + dbcustadd + "',vertical='" + dbcustver
-					+ "',industry='" + dbcustind + "',service='" + dbcustser
-					+ "',product='" + dbcustpro + "',stage='" + dbcuststa
-					+ "',designation='" + dbcustdes + "',order_Booked_By='"
-					+ dbcustoby + "',work_Order_Date='" + dbcustwod
-					+ "',currency='" + dbcustcurr + "',work_Order_Value='"
-					+ dbcustwo + "',exchange_Rate='" + dbcuster
-					+ "',updated_Work_Order='" + dbcustupr + "',start_month='"
-					+ dbcustsm + "',workOrder='" + dbcustwrk
-					+ "' where workOrder='" + dbcustwrk + "' ";
-			System.out.println("Update in SearchCustomer Table?" + query);
-			stmt.executeUpdate(query);// rs=stmt.executeQuery(strSql);
+			else {
+				String query = "UPDATE revenue.master SET bR = '" + dbcustbr
+						+ "', customer_Name = '" + dbcustid
+						+ "',customer_Type = '" + dbcustname + "',region='"
+						+ dbcustadd + "',vertical='" + dbcustver
+						+ "',industry='" + dbcustind + "',service='"
+						+ dbcustser + "',product='" + dbcustpro + "',stage='"
+						+ dbcuststa + "',designation='" + dbcustdes
+						+ "',order_Booked_By='" + dbcustoby
+						+ "',work_Order_Date='" + dbcustwod + "',currency='"
+						+ dbcustcurr + ",work_Order_Assessment_fee='"
+						+ dbcustwoas + "',work_Order_Logo_fee='" + dbcustwls
+						+ "',shared_Revenue='" + dbcustsrv
+						+ "',work_Order_Value='" + dbcustwo
+						+ "',exchange_Rate='" + dbcuster
+						+ "',updated_Work_Order=('" + dbcustwo + "' * '"
+						+ dbcuster + "'),updated_WO_Assessment_fee='"
+						+ dbcustuws + "',work_Order_Mandays='" + dbcustwomd
+						+ "',start_month='" + dbcustsm
+						+ "',delivered_Mandays='" + dbcustdm + "',startDate='"
+						+ dbcustsdat + "',endDate='" + dbcusten + "'invoice='"
+						+ dbcustinv + "', invoice_Date='" + dbcustivd
+						+ "',assessment_Fees='" + dbcustass
+						+ "' logo_Fee_Database='" + dbcustlog + "',t_L='"
+						+ dbcusttl + "',period_Mandays='" + dbcustsum_pmr
+						+ "',workOrder='" + dbcustwrk + "' where workOrder='"
+						+ dbcustwrk + "' ";
+				System.out.println("Update in SearchCustomer Table–" + query);
+				stmt.executeUpdate(query);// rs=stmt.executeQuery(strSql);
+			}
+
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			System.out.println("Exception in addAction:-" + ex.getMessage());
@@ -288,21 +546,48 @@ public class Customer {
 		return "insert";
 	}
 
-	public List<Customer> getAllCustomer() {
+	// adddateaction
+	public String updateAction() throws SQLException {
+		try {
 
+			Labcon lc = new Labcon();
+			MySQLcon = lc.getLocalConnection();
+			stmt = MySQLcon.createStatement();
+		
+			String dbcustmnd = this.mandayvalue;
+			
+
+			String query = "UPDATE revenue.manday_table SET mandayvalue = '"
+					+ dbcustmnd + "' where  datec='" + datec
+					+ "'   and master_masterid='" + masterid + "' ";
+			System.out.println("Update in SearchCustomer Table–" + query);
+			stmt.executeUpdate(query);// rs=stmt.executeQuery(strSql);
+
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			System.out.println("Exception in addAction:-" + ex.getMessage());
+		}
+
+		return "update";
+	}
+
+	public List<Customer> getAllCustomer() {
+		
 		Labcon lc = new Labcon();
 		MySQLcon = lc.getLocalConnection();
 		try {
 			stmt = MySQLcon.createStatement();
 
-			String strSql = "select customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Value,exchange_Rate,updated_Work_Order,start_month,workOrder from revenue.chek order by customer_Name asc";
+			String strSql = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,period_Mandays,workOrder from revenue.master order by customer_Name asc";
 			System.err.println("*select all***" + strSql);
 			rs = stmt.executeQuery(strSql);
 			System.out.println(strSql);
 			while (rs.next()) {
 				Customer cust = new Customer();
-				cust.setCustomerName(rs.getString("customer_Name"));
-				cust.setCustomerType(rs.getString("customer_Type"));
+				cust.setNewtableid(rs.getString("masterid"));
+				cust.setbR(rs.getString("bR"));
+				cust.setcustomer_Name(rs.getString("customer_Name"));
+				cust.setcustomer_Type(rs.getString("customer_Type"));
 				cust.setRegion(rs.getString("region"));
 				cust.setWorkOrder(rs.getString("workOrder"));
 				cust.setVertical(rs.getString("vertical"));
@@ -314,13 +599,31 @@ public class Customer {
 				cust.setorder_Booked_By(rs.getString("order_Booked_By"));
 				cust.setwork_Order_Date_By(rs.getString("work_Order_Date"));
 				cust.setcurrency(rs.getString("currency"));
+				cust.setwork_Order_Assessment_fee(rs
+						.getString("work_Order_Assessment_fee"));
+				cust.setwork_Order_Logo_fee(rs.getString("work_Order_Logo_fee"));
+				cust.setshared_Revenue(rs.getString("shared_Revenue"));
 				cust.setwork_Order_Value(rs.getString("work_Order_Value"));
 				cust.setexchange_Rate(rs.getString("exchange_Rate"));
 				cust.setupdated_Work_Order(rs.getString("updated_Work_Order"));
+				cust.setupdated_WO_Assessment_fee(rs
+						.getString("updated_WO_Assessment_fee"));
+				cust.setwork_Order_Mandays(rs.getString("work_Order_Mandays"));
 				cust.setstart_month(rs.getString("start_month"));
+				cust.setstartDate(rs.getString("startDate"));
+				cust.setendDate(rs.getString("endDate"));
+				cust.setdelivered_Mandays(rs.getString("delivered_Mandays"));
+				cust.setinvoice(rs.getString("invoice"));
+				cust.setinvoice_Date(rs.getString("invoice_Date"));
+				cust.setassessment_Fees(rs.getString("assessment_Fees"));
+				cust.setLogo_Fee_Database(rs.getString("logo_Fee_Database"));
+				cust.sett_L(rs.getString("t_L"));
+				cust.setperiod_Mandays(rs.getString("period_Mandays"));
 
-				this.customerName = rs.getString("customer_Name");
-				this.customerType = rs.getString("customer_Type");
+				this.masterid = rs.getString("masterid");
+				this.bR = rs.getString("bR");
+				this.customer_Name = rs.getString("customer_Name");
+				this.customer_Type = rs.getString("customer_Type");
 				this.region = rs.getString("region");
 				this.workOrder = rs.getString("workOrder");
 				this.vertical = rs.getString("vertical");
@@ -332,10 +635,24 @@ public class Customer {
 				this.order_Booked_By = rs.getString("order_Booked_By");
 				this.work_Order_Date = rs.getString("work_Order_Date");
 				this.currency = rs.getString("currency");
+				this.work_Order_Assessment_fee = rs.getString("work_Order_Assessment_fee");
+				this.work_Order_Logo_fee = rs.getString("work_Order_Logo_fee");
+				this.shared_Revenue = rs.getString("shared_Revenue");
 				this.work_Order_Value = rs.getString("work_Order_Value");
 				this.exchange_Rate = rs.getString("exchange_Rate");
 				this.updated_Work_Order = rs.getString("updated_Work_Order");
+				this.updated_WO_Assessment_fee = rs.getString("updated_WO_Assessment_fee");
+				this.work_Order_Mandays = rs.getString("work_Order_Mandays");
+				this.startDate = rs.getString("startDate");
 				this.start_month = rs.getString("start_month");
+				this.endDate = rs.getString("endDate");
+				this.delivered_Mandays = rs.getString("delivered_Mandays");
+				this.invoice = rs.getString("invoice");
+				this.invoice_Date = rs.getString("invoice_Date");
+				this.assessment_Fees = rs.getString("assessment_Fees");
+				this.logo_Fee_Database = rs.getString("logo_Fee_Database");
+				this.t_L = rs.getString("t_L");
+				this.period_Mandays = rs.getString("period_Mandays");
 
 				// store all data into a List
 				this.custInfoAll.add(cust);
@@ -348,28 +665,72 @@ public class Customer {
 	}
 
 	public List<Customer> getCustomerDetail() {
-		List<Customer> custInfo = new ArrayList<Customer>();
+		
+		this.custInfoAll.clear();
 		Labcon lc = new Labcon();
 		MySQLcon = lc.getLocalConnection();
 		try {
 			stmt = MySQLcon.createStatement();
-			// String customer_Name ="";
-			// String BR="20006691";
-			// if(customer_Name!=null && workOrder==null ){
-			String strSql = "select customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Value,exchange_Rate,updated_Work_Order,start_month,workOrder from revenue.chek where customer_Name like '"
+
+			
+			String sql1 = "Select masterid from revenue.master where  customer_Name like '"
+					+ searchName + "%'   ";
+			System.out.println(sql1);
+			rs = stmt.executeQuery(sql1);
+
+			ArrayList<String> arrl = new ArrayList<String>();
+			while (rs.next()) {
+				arrl.add(rs.getString("masterid"));
+
+				Iterator<String> itr = arrl.iterator();
+				while (itr.hasNext()) {
+					System.out.println(itr.next());
+				}
+			}
+
+			// getting manday summation
+			for (int i = 0; i < arrl.size(); i++) {
+				String strSql1 = "select  mandayvalue from revenue.manday_table where  master_masterid='"
+						+ arrl.get(i) + "'  ";
+				System.err.println("Search5 query:-" + strSql1);
+				rs = stmt.executeQuery(strSql1);
+				System.out.println(strSql1);
+
+				while (rs.next()) {
+					ArrayList<String> arr2 = new ArrayList<String>();
+
+					arr2.add(rs.getString("mandayvalue"));
+
+					Iterator<String> itr = arr2.iterator();
+
+					int p = rs.getInt(1);
+					this.sum_pm = this.sum_pm + p;
+
+					while (itr.hasNext()) {
+						System.out.println(itr.next());
+
+					}
+
+				}
+
+			}
+
+			String strSql = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,period_Mandays,workOrder from revenue.master where customer_Name like '"
 					+ searchName + "%'";
-			System.err.println("Search query:-" + strSql);
+			System.err.println("Search2 query:-" + strSql);
 			rs = stmt.executeQuery(strSql);
-			// preparedStatement = connection.prepareStatement(strSql);
-			// preparedStatement.setString(1, "%" + customerName + "%");
-			// rs = preparedStatement.executeQuery();
+
 			System.out.println(strSql);
 			while (rs.next()) {
 				Customer cust = new Customer();
+				System.out.println(rs.getString("masterid") + "custname");
+				cust.setNewtableid(rs.getString("masterid"));
+				System.out.println(rs.getString("bR") + "custname");
+				cust.setbR(rs.getString("bR"));
 				System.out.println(rs.getString("customer_Name") + "custname");
-				cust.setCustomerName(rs.getString("customer_Name"));
+				cust.setcustomer_Name(rs.getString("customer_Name"));
 				System.out.println(rs.getString("customer_Type") + "custname");
-				cust.setCustomerType(rs.getString("customer_Type"));
+				cust.setcustomer_Type(rs.getString("customer_Type"));
 				System.out.println(rs.getString("region") + "custname");
 				cust.setRegion(rs.getString("region"));
 				System.out.println(rs.getString("workOrder") + "custname");
@@ -383,9 +744,9 @@ public class Customer {
 				System.out.println(rs.getString("product") + "custname");
 				cust.setproduct(rs.getString("product"));
 				System.out.println(rs.getString("stage") + "custname");
-				cust.setservice(rs.getString("stage"));
+				cust.setstage(rs.getString("stage"));
 				System.out.println(rs.getString("designation") + "custname");
-				cust.setservice(rs.getString("designation"));
+				cust.setdesignation(rs.getString("designation"));
 				System.out
 						.println(rs.getString("order_Booked_By") + "custname");
 				cust.setorder_Booked_By(rs.getString("order_Booked_By"));
@@ -394,6 +755,16 @@ public class Customer {
 				cust.setwork_Order_Date_By(rs.getString("work_Order_Date"));
 				System.out.println(rs.getString("currency") + "custname");
 				cust.setcurrency(rs.getString("currency"));
+				System.out.println(rs.getString("work_Order_Assessment_fee")
+						+ "custname");
+				cust.setwork_Order_Assessment_fee(rs
+						.getString("work_Order_Assessment_fee"));
+				System.out.println(rs.getString("work_Order_Logo_fee")
+						+ "custname");
+				cust.setwork_Order_Logo_fee(rs.getString("work_Order_Logo_fee"));
+
+				System.out.println(rs.getString("shared_Revenue") + "custname");
+				cust.setshared_Revenue(rs.getString("shared_Revenue"));
 				System.out.println(rs.getString("work_Order_Value")
 						+ "custname");
 				cust.setwork_Order_Value(rs.getString("work_Order_Value"));
@@ -402,8 +773,37 @@ public class Customer {
 				System.out.println(rs.getString("updated_Work_Order")
 						+ "custname");
 				cust.setupdated_Work_Order(rs.getString("updated_Work_Order"));
+				System.out.println(rs.getString("updated_WO_Assessment_fee")
+						+ "custname");
+				cust.setupdated_WO_Assessment_fee(rs
+						.getString("updated_WO_Assessment_fee"));
+				System.out.println(rs.getString("updated_WO_Assessment_fee")
+						+ "custname");
+				cust.setupdated_WO_Assessment_fee(rs
+						.getString("updated_WO_Assessment_fee"));
+				System.out.println(rs.getString("work_Order_Mandays")
+						+ "custname");
+				cust.setwork_Order_Mandays(rs.getString("work_Order_Mandays"));
 				System.out.println(rs.getString("start_month") + "custname");
 				cust.setstart_month(rs.getString("start_month"));
+				System.out.println(rs.getString("startDate") + "custname");
+				cust.setstartDate(rs.getString("startDate"));
+				System.out.println(rs.getString("endDate") + "custname");
+				cust.setendDate(rs.getString("endDate"));
+				System.out.println(rs.getString("delivered_Mandays")+ "custname");
+				cust.setdelivered_Mandays(rs.getString("delivered_Mandays"));
+				System.out.println(rs.getString("invoice") + "custname");
+				cust.setinvoice(rs.getString("invoice"));
+				System.out.println(rs.getString("invoice_Date") + "custname");
+				cust.setinvoice_Date(rs.getString("invoice_Date"));
+				System.out.println(rs.getString("assessment_Fees") + "custname");
+				cust.setassessment_Fees(rs.getString("assessment_Fees"));
+				System.out.println(rs.getString("logo_Fee_Database")	+ "custname");
+				cust.setLogo_Fee_Database(rs.getString("logo_Fee_Database"));
+				System.out.println(rs.getString("t_L") + "custname");
+				cust.sett_L(rs.getString("t_L"));
+
+				
 
 				this.custInfoAll.add(cust);
 			}
@@ -412,117 +812,158 @@ public class Customer {
 					+ e.getMessage());
 		}
 
-		return custInfo;
+		return this.custInfoAll;
 	}
 
-	public List<Customer> getmonth() {
-		List<Customer> custmon = new ArrayList<Customer>();
+	public ArrayList<Customer> getCalendarDetail() {
+		
+		this.custInfoAll.clear();
 		Labcon lc = new Labcon();
 		MySQLcon = lc.getLocalConnection();
 		try {
 			stmt = MySQLcon.createStatement();
-			// String customer_Name ="";
-			// String BR="20006691";
-			// if(customer_Name!=null && workOrder==null ){
-			String strSql = "select customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Value,exchange_Rate,updated_Work_Order,start_month,workOrder from revenue.chek where start_month='"
-					+ selectedItems + "'";
-			System.err.println("Search query:-" + strSql);
-			rs = stmt.executeQuery(strSql);
-			// preparedStatement = connection.prepareStatement(strSql);
-			// preparedStatement.setString(1, "%" + customerName + "%");
-			// rs = preparedStatement.executeQuery();
-			System.out.println(strSql);
-			while (rs.next()) {
-				Customer cust = new Customer();
-				System.out.println(rs.getString("customer_Name") + "custname");
-				cust.setCustomerName(rs.getString("customer_Name"));
-				System.out.println(rs.getString("customer_Type") + "custname");
-				cust.setCustomerType(rs.getString("customer_Type"));
-				System.out.println(rs.getString("region") + "custname");
-				cust.setRegion(rs.getString("region"));
-				System.out.println(rs.getString("workOrder") + "custname");
-				cust.setWorkOrder(rs.getString("workOrder"));
-				System.out.println(rs.getString("vertical") + "custname");
-				cust.setVertical(rs.getString("vertical"));
-				System.out.println(rs.getString("industry") + "custname");
-				cust.setindustry(rs.getString("industry"));
-				System.out.println(rs.getString("service") + "custname");
-				cust.setservice(rs.getString("service"));
-				System.out.println(rs.getString("product") + "custname");
-				cust.setproduct(rs.getString("product"));
-				System.out.println(rs.getString("stage") + "custname");
-				cust.setservice(rs.getString("stage"));
-				System.out.println(rs.getString("designation") + "custname");
-				cust.setservice(rs.getString("designation"));
-				System.out
-						.println(rs.getString("order_Booked_By") + "custname");
-				cust.setorder_Booked_By(rs.getString("order_Booked_By"));
-				System.out
-						.println(rs.getString("work_Order_Date") + "custname");
-				cust.setwork_Order_Date_By(rs.getString("work_Order_Date"));
-				System.out.println(rs.getString("currency") + "custname");
-				cust.setcurrency(rs.getString("currency"));
-				System.out.println(rs.getString("work_Order_Value")
-						+ "custname");
-				cust.setwork_Order_Value(rs.getString("work_Order_Value"));
-				System.out.println(rs.getString("exchange_Rate") + "custname");
-				cust.setexchange_Rate(rs.getString("exchange_Rate"));
-				System.out.println(rs.getString("updated_Work_Order")
-						+ "custname");
-				cust.setupdated_Work_Order(rs.getString("updated_Work_Order"));
-				System.out.println(rs.getString("start_month") + "custname");
-				cust.setstart_month(rs.getString("start_month"));
 
-				this.custInfoAll.add(cust);
+			String sql1 = "Select master_masterid from revenue.manday_table where datec  BETWEEN '"
+					+ datea
+					+ "' AND '"
+					+ dateb
+					+ "' and mandayvalue IS NOT NULL  ";
+			System.out.println(sql1);
+			rs = stmt.executeQuery(sql1);
+
+			ArrayList<String> arrl = new ArrayList<String>();
+			while (rs.next()) {
+				arrl.add(rs.getString("master_masterid"));
+
+				Iterator<String> itr = arrl.iterator();
+				while (itr.hasNext()) {
+					System.out.println(itr.next());
+				}
+			}
+
+			
+			for (int i = 0; i < arrl.size(); i++) {
+				String strSql = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,period_Mandays,workOrder from revenue.master where masterid='"
+						+ arrl.get(i) + "'  ";
+				System.err.println("Search2 query:-" + strSql);
+				rs = stmt.executeQuery(strSql);//
+				
+				System.out.println(strSql);
+				while (rs.next()) {
+					Customer cust = new Customer();
+					System.out.println(rs.getString("masterid") + "custname");
+					cust.setNewtableid(rs.getString("masterid"));
+					System.out.println(rs.getString("bR") + "custname");
+					cust.setbR(rs.getString("bR"));
+					System.out.println(rs.getString("customer_Name")
+							+ "custname");
+					cust.setcustomer_Name(rs.getString("customer_Name"));
+					System.out.println(rs.getString("customer_Type")
+							+ "custname");
+					cust.setcustomer_Type(rs.getString("customer_Type"));
+					System.out.println(rs.getString("region") + "custname");
+					cust.setRegion(rs.getString("region"));
+					System.out.println(rs.getString("workOrder") + "custname");
+					cust.setWorkOrder(rs.getString("workOrder"));
+					System.out.println(rs.getString("vertical") + "custname");
+					cust.setVertical(rs.getString("vertical"));
+					System.out.println(rs.getString("industry") + "custname");
+					cust.setindustry(rs.getString("industry"));
+					System.out.println(rs.getString("service") + "custname");
+					cust.setservice(rs.getString("service"));
+					System.out.println(rs.getString("product") + "custname");
+					cust.setproduct(rs.getString("product"));
+					System.out.println(rs.getString("stage") + "custname");
+					cust.setstage(rs.getString("stage"));
+					System.out
+							.println(rs.getString("designation") + "custname");
+					cust.setdesignation(rs.getString("designation"));
+					System.out.println(rs.getString("order_Booked_By")
+							+ "custname");
+					cust.setorder_Booked_By(rs.getString("order_Booked_By"));
+					System.out.println(rs.getString("work_Order_Date")
+							+ "custname");
+					cust.setwork_Order_Date_By(rs.getString("work_Order_Date"));
+					System.out.println(rs.getString("currency") + "custname");
+					cust.setcurrency(rs.getString("currency"));
+					System.out.println(rs
+							.getString("work_Order_Assessment_fee")
+							+ "custname");
+					cust.setwork_Order_Assessment_fee(rs
+							.getString("work_Order_Assessment_fee"));
+					System.out.println(rs.getString("work_Order_Logo_fee")
+							+ "custname");
+					cust.setwork_Order_Logo_fee(rs
+							.getString("work_Order_Logo_fee"));
+
+					System.out.println(rs.getString("shared_Revenue")
+							+ "custname");
+					cust.setshared_Revenue(rs.getString("shared_Revenue"));
+					System.out.println(rs.getString("work_Order_Value")
+							+ "custname");
+					cust.setwork_Order_Value(rs.getString("work_Order_Value"));
+					System.out.println(rs.getString("exchange_Rate")
+							+ "custname");
+					cust.setexchange_Rate(rs.getString("exchange_Rate"));
+					System.out.println(rs.getString("updated_Work_Order")
+							+ "custname");
+					cust.setupdated_Work_Order(rs
+							.getString("updated_Work_Order"));
+					System.out.println(rs
+							.getString("updated_WO_Assessment_fee")
+							+ "custname");
+					cust.setupdated_WO_Assessment_fee(rs
+							.getString("updated_WO_Assessment_fee"));
+					System.out.println(rs
+							.getString("updated_WO_Assessment_fee")
+							+ "custname");
+					cust.setupdated_WO_Assessment_fee(rs
+							.getString("updated_WO_Assessment_fee"));
+					System.out.println(rs.getString("work_Order_Mandays")
+							+ "custname");
+					cust.setwork_Order_Mandays(rs
+							.getString("work_Order_Mandays"));
+					System.out
+							.println(rs.getString("start_month") + "custname");
+					cust.setstart_month(rs.getString("start_month"));
+					System.out.println(rs.getString("startDate") + "custname");
+					cust.setstartDate(rs.getString("startDate"));
+					System.out.println(rs.getString("endDate") + "custname");
+					cust.setendDate(rs.getString("endDate"));
+					System.out.println(rs.getString("delivered_Mandays")
+							+ "custname");
+					cust.setdelivered_Mandays(rs.getString("delivered_Mandays"));
+					System.out.println(rs.getString("invoice") + "custname");
+					cust.setinvoice(rs.getString("invoice"));
+					System.out.println(rs.getString("invoice_Date")
+							+ "custname");
+					cust.setinvoice_Date(rs.getString("invoice_Date"));
+					System.out.println(rs.getString("assessment_Fees")
+							+ "custname");
+					cust.setassessment_Fees(rs.getString("assessment_Fees"));
+					System.out.println(rs.getString("logo_Fee_Database")
+							+ "custname");
+					cust.setLogo_Fee_Database(rs.getString("logo_Fee_Database"));
+					System.out.println(rs.getString("t_L") + "custname");
+					cust.sett_L(rs.getString("t_L"));
+					System.out.println(rs.getString("period_Mandays")
+							+ "custname");
+					cust.setperiod_Mandays(rs.getString("period_Mandays"));
+
+					int c = rs.getInt(20);
+					int d = rs.getInt(24);
+					this.sum_dm = this.sum_dm + c;
+					this.sum_Del = this.sum_Del + d;
+
+					this.custInfoAll.add(cust);
+				}
 			}
 		} catch (SQLException e) {
 			System.out.println("Exception in getCustomerDetail::"
 					+ e.getMessage());
 		}
 
-		return custmon;
-	}
-
-	public List<Customer> getSum() {
-		List<Customer> sum1 = new ArrayList<Customer>();
-		Labcon lc = new Labcon();
-		MySQLcon = lc.getLocalConnection();
-		int so = 0;
-		try {
-			stmt = MySQLcon.createStatement();
-			// String customer_Name ="";public List<Object[]>
-			// getFirstClassPrices() {
-			// String BR="20006691";
-			// if(customer_Name!=null && workOrder==null ){
-			String strSql = "select updated_Work_Order from revenue.chek where start_month='"
-					+ selectedItems + "'";
-			// SUM(IF(start_month = 'data'))
-			//
-			System.err.println("Search query:-" + strSql);
-			rs = stmt.executeQuery(strSql);
-			// List<Customer[]> lista = strSql.getResultList();
-			// return lista;
-			// preparedStatement = connection.prepareStatement(strSql);
-			// preparedStatement.setString(1, "%" + customerName + "%");
-			// rs = preparedStatement.executeQuery();
-			System.out.println(strSql);
-			while (rs.next()) {
-				Customer cust = new Customer();
-
-				System.out.println(rs.getString("updated_Work_Order")
-						+ "custname");
-				cust.setupdated_Work_Order(rs.getString("updated_Work_Order"));
-				int c = rs.getInt(1);
-				this.so = this.so + c;
-
-				this.custInfoAll.add(cust);
-			}
-		} catch (SQLException e) {
-			System.out.println("Exception in getCustomerDetail::"
-					+ e.getMessage());
-		}
-
-		return sum1;
+		return (ArrayList<Customer>) this.custInfoAll;
 	}
 
 	public List<Customer> getAllDetail() {
@@ -531,23 +972,22 @@ public class Customer {
 		MySQLcon = lc.getLocalConnection();
 		try {
 			stmt = MySQLcon.createStatement();
-			// String customer_Name ="";
-			// String BR="20006691";
-			// if(customer_Name!=null && workOrder==null ){
-			String strSql = "select customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Value,exchange_Rate,updated_Work_Order,start_month,workOrder from revenue.chek where customer_Name like '"
+			
+			String strSql = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,period_Mandays,workOrder from revenue.master where customer_Name like '"
 					+ searchName + "%'";
 			System.err.println("Search query:-" + strSql);
 			rs = stmt.executeQuery(strSql);
-			// preparedStatement = connection.prepareStatement(strSql);
-			// preparedStatement.setString(1, "%" + customerName + "%");
-			// rs = preparedStatement.executeQuery();
 			System.out.println(strSql);
 			while (rs.next()) {
 				Customer cust = new Customer();
+				System.out.println(rs.getString("masterid") + "custname");
+				cust.setNewtableid(rs.getString("masterid"));
+				System.out.println(rs.getString("bR") + "custname");
+				cust.setbR(rs.getString("bR"));
 				System.out.println(rs.getString("customer_Name") + "custname");
-				cust.setCustomerName(rs.getString("customer_Name"));
+				cust.setcustomer_Name(rs.getString("customer_Name"));
 				System.out.println(rs.getString("customer_Type") + "custname");
-				cust.setCustomerType(rs.getString("customer_Type"));
+				cust.setcustomer_Type(rs.getString("customer_Type"));
 				System.out.println(rs.getString("region") + "custname");
 				cust.setRegion(rs.getString("region"));
 				System.out.println(rs.getString("workOrder") + "custname");
@@ -572,6 +1012,15 @@ public class Customer {
 				cust.setwork_Order_Date_By(rs.getString("work_Order_Date"));
 				System.out.println(rs.getString("currency") + "custname");
 				cust.setcurrency(rs.getString("currency"));
+				System.out.println(rs.getString("work_Order_Assessment_fee")
+						+ "custname");
+				cust.setwork_Order_Assessment_fee(rs
+						.getString("work_Order_Assessment_fee"));
+				System.out.println(rs.getString("work_Order_Logo_fee")
+						+ "custname");
+				cust.setwork_Order_Logo_fee(rs.getString("work_Order_Logo_fee"));
+				System.out.println(rs.getString("shared_Revenue") + "custname");
+				cust.setshared_Revenue(rs.getString("shared_Revenue"));
 				System.out.println(rs.getString("work_Order_Value")
 						+ "custname");
 				cust.setwork_Order_Value(rs.getString("work_Order_Value"));
@@ -579,10 +1028,40 @@ public class Customer {
 				cust.setexchange_Rate(rs.getString("exchange_Rate"));
 				System.out.println(rs.getString("updated_Work_Order")
 						+ "custname");
-				cust.setexchange_Rate(rs.getString("updated_Work_Order"));
+				cust.setupdated_Work_Order(rs.getString("updated_Work_Order"));
+				System.out.println(rs.getString("updated_WO_Assessment_fee")
+						+ "custname");
+				cust.setupdated_WO_Assessment_fee(rs
+						.getString("updated_WO_Assessment_fee"));
+				System.out.println(rs.getString("work_Order_Mandays")
+						+ "custname");
+				cust.setwork_Order_Mandays(rs.getString("work_Order_Mandays"));
 
 				System.out.println(rs.getString("start_month") + "custname");
 				cust.setstart_month(rs.getString("start_month"));
+				System.out.println(rs.getString("startDate") + "custname");
+				cust.setstartDate(rs.getString("startDate"));
+				System.out.println(rs.getString("endDate") + "custname");
+				cust.setendDate(rs.getString("endDate"));
+				System.out.println(rs.getString("delivered_Mandays")
+						+ "custname");
+				cust.setdelivered_Mandays(rs.getString("delivered_Mandays"));
+
+				System.out.println(rs.getString("invoice") + "custname");
+				cust.setinvoice(rs.getString("invoice"));
+				System.out.println(rs.getString("invoice_Date") + "custname");
+				cust.setinvoice_Date(rs.getString("invoice_Date"));
+				System.out
+						.println(rs.getString("assessment_Fees") + "custname");
+				cust.setassessment_Fees(rs.getString("assessment_Fees"));
+				System.out.println(rs.getString("logo_Fee_Database")
+						+ "custname");
+				cust.setLogo_Fee_Database(rs.getString("logo_Fee_Database"));
+				System.out.println(rs.getString("t_L") + "custname");
+				cust.sett_L(rs.getString("t_L"));
+
+				System.out.println(rs.getString("period_Mandays") + "custname");
+				cust.setperiod_Mandays(rs.getString("period_Mandays"));
 
 				this.custInfoAll.add(cust);
 			}
@@ -593,145 +1072,1298 @@ public class Customer {
 		return custalll;
 	}
 
-	public List<Customer> getTwoDetail() {
-		List<Customer> drop = new ArrayList<Customer>();
+	public List<Customer> getDropDownDetail() {
+
+		this.custInfoAll.clear();
 		Labcon lc = new Labcon();
 		MySQLcon = lc.getLocalConnection();
 
 		try {
 			stmt = MySQLcon.createStatement();
-			// String strSql=null;
-			if (searchName1 != null) {
-				String strSql = "select customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Value,exchange_Rate,updated_Work_Order,start_month,workOrder from revenue.chek where customer_Type='"
-						+ searchName1 + "'  ";
-				System.err.println("Search query:-" + strSql);
-				rs = stmt.executeQuery(strSql);
-				System.out.println(strSql);
-			} else if (searchName2 != null) {
-				String strSql = "select customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Value,exchange_Rate,updated_Work_Order,start_month,workOrder from revenue.chek where  region='"
+			String All = "All";
+			if (searchName2 == "" && searchName3 == "") {
+				if (searchName1.equals(All) && searchName3 == "") {
+					String strSql = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,period_Mandays,workOrder from revenue.master where customer_Type in ('New', 'Existing','Inter Company')  ";
+					System.err.println("Search query:-" + strSql);
+					rs = stmt.executeQuery(strSql);
+					System.out.println(strSql);
+					while (rs.next()) {
+						Customer cust = new Customer();
+						System.out.println(rs.getString("masterid")
+								+ "custname");
+						cust.setNewtableid(rs.getString("masterid"));
+						System.out.println(rs.getString("bR") + "custname");
+						cust.setbR(rs.getString("bR"));
+						System.out.println(rs.getString("customer_Name")
+								+ "custname");
+						cust.setcustomer_Name(rs.getString("customer_Name"));
+						System.out.println(rs.getString("customer_Type")
+								+ "custname");
+						cust.setcustomer_Type(rs.getString("customer_Type"));
+						System.out.println(rs.getString("region") + "custname");
+						cust.setRegion(rs.getString("region"));
+						System.out.println(rs.getString("workOrder")
+								+ "custname");
+						cust.setWorkOrder(rs.getString("workOrder"));
+						System.out.println(rs.getString("vertical")
+								+ "custname");
+						cust.setVertical(rs.getString("vertical"));
+						System.out.println(rs.getString("industry")
+								+ "custname");
+						cust.setindustry(rs.getString("industry"));
+						System.out
+								.println(rs.getString("service") + "custname");
+						cust.setservice(rs.getString("service"));
+						System.out
+								.println(rs.getString("product") + "custname");
+						cust.setproduct(rs.getString("product"));
+						System.out.println(rs.getString("stage") + "custname");
+						cust.setservice(rs.getString("stage"));
+						System.out.println(rs.getString("designation")
+								+ "custname");
+						cust.setservice(rs.getString("designation"));
+						System.out.println(rs.getString("order_Booked_By")
+								+ "custname");
+						cust.setorder_Booked_By(rs.getString("order_Booked_By"));
+						System.out.println(rs.getString("work_Order_Date")
+								+ "custname");
+						cust.setwork_Order_Date_By(rs
+								.getString("work_Order_Date"));
+						System.out.println(rs.getString("currency")
+								+ "custname");
+						cust.setcurrency(rs.getString("currency"));
+						System.out.println(rs
+								.getString("work_Order_Assessment_fee")
+								+ "custname");
+						cust.setwork_Order_Assessment_fee(rs
+								.getString("work_Order_Assessment_fee"));
+						System.out.println(rs.getString("work_Order_Logo_fee")
+								+ "custname");
+						cust.setwork_Order_Logo_fee(rs
+								.getString("work_Order_Logo_fee"));
+						System.out.println(rs.getString("shared_Revenue")
+								+ "custname");
+						cust.setshared_Revenue(rs.getString("shared_Revenue"));
+						System.out.println(rs.getString("work_Order_Value")
+								+ "custname");
+						cust.setwork_Order_Value(rs
+								.getString("work_Order_Value"));
+						System.out.println(rs.getString("exchange_Rate")
+								+ "custname");
+						cust.setexchange_Rate(rs.getString("exchange_Rate"));
+						System.out.println(rs.getString("updated_Work_Order")
+								+ "custname");
+						cust.setupdated_Work_Order(rs
+								.getString("updated_Work_Order"));
+						System.out.println(rs
+								.getString("updated_WO_Assessment_fee")
+								+ "custname");
+						cust.setupdated_WO_Assessment_fee(rs
+								.getString("updated_WO_Assessment_fee"));
+						System.out.println(rs.getString("work_Order_Mandays")
+								+ "custname");
+						cust.setwork_Order_Mandays(rs
+								.getString("work_Order_Mandays"));
+
+						System.out.println(rs.getString("start_month")
+								+ "custname");
+						cust.setstart_month(rs.getString("start_month"));
+						System.out.println(rs.getString("startDate")
+								+ "custname");
+						cust.setstartDate(rs.getString("startDate"));
+						System.out
+								.println(rs.getString("endDate") + "custname");
+						cust.setendDate(rs.getString("endDate"));
+						System.out.println(rs.getString("delivered_Mandays")
+								+ "custname");
+						cust.setdelivered_Mandays(rs
+								.getString("delivered_Mandays"));
+						System.out
+								.println(rs.getString("invoice") + "custname");
+						cust.setinvoice(rs.getString("invoice"));
+						System.out.println(rs.getString("invoice_Date")
+								+ "custname");
+						cust.setinvoice_Date(rs.getString("invoice_Date"));
+						System.out.println(rs.getString("assessment_Fees")
+								+ "custname");
+						cust.setassessment_Fees(rs.getString("assessment_Fees"));
+						System.out.println(rs.getString("logo_Fee_Database")
+								+ "custname");
+						cust.setLogo_Fee_Database(rs
+								.getString("logo_Fee_Database"));
+						System.out.println(rs.getString("t_L") + "custname");
+						cust.sett_L(rs.getString("t_L"));
+						System.out.println(rs.getString("period_Mandays")
+								+ "custname");
+						cust.setperiod_Mandays(rs.getString("period_Mandays"));
+						int c = rs.getInt(20);
+						int d = rs.getInt(24);
+						this.sum_dm = this.sum_dm + c;
+						this.sum_Del = this.sum_Del + d;
+
+						this.custInfoAll.add(cust);
+					}
+
+				} else {
+					String strSq = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,period_Mandays,workOrder from revenue.master where  customer_Type='"
+							+ searchName1 + "'  ";
+					System.err.println("Search query:-" + strSq);
+					rs = stmt.executeQuery(strSq);
+					System.out.println(strSq);
+					while (rs.next()) {
+						Customer cust = new Customer();
+						System.out.println(rs.getString("masterid")
+								+ "custname");
+						cust.setNewtableid(rs.getString("masterid"));
+						System.out.println(rs.getString("bR") + "custname");
+						cust.setbR(rs.getString("bR"));
+						System.out.println(rs.getString("customer_Name")
+								+ "custname");
+						cust.setcustomer_Name(rs.getString("customer_Name"));
+						System.out.println(rs.getString("customer_Type")
+								+ "custname");
+						cust.setcustomer_Type(rs.getString("customer_Type"));
+						System.out.println(rs.getString("region") + "custname");
+						cust.setRegion(rs.getString("region"));
+						System.out.println(rs.getString("workOrder")
+								+ "custname");
+						cust.setWorkOrder(rs.getString("workOrder"));
+						System.out.println(rs.getString("vertical")
+								+ "custname");
+						cust.setVertical(rs.getString("vertical"));
+						System.out.println(rs.getString("industry")
+								+ "custname");
+						cust.setindustry(rs.getString("industry"));
+						System.out
+								.println(rs.getString("service") + "custname");
+						cust.setservice(rs.getString("service"));
+						System.out
+								.println(rs.getString("product") + "custname");
+						cust.setproduct(rs.getString("product"));
+						System.out.println(rs.getString("stage") + "custname");
+						cust.setservice(rs.getString("stage"));
+						System.out.println(rs.getString("designation")
+								+ "custname");
+						cust.setservice(rs.getString("designation"));
+						System.out.println(rs.getString("order_Booked_By")
+								+ "custname");
+						cust.setorder_Booked_By(rs.getString("order_Booked_By"));
+						System.out.println(rs.getString("work_Order_Date")
+								+ "custname");
+						cust.setwork_Order_Date_By(rs
+								.getString("work_Order_Date"));
+						System.out.println(rs.getString("currency")
+								+ "custname");
+						cust.setcurrency(rs.getString("currency"));
+						System.out.println(rs
+								.getString("work_Order_Assessment_fee")
+								+ "custname");
+						cust.setwork_Order_Assessment_fee(rs
+								.getString("work_Order_Assessment_fee"));
+						System.out.println(rs.getString("work_Order_Logo_fee")
+								+ "custname");
+						cust.setwork_Order_Logo_fee(rs
+								.getString("work_Order_Logo_fee"));
+
+						System.out.println(rs.getString("shared_Revenue")
+								+ "custname");
+						cust.setshared_Revenue(rs.getString("shared_Revenue"));
+						System.out.println(rs.getString("work_Order_Value")
+								+ "custname");
+						cust.setwork_Order_Value(rs
+								.getString("work_Order_Value"));
+						System.out.println(rs.getString("exchange_Rate")
+								+ "custname");
+						cust.setexchange_Rate(rs.getString("exchange_Rate"));
+						System.out.println(rs.getString("updated_Work_Order")
+								+ "custname");
+						cust.setupdated_Work_Order(rs
+								.getString("updated_Work_Order"));
+						System.out.println(rs
+								.getString("updated_WO_Assessment_fee")
+								+ "custname");
+						cust.setupdated_WO_Assessment_fee(rs
+								.getString("updated_WO_Assessment_fee"));
+						System.out.println(rs.getString("work_Order_Mandays")
+								+ "custname");
+						cust.setwork_Order_Mandays(rs
+								.getString("work_Order_Mandays"));
+
+						System.out.println(rs.getString("start_month")
+								+ "custname");
+						cust.setstart_month(rs.getString("start_month"));
+						System.out.println(rs.getString("startDate")
+								+ "custname");
+						cust.setstartDate(rs.getString("startDate"));
+						System.out
+								.println(rs.getString("endDate") + "custname");
+						cust.setendDate(rs.getString("endDate"));
+						System.out.println(rs.getString("delivered_Mandays")
+								+ "custname");
+						cust.setdelivered_Mandays(rs
+								.getString("delivered_Mandays"));
+						System.out
+								.println(rs.getString("invoice") + "custname");
+						cust.setinvoice(rs.getString("invoice"));
+						System.out.println(rs.getString("invoice_Date")
+								+ "custname");
+						cust.setinvoice_Date(rs.getString("invoice_Date"));
+						System.out.println(rs.getString("assessment_Fees")
+								+ "custname");
+						cust.setassessment_Fees(rs.getString("assessment_Fees"));
+						System.out.println(rs.getString("logo_Fee_Database")
+								+ "custname");
+						cust.setLogo_Fee_Database(rs
+								.getString("logo_Fee_Database"));
+						System.out.println(rs.getString("t_L") + "custname");
+						cust.sett_L(rs.getString("t_L"));
+						System.out.println(rs.getString("period_Mandays")
+								+ "custname");
+						cust.setperiod_Mandays(rs.getString("period_Mandays"));
+						int c = rs.getInt(20);
+						int d = rs.getInt(24);
+						this.sum_dm = this.sum_dm + c;
+						this.sum_Del = this.sum_Del + d;
+
+						this.custInfoAll.add(cust);
+
+					}
+				}
+			}
+
+			else if (searchName1 == "" && searchName3 == "") {
+				String strSq = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,period_Mandays,workOrder from revenue.master where  region='"
 						+ searchName2 + "'  ";
-				System.err.println("Search query:-" + strSql);
-				rs = stmt.executeQuery(strSql);
-				System.out.println(strSql);
+				System.err.println("Search query:-" + strSq);
+				rs = stmt.executeQuery(strSq);
+				System.out.println(strSq);
+				while (rs.next()) {
+					Customer cust = new Customer();
+					System.out.println(rs.getString("masterid") + "custname");
+					cust.setNewtableid(rs.getString("masterid"));
+					System.out.println(rs.getString("bR") + "custname");
+					cust.setbR(rs.getString("bR"));
+					System.out.println(rs.getString("customer_Name")
+							+ "custname");
+					cust.setcustomer_Name(rs.getString("customer_Name"));
+					System.out.println(rs.getString("customer_Type")
+							+ "custname");
+					cust.setcustomer_Type(rs.getString("customer_Type"));
+					System.out.println(rs.getString("region") + "custname");
+					cust.setRegion(rs.getString("region"));
+					System.out.println(rs.getString("workOrder") + "custname");
+					cust.setWorkOrder(rs.getString("workOrder"));
+					System.out.println(rs.getString("vertical") + "custname");
+					cust.setVertical(rs.getString("vertical"));
+					System.out.println(rs.getString("industry") + "custname");
+					cust.setindustry(rs.getString("industry"));
+					System.out.println(rs.getString("service") + "custname");
+					cust.setservice(rs.getString("service"));
+					System.out.println(rs.getString("product") + "custname");
+					cust.setproduct(rs.getString("product"));
+					System.out.println(rs.getString("stage") + "custname");
+					cust.setservice(rs.getString("stage"));
+					System.out
+							.println(rs.getString("designation") + "custname");
+					cust.setservice(rs.getString("designation"));
+					System.out.println(rs.getString("order_Booked_By")
+							+ "custname");
+					cust.setorder_Booked_By(rs.getString("order_Booked_By"));
+					System.out.println(rs.getString("work_Order_Date")
+							+ "custname");
+					cust.setwork_Order_Date_By(rs.getString("work_Order_Date"));
+					System.out.println(rs.getString("currency") + "custname");
+					cust.setcurrency(rs.getString("currency"));
+					System.out.println(rs
+							.getString("work_Order_Assessment_fee")
+							+ "custname");
+					cust.setwork_Order_Assessment_fee(rs
+							.getString("work_Order_Assessment_fee"));
+					System.out.println(rs.getString("work_Order_Logo_fee")
+							+ "custname");
+					cust.setwork_Order_Logo_fee(rs
+							.getString("work_Order_Logo_fee"));
+					System.out.println(rs.getString("shared_Revenue")
+							+ "custname");
+					cust.setshared_Revenue(rs.getString("shared_Revenue"));
+					System.out.println(rs.getString("work_Order_Value")
+							+ "custname");
+					cust.setwork_Order_Value(rs.getString("work_Order_Value"));
+					System.out.println(rs.getString("exchange_Rate")
+							+ "custname");
+					cust.setexchange_Rate(rs.getString("exchange_Rate"));
+					System.out.println(rs.getString("updated_Work_Order")
+							+ "custname");
+					cust.setupdated_Work_Order(rs
+							.getString("updated_Work_Order"));
+					System.out.println(rs
+							.getString("updated_WO_Assessment_fee")
+							+ "custname");
+					cust.setupdated_WO_Assessment_fee(rs
+							.getString("updated_WO_Assessment_fee"));
+					System.out.println(rs.getString("work_Order_Mandays")
+							+ "custname");
+					cust.setwork_Order_Mandays(rs
+							.getString("work_Order_Mandays"));
+
+					System.out
+							.println(rs.getString("start_month") + "custname");
+					cust.setstart_month(rs.getString("start_month"));
+					System.out.println(rs.getString("startDate") + "custname");
+					cust.setstartDate(rs.getString("startDate"));
+					System.out.println(rs.getString("endDate") + "custname");
+					cust.setendDate(rs.getString("endDate"));
+					System.out.println(rs.getString("delivered_Mandays")
+							+ "custname");
+					cust.setdelivered_Mandays(rs.getString("delivered_Mandays"));
+					System.out.println(rs.getString("invoice") + "custname");
+					cust.setinvoice(rs.getString("invoice"));
+					System.out.println(rs.getString("invoice_Date")
+							+ "custname");
+					cust.setinvoice_Date(rs.getString("invoice_Date"));
+					System.out.println(rs.getString("assessment_Fees")
+							+ "custname");
+					cust.setassessment_Fees(rs.getString("assessment_Fees"));
+					System.out.println(rs.getString("logo_Fee_Database")
+							+ "custname");
+					cust.setLogo_Fee_Database(rs.getString("logo_Fee_Database"));
+					System.out.println(rs.getString("t_L") + "custname");
+					cust.sett_L(rs.getString("t_L"));
+					System.out.println(rs.getString("period_Mandays")
+							+ "custname");
+					cust.setperiod_Mandays(rs.getString("period_Mandays"));
+					int c = rs.getInt(20);
+					int d = rs.getInt(24);
+					this.sum_dm = this.sum_dm + c;
+					this.sum_Del = this.sum_Del + d;
+
+					this.custInfoAll.add(cust);
+
+				}
 			}
 
-			// System.out.println("List : " + this.selectedItems);
+			else if (searchName1 != "" && searchName2 != ""
+					&& searchName3 == "") {
+				if (searchName1.equals(All) && searchName3 == "") {
+					String strSql = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,period_Mandays,workOrder from revenue.master where customer_Type in ('New', 'Existing','Inter Company')and  region='"
+							+ searchName2 + "'  ";
+					System.err.println("Search query:-" + strSql);
+					rs = stmt.executeQuery(strSql);
+					System.out.println(strSql);
+					while (rs.next()) {
+						Customer cust = new Customer();
+						System.out.println(rs.getString("masterid")
+								+ "custname");
+						cust.setNewtableid(rs.getString("masterid"));
+						System.out.println(rs.getString("bR") + "custname");
+						cust.setbR(rs.getString("bR"));
+						System.out.println(rs.getString("customer_Name")
+								+ "custname");
+						cust.setcustomer_Name(rs.getString("customer_Name"));
+						System.out.println(rs.getString("customer_Type")
+								+ "custname");
+						cust.setcustomer_Type(rs.getString("customer_Type"));
+						System.out.println(rs.getString("region") + "custname");
+						cust.setRegion(rs.getString("region"));
+						System.out.println(rs.getString("workOrder")
+								+ "custname");
+						cust.setWorkOrder(rs.getString("workOrder"));
+						System.out.println(rs.getString("vertical")
+								+ "custname");
+						cust.setVertical(rs.getString("vertical"));
+						System.out.println(rs.getString("industry")
+								+ "custname");
+						cust.setindustry(rs.getString("industry"));
+						System.out
+								.println(rs.getString("service") + "custname");
+						cust.setservice(rs.getString("service"));
+						System.out
+								.println(rs.getString("product") + "custname");
+						cust.setproduct(rs.getString("product"));
+						System.out.println(rs.getString("stage") + "custname");
+						cust.setservice(rs.getString("stage"));
+						System.out.println(rs.getString("designation")
+								+ "custname");
+						cust.setservice(rs.getString("designation"));
+						System.out.println(rs.getString("order_Booked_By")
+								+ "custname");
+						cust.setorder_Booked_By(rs.getString("order_Booked_By"));
+						System.out.println(rs.getString("work_Order_Date")
+								+ "custname");
+						cust.setwork_Order_Date_By(rs
+								.getString("work_Order_Date"));
+						System.out.println(rs.getString("currency")
+								+ "custname");
+						cust.setcurrency(rs.getString("currency"));
+						System.out.println(rs
+								.getString("work_Order_Assessment_fee")
+								+ "custname");
+						cust.setwork_Order_Assessment_fee(rs
+								.getString("work_Order_Assessment_fee"));
+						System.out.println(rs.getString("work_Order_Logo_fee")
+								+ "custname");
+						cust.setwork_Order_Logo_fee(rs
+								.getString("work_Order_Logo_fee"));
 
-			while (rs.next()) {
-				Customer cust = new Customer();
-				System.out.println(rs.getString("customer_Name") + "custname");
-				cust.setCustomerName(rs.getString("customer_Name"));
-				System.out.println(rs.getString("customer_Type") + "custname");
-				cust.setCustomerType(rs.getString("customer_Type"));
-				System.out.println(rs.getString("region") + "custname");
-				cust.setRegion(rs.getString("region"));
-				System.out.println(rs.getString("workOrder") + "custname");
-				cust.setWorkOrder(rs.getString("workOrder"));
-				System.out.println(rs.getString("vertical") + "custname");
-				cust.setVertical(rs.getString("vertical"));
-				System.out.println(rs.getString("industry") + "custname");
-				cust.setindustry(rs.getString("industry"));
-				System.out.println(rs.getString("service") + "custname");
-				cust.setservice(rs.getString("service"));
-				System.out.println(rs.getString("product") + "custname");
-				cust.setproduct(rs.getString("product"));
-				System.out.println(rs.getString("stage") + "custname");
-				cust.setservice(rs.getString("stage"));
-				System.out.println(rs.getString("designation") + "custname");
-				cust.setservice(rs.getString("designation"));
-				System.out
-						.println(rs.getString("order_Booked_By") + "custname");
-				cust.setorder_Booked_By(rs.getString("order_Booked_By"));
-				System.out
-						.println(rs.getString("work_Order_Date") + "custname");
-				cust.setwork_Order_Date_By(rs.getString("work_Order_Date"));
-				System.out.println(rs.getString("currency") + "custname");
-				cust.setcurrency(rs.getString("currency"));
-				System.out.println(rs.getString("work_Order_Value")
-						+ "custname");
-				cust.setwork_Order_Value(rs.getString("work_Order_Value"));
-				System.out.println(rs.getString("exchange_Rate") + "custname");
-				cust.setexchange_Rate(rs.getString("exchange_Rate"));
-				System.out.println(rs.getString("updated_Work_Order")
-						+ "custname");
-				cust.setupdated_Work_Order(rs.getString("updated_Work_Order"));
+						System.out.println(rs.getString("shared_Revenue")
+								+ "custname");
+						cust.setshared_Revenue(rs.getString("shared_Revenue"));
+						System.out.println(rs.getString("work_Order_Value")
+								+ "custname");
+						cust.setwork_Order_Value(rs
+								.getString("work_Order_Value"));
+						System.out.println(rs.getString("exchange_Rate")
+								+ "custname");
+						cust.setexchange_Rate(rs.getString("exchange_Rate"));
+						System.out.println(rs.getString("updated_Work_Order")
+								+ "custname");
+						cust.setupdated_Work_Order(rs
+								.getString("updated_Work_Order"));
+						System.out.println(rs
+								.getString("updated_WO_Assessment_fee")
+								+ "custname");
+						cust.setupdated_WO_Assessment_fee(rs
+								.getString("updated_WO_Assessment_fee"));
+						System.out.println(rs.getString("work_Order_Mandays")
+								+ "custname");
+						cust.setwork_Order_Mandays(rs
+								.getString("work_Order_Mandays"));
+						System.out.println(rs.getString("start_month")
+								+ "custname");
+						cust.setstart_month(rs.getString("start_month"));
+						System.out.println(rs.getString("startDate")
+								+ "custname");
+						cust.setstartDate(rs.getString("startDate"));
+						System.out
+								.println(rs.getString("endDate") + "custname");
+						cust.setendDate(rs.getString("endDate"));
 
-				System.out.println(rs.getString("start_month") + "custname");
-				cust.setstart_month(rs.getString("start_month"));
+						System.out.println(rs.getString("delivered_Mandays")
+								+ "custname");
+						cust.setdelivered_Mandays(rs
+								.getString("delivered_Mandays"));
+						System.out
+								.println(rs.getString("invoice") + "custname");
+						cust.setinvoice(rs.getString("invoice"));
+						System.out.println(rs.getString("invoice_Date")
+								+ "custname");
+						cust.setinvoice_Date(rs.getString("invoice_Date"));
+						System.out.println(rs.getString("assessment_Fees")
+								+ "custname");
+						cust.setassessment_Fees(rs.getString("assessment_Fees"));
+						System.out.println(rs.getString("logo_Fee_Database")
+								+ "custname");
+						cust.setLogo_Fee_Database(rs
+								.getString("logo_Fee_Database"));
+						System.out.println(rs.getString("t_L") + "custname");
+						cust.sett_L(rs.getString("t_L"));
+						System.out.println(rs.getString("period_Mandays")
+								+ "custname");
+						cust.setperiod_Mandays(rs.getString("period_Mandays"));
+						int c = rs.getInt(20);
+						int d = rs.getInt(24);
+						this.sum_dm = this.sum_dm + c;
+						this.sum_Del = this.sum_Del + d;
 
-				int c = rs.getInt(15);
-				this.so = this.so + c;
+						this.custInfoAll.add(cust);
+					}
 
-				this.custInfoAll.add(cust);
+				} else {
+					String strSq = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,period_Mandays,workOrder from revenue.master where  customer_Type='"
+							+ searchName1
+							+ "' and region= '"
+							+ searchName2
+							+ "'";
+					System.err.println("Search query:-" + strSq);
+					rs = stmt.executeQuery(strSq);
+					System.out.println(strSq);
+					while (rs.next()) {
+						Customer cust = new Customer();
+						System.out.println(rs.getString("masterid")
+								+ "custname");
+						cust.setNewtableid(rs.getString("masterid"));
+						System.out.println(rs.getString("bR") + "custname");
+						cust.setbR(rs.getString("bR"));
+						System.out.println(rs.getString("customer_Name")
+								+ "custname");
+						cust.setcustomer_Name(rs.getString("customer_Name"));
+						System.out.println(rs.getString("customer_Type")
+								+ "custname");
+						cust.setcustomer_Type(rs.getString("customer_Type"));
+						System.out.println(rs.getString("region") + "custname");
+						cust.setRegion(rs.getString("region"));
+						System.out.println(rs.getString("workOrder")
+								+ "custname");
+						cust.setWorkOrder(rs.getString("workOrder"));
+						System.out.println(rs.getString("vertical")
+								+ "custname");
+						cust.setVertical(rs.getString("vertical"));
+						System.out.println(rs.getString("industry")
+								+ "custname");
+						cust.setindustry(rs.getString("industry"));
+						System.out
+								.println(rs.getString("service") + "custname");
+						cust.setservice(rs.getString("service"));
+						System.out
+								.println(rs.getString("product") + "custname");
+						cust.setproduct(rs.getString("product"));
+						System.out.println(rs.getString("stage") + "custname");
+						cust.setservice(rs.getString("stage"));
+						System.out.println(rs.getString("designation")
+								+ "custname");
+						cust.setservice(rs.getString("designation"));
+						System.out.println(rs.getString("order_Booked_By")
+								+ "custname");
+						cust.setorder_Booked_By(rs.getString("order_Booked_By"));
+						System.out.println(rs.getString("work_Order_Date")
+								+ "custname");
+						cust.setwork_Order_Date_By(rs
+								.getString("work_Order_Date"));
+						System.out.println(rs.getString("currency")
+								+ "custname");
+						cust.setcurrency(rs.getString("currency"));
+						System.out.println(rs
+								.getString("work_Order_Assessment_fee")
+								+ "custname");
+						cust.setwork_Order_Assessment_fee(rs
+								.getString("work_Order_Assessment_fee"));
+						System.out.println(rs.getString("work_Order_Logo_fee")
+								+ "custname");
+						cust.setwork_Order_Logo_fee(rs
+								.getString("work_Order_Logo_fee"));
+						System.out.println(rs.getString("shared_Revenue")
+								+ "custname");
+						cust.setshared_Revenue(rs.getString("shared_Revenue"));
+						System.out.println(rs.getString("work_Order_Value")
+								+ "custname");
+						cust.setwork_Order_Value(rs
+								.getString("work_Order_Value"));
+						System.out.println(rs.getString("exchange_Rate")
+								+ "custname");
+						cust.setexchange_Rate(rs.getString("exchange_Rate"));
+						System.out.println(rs.getString("updated_Work_Order")
+								+ "custname");
+						cust.setupdated_Work_Order(rs
+								.getString("updated_Work_Order"));
+						System.out.println(rs
+								.getString("updated_WO_Assessment_fee")
+								+ "custname");
+						cust.setupdated_WO_Assessment_fee(rs
+								.getString("updated_WO_Assessment_fee"));
+						System.out.println(rs.getString("work_Order_Mandays")
+								+ "custname");
+						cust.setwork_Order_Mandays(rs
+								.getString("work_Order_Mandays"));
+						System.out.println(rs.getString("start_month")
+								+ "custname");
+						cust.setstart_month(rs.getString("start_month"));
+						System.out.println(rs.getString("startDate")
+								+ "custname");
+						cust.setstartDate(rs.getString("startDate"));
+						System.out
+								.println(rs.getString("endDate") + "custname");
+						cust.setendDate(rs.getString("endDate"));
+						System.out.println(rs.getString("delivered_Mandays")
+								+ "custname");
+						cust.setdelivered_Mandays(rs
+								.getString("delivered_Mandays"));
+						System.out
+								.println(rs.getString("invoice") + "custname");
+						cust.setinvoice(rs.getString("invoice"));
+						System.out.println(rs.getString("invoice_Date")
+								+ "custname");
+						cust.setinvoice_Date(rs.getString("invoice_Date"));
+						System.out.println(rs.getString("assessment_Fees")
+								+ "custname");
+						cust.setassessment_Fees(rs.getString("assessment_Fees"));
+						System.out.println(rs.getString("logo_Fee_Database")
+								+ "custname");
+						cust.setLogo_Fee_Database(rs
+								.getString("logo_Fee_Database"));
+						System.out.println(rs.getString("t_L") + "custname");
+						cust.sett_L(rs.getString("t_L"));
+						System.out.println(rs.getString("period_Mandays")
+								+ "custname");
+						cust.setperiod_Mandays(rs.getString("period_Mandays"));
+						int c = rs.getInt(20);
+						int d = rs.getInt(24);
+						this.sum_dm = this.sum_dm + c;
+						this.sum_Del = this.sum_Del + d;
+
+						this.custInfoAll.add(cust);
+
+					}
+				}
+
 			}
 
+			else if (searchName1 != "" && searchName2 != ""
+					&& searchName3 != "") {
+				String strSq = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,period_Mandays,workOrder from revenue.master where customer_Type='"
+						+ searchName1
+						+ "' and region= '"
+						+ searchName2
+						+ "'and start_month='" + searchName3 + "'  ";
+				System.err.println("Search query:-" + strSq);
+				rs = stmt.executeQuery(strSq);
+				System.out.println(strSq);
+				while (rs.next()) {
+					Customer cust = new Customer();
+					System.out.println(rs.getString("masterid") + "custname");
+					cust.setNewtableid(rs.getString("masterid"));
+					System.out.println(rs.getString("bR") + "custname");
+					cust.setbR(rs.getString("bR"));
+					System.out.println(rs.getString("customer_Name")
+							+ "custname");
+					cust.setcustomer_Name(rs.getString("customer_Name"));
+					System.out.println(rs.getString("customer_Type")
+							+ "custname");
+					cust.setcustomer_Type(rs.getString("customer_Type"));
+					System.out.println(rs.getString("region") + "custname");
+					cust.setRegion(rs.getString("region"));
+					System.out.println(rs.getString("workOrder") + "custname");
+					cust.setWorkOrder(rs.getString("workOrder"));
+					System.out.println(rs.getString("vertical") + "custname");
+					cust.setVertical(rs.getString("vertical"));
+					System.out.println(rs.getString("industry") + "custname");
+					cust.setindustry(rs.getString("industry"));
+					System.out.println(rs.getString("service") + "custname");
+					cust.setservice(rs.getString("service"));
+					System.out.println(rs.getString("product") + "custname");
+					cust.setproduct(rs.getString("product"));
+					System.out.println(rs.getString("stage") + "custname");
+					cust.setservice(rs.getString("stage"));
+					System.out
+							.println(rs.getString("designation") + "custname");
+					cust.setservice(rs.getString("designation"));
+					System.out.println(rs.getString("order_Booked_By")
+							+ "custname");
+					cust.setorder_Booked_By(rs.getString("order_Booked_By"));
+					System.out.println(rs.getString("work_Order_Date")
+							+ "custname");
+					cust.setwork_Order_Date_By(rs.getString("work_Order_Date"));
+					System.out.println(rs.getString("currency") + "custname");
+					cust.setcurrency(rs.getString("currency"));
+					System.out.println(rs
+							.getString("work_Order_Assessment_fee")
+							+ "custname");
+					cust.setwork_Order_Assessment_fee(rs
+							.getString("work_Order_Assessment_fee"));
+					System.out.println(rs.getString("work_Order_Logo_fee")
+							+ "custname");
+					cust.setwork_Order_Assessment_fee(rs
+							.getString("work_Order_Logo_fee"));
+					System.out.println(rs.getString("shared_Revenue")
+							+ "custname");
+					cust.setshared_Revenue(rs.getString("shared_Revenue"));
+					System.out.println(rs.getString("work_Order_Value")
+							+ "custname");
+					cust.setwork_Order_Value(rs.getString("work_Order_Value"));
+					System.out.println(rs.getString("exchange_Rate")
+							+ "custname");
+					cust.setexchange_Rate(rs.getString("exchange_Rate"));
+					System.out.println(rs.getString("updated_Work_Order")
+							+ "custname");
+					cust.setupdated_Work_Order(rs
+							.getString("updated_Work_Order"));
+					System.out.println(rs
+							.getString("updated_WO_Assessment_fee")
+							+ "custname");
+					cust.setupdated_WO_Assessment_fee(rs
+							.getString("updated_WO_Assessment_fee"));
+					System.out.println(rs.getString("work_Order_Mandays")
+							+ "custname");
+					cust.setwork_Order_Mandays(rs
+							.getString("work_Order_Mandays"));
+
+					System.out
+							.println(rs.getString("start_month") + "custname");
+					cust.setstart_month(rs.getString("start_month"));
+					System.out.println(rs.getString("startDate") + "custname");
+					cust.setstartDate(rs.getString("startDate"));
+					System.out.println(rs.getString("endDate") + "custname");
+					cust.setendDate(rs.getString("endDate"));
+					System.out.println(rs.getString("delivered_Mandays")
+							+ "custname");
+					cust.setdelivered_Mandays(rs.getString("delivered_Mandays"));
+					System.out.println(rs.getString("invoice") + "custname");
+					cust.setinvoice(rs.getString("invoice"));
+					System.out.println(rs.getString("invoice_Date")
+							+ "custname");
+					cust.setinvoice_Date(rs.getString("invoice_Date"));
+					System.out.println(rs.getString("assessment_Fees")
+							+ "custname");
+					cust.setassessment_Fees(rs.getString("assessment_Fees"));
+					System.out.println(rs.getString("logo_Fee_Database")
+							+ "custname");
+					cust.setLogo_Fee_Database(rs.getString("logo_Fee_Database"));
+					System.out.println(rs.getString("t_L") + "custname");
+					cust.sett_L(rs.getString("t_L"));
+					System.out.println(rs.getString("period_Mandays")
+							+ "custname");
+					cust.setperiod_Mandays(rs.getString("period_Mandays"));
+
+					int c = rs.getInt(20);
+					int d = rs.getInt(24);
+					this.sum_dm = this.sum_dm + c;
+					this.sum_Del = this.sum_Del + d;
+
+					this.custInfoAll.add(cust);
+
+				}
+			}
+
+			else if (searchName1 == "" && searchName2 == ""
+					&& searchName3 != "") {
+				String strSq = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,period_Mandays,workOrder from revenue.master where  start_month='"
+						+ searchName3 + "'  ";
+				System.err.println("Search query:-" + strSq);
+				rs = stmt.executeQuery(strSq);
+				System.out.println(strSq);
+				while (rs.next()) {
+					Customer cust = new Customer();
+					System.out.println(rs.getString("masterid") + "custname");
+					cust.setNewtableid(rs.getString("masterid"));
+					System.out.println(rs.getString("bR") + "custname");
+					cust.setbR(rs.getString("bR"));
+					System.out.println(rs.getString("customer_Name")
+							+ "custname");
+					cust.setcustomer_Name(rs.getString("customer_Name"));
+					System.out.println(rs.getString("customer_Type")
+							+ "custname");
+					cust.setcustomer_Type(rs.getString("customer_Type"));
+					System.out.println(rs.getString("region") + "custname");
+					cust.setRegion(rs.getString("region"));
+					System.out.println(rs.getString("workOrder") + "custname");
+					cust.setWorkOrder(rs.getString("workOrder"));
+					System.out.println(rs.getString("vertical") + "custname");
+					cust.setVertical(rs.getString("vertical"));
+					System.out.println(rs.getString("industry") + "custname");
+					cust.setindustry(rs.getString("industry"));
+					System.out.println(rs.getString("service") + "custname");
+					cust.setservice(rs.getString("service"));
+					System.out.println(rs.getString("product") + "custname");
+					cust.setproduct(rs.getString("product"));
+					System.out.println(rs.getString("stage") + "custname");
+					cust.setservice(rs.getString("stage"));
+					System.out
+							.println(rs.getString("designation") + "custname");
+					cust.setservice(rs.getString("designation"));
+					System.out.println(rs.getString("order_Booked_By")
+							+ "custname");
+					cust.setorder_Booked_By(rs.getString("order_Booked_By"));
+					System.out.println(rs.getString("work_Order_Date")
+							+ "custname");
+					cust.setwork_Order_Date_By(rs.getString("work_Order_Date"));
+					System.out.println(rs.getString("currency") + "custname");
+					cust.setcurrency(rs.getString("currency"));
+					System.out.println(rs
+							.getString("work_Order_Assessment_fee")
+							+ "custname");
+					cust.setwork_Order_Assessment_fee(rs
+							.getString("work_Order_Assessment_fee"));
+					System.out.println(rs.getString("work_Order_Logo_fee")
+							+ "custname");
+					cust.setwork_Order_Logo_fee(rs
+							.getString("work_Order_Logo_fee"));
+					System.out.println(rs.getString("shared_Revenue")
+							+ "custname");
+					cust.setshared_Revenue(rs.getString("shared_Revenue"));
+					System.out.println(rs.getString("work_Order_Value")
+							+ "custname");
+					cust.setwork_Order_Value(rs.getString("work_Order_Value"));
+					System.out.println(rs.getString("exchange_Rate")
+							+ "custname");
+					cust.setexchange_Rate(rs.getString("exchange_Rate"));
+					System.out.println(rs.getString("updated_Work_Order")
+							+ "custname");
+					cust.setupdated_Work_Order(rs
+							.getString("updated_Work_Order"));
+					System.out.println(rs
+							.getString("updated_WO_Assessment_fee")
+							+ "custname");
+					cust.setupdated_WO_Assessment_fee(rs
+							.getString("updated_WO_Assessment_fee"));
+					System.out.println(rs.getString("work_Order_Mandays")
+							+ "custname");
+					cust.setwork_Order_Mandays(rs
+							.getString("work_Order_Mandays"));
+					System.out
+							.println(rs.getString("start_month") + "custname");
+					cust.setstart_month(rs.getString("start_month"));
+					System.out.println(rs.getString("startDate") + "custname");
+					cust.setstartDate(rs.getString("startDate"));
+					System.out.println(rs.getString("endDate") + "custname");
+					cust.setendDate(rs.getString("endDate"));
+					System.out.println(rs.getString("delivered_Mandays")
+							+ "custname");
+					cust.setdelivered_Mandays(rs.getString("delivered_Mandays"));
+
+					System.out.println(rs.getString("invoice") + "custname");
+					cust.setinvoice(rs.getString("invoice"));
+					System.out.println(rs.getString("invoice_Date")
+							+ "custname");
+					cust.setinvoice_Date(rs.getString("invoice_Date"));
+					System.out.println(rs.getString("assessment_Fees")
+							+ "custname");
+					cust.setassessment_Fees(rs.getString("assessment_Fees"));
+					System.out.println(rs.getString("logo_Fee_Database")
+							+ "custname");
+					cust.setLogo_Fee_Database(rs.getString("logo_Fee_Database"));
+					System.out.println(rs.getString("t_L") + "custname");
+					cust.sett_L(rs.getString("t_L"));
+					System.out.println(rs.getString("period_Mandays")
+							+ "custname");
+					cust.setperiod_Mandays(rs.getString("period_Mandays"));
+
+					int c = rs.getInt(20);
+					int d = rs.getInt(24);
+					this.sum_dm = this.sum_dm + c;
+					this.sum_Del = this.sum_Del + d;
+
+					this.custInfoAll.add(cust);
+
+				}
+			}
+
+			else if (searchName1 == "" && searchName2 != ""
+					&& searchName3 != "") {
+				String strSq = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,period_Mandays,workOrder from revenue.master where  start_month='"
+						+ searchName3 + "'and region='" + searchName2 + "'  ";
+				System.err.println("Search query:-" + strSq);
+				rs = stmt.executeQuery(strSq);
+				System.out.println(strSq);
+				while (rs.next()) {
+					Customer cust = new Customer();
+					System.out.println(rs.getString("masterid") + "custname");
+					cust.setNewtableid(rs.getString("masterid"));
+					System.out.println(rs.getString("bR") + "custname");
+					cust.setbR(rs.getString("bR"));
+					System.out.println(rs.getString("customer_Name")
+							+ "custname");
+					cust.setcustomer_Name(rs.getString("customer_Name"));
+					System.out.println(rs.getString("customer_Type")
+							+ "custname");
+					cust.setcustomer_Type(rs.getString("customer_Type"));
+					System.out.println(rs.getString("region") + "custname");
+					cust.setRegion(rs.getString("region"));
+					System.out.println(rs.getString("workOrder") + "custname");
+					cust.setWorkOrder(rs.getString("workOrder"));
+					System.out.println(rs.getString("vertical") + "custname");
+					cust.setVertical(rs.getString("vertical"));
+					System.out.println(rs.getString("industry") + "custname");
+					cust.setindustry(rs.getString("industry"));
+					System.out.println(rs.getString("service") + "custname");
+					cust.setservice(rs.getString("service"));
+					System.out.println(rs.getString("product") + "custname");
+					cust.setproduct(rs.getString("product"));
+					System.out.println(rs.getString("stage") + "custname");
+					cust.setservice(rs.getString("stage"));
+					System.out
+							.println(rs.getString("designation") + "custname");
+					cust.setservice(rs.getString("designation"));
+					System.out.println(rs.getString("order_Booked_By")
+							+ "custname");
+					cust.setorder_Booked_By(rs.getString("order_Booked_By"));
+					System.out.println(rs.getString("work_Order_Date")
+							+ "custname");
+					cust.setwork_Order_Date_By(rs.getString("work_Order_Date"));
+					System.out.println(rs.getString("currency") + "custname");
+					cust.setcurrency(rs.getString("currency"));
+					System.out.println(rs
+							.getString("work_Order_Assessment_fee")
+							+ "custname");
+					cust.setwork_Order_Assessment_fee(rs
+							.getString("work_Order_Assessment_fee"));
+					System.out.println(rs.getString("work_Order_Logo_fee")
+							+ "custname");
+					cust.setwork_Order_Logo_fee(rs
+							.getString("work_Order_Logo_fee"));
+					System.out.println(rs.getString("shared_Revenue")
+							+ "custname");
+					cust.setshared_Revenue(rs.getString("shared_Revenue"));
+					System.out.println(rs.getString("work_Order_Value")
+							+ "custname");
+					cust.setwork_Order_Value(rs.getString("work_Order_Value"));
+					System.out.println(rs.getString("exchange_Rate")
+							+ "custname");
+					cust.setexchange_Rate(rs.getString("exchange_Rate"));
+					System.out.println(rs.getString("updated_Work_Order")
+							+ "custname");
+					cust.setupdated_Work_Order(rs
+							.getString("updated_Work_Order"));
+					System.out.println(rs
+							.getString("updated_WO_Assessment_fee")
+							+ "custname");
+					cust.setupdated_WO_Assessment_fee(rs
+							.getString("updated_WO_Assessment_fee"));
+					System.out.println(rs.getString("work_Order_Mandays")
+							+ "custname");
+					cust.setwork_Order_Mandays(rs
+							.getString("work_Order_Mandays"));
+					System.out
+							.println(rs.getString("start_month") + "custname");
+					cust.setstart_month(rs.getString("start_month"));
+					System.out.println(rs.getString("startDate") + "custname");
+					cust.setstartDate(rs.getString("startDate"));
+					System.out.println(rs.getString("endDate") + "custname");
+					cust.setendDate(rs.getString("endDate"));
+					System.out.println(rs.getString("delivered_Mandays")
+							+ "custname");
+					cust.setdelivered_Mandays(rs.getString("delivered_Mandays"));
+					System.out.println(rs.getString("invoice") + "custname");
+					cust.setinvoice(rs.getString("invoice"));
+					System.out.println(rs.getString("invoice_Date")
+							+ "custname");
+					cust.setinvoice_Date(rs.getString("invoice_Date"));
+					System.out.println(rs.getString("assessment_Fees")
+							+ "custname");
+					cust.setassessment_Fees(rs.getString("assessment_Fees"));
+					System.out.println(rs.getString("logo_Fee_Database")
+							+ "custname");
+					cust.setLogo_Fee_Database(rs.getString("logo_Fee_Database"));
+					System.out.println(rs.getString("t_L") + "custname");
+					cust.sett_L(rs.getString("t_L"));
+					System.out.println(rs.getString("period_Mandays")
+							+ "custname");
+					cust.setperiod_Mandays(rs.getString("period_Mandays"));
+					int c = rs.getInt(20);
+					int d = rs.getInt(24);
+					this.sum_dm = this.sum_dm + c;
+					this.sum_Del = this.sum_Del + d;
+
+					this.custInfoAll.add(cust);
+
+				}
+			}
+
+			// last
+			else if (searchName1 != "" && searchName2 == ""
+					&& searchName3 != "") {
+				if (searchName1.equals(All) && searchName3 != "") {
+					String strSql = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,period_Mandays,workOrder from revenue.master where customer_Type in ('New', 'Existing','Inter Company') and  start_month='"
+							+ searchName3 + "' ";
+					System.err.println("Search query:-" + strSql);
+					rs = stmt.executeQuery(strSql);
+					System.out.println(strSql);
+					while (rs.next()) {
+						Customer cust = new Customer();
+						System.out.println(rs.getString("masterid")
+								+ "custname");
+						cust.setNewtableid(rs.getString("masterid"));
+						System.out.println(rs.getString("bR") + "custname");
+						cust.setbR(rs.getString("bR"));
+						System.out.println(rs.getString("customer_Name")
+								+ "custname");
+						cust.setcustomer_Name(rs.getString("customer_Name"));
+						System.out.println(rs.getString("customer_Type")
+								+ "custname");
+						cust.setcustomer_Type(rs.getString("customer_Type"));
+						System.out.println(rs.getString("region") + "custname");
+						cust.setRegion(rs.getString("region"));
+						System.out.println(rs.getString("workOrder")
+								+ "custname");
+						cust.setWorkOrder(rs.getString("workOrder"));
+						System.out.println(rs.getString("vertical")
+								+ "custname");
+						cust.setVertical(rs.getString("vertical"));
+						System.out.println(rs.getString("industry")
+								+ "custname");
+						cust.setindustry(rs.getString("industry"));
+						System.out
+								.println(rs.getString("service") + "custname");
+						cust.setservice(rs.getString("service"));
+						System.out
+								.println(rs.getString("product") + "custname");
+						cust.setproduct(rs.getString("product"));
+						System.out.println(rs.getString("stage") + "custname");
+						cust.setservice(rs.getString("stage"));
+						System.out.println(rs.getString("designation")
+								+ "custname");
+						cust.setservice(rs.getString("designation"));
+						System.out.println(rs.getString("order_Booked_By")
+								+ "custname");
+						cust.setorder_Booked_By(rs.getString("order_Booked_By"));
+						System.out.println(rs.getString("work_Order_Date")
+								+ "custname");
+						cust.setwork_Order_Date_By(rs
+								.getString("work_Order_Date"));
+						System.out.println(rs.getString("currency")
+								+ "custname");
+						cust.setcurrency(rs.getString("currency"));
+						System.out.println(rs
+								.getString("work_Order_Assessment_fee")
+								+ "custname");
+						cust.setwork_Order_Assessment_fee(rs
+								.getString("work_Order_Assessment_fee"));
+						System.out.println(rs.getString("work_Order_Logo_fee")
+								+ "custname");
+						cust.setwork_Order_Logo_fee(rs
+								.getString("work_Order_Logo_fee"));
+						System.out.println(rs.getString("shared_Revenue")
+								+ "custname");
+						cust.setshared_Revenue(rs.getString("shared_Revenue"));
+						System.out.println(rs.getString("work_Order_Value")
+								+ "custname");
+						cust.setwork_Order_Value(rs
+								.getString("work_Order_Value"));
+						System.out.println(rs.getString("exchange_Rate")
+								+ "custname");
+						cust.setexchange_Rate(rs.getString("exchange_Rate"));
+						System.out.println(rs.getString("updated_Work_Order")
+								+ "custname");
+						cust.setupdated_Work_Order(rs
+								.getString("updated_Work_Order"));
+						System.out.println(rs
+								.getString("updated_WO_Assessment_fee")
+								+ "custname");
+						cust.setupdated_WO_Assessment_fee(rs
+								.getString("updated_WO_Assessment_fee"));
+
+						System.out.println(rs.getString("work_Order_Mandays")
+								+ "custname");
+						cust.setwork_Order_Mandays(rs
+								.getString("work_Order_Mandays"));
+						System.out.println(rs.getString("start_month")
+								+ "custname");
+						cust.setstart_month(rs.getString("start_month"));
+						System.out.println(rs.getString("startDate")
+								+ "custname");
+						cust.setstartDate(rs.getString("startDate"));
+						System.out
+								.println(rs.getString("endDate") + "custname");
+						cust.setendDate(rs.getString("endDate"));
+						System.out.println(rs.getString("delivered_Mandays")
+								+ "custname");
+						cust.setdelivered_Mandays(rs
+								.getString("delivered_Mandays"));
+						System.out
+								.println(rs.getString("invoice") + "custname");
+						cust.setinvoice(rs.getString("invoice"));
+						System.out.println(rs.getString("invoice_Date")
+								+ "custname");
+						cust.setinvoice_Date(rs.getString("invoice_Date"));
+						System.out.println(rs.getString("assessment_Fees")
+								+ "custname");
+						cust.setassessment_Fees(rs.getString("assessment_Fees"));
+						System.out.println(rs.getString("logo_Fee_Database")
+								+ "custname");
+						cust.setLogo_Fee_Database(rs
+								.getString("logo_Fee_Database"));
+						System.out.println(rs.getString("t_L") + "custname");
+						cust.sett_L(rs.getString("t_L"));
+						System.out.println(rs.getString("period_Mandays")
+								+ "custname");
+						cust.setperiod_Mandays(rs.getString("period_Mandays"));
+						int c = rs.getInt(20);
+						int d = rs.getInt(24);
+						this.sum_dm = this.sum_dm + c;
+						this.sum_Del = this.sum_Del + d;
+
+						this.custInfoAll.add(cust);
+					}
+
+				} else {
+					String strSq = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,period_Mandays,workOrder from revenue.master where  customer_Type='"
+							+ searchName1
+							+ "' and start_month='"
+							+ searchName3
+							+ "' ";
+					System.err.println("Search query:-" + strSq);
+					rs = stmt.executeQuery(strSq);
+					System.out.println(strSq);
+					while (rs.next()) {
+						Customer cust = new Customer();
+						System.out.println(rs.getString("masterid")
+								+ "custname");
+						cust.setNewtableid(rs.getString("masterid"));
+						System.out.println(rs.getString("bR") + "custname");
+						cust.setbR(rs.getString("bR"));
+						System.out.println(rs.getString("customer_Name")
+								+ "custname");
+						cust.setcustomer_Name(rs.getString("customer_Name"));
+						System.out.println(rs.getString("customer_Type")
+								+ "custname");
+						cust.setcustomer_Type(rs.getString("customer_Type"));
+						System.out.println(rs.getString("region") + "custname");
+						cust.setRegion(rs.getString("region"));
+						System.out.println(rs.getString("workOrder")
+								+ "custname");
+						cust.setWorkOrder(rs.getString("workOrder"));
+						System.out.println(rs.getString("vertical")
+								+ "custname");
+						cust.setVertical(rs.getString("vertical"));
+						System.out.println(rs.getString("industry")
+								+ "custname");
+						cust.setindustry(rs.getString("industry"));
+						System.out
+								.println(rs.getString("service") + "custname");
+						cust.setservice(rs.getString("service"));
+						System.out
+								.println(rs.getString("product") + "custname");
+						cust.setproduct(rs.getString("product"));
+						System.out.println(rs.getString("stage") + "custname");
+						cust.setservice(rs.getString("stage"));
+						System.out.println(rs.getString("designation")
+								+ "custname");
+						cust.setservice(rs.getString("designation"));
+						System.out.println(rs.getString("order_Booked_By")
+								+ "custname");
+						cust.setorder_Booked_By(rs.getString("order_Booked_By"));
+						System.out.println(rs.getString("work_Order_Date")
+								+ "custname");
+						cust.setwork_Order_Date_By(rs
+								.getString("work_Order_Date"));
+						System.out.println(rs.getString("currency")
+								+ "custname");
+						cust.setcurrency(rs.getString("currency"));
+						System.out.println(rs
+								.getString("work_Order_Assessment_fee")
+								+ "custname");
+						cust.setwork_Order_Assessment_fee(rs
+								.getString("work_Order_Assessment_fee"));
+						System.out.println(rs.getString("work_Order_Logo_fee")
+								+ "custname");
+						cust.setwork_Order_Logo_fee(rs
+								.getString("work_Order_Logo_fee"));
+						System.out.println(rs.getString("shared_Revenue")
+								+ "custname");
+						cust.setshared_Revenue(rs.getString("shared_Revenue"));
+						System.out.println(rs.getString("work_Order_Value")
+								+ "custname");
+						cust.setwork_Order_Value(rs
+								.getString("work_Order_Value"));
+						System.out.println(rs.getString("exchange_Rate")
+								+ "custname");
+						cust.setexchange_Rate(rs.getString("exchange_Rate"));
+						System.out.println(rs.getString("updated_Work_Order")
+								+ "custname");
+						cust.setupdated_Work_Order(rs
+								.getString("updated_Work_Order"));
+						// updated_WO_Assessment_fee
+						System.out.println(rs
+								.getString("updated_WO_Assessment_fee")
+								+ "custname");
+						cust.setupdated_WO_Assessment_fee(rs
+								.getString("updated_WO_Assessment_fee"));
+						System.out.println(rs.getString("work_Order_Mandays")
+								+ "custname");
+						cust.setwork_Order_Mandays(rs
+								.getString("work_Order_Mandays"));
+						System.out.println(rs.getString("start_month")
+								+ "custname");
+						cust.setstart_month(rs.getString("start_month"));
+						System.out.println(rs.getString("startDate")
+								+ "custname");
+						cust.setstartDate(rs.getString("startDate"));
+						System.out
+								.println(rs.getString("endDate") + "custname");
+						cust.setendDate(rs.getString("endDate"));
+						System.out.println(rs.getString("delivered_Mandays")
+								+ "custname");
+						cust.setdelivered_Mandays(rs
+								.getString("delivered_Mandays"));
+						System.out
+								.println(rs.getString("invoice") + "custname");
+						cust.setinvoice(rs.getString("invoice"));
+						System.out.println(rs.getString("invoice_Date")
+								+ "custname");
+						cust.setinvoice_Date(rs.getString("invoice_Date"));
+						System.out.println(rs.getString("assessment_Fees")
+								+ "custname");
+						cust.setassessment_Fees(rs.getString("assessment_Fees"));
+						System.out.println(rs.getString("logo_Fee_Database")
+								+ "custname");
+						cust.setLogo_Fee_Database(rs
+								.getString("logo_Fee_Database"));
+						System.out.println(rs.getString("t_L") + "custname");
+						cust.sett_L(rs.getString("t_L"));
+						System.out.println(rs.getString("period_Mandays")
+								+ "custname");
+						cust.setperiod_Mandays(rs.getString("period_Mandays"));
+						int c = rs.getInt(20);
+						int d = rs.getInt(24);
+						this.sum_dm = this.sum_dm + c;
+						this.sum_Del = this.sum_Del + d;
+
+						this.custInfoAll.add(cust);
+
+					}
+				}
+
+			}
+
+			else {
+				System.out.println("hey");
+			}
 		} catch (SQLException e) {
 			System.out.println("Exception in getCustomerDetail::"
 					+ e.getMessage());
 		}
-		return drop;
+		return this.custInfoAll;
 	}
 
-	// store all data into a List
+	public List<Customer> getEntryDetail() {
 
-	/*
-	 * else if(workOrder!=null ) {String strSql=
-	 * "select customer_Name,customer_Type,region,workOrder from revenue.master2 where workOrder like '"
-	 * +searchName+"%'"; System.err.println("Search query:-"+strSql);
-	 * rs=stmt.executeQuery(strSql); System.out.println(strSql);
-	 * while(rs.next()){ Customer cust = new Customer();
-	 * System.out.println(rs.getString("customer_Name")+"custname");
-	 * cust.setCustomerName(rs.getString("customer_Name"));
-	 * System.out.println(rs.getString("customer_Type")+"custname");
-	 * cust.setCustomerType(rs.getString("customer_Type"));
-	 * System.out.println(rs.getString("region")+"custname");
-	 * cust.setRegion(rs.getString("region"));
-	 * System.out.println(rs.getString("workOrder")+"custname");
-	 * cust.setWorkOrder(rs.getString("workOrder")); this.custInfoAll.add(cust);
-	 * return custInfo; }}}
-	 * 
-	 * 
-	 * 
-	 * catch(SQLException se){
-	 * 
-	 * se.printStackTrace(); }catch(Exception e){
-	 * 
-	 * e.printStackTrace(); }
-	 * 
-	 * 
-	 * finally{{
-	 * 
-	 * try{ if(stmt!=null) MySQLcon.close(); }catch(SQLException se){ } try{
-	 * if(rs!=null) rs.close(); }catch(Exception se){ } try{ if(MySQLcon!=null)
-	 * MySQLcon.close(); }catch(SQLException se){ se.printStackTrace(); } }}
-	 * return custInfo;
-	 * 
-	 * }
-	 */
+		this.custInfoAll.clear();
+		Labcon lc = new Labcon();
+		MySQLcon = lc.getLocalConnection();
+		try {
+			stmt = MySQLcon.createStatement();
+
+			String sql1 = "Select masterid from revenue.master where customer_Name ='"
+					+ customer_Name + "'   ";
+			System.out.println(sql1);
+			rs = stmt.executeQuery(sql1);
+
+			while (rs.next()) {
+				masterid = rs.getString("masterid");
+				System.out.println(masterid);
+			}
+
+			String strSql = "select  date_ID,datec,mandayvalue from revenue.manday_table where datec  BETWEEN '"
+					+ datea
+					+ "' AND '"
+					+ dateb
+					+ "' and master_masterid='"
+					+ masterid + "'  ";
+			System.err.println("Search5 query:-" + strSql);
+			rs = stmt.executeQuery(strSql);
+
+			System.out.println(strSql);
+			while (rs.next()) {
+				Customer cust = new Customer();
+				this.mandayvalue = rs.getString("mandayvalue");
+
+				System.out.println(rs.getString("date_ID") + "custname");
+				cust.setdate_ID(rs.getString("date_ID"));
+				System.out.println(rs.getString("datec") + "custname");
+				cust.setdatec(rs.getString("datec"));
+
+				System.out.println(rs.getString("mandayvalue") + "custname");
+				cust.setmandayvalue(rs.getString("mandayvalue"));
+				int p = rs.getInt(3);
+
+				this.sum_dm = this.sum_dm + p;
+
+				this.custInfoAll.add(cust);
+			}
+		} catch (SQLException e) {
+			System.out.println("Exception in getCustomerDetail::"
+					+ e.getMessage());
+		}
+
+		return this.custInfoAll;
+	}
+
+	// over 
 
 	public void getEditDetail() {
-		// Customer edit = new Customer();
+
 		try {
-			// String customer = (String)
-			// FacesContext.getCurrentInstance().getExternalContext().getRequestMap().get("workOrder");
 
 			System.out.println("customer" + this.workOrder);
-			/*
-			 * this.customerName = customer.customerName; this.customerType =
-			 * customer.customerType; this.region = customer.region;
-			 * this.vertical = customer.vertical; this.industry =
-			 * customer.industry; this.service = customer.service; this.product
-			 * = customer.product; this.stage = customer.stage; this.designation
-			 * = customer.designation; this.order_Booked_By =
-			 * customer.order_Booked_By; this.work_Order_Date =
-			 * customer.work_Order_Date; this.currency = customer.currency;
-			 * this.work_Order_Value = customer.work_Order_Value;
-			 * this.exchange_Rate = customer.exchange_Rate;
-			 * this.updated_Work_Order = customer.updated_Work_Order;
-			 * this.start_month = customer.start_month; this.workOrder =
-			 * customer.workOrder;
-			 */// store all data into a List
-				// return edit;
+			System.out.println("customer" + this.work_Order_Date);
 
 		} catch (Exception e) {
 			System.out.println("Exception in getCustomerDetail::"
@@ -740,54 +2372,21 @@ public class Customer {
 
 	}
 
-	public List<Customer> getEditDetail2() {
-		List<Customer> editInfo1 = new ArrayList<Customer>();
-		Labcon lc = new Labcon();
-		MySQLcon = lc.getLocalConnection();
+	public void getCompanyDetail() {
+
 		try {
-			stmt = MySQLcon.createStatement();
 
-			// String
-			// strSql="insert into revenue.master2(customer_Name,customer_Type,region,workOrder) values ('"+dbcustid+"','"+dbcustname+"','"+dbcustadd+"','"+dbcustwrk+"')";
-			String strSql = "select customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Value,exchange_Rate,updated_Work_Order,start_month,workOrder from revenue.chek where customer_Type='"
-					+ searchName1 + "' and region='" + searchName2 + "'";
-			System.err.println("Search query:-" + strSql);
-			rs = stmt.executeQuery(strSql);
+			System.out.println("customer" + this.customer_Name);
+			System.out.println("customer" + this.workOrder);
 
-			System.out.println(strSql);
-			while (rs.next()) {
-				this.customerName = rs.getString("customer_Name");
-				this.customerType = rs.getString("customer_Type");
-				this.region = rs.getString("region");
-				this.vertical = rs.getString("vertical");
-				this.industry = rs.getString("industry");
-				this.service = rs.getString("service");
-				this.product = rs.getString("product");
-				this.stage = rs.getString("stage");
-				this.designation = rs.getString("designation");
-				this.order_Booked_By = rs.getString("order_Booked_By");
-				this.work_Order_Date = rs.getString("work_Order_Date");
-				this.currency = rs.getString("currency");
-				this.work_Order_Value = rs.getString("work_Order_Value");
-				this.exchange_Rate = rs.getString("exchange_Rate");
-				this.updated_Work_Order = rs.getString("updated_Work_Order");
-				this.start_month = rs.getString("start_month");
-				this.workOrder = rs.getString("workOrder");
-				// store all data into a List
-
-			}
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			System.out.println("Exception in getCustomerDetail::"
 					+ e.getMessage());
 		}
-		return editInfo1;
+
 	}
 
-	public String ResultCustomer() {
-		getCustomerDetail();
-		return "result";
-	}
-
+	
 	public String addCustomer() throws SQLException {
 		try {
 			System.out.println("in add customer");
@@ -798,34 +2397,43 @@ public class Customer {
 		}
 		return "add";
 	}
+	
+//Search method	
+	public String ResultCustomer() {
+		getCustomerDetail();
+		return "result";
+	}
 
+	
+//Edit method for edit button 
 	public String EditCustomer() {
 		getEditDetail();
-		return "result1";
+		return "edit";
 	}
 
 	public String ResultAll() {
 		getAllDetail();
 		return "all";
 	}
-
-	public String Twocustomer() {
-		getTwoDetail();
-		return "two";
+//Method for drop downs of Customer type, region ,month
+	public String DropDowns() {
+		getDropDownDetail();
+		return "values";
+	}
+//Start and end date method
+	public String Calendarcustomer() {
+		getCalendarDetail();
+		return "calendar";
+	}
+//Getting Customer Name instance
+	public String MandayEntryCustomer() {
+		getCompanyDetail();
+		return "company";
+	}
+//Method for Report button in mandatEntry.jsp
+	public String Entrycustomer() {
+		getEntryDetail();
+		return "entry";
 	}
 
-	public String Dropcustomer() {
-		getEditDetail2();
-		return "three";
-	}
-
-	public String Month() {
-		getmonth();
-		return "mon";
-	}
-
-	public String Summation() {
-		getSum();
-		return "sum";
-	}
 }

@@ -5,46 +5,93 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
 <title>Home Page</title>
 <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+<link rel="stylesheet"
+	href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+<style>
+.ui-datepicker-header {
+	background: url('../img/dark_leather.png') repeat 0 0 #000;
+	color: #e0e0e0;
+	font-weight: bold;
+	-webkit-box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, 2);
+	-moz-box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, .2);
+	box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, .2);
+	text-shadow: 1px -1px 0px #000;
+	filter: dropshadow(color = #000, offx = 1, offy = -1);
+	line-height: 30px;
+	border-width: 1px 0 0 0;
+	border-style: solid;
+	border-color: #111;
+}
+
+.ui-datepicker {
+	width: 216px;
+	height: auto;
+	margin: 5px auto 0;
+	font: 9pt Arial, sans-serif;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+	-moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+}
+</style>
+<script>
+	$(function() {
+		$("#insert\\:workOrder_Date").datepicker({
+			showOn : "button",
+			buttonImage : "images/calendar.gif",
+			buttonImageOnly : true,
+			changeMonth : true,
+			changeYear : true,
+			dateFormat : 'yy-mm-dd'
+		});
+	});
+</script>
 
 </head>
 <body>
 	<!-- Header -->
 	<div id="header">
 		<div class="shell">
-			<br /> <br /> <span class="right"><font face="Times New Roman"
-				size="5" color="SteelBlue"> Revenue Tracker</font></span>
+			<br/> <br/> <span class="right"><font
+				face="Times New Roman" size="5" color="SteelBlue"> Revenue
+					Tracker</font>
+			</span>
 
 
-
+			<!-- Logo + Top Nav -->
 			<div id="top">
 
 				<table>
 					<tr>
 						<td><a href="https://ul-dqs.in/" target="_blank"><img
-								src="css/images/small.png"></img></a> <span class="centre"><a
-								href="search.jsp"><img src="css/images/home.png"></img></a></span></td>
+								src="css/images/small.png"></img>
+						</a> <span class="centre"><a href="search.jsp"><img
+									src="css/images/home.png"></img>
+							</a>
+						</span></td>
 
 					</tr>
 				</table>
 			</div>
-			<br /> <br /> <br /> <br /> <br /> <br />
-
+			<br/> <br/> <br/> <br/> <br/> <br/>
+			<!-- End Logo + Top Nav -->
 		</div>
 	</div>
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-
-	<br />
-	<br />
-	<br />
-
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<!-- End Header -->
+	<br/>
+	<br/>
+	<br/>
 
 	<f:view>
 		<h:form id="insert">
@@ -52,19 +99,23 @@
 
 				<tr>
 					<td><b> <h:outputLabel value="Customer Name::"
-								for="customer_Name" /></b></td>
+								for="customer_Name" />
+					</b></td>
 					<td><h:message id="customerIDMessage" for="customer_Name" /> <h:inputText
-							id="customer_Name" value="#{customer.customerName}"
-							required="true" /></td>
+							id="customer_Name" value="#{customer.customer_Name}"
+							required="true" />
+					</td>
 				</tr>
 
 				<tr>
 					<td><b> <h:outputLabel value="Customer Type::"
-								for="customer_Type" /></b></td>
+								for="customer_Type" />
+					</b>
+					</td>
 					<td><h:message id="CustomerTypeMessage" for="customer_Type" />
-						<h:inputText id="customer_Type" value="#{customer.customerType}"
-							required="true" rendered="#{customer.region == 'seven'}" /> <h:selectOneMenu
-							value="#{customer.customerType}">
+						<h:inputText id="customer_Type" value="#{customer.customer_Type}"
+							required="true" rendered="#{customer.customer_Type == 'seven'}" />
+						<h:selectOneMenu value="#{customer.customer_Type}">
 							<f:selectItem itemValue="New" itemLabel="New" />
 							<f:selectItem itemValue="Existing" itemLabel="Existing" />
 							<f:selectItem itemValue="InterCompany" itemLabel="InterCompany" />
@@ -75,7 +126,9 @@
 				</tr>
 
 				<tr>
-					<td><b> <h:outputLabel value="Region::" for="region" /></b></td>
+					<td><b> <h:outputLabel value="Region::" for="region" />
+					</b>
+					</td>
 					<td><h:message id="CustomerAddressMessage" for="region" /> <h:inputText
 							id="region" value="#{customer.region}" required="true"
 							rendered="#{customer.region == 'seven'}" /> <h:selectOneMenu
@@ -96,7 +149,9 @@
 
 
 				<tr>
-					<td><b> <h:outputLabel value="vertical::" for="vertical" /></b></td>
+					<td><b> <h:outputLabel value="vertical::" for="vertical" />
+					</b>
+					</td>
 					<td><h:message id="CustomerverticalMessage" for="vertical" />
 						<h:inputText id="vertical" value="#{customer.vertical}"
 							required="true" rendered="#{customer.vertical == 'seven'}" /> <h:selectOneMenu
@@ -116,7 +171,9 @@
 
 
 				<tr>
-					<td><b> <h:outputLabel value="Industry::" for="industry" /></b></td>
+					<td><b> <h:outputLabel value="Industry::" for="industry" />
+					</b>
+					</td>
 					<td><h:message id="CustomerindustryMessage" for="industry" />
 						<h:inputText id="industry" value="#{customer.industry}"
 							required="true" rendered="#{customer.industry == 'seven'}" /> <h:selectOneMenu
@@ -165,7 +222,38 @@
 
 
 				<tr>
-					<td><b> <h:outputLabel value="Product::" for="product" /></b></td>
+					<td><b> <h:outputLabel value="Service::" for="service" />
+					</b>
+					</td>
+					<td><h:message id="CustomerserviceMessage" for="service" /> <h:inputText
+							id="service" value="#{customer.service}" required="true"
+							rendered="#{customer.service == 'seven'}" /> <h:selectOneMenu
+							value="#{customer.service}">
+							<f:selectItem itemValue="RA" itemLabel="RA" />
+							<f:selectItem itemValue="GC Mark" itemLabel="GC Mark" />
+							<f:selectItem itemValue="CA" itemLabel="CA" />
+							<f:selectItem itemValue="TRA" itemLabel="TRA" />
+							<f:selectItem itemValue="KSC Inhouse" itemLabel="KSC Inhouse" />
+							<f:selectItem itemValue="KSC Openhouse" itemLabel="KSC Openhouse" />
+							<f:selectItem itemValue="KSC Special assessment"
+								itemLabel="KSC Special assessment" />
+							<f:selectItem itemValue="KSC Solution" itemLabel="KSC Solution" />
+							<f:selectItem itemValue="KSC MTS" itemLabel="KSC MTS" />
+							<f:selectItem itemValue="PPP" itemLabel="PPP" />
+							<f:selectItem itemValue="Safety" itemLabel="Safety" />
+							<f:selectItem
+								itemValue="please select any one of the values from the drop down here"
+								itemLabel="please select any one of the values from the drop down here" />
+						</h:selectOneMenu></td>
+				</tr>
+
+
+
+
+				<tr>
+					<td><b> <h:outputLabel value="Product::" for="product" />
+					</b>
+					</td>
 					<td><h:message id="CustomerproductMessage" for="product" /> <h:inputText
 							id="product" value="#{customer.product}" required="true"
 							rendered="#{customer.product == 'seven'}" /> <h:selectOneMenu
@@ -223,32 +311,11 @@
 				</tr>
 
 
-				<tr>
-					<td><b> <h:outputLabel value="Service::" for="service" /></b></td>
-					<td><h:message id="CustomerserviceMessage" for="service" /> <h:inputText
-							id="service" value="#{customer.service}" required="true"
-							rendered="#{customer.service == 'seven'}" /> <h:selectOneMenu
-							value="#{customer.service}">
-							<f:selectItem itemValue="RA" itemLabel="RA" />
-							<f:selectItem itemValue="GC Mark" itemLabel="GC Mark" />
-							<f:selectItem itemValue="CA" itemLabel="CA" />
-							<f:selectItem itemValue="TRA" itemLabel="TRA" />
-							<f:selectItem itemValue="KSC Inhouse" itemLabel="KSC Inhouse" />
-							<f:selectItem itemValue="KSC Openhouse" itemLabel="KSC Openhouse" />
-							<f:selectItem itemValue="KSC Special assessment"
-								itemLabel="KSC Special assessment" />
-							<f:selectItem itemValue="KSC Solution" itemLabel="KSC Solution" />
-							<f:selectItem itemValue="KSC MTS" itemLabel="KSC MTS" />
-							<f:selectItem itemValue="PPP" itemLabel="PPP" />
-							<f:selectItem itemValue="Safety" itemLabel="Safety" />
-							<f:selectItem
-								itemValue="please select any one of the values from the drop down here"
-								itemLabel="please select any one of the values from the drop down here" />
-						</h:selectOneMenu></td>
-				</tr>
 
 				<tr>
-					<td><b> <h:outputLabel value="Stage::" for="stage" /></b></td>
+					<td><b> <h:outputLabel value="Stage::" for="stage" />
+					</b>
+					</td>
 					<td><h:message id="CustomersstageMessage" for="stage" /> <h:inputText
 							id="stage" value="#{customer.stage}" required="true"
 							rendered="#{customer.stage == 'seven'}" /> <h:selectOneMenu
@@ -313,9 +380,45 @@
 				</tr>
 
 
+
+				<tr>
+					<td><b> <h:outputLabel value="Designation::"
+								for="designation" />
+					</b>
+					</td>
+					<td><h:message id="CustomerdesignationMessage"
+							for="designation" /> <h:inputText id="designation"
+							value="#{customer.designation}" required="true"
+							rendered="#{customer.designation == 'seven'}" /> <h:selectOneMenu
+							value="#{customer.designation}">
+							<f:selectItem itemValue="Sales Executive - Existing"
+								itemLabel="Sales Executive - Existing" />
+							<f:selectItem itemValue="CSP" itemLabel="CSP" />
+							<f:selectItem itemValue="SRH" itemLabel="SRH" />
+							<f:selectItem itemValue="TRA" itemLabel="TRA" />
+							<f:selectItem itemValue="Auditor" itemLabel="Auditor" />
+							<f:selectItem itemValue="Business Head" itemLabel="Business Head" />
+							<f:selectItem itemValue="Vertical Head" itemLabel="Vertical Head" />
+							<f:selectItem itemValue="RSH" itemLabel="RSH" />
+							<f:selectItem itemValue="SE - T & S" itemLabel="SE - T & S" />
+							<f:selectItem itemValue="Sales Executive - New"
+								itemLabel="Sales Executive - New" />
+							<f:selectItem itemValue="Sales Support" itemLabel="Sales Support" />
+							<f:selectItem itemValue="TL-New" itemLabel="TL-New" />
+							<f:selectItem itemValue="TL-Existing" itemLabel="TL-Existing" />
+							<f:selectItem
+								itemValue="please select any one of the values from the drop down here"
+								itemLabel="please select any one of the values from the drop down here" />
+						</h:selectOneMenu></td>
+				</tr>
+
+
+
 				<tr>
 					<td><b> <h:outputLabel value="Order Booked By::"
-								for="order_Booked_By" /></b></td>
+								for="order_Booked_By" />
+					</b>
+					</td>
 					<td><h:message id="Customerorder_Booked_ByMessage"
 							for="order_Booked_By" /> <h:inputText id="order_Booked_By"
 							value="#{customer.order_Booked_By}" required="true"
@@ -369,53 +472,31 @@
 
 
 				<tr>
-					<td><b> <h:outputLabel value="Designation::"
-								for="designation" /></b></td>
-					<td><h:message id="CustomerdesignationMessage"
-							for="designation" /> <h:inputText id="designation"
-							value="#{customer.designation}" required="true"
-							rendered="#{customer.designation == 'seven'}" /> <h:selectOneMenu
-							value="#{customer.designation}">
-							<f:selectItem itemValue="Sales Executive - Existing"
-								itemLabel="Sales Executive - Existing" />
-							<f:selectItem itemValue="CSP" itemLabel="CSP" />
-							<f:selectItem itemValue="SRH" itemLabel="SRH" />
-							<f:selectItem itemValue="TRA" itemLabel="TRA" />
-							<f:selectItem itemValue="Auditor" itemLabel="Auditor" />
-							<f:selectItem itemValue="Business Head" itemLabel="Business Head" />
-							<f:selectItem itemValue="Vertical Head" itemLabel="Vertical Head" />
-							<f:selectItem itemValue="RSH" itemLabel="RSH" />
-							<f:selectItem itemValue="SE - T & S" itemLabel="SE - T & S" />
-							<f:selectItem itemValue="Sales Executive - New"
-								itemLabel="Sales Executive - New" />
-							<f:selectItem itemValue="Sales Support" itemLabel="Sales Support" />
-							<f:selectItem itemValue="TL-New" itemLabel="TL-New" />
-							<f:selectItem itemValue="TL-Existing" itemLabel="TL-Existing" />
-							<f:selectItem
-								itemValue="please select any one of the values from the drop down here"
-								itemLabel="please select any one of the values from the drop down here" />
-						</h:selectOneMenu></td>
-				</tr>
-
-
-				<tr>
 					<td><b> <h:outputLabel value="work Order Date::"
-								for="work_Order_Date" /></b></td>
-					<td><h:message id="Customerwork_Order_DateMessage"
-							for="work_Order_Date" /></td>
-				</tr>
-
-				<tr>
-					<td><b> <h:outputLabel value="work Order ::"
-								for="work_Order" /></b></td>
-					<td><h:message id="work_OrderMessage" for="work_Order" /> <h:inputText
-							id="work_Order" value="#{customer.workOrder}" required="true" />
+								for="endDatePicker" />
+					</b>
 					</td>
+					<td><h:message id="work_Order_DateMessage"
+							for="work_Order_Date" /> <h:inputText id="workOrder_Date"
+							value="#{customer.work_Order_Date}" required="true" /></td>
+				</tr>
+				<tr>
+					<td><b> <h:outputLabel value="Shared Revenue::"
+								for="shared_Revenue" />
+					</b>
+					</td>
+					<td><h:message id="shared_RevenueMessage" for="shared_Revenue" />
+						<h:inputText id="shared_Revenue"
+							value="#{customer.shared_Revenue}" required="true" /></td>
 				</tr>
 
 
+
+
 				<tr>
-					<td><b> <h:outputLabel value="currency::" for="currency" /></b></td>
+					<td><b> <h:outputLabel value="currency::" for="currency" />
+					</b>
+					</td>
 					<td><h:message id="CustomercurrencyMessage" for="currency" />
 						<h:inputText id="currency" value="#{customer.currency}"
 							required="true" rendered="#{customer.currency == 'seven'}" /> <h:selectOneMenu
@@ -433,8 +514,34 @@
 				</tr>
 
 				<tr>
+					<td><b> <h:outputLabel value="work Order Assessment fee::"
+								for="work_Order_Assessment_fee" />
+					</b>
+					</td>
+					<td><h:message id="work_Order_Assessment_feeMessage"
+							for="work_Order_Assessment_fee" /> <h:inputText
+							id="work_Order_Assessment_fee"
+							value="#{customer.work_Order_Assessment_fee}" required="true" />
+					</td>
+				</tr>
+
+				<tr>
+					<td><b> <h:outputLabel value="work Order Logo fee::"
+								for="work_Order_Logo_fee" />
+					</b>
+					</td>
+					<td><h:message id="work_Order_Logo_feeMessage"
+							for="work_Order_Logo_fee" /> <h:inputText
+							id="work_Order_Logo_fee" value="#{customer.work_Order_Logo_fee}"
+							required="true" /></td>
+				</tr>
+
+
+				<tr>
 					<td><b> <h:outputLabel value="Work Order Value::"
-								for="work_Order_Value" /></b></td>
+								for="work_Order_Value" />
+					</b>
+					</td>
 					<td><h:message id="Customerwork_Order_ValueMessage"
 							for="work_Order_Value" /> <h:inputText id="work_Order_Value"
 							value="#{customer.work_Order_Value}" required="true" /></td>
@@ -443,7 +550,9 @@
 
 				<tr>
 					<td><b> <h:outputLabel value="Exchange Rate::"
-								for="exchange_Rate" /></b></td>
+								for="exchange_Rate" />
+					</b>
+					</td>
 					<td><h:message id="exchange_RateMessage" for="exchange_Rate" />
 						<h:inputText id="exchange_Rate" value="#{customer.exchange_Rate}"
 							required="true" /></td>
@@ -452,30 +561,76 @@
 
 				<tr>
 					<td><b> <h:outputLabel value="Updated Work ::"
-								for="updated_Work_Order" /></b></td>
+								for="updated_Work_Order" />
+					</b>
+					</td>
 					<td><h:message id="updated_Work_OrderMessage"
 							for="updated_Work_Order" /> <h:inputText id="updated_Work_Order"
 							value="#{customer.updated_Work_Order}" required="true" /></td>
 				</tr>
 
 				<tr>
+					<td><b> <h:outputLabel
+								value="Updated WO Assessment fee ::"
+								for="updated_WO_Assessment_fee" />
+					</b>
+					</td>
+					<td><h:message id="updated_WO_Assessment_feeMessage"
+							for="updated_WO_Assessment_fee" /> <h:inputText
+							id="updated_WO_Assessment_fee"
+							value="#{customer.updated_WO_Assessment_fee}" required="true" />
+					</td>
+				</tr>
+
+
+				<tr>
+					<td><b> <h:outputLabel value="work Order Mandays::"
+								for="work_Order_Mandays" />
+					</b>
+					</td>
+					<td><h:message id="work_Order_MandaysMessage"
+							for="work_Order_Mandays" /> <h:inputText id="work_Order_Mandays"
+							value="#{customer.work_Order_Mandays}" required="true" /></td>
+				</tr>
+
+				<tr>
 					<td><b> <h:outputLabel value="StartMonth::"
-								for="start_month" /></b></td>
+								for="start_month" />
+					</b>
+					</td>
 					<td><h:message id="start_monthMessage" for="start_month" /> <h:inputText
 							id="start_month" value="#{customer.start_month}" required="true"
 							rendered="#{customer.start_month == 'seven'}" /> <h:selectOneMenu
 							value="#{customer.start_month}">
-							<f:selectItem itemValue="Oct" itemLabel="Oct" />
-							<f:selectItem itemValue="Nov" itemLabel="Nov" />
-							<f:selectItem itemValue="Dec" itemLabel="Dec" />
 							<f:selectItem itemValue="Jan" itemLabel="Jan" />
 							<f:selectItem itemValue="Feb" itemLabel="Feb" />
-
+							<f:selectItem itemValue="Mar" itemLabel="Mar" />
 							<f:selectItem
 								itemValue="please select any one of the values from the drop down here"
 								itemLabel="please select any one of the values from the drop down here" />
 						</h:selectOneMenu></td>
 				</tr>
+
+				<tr>
+					<td><b> <h:outputLabel value="Delivered Mandays::"
+								for="delivered_Mandays" />
+					</b>
+					</td>
+					<td><h:message id="delivered_MandaysMessage"
+							for="delivered_Mandays" /> <h:inputText id="delivered_Mandays"
+							value="#{customer.delivered_Mandays}" required="true" /></td>
+				</tr>
+
+				<tr>
+					<td><b> <h:outputLabel value="work Order ::"
+								for="work_Order" />
+					</b>
+					</td>
+					<td><h:message id="work_OrderMessage" for="work_Order" /> <h:inputText
+							id="work_Order" value="#{customer.workOrder}" required="true" />
+					</td>
+				</tr>
+
 
 
 			</table>
@@ -488,16 +643,17 @@
 	</f:view>
 
 
-	<br />
-
+	<br/>
+	<!-- Footer -->
 	<div id="footer">
 		<div class="shell">
 			<span class="left"><font face="Times New Roman"
-				color="SteelBlue">&copy; UL DQS India,Bangalore</font></span> <br />
+				color="SteelBlue">&copy; UL DQS India,Bangalore</font>
+			</span> <br/>
 
 		</div>
 	</div>
-
+	<!-- End Footer -->
 
 </body>
 
