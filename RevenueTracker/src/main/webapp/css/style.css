@@ -1,11 +1,44 @@
 * { padding:0; margin:0; outline:0; }
 body {
-	background:#99CCFF;
+	background:#F8F8F8 ;
 	font-family: Verdana, sans-serif;
 	font-size:11px;
 	line-height:14px;
 	color:#5e5e5e;
 }
+
+ui-datepicker-header {   
+    background: url('../img/dark_leather.png') repeat 0 0 #000;   
+    color: #e0e0e0;   
+    font-weight: bold;   
+    -webkit-box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, 2);   
+    -moz-box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, .2);   
+    box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, .2);   
+    text-shadow: 1px -1px 0px #000;   
+    filter: dropshadow(color=#000, offx=1, offy=-1);   
+    line-height: 30px;   
+    border-width: 1px 0 0 0;   
+    border-style: solid;   
+    border-color: #111;   
+}  
+
+.ui-datepicker {   
+    width: 216px;   
+    height: auto;   
+    margin: 5px auto 0;   
+    font: 9pt Arial, sans-serif;   
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);   
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);   
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);   
+} 
+
+tbody {
+    height: 300px; /* Just some fixed height */
+    overflow: scroll;
+    frozenColumns:"1";
+}
+
+
 input, textarea, select { font-family: Verdana, sans-serif; font-size:13px; }
 textarea { overflow:hidden; }
 
@@ -44,7 +77,7 @@ h3 a{ text-decoration: none; }
 
 .shell { width:988px; margin:0 auto; }
 
-#header { height:89px; background:#99CCCC; white-space:nowrap; }
+#header { height:80px; background:#003366; white-space:nowrap; }
 #header h1{ float:left; display:inline; padding-top:12px; }
 #top-navigation { float:right; white-space:nowrap; color:#fff; padding-top:15px; }
 #top-navigation a{ color:#fff; }
@@ -141,7 +174,7 @@ textarea.size1 { height:180px; }
 .add-button:hover { color:#333;}
 
 
-#footer { height:44px; background:#99CCCC; line-height:44px; color:#fff;}
+#footer { height:42px; background:#003366; line-height:44px; color:#fff;}
 #footer a{ color:#fff; }
 
 
@@ -172,7 +205,8 @@ order-table{
 
 .order-table-header{
  text-align:center;
- background:#99CCCC;
+ background:#003366	;
+ color:White;
  border-bottom:1px solid #BBBBBB;
  padding:10px;
  }
@@ -185,12 +219,21 @@ order-table{
 
 .order-table-even-row{
  text-align:center;
- background:#FFFAF0;
+ background:#99CCCC;
  border-top:4px solid #BBBBBB;
  }
+ 
+ .order-table-footer{
+ text-align:center;
+ background:#003366	;
+ color:White;
+ 
+ }
+ 
+ 
  body {
 
-background-color: #99CCFF;
+background-color: #FFFFFF ;
 }
  table.tbl{
  width: 100%;
@@ -264,4 +307,72 @@ padding: 2px;
     content: "";
     clear: both;
     display: block;
+}
+
+
+
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.nav{
+    background: #E0E0E0;
+    width: 100%;
+}
+.nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: -4px;
+    position: relative;
+}
+.nav a{
+    background: #E0E0E0;
+    color: SteelBlue;
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+    font-size: 24px;
+
+}
+.nav > ul > li > ul > li > a:hover, 
+.nav > ul > li > ul > li > ul > li > a:hover{
+    background: #FFFFFF;
+    color: SteelBlue; 
+}
+.nav > ul > li > ul, .nav > ul > li > ul > li > ul {
+    position: absolute;
+    white-space: nowrap;
+}
+.nav > ul > li > ul > li, .nav > ul > li > ul > li > ul > li {
+    display: block;
+    position: relative;
+}
+.nav > ul > li > ul, .nav > ul > li > ul > li > ul {
+    opacity: 0;
+    visibility: hidden;
+}
+.nav > ul > li > ul {
+    top: 75px;
+    transition: all .2s ease-in-out;
+}
+.nav > ul > li:hover > ul, .nav > ul > li > ul > li:hover > ul {
+    opacity: 1;
+    visibility: visible;
+}
+.nav > ul > li:hover > ul {
+    top: 100%;
+    transition: all .2s ease-in-out;
+}
+.nav > ul > li > ul > li > ul {
+    top: 0;
+    left: 0;
+    transition: all 2s ease-in-out;
+}
+.nav > ul > li > ul > li:hover > ul{
+    left: 100%;
+    transition: all 2s ease-in-out;
 }

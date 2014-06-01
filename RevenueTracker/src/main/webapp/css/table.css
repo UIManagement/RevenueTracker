@@ -102,3 +102,69 @@ padding: 2px;
     {
         margin:5px;
     }
+    
+    
+    
+    
+    
+    *{
+    margin: 0;
+    padding: 0;
+}
+.nav{
+    background: #282828;
+    width: 100%;
+}
+.nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: -4px;
+    position: relative;
+}
+.nav a{
+    background: #282828;
+    color: #ddd;
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+    font-size: 24px;
+
+}
+.nav > ul > li > ul > li > a:hover, 
+.nav > ul > li > ul > li > ul > li > a:hover{
+    background: #404040;
+    color: #AFAFAF; 
+}
+.nav > ul > li > ul, .nav > ul > li > ul > li > ul {
+    position: absolute;
+    white-space: nowrap;
+}
+.nav > ul > li > ul > li, .nav > ul > li > ul > li > ul > li {
+    display: block;
+    position: relative;
+}
+.nav > ul > li > ul, .nav > ul > li > ul > li > ul {
+    opacity: 0;
+    visibility: hidden;
+}
+.nav > ul > li > ul {
+    top: 75px;
+    transition: all .2s ease-in-out;
+}
+.nav > ul > li:hover > ul, .nav > ul > li > ul > li:hover > ul {
+    opacity: 1;
+    visibility: visible;
+}
+.nav > ul > li:hover > ul {
+    top: 100%;
+    transition: all .2s ease-in-out;
+}
+.nav > ul > li > ul > li > ul {
+    top: 0;
+    left: 0;
+    transition: all 2s ease-in-out;
+}
+.nav > ul > li > ul > li:hover > ul{
+    left: 100%;
+    transition: all 2s ease-in-out;
+}
