@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
-<%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+	<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
 <title>Edit Page</title>
 <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
 <link rel="stylesheet"
@@ -52,7 +52,7 @@
 
 <script>
 $(function() {
-	$("#insertquote\\:quotedate").datepicker({
+	$("#insertorderBooking\\:orderBookingdate").datepicker({
 		showOn : "button",
 		buttonImage : "images/calendar.gif",
 		buttonImageOnly : true,
@@ -70,16 +70,16 @@ $(function() {
 	<f:view>
 
 
-		<h:form id="insertquote">
+		<h:form id="insertorderBooking">
 	<!-- Header -->
 	<div id="header">
 		<div class="shell">
 			<br/> <br/> <span class="right"><font
-				face="Times New Roman" size="5" color="SteelBlue"> Revenue
+				face="Times New Roman" size="5" color="SteelBlue"> Order Booking
 					Tracker</font> 
 					</span> 
 					
-				<span class="right">	<h:commandLink id="next" action="#{quote.NavigQuote}">
+				<span class="right">	<h:commandLink id="next" action="#{orderBooking.NavigQuote}">
    <h:graphicImage value="css/images/hom.png" 
 		  alt="Next" title="Next"/>
 </h:commandLink>
@@ -106,15 +106,14 @@ $(function() {
 	<br/>
 	<br/>
 	<br/>
-<body>
 	
-			<table class=”tbl” cellpadding=”0″ cellspacing=”0″ border=”0″         >
+			<table  >
 
 				<tr>
 					<td><b> <h:outputLabel value="BR::"for="bR" /> </b>
 					</td>
 					<td><h:message id="bRMessage" for="bR" />
-						<h:inputText id="bR1" value="#{quote.bR}"
+						<h:inputText id="bR1" value="#{orderBooking.bR}"
 							 /></td>
 				</tr>
 				<tr>
@@ -122,7 +121,7 @@ $(function() {
 								for="customer_Name" /> </b>
 					</td>
 					<td><h:message id="customerIDMessage" for="customer_Name" />
-						<h:inputText id="customer_Name" value="#{quote.customer_Name}"
+						<h:inputText id="customer_Name" value="#{orderBooking.customer_Name}"
 							 /></td>
 				</tr>
 
@@ -130,9 +129,9 @@ $(function() {
 					<td><b> <h:outputLabel value="Customer Type::"
 								for="customer_Type" /> </b></td>
 					<td><h:message id="CustomerTypeMessage" for="customer_Type" />
-						<h:inputText id="customer_Type" value="#{quote.customer_Type}"
-							 rendered="#{quote.customer_Type == 'seven'}" />
-						<h:selectOneMenu value="#{quote.customer_Type}">
+						<h:inputText id="customer_Type" value="#{orderBooking.customer_Type}"
+							 rendered="#{orderBooking.customer_Type == 'seven'}" />
+						<h:selectOneMenu value="#{orderBooking.customer_Type}">
 							<f:selectItem itemValue="New" itemLabel="New" />
 							<f:selectItem itemValue="Existing" itemLabel="Existing" />
 							<f:selectItem itemValue="InterCompany" itemLabel="InterCompany" />
@@ -147,9 +146,9 @@ $(function() {
 					<td><b> <h:outputLabel value="Region::" for="region" /> </b>
 					</td>
 					<td><h:message id="CustomerAddressMessage" for="region" /> <h:inputText
-							id="region" value="#{quote.region}" 
-							rendered="#{quote.region == 'seven'}" /> <h:selectOneMenu
-							value="#{quote.region}">
+							id="region" value="#{orderBooking.region}" 
+							rendered="#{orderBooking.region == 'seven'}" /> <h:selectOneMenu
+							value="#{orderBooking.region}">
 							<f:selectItem itemValue="Aerospace" itemLabel="Aerospace" />
 							<f:selectItem itemValue="C&I(R)" itemLabel="C&I(R)" />
 							<f:selectItem itemValue="Gujarat" itemLabel="Gujarat" />
@@ -166,6 +165,84 @@ $(function() {
 
 
 
+		<tr>
+					<td><b> <h:outputLabel value="vertical::" for="vertical" />
+					</b></td>
+					<td><h:message id="CustomerverticalMessage" for="vertical" />
+						<h:inputText id="vertical" value="#{orderBooking.vertical}"
+							 rendered="#{orderBooking.vertical == 'seven'}" /> <h:selectOneMenu
+							value="#{orderBooking.vertical}">
+							<f:selectItem itemValue="Aerospace" itemLabel="Aerospace" />
+							<f:selectItem itemValue="Medical & Healthcare"
+								itemLabel="Medical & Healthcare" />
+							<f:selectItem itemValue="Energy" itemLabel="Energy" />
+							<f:selectItem itemValue="RC 14001" itemLabel="RC 14001" />
+							<f:selectItem itemValue="C&I (V)" itemLabel="C&I (V)" />
+							<f:selectItem itemValue="Others" itemLabel="Others" />
+							<f:selectItem
+								itemValue="please select any one of the values from the drop down here"
+								itemLabel="please select any one of the values from the drop down here" />
+						</h:selectOneMenu>
+					</td>
+				</tr>
+
+
+				<tr>
+					<td><b> <h:outputLabel value="Industry::" for="industry" />
+					</b></td>
+					<td><h:message id="CustomerindustryMessage" for="industry" />
+						<h:inputText id="industry" value="#{orderBooking.industry}"
+							 rendered="#{orderBooking.industry == 'seven'}" /> <h:selectOneMenu
+							value="#{orderBooking.industry}">
+							<f:selectItem itemValue="Aerospace" itemLabel="Aerospace" />
+							<f:selectItem itemValue="Automotive" itemLabel="Automotive" />
+							<f:selectItem itemValue="Banking, Financial Services & Insurance"
+								itemLabel="Banking, Financial Services & Insurance" />
+							<f:selectItem itemValue="Chemical & Fertilizers"
+								itemLabel="Chemical & Fertilizers" />
+							<f:selectItem itemValue="Consumer Durables & Non-Durables"
+								itemLabel="Consumer Durables & Non-Durables" />
+							<f:selectItem itemValue="Clinical Research"
+								itemLabel="Clinical Researchhers" />
+							<f:selectItem itemValue="Defence" itemLabel="Defence" />
+							<f:selectItem itemValue="Educational Institutions"
+								itemLabel="Educational Institutions" />
+							<f:selectItem itemValue="Engineering" itemLabel="Engineering" />
+							<f:selectItem itemValue="Food & Water" itemLabel="Food & Water" />
+							<f:selectItem itemValue="Healthcare" itemLabel="Healthcare" />
+							<f:selectItem itemValue="Hospitality" itemLabel="Hospitality" />
+							<f:selectItem itemValue="Infrastructure & Cement"
+								itemLabel="Infrastructure & Cement" />
+							<f:selectItem itemValue="IT &ITES" itemLabel="IT &ITES" />
+							<f:selectItem itemValue="Medical Devices"
+								itemLabel="Medical Devices" />
+							<f:selectItem itemValue="Oil & Gas" itemLabel="Oil & Gas" />
+							<f:selectItem itemValue="Pharmaceutical"
+								itemLabel="Pharmaceutical" />
+							<f:selectItem itemValue="Power & Energy"
+								itemLabel="Power & Energy" />
+							<f:selectItem itemValue="Retail" itemLabel="Retail" />
+							<f:selectItem itemValue="Railways" itemLabel="Railways" />
+							<f:selectItem itemValue="Steel" itemLabel="Steel" />
+							<f:selectItem itemValue="Supply Chain & Logistics"
+								itemLabel="Supply Chain & Logistics" />
+							<f:selectItem itemValue="Textiles" itemLabel="Textiles" />
+							<f:selectItem itemValue="Electrical & Electronics"
+								itemLabel="Electrical & Electronics" />
+							<f:selectItem itemValue="Others" itemLabel="Others" />
+							<f:selectItem
+								itemValue="please select any one of the values from the drop down here"
+								itemLabel="please select any one of the values from the drop down here" />
+						</h:selectOneMenu>
+					</td>
+				</tr>
+
+
+				
+
+
+				
+
 				
 
 
@@ -176,9 +253,9 @@ $(function() {
 					<td><b> <h:outputLabel value="Service::" for="service" />
 					</b></td>
 					<td><h:message id="CustomerserviceMessage" for="service" /> <h:inputText
-							id="service1" value="#{quote.service}" 
-							rendered="#{quote.service == 'seven'}" /> <h:selectOneMenu
-							value="#{quote.service}">
+							id="service1" value="#{orderBooking.service}" 
+							rendered="#{orderBooking.service == 'seven'}" /> <h:selectOneMenu
+							value="#{orderBooking.service}">
 							<f:selectItem itemValue="RA" itemLabel="RA" />
 							<f:selectItem itemValue="GC Mark" itemLabel="GC Mark" />
 							<f:selectItem itemValue="CA" itemLabel="CA" />
@@ -205,9 +282,9 @@ $(function() {
 					<td><b> <h:outputLabel value="Product::" for="product" />
 					</b></td>
 					<td><h:message id="CustomerproductMessage" for="produc" /> <h:inputText
-							id="product1" value="#{quote.product}" 
-							rendered="#{quote.product == 'seven'}" /> <h:selectOneMenu
-							value="#{quote.product}">
+							id="product1" value="#{orderBooking.product}" 
+							rendered="#{orderBooking.product == 'seven'}" /> <h:selectOneMenu
+							value="#{orderBooking.product}">
 							<f:selectItem itemValue="ANSI/ESD S 20.20"
 								itemLabel="ANSI/ESD S 20.20" />
 							<f:selectItem itemValue="AS 9100" itemLabel="AS 9100" />
@@ -270,9 +347,9 @@ $(function() {
 								for="designation" /> </b></td>
 					<td><h:message id="CustomerdesignationMessage"
 							for="designation" /> <h:inputText id="designation"
-							value="#{quote.designation}" 
-							rendered="#{quote.designation == 'seven'}" /> <h:selectOneMenu
-							value="#{quote.designation}">
+							value="#{orderBooking.designation}" 
+							rendered="#{orderBooking.designation == 'seven'}" /> <h:selectOneMenu
+							value="#{orderBooking.designation}">
 							<f:selectItem itemValue="Sales Executive - Existing"
 								itemLabel="Sales Executive - Existing" />
 							<f:selectItem itemValue="CSP" itemLabel="CSP" />
@@ -299,12 +376,12 @@ $(function() {
 
 				<tr>
 					<td><b> <h:outputLabel value="Quote Booked By::"
-								for="quote_Booked_By" /> </b></td>
-					<td><h:message id="quote_Booked_ByMessage"
-							for="quote_Booked_By" /> <h:inputText id="quote_Booked_By"
-							value="#{quote.quote_Booked_By}" 
-							rendered="#{quote.quote_Booked_By == 'seven'}" /> <h:selectOneMenu
-							value="#{quote.quote_Booked_By}">
+								for="orderBooking_Booked_By" /> </b></td>
+					<td><h:message id="orderBooking_Booked_ByMessage"
+							for="orderBooking_Booked_By" /> <h:inputText id="orderBooking_Booked_By"
+							value="#{orderBooking.order_Booked_By}" 
+							rendered="#{orderBooking.order_Booked_By == 'seven'}" /> <h:selectOneMenu
+							value="#{orderBooking.order_Booked_By}">
 							<f:selectItem itemValue="Subhendu" itemLabel="Subhendu" />
 							<f:selectItem itemValue="Avijit Choudary"
 								itemLabel="Avijit Choudary" />
@@ -371,10 +448,10 @@ $(function() {
 					<td><b> <h:outputLabel value="currency::" for="currency" />
 					</b></td>
 					<td><h:message id="CustomercurrencyMessage" for="currency" />
-						<h:inputText id="currency" value="#{quote.currency}"
-							 rendered="#{quote.currency == 'seven'}" />
+						<h:inputText id="currency" value="#{orderBooking.currency}"
+							 rendered="#{orderBooking.currency == 'seven'}" />
 							  <h:selectOneMenu
-							value="#{quote.currency}">
+							value="#{orderBooking.currency}">
 							<f:selectItem itemValue="INR" itemLabel="INR" />
 							<f:selectItem itemValue="USD" itemLabel="USD" />
 							<f:selectItem itemValue="EUR" itemLabel="EUR" />
@@ -393,20 +470,20 @@ $(function() {
 					<td><b> <h:outputLabel value="Exchange Rate::"
 								for="exchange_Rate" /> </b></td>
 					<td><h:message id="exchange_RateMessage" for="exchange_Rate" />
-						<h:inputText id="exchange_Rate" value="#{quote.exchange_Rate}"
+						<h:inputText id="exchange_Rate" value="#{orderBooking.exchange_Rate}"
 							 />
 					</td>
 				</tr>
-				<tr>
+				
 				
 				<tr>
 					<td><b> <h:outputLabel value="Starting Month::" for="starting_month" />
 					</b></td>
 					<td><h:message id="starting_monthMessage" for="starting_month" />
-						<h:inputText id="starting_month" value="#{quote.starting_month}"
-							 rendered="#{quote.starting_month == 'seven'}" />
+						<h:inputText id="starting_month" value="#{orderBooking.starting_month}"
+							 rendered="#{orderBooking.starting_month == 'seven'}" />
 							  <h:selectOneMenu
-							value="#{quote.starting_month}">
+							value="#{orderBooking.starting_month}">
 							<f:selectItem itemValue="Jan" itemLabel="Jan" />
 							<f:selectItem itemValue="Feb" itemLabel="Feb" />
 							<f:selectItem itemValue="Mar" itemLabel="Mar" />
@@ -422,43 +499,43 @@ $(function() {
 					</td>
 				</tr>
 				<tr>
-					<td><b> <h:outputLabel value="Quote Date  ::"
-								for="quote_Date" /> </b></td>
-					<td><h:message id="quote_DateMessage"
-							for="quote_Date" /> <h:inputText id="quotedate"
-							value="#{quote.quote_Date}" readonly="true"  />
+					<td><b> <h:outputLabel value="work Order Date ::"
+								for="work_Order_Date" /> </b></td>
+					<td><h:message id="work_Order_DateMessage"
+							for="work_Order_Date" /> <h:inputText id="orderBookingdate"
+							value="#{orderBooking.work_Order_Date}"  />
 					</td>
 				</tr>
 				<tr>
-					<td><b> <h:outputLabel value="Quoted Mandays::"
-								for="quoted_Mandays" /> </b></td>
-					<td><h:message id="quoted_MandaysMessage"
-							for="quoted_Mandays" /> <h:inputText id="quoted_Mandays"
-							value="#{quote.quoted_Mandays}"  />
+					<td><b> <h:outputLabel value="order_Mandays::"
+								for="order_Mandays" /> </b></td>
+					<td><h:message id="order_MandaysMessage"
+							for="order_Mandays" /> <h:inputText id="order_Mandays"
+							value="#{orderBooking.order_Mandays}"  />
 					</td>
 				</tr>
 				
 				
 				
-				<tr>
-					<td><b> <h:outputLabel value="Quote Value ::"
-								for="quote_Value" /> </b></td>
-					<td><h:message id="quote_ValueMessage" for="quote_Value" /> <h:inputText
- 							id="quote_Value" value="#{quote.quote_Value}"  /> 
+				
+				
+			<tr>
+					<td><b> <h:outputLabel value="Order Value ::"
+								for="order_Value" /> </b></td>
+					<td><h:message id="order_ValueMessage" for="order_Value" /> <h:inputText
+ 							id="order_Value" value="#{orderBooking.order_Value}"  /> 
 					</td>
 				</tr>
 
 <tr>
-					<td><b> <h:outputLabel value="Updated Quote Value::"
-								for="updated_Quote_Value" /> </b></td>
-					<td><h:message id="mandayvalue1Message" for="updated_Quote_Value" /> <h:inputText
-							id="updated_Quote_Value" value="#{quote.updated_Quote_Value}" readonly="true"  />
+					<td><b> <h:outputLabel value="Updated Order Value::"
+								for="updated_Order_Value" /> </b></td>
+					<td><h:message id="mandayvalue1Message1" for="updated_Order_Value" /> <h:inputText
+							id="updated_Order_Value" value="#{orderBooking.updated_Order_Value}" readonly="true"  />
 					</td>
 				</tr>
-
-
 			</table>
-			<h:commandButton action="#{quote.addAction}" value="Update" />&nbsp;&nbsp;
+			<h:commandButton action="#{orderBooking.addAction}" value="Update" />&nbsp;&nbsp;
 			
 			
 		
@@ -475,7 +552,7 @@ $(function() {
 	<div id="footer">
 		<div class="shell">
 			<span class="left"><font face="Times New Roman"
-				color="SteelBlue">© 2014 UL DQS. All rights reserved</font> </span> <br/>
+				color="SteelBlue">Â© 2014 UL DQS. All rights reserved</font> </span> <br/>
 
 		</div>
 	</div>

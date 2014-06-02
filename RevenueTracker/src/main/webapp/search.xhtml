@@ -4,6 +4,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
+	
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
 <title>Home Page</title>
@@ -24,7 +25,16 @@
 	-moz-box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, .2);
 	-box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, .2);
 	text-shadow: 1px -1px 0px #000;
-	filter: dropshadow(color = #000, offx = 1, offy = -1);
+	filter: dropshadow(color =            
+		                                                      
+		                 #000, offx =                      
+		 
+		      
+		                    
+		                                1, offy =   
+		                                
+		          
+		                                     -1);
 	line-height: 30px;
 	border-width: 1px 0 0 0;
 	border-style: solid;
@@ -63,35 +73,64 @@
 			dateFormat : 'yy-mm-dd'
 		});
 	});
+	
+	
+	function dataTableToExcel()  
+	{  
+	var strCopy = document.getElementById("MyTable").innerHTML;  
+	window.clipboardData.setData("Text", strCopy);  
+	var objExcel = new ActiveXObject ("Excel.Application");  
+	objExcel.visible = true;  
+	  
+	var objWorkbook = objExcel.Workbooks.Add;  
+	var objWorksheet = objWorkbook.Worksheets(1);  
+	objWorksheet.Paste;  
+	}  
+	
 </script>
-
-
-
-
-
-
-
 
 </head>
 <body>
+<f:view>
+
+
+		<h:form id="Search">
 	<!-- Header -->
 	<div id="header">
 		<div class="shell">
 			<br/> <br/> <span class="right"><font
 				face="Times New Roman" size="5" color="SteelBlue"> Revenue
-					Tracker</font>
-			</span> <span class="right"><a href="search.jsp"><img
-					src="css/images/home.png"></img>
-			</a>
-			</span>
+					Tracker</font> 
+					</span> 
+					
+				<span class="right">	<h:commandLink id="next" action="#{customer.NavigCustomer}">
+   <h:graphicImage value="css/images/hom.png" 
+		  alt="Next" title="Next"/>
+</h:commandLink>
+	</span>				
+					
+					
+					
+					
+<!-- 					<a href="Home.jsp"><img -->
+<!-- 					src="css/images/hom.png"></img> </a>  -->
+
+
+	
+					
+					
+					
+					
+					
 			<!-- Logo + Top Nav -->
+				
+	
 			<div id="top">
 
 				<table>
 					<tr>
 						<td><a href="https://ul-dqs.in/" target="_blank"><img
-								src="css/images/copy.png"></img>
-						</a></td>
+								src="css/images/copy.png"></img> </a></td>
 
 					</tr>
 				</table>
@@ -102,27 +141,19 @@
 	</div>
 	<br/>
 	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
+	
+	
 	<!-- End Header -->
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<f:view>
+	
+	
 
-
-		<h:form id="Search">
-
-
+ 
 
 			<tr>
-				<td><b> <h:outputLabel value="Customer Name 2"
-							for="customer_Name" />
-				</b> <h:message id="customerNameMessage" for="customer_Name" /> <h:inputText
-						id="customer_Name" value="#{customer.searchName}" /></td>
+				<td><b> <h:outputLabel value="Customer Name"
+							for="customer_Name" /> </b> <h:message id="customerNameMessage"
+						for="customer_Name" /> <h:inputText id="customer_Name"
+						value="#{customer.searchName}" /></td>
 			</tr>
 
 
@@ -131,18 +162,24 @@
 
 			<h:commandButton value="Search" action="#{customer.ResultCustomer}"
 				rendered="true" />
+				
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				
+				<a href="addNew.jsp">Add New Customer</a>
 			
+			<%--  <h:commandButton value="reset" type="reset" /> --%>
+
 			<!--  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+			<%--  <h:commandLink value="All" action="#{customer.ResultAll}"  /> --%>
+ <br/><br/>
  
- 
-   &nbsp;&nbsp;&nbsp;
+   
   
 <tr>
 				<td><b> <h:outputLabel value="Customer Type"
-							for="customer_Type" />
-				</b>
+							for="customer_Type" /> </b>
 				</td>
-				<td><h:selectOneMenu value="#{customer.searchName1}">
+				<td><h:selectOneMenu value="#{customer.searchName1}" >
 						<f:selectItem itemValue="" itemLabel="" />
 						<f:selectItem itemValue="All" itemLabel="All" />
 						<f:selectItem itemValue="New" itemLabel="New" />
@@ -153,64 +190,96 @@
 			</tr>
 
 			<tr>
-				<td><b> <h:outputLabel value="Region" for="region" />
-				</b>
+				<td><b> <h:outputLabel value="Region" for="region" /> </b>
 				</td>
 				<td><h:selectOneMenu value="#{customer.searchName2}">
 						<f:selectItem itemValue="" itemLabel="" />
 						<f:selectItem itemValue="Aerospace" itemLabel="Aerospace" />
-						<f:selectItem itemValue="C&amp;I(R)" itemLabel="C&amp;I(R)" />
+						<f:selectItem itemValue="C&I (R) " itemLabel="C&I (R) " />
 						<f:selectItem itemValue="Gujarat" itemLabel="Gujarat" />
 						<f:selectItem itemValue="Maharashtra" itemLabel="Maharashtra" />
-						<f:selectItem itemValue="North &amp; East" itemLabel="North &amp; East" />
+						<f:selectItem itemValue="North & East" itemLabel="North & East" />
 						<f:selectItem itemValue="South-1" itemLabel="South-1" />
 						<f:selectItem itemValue="South-2" itemLabel="South-2" />
 					</h:selectOneMenu> <h:message id="regionMessage" for="region" /></td>
 			</tr>
 
-			<tr>
-				<td><b> <h:outputLabel value="Start Month"
-							for="start_month" />
-				</b>
+		<tr>
+				<td><b> <h:outputLabel value="Vertical" for="vertical" /> </b>
 				</td>
 				<td><h:selectOneMenu value="#{customer.searchName3}">
-						<f:selectItem itemValue="" itemLabel="" />
-						<f:selectItem itemValue="Jan" itemLabel="Jan" />
-						<f:selectItem itemValue="Feb" itemLabel="Feb" />
-						<f:selectItem itemValue="Mar" itemLabel="Mar" />
-
-					</h:selectOneMenu> <h:message id="start_monthMessage" for="start_month" /></td>
+				<f:selectItem itemValue="" itemLabel="" />
+						<f:selectItem itemValue="Aerospace" itemLabel="Aerospace" />
+							<f:selectItem itemValue="Medical & Healthcare"
+								itemLabel="Medical & Healthcare" />
+							<f:selectItem itemValue="Energy" itemLabel="Energy" />
+							<f:selectItem itemValue="RC 14001" itemLabel="RC 14001" />
+							<f:selectItem itemValue="C&I (V)" itemLabel="C&I (V)" />
+							<f:selectItem itemValue="Others" itemLabel="Others" />
+												</h:selectOneMenu> <h:message id="CustomerverticalMessage" for="vertical" /></td>
 			</tr>
+			
+			<tr>
+				<td><b> <h:outputLabel value="Service" for="service" /> </b>
+				</td>
+				<td><h:selectOneMenu value="#{customer.searchName4}">
+				<f:selectItem itemValue="" itemLabel="" />
+						<f:selectItem itemValue="RA" itemLabel="RA" />
+						<f:selectItem itemValue="1st Annual Assessment" itemLabel="1st Annual Assessment" />
+							<f:selectItem itemValue="GC Mark" itemLabel="GC Mark" />
+							<f:selectItem itemValue="CA" itemLabel="CA" />
+							<f:selectItem itemValue="TRA" itemLabel="TRA" />
+							<f:selectItem itemValue="KSC Inhouse" itemLabel="KSC Inhouse" />
+							<f:selectItem itemValue="KSC Openhouse" itemLabel="KSC Openhouse" />
+							<f:selectItem itemValue="KSC Special assessment"
+								itemLabel="KSC Special assessment" />
+							<f:selectItem itemValue="KSC Solution" itemLabel="KSC Solution" />
+							<f:selectItem itemValue="KSC MTS" itemLabel="KSC MTS" />
+							<f:selectItem itemValue="PPP" itemLabel="PPP" />
+							<f:selectItem itemValue="Safety" itemLabel="Safety" />
+					</h:selectOneMenu> <h:message id="CustomerserviceMessage" for="service" /></td>
+			</tr>	
+			
 
-			<h:commandButton value="Go" action="#{customer.DropDowns}" /> 
  
  &nbsp;&nbsp;
  
   <h:outputLabel value="StartDate" for="startDatePicker" />
 
 			<h:inputText id="startdate" onfocus="calendar()"
-				value="#{customer.datea}"></h:inputText>
+				value="#{customer.datea}"     ></h:inputText>
 			<h:outputLabel value="EndDate" for="endDatePicker" />
-			<h:inputText id="enddate" value="#{customer.dateb}">
+			<h:inputText id="enddate" value="#{customer.dateb}"    >
 			</h:inputText>
 
+			<h:commandButton value="Go" action="#{customer.DropDowns}" />
+			
+			 &nbsp;&nbsp;
+			
+			
+			 
 
-			<h:commandButton value="Report" action="#{customer.Calendarcustomer}" />
 			<br/>
 			<br/>
 			<br/>
+<div style="height:300px;overflow-x:auto;overflow-y:scroll;">
 
+                               
 			<h:dataTable value="#{customer.custInfoAll}" var="custInfo"
 				styleClass="order-table" headerClass="order-table-header" border="5"
-				rowClasses="order-table-odd-row,order-table-even-row">
-				
+				rowClasses="order-table-odd-row,order-table-even-row"  footerClass="order-table-footer" >
+
 				<h:column>
 					<f:facet name="header">
 						<h:outputText value="BR " />
 					</f:facet>
+					
 					<h:outputText value="#{custInfo.bR}">
 					</h:outputText>
 				</h:column>
+				 
+				
+				
 				<h:column>
 					<f:facet name="header">
 						<h:outputText value="customer Name" />
@@ -369,7 +438,7 @@
 					<h:outputText value="#{custInfo.updated_Work_Order}">
 					</h:outputText>
 					<f:facet name="footer">
-						<h:outputText value="#{customer.sum_dm}" />
+						<h:outputText value="#{customer.sum_up}" />
 
 					</f:facet>
 				</h:column>
@@ -390,7 +459,6 @@
 					<h:outputText value="#{custInfo.work_Order_Mandays}">
 					</h:outputText>
 				</h:column>
-
 
 				<h:column>
 					<f:facet name="header">
@@ -418,10 +486,10 @@
 					<f:facet name="header">
 						<h:outputText value="Delivered Mandays " />
 					</f:facet>
-					<h:outputText value="#{custInfo.delivered_Mandays}">
+					<h:outputText value="#{custInfo.dm}">
 					</h:outputText>
 					<f:facet name="footer">
-						<h:outputText value="#{customer.sum_Del}" />
+						<h:outputText value="#{customer.sum_dm}" />
 					</f:facet>
 				</h:column>
 
@@ -454,24 +522,66 @@
 					<h:outputText value="#{custInfo.logo_Fee_Database}">
 					</h:outputText>
 				</h:column>
+				
+				
 				<h:column>
 					<f:facet name="header">
-						<h:outputText value="T&amp;L " />
+						<h:outputText value="T&L " />
 					</f:facet>
 					<h:outputText value="#{custInfo.t_L}">
 					</h:outputText>
 				</h:column>
+				
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Service Tax    " />
+					</f:facet>
+					<h:outputText value="#{custInfo.service_Tax }">
+					</h:outputText>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Total Invoice Amount" />
+					</f:facet>
+					<h:outputText value="#{custInfo.total_Invoice_Amount}">
+					</h:outputText>
+				</h:column>
+				
+				
 
 				<h:column>
 					<f:facet name="header">
 						<h:outputText value="Period Mandays " />
 					</f:facet>
-					<h:outputText value="#{customer.sum_pm}">
+
+					<h:outputText value="#{custInfo.mandayvalue}">
 
 					</h:outputText>
-
+					<f:facet name="footer">
+						<h:outputText value="#{customer.sum_pm}" />
+					</f:facet>
 
 				</h:column>
+
+               <h:column>
+					<f:facet name="header">
+						<h:outputText value="Period Revenue " />
+					</f:facet>
+					<h:outputText value="#{custInfo.period_rev}">
+					</h:outputText>
+					<f:facet name="footer">
+						<h:outputText value="#{customer.sum_pr}" />
+
+					</f:facet>
+				</h:column>
+				
+
+
+
+
+
+
+
 				<h:column>
 					<f:facet name="header">
 						<h:outputText value="Work Order " />
@@ -517,24 +627,30 @@
 
 				</h:column>
 
-
+  	 	
 			</h:dataTable>
+			
+	
+				
+			
+			 </div>
 			<br/>
 
 
 
 		</h:form>
+		
 	</f:view>
 
+	
 	<br/>
 	<br/>
-	<br/>
+	
 	<!-- Footer -->
 	<div id="footer">
 		<div class="shell">
 			<span class="left"><font face="Times New Roman"
-				color="SteelBlue">&copy; UL DQS India,Bangalore</font>
-			</span> <br/>
+				color="SteelBlue">© 2014 UL DQS. All rights reserved</font> </span> <br/>
 
 		</div>
 	</div>

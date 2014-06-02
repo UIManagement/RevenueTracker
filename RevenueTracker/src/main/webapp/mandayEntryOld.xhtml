@@ -1,13 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
-<%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
-<html>
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Manday Entry Page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<title>Home Page</title>
 <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
 <link rel="stylesheet"
 	href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
@@ -30,7 +29,6 @@
 	border-color: #111;
 }
 
-
 .ui-datepicker {
 	width: 216px;
 	height: auto;
@@ -52,11 +50,7 @@
 			dateFormat : 'yy-mm-dd'
 		});
 	});
-	function box() {
 
-		alert("Updated");
-	return true;
-	}
 	$(function() {
 		$("#insert\\:enddate").datepicker({
 			showOn : "button",
@@ -67,8 +61,6 @@
 			dateFormat : 'yy-mm-dd'
 		});
 	});
-	
-	
 </script>
 
 
@@ -78,48 +70,32 @@
 
 </head>
 <body>
-	<f:view>
-
-
-		<h:form id="insert">
 	<!-- Header -->
 	<div id="header">
 		<div class="shell">
 			<br/> <br/> <span class="right"><font
 				face="Times New Roman" size="5" color="SteelBlue"> Revenue
-					Tracker</font> 
-					</span> 
-					
-				<span class="right">	<h:commandLink id="next" action="#{customer.NavigCustomer}">
-   <h:graphicImage value="css/images/hom.png" 
-		  alt="Next" title="Next"/>
-</h:commandLink>
-	</span>				
-					
-					
-					
-					
-<!-- 					<a href="Home.jsp"><img -->
-<!-- 					src="css/images/hom.png"></img> </a>  -->
+					Tracker</font>
+			</span>
 
 
-	
-					
-					
-					
-					
-			<!-- End Logo + Top Nav -->
+			<!-- Logo + Top Nav -->
 			<div id="top">
 
 				<table>
 					<tr>
 						<td><a href="https://ul-dqs.in/" target="_blank"><img
-								src="css/images/copy.png"></img> </a></td>
+								src="css/images/small.png"></img>
+						</a> <span class="centre"><a href="search.jsp"><img
+									src="css/images/home.png"></img>
+							</a>
+						</span></td>
 
 					</tr>
 				</table>
 			</div>
 			<br/> <br/> <br/> <br/> <br/> <br/>
+			<!-- End Logo + Top Nav -->
 		</div>
 	</div>
 	<br/>
@@ -132,9 +108,10 @@
 	<br/>
 	<br/>
 	<br/>
-<body>
-	
-			<table class=”tbl” cellpadding=”0″ cellspacing=”0″ border=”0″>
+
+	<f:view>
+		<h:form id="insert">
+			<table>
 
 				<tr>
 					<td><b> <h:outputLabel value="Customer Name::"
@@ -158,7 +135,7 @@
 			</h:inputText>
    &nbsp;
   
- <h:commandButton value="Report" action="#{customer.Entrycustomer}"   >
+ <h:commandButton value="Report" action="#{customer.Entrycustomer}">
 
 			</h:commandButton>
 
@@ -183,36 +160,29 @@
 					<h:outputLabel value="Manday::" for="mandayvalue" />
 					<h:message id="mandayvalueMessage" for="mandayvalue" />
 					<h:inputText id="mandayvalue" value="#{custInfo.mandayvalue}"
-						 />
+						required="true" />
 
-					
 				</h:column>
 			</h:dataTable>
 			<br/>
 			<br/>
-			<h:commandButton action="#{customer.updateAction}" value="Update Mandays"   rendered="true"  onclick="box()"  >
-			
-				 <f:setPropertyActionListener target="#{customer.custInfoAll}" value="custInfo" />
-				 </h:commandButton>
-				 
-				 
+			<h:commandButton action="#{mandays.updateAction}"
+				value="Update Mandays" />
   &nbsp;&nbsp;
  <h:commandButton value="reset" type="reset" />
 
 		</h:form>
-		
-		
 	</f:view>
-<br/>
-<br/>
-<br/>
-<br/>
+
+
+
+
 	<br/>
 	<!-- Footer -->
 	<div id="footer">
 		<div class="shell">
 			<span class="left"><font face="Times New Roman"
-				color="SteelBlue">© 2014 UL DQS. All rights reserved</font>
+				color="SteelBlue">&copy; UL DQS India,Bangalore</font>
 			</span> <br/>
 
 		</div>
