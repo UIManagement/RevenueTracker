@@ -1,0 +1,530 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
+<%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Home Page</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+
+<link rel="stylesheet"
+	href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+<style>
+.ui-datepicker-header {
+	background: url('../img/dark_leather.png') repeat 0 0 #000;
+	color: #e0e0e0;
+	font-weight: bold;
+	webkit-box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, 2);
+	-moz-box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, .2);
+	-box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, .2);
+	text-shadow: 1px -1px 0px #000;
+	filter: dropshadow(color =            
+		                                                      
+		                 #000, offx =                      
+		 
+		      
+		                    
+		                                1, offy =   
+		                                
+		          
+		                                     -1);
+	line-height: 30px;
+	border-width: 1px 0 0 0;
+	border-style: solid;
+	border-color: #111;
+}
+
+.ui-datepicker {
+	width: 216px;
+	height: auto;
+	margin: 5px auto 0;
+	font: 9pt Arial, sans-serif;
+	webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+	-moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+	-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+}
+</style>
+<script>
+	$(function() {
+		$("#quote\\:startdate").datepicker({
+			showOn : "button",
+			buttonImage : "images/calendar.gif",
+			buttonImageOnly : true,
+			changeMonth : true,
+			changeYear : true,
+			dateFormat : 'yy-mm-dd'
+		});
+	});
+
+	$(function() {
+		$("#quote\\:enddate").datepicker({
+			showOn : "button",
+			buttonImage : "images/calendar.gif",
+			buttonImageOnly : true,
+			changeMonth : true,
+			changeYear : true,
+			dateFormat : 'yy-mm-dd'
+		});
+	});
+	
+	
+	
+	
+</script>
+
+</head>
+<body>
+<f:view>
+
+
+		<h:form id="quote">
+	<!-- Header -->
+	<div id="header">
+		<div class="shell">
+			<br/> <br/> <span class="right"><font
+				face="Times New Roman" size="5" color="SteelBlue"> Quote
+					Tracker</font> 
+					</span> 
+					
+				<span class="right">	<h:commandLink id="next" action="#{quote.NavigQuote}">
+   <h:graphicImage value="css/images/hom.png" 
+		  alt="Next" title="Next"/>
+</h:commandLink>
+	</span>				
+					
+					
+					
+					
+<!-- 					<a href="Home.jsp"><img -->
+<!-- 					src="css/images/hom.png"></img> </a>  -->
+
+
+	
+					
+					
+					
+					
+					
+			<!-- Logo + Top Nav -->
+				
+	
+			<div id="top">
+
+				<table>
+					<tr>
+						<td><a href="https://ul-dqs.in/" target="_blank"><img
+								src="css/images/copy.png"></img> </a></td>
+
+					</tr>
+				</table>
+			</div>
+			<br/> <br/> <br/> <br/> <br/> <br/>
+			<!-- End Logo + Top Nav -->
+		</div>
+	</div>
+	<br/>
+	<br/>
+	
+	
+	<!-- End Header -->
+	
+	
+
+ 
+
+			<tr>
+				<td><b> <h:outputLabel value="Customer Name"
+							for="customer_Name" /> </b> <h:message id="customerNameMessage"
+						for="customer_Name" /> <h:inputText id="customer_Name"
+						value="#{quote.searchName}" /></td>
+			</tr>
+
+
+
+
+
+			<h:commandButton value="Search" action="#{quote.ResultQuote}"
+				rendered="true" />
+				
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				
+				
+		
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				
+				<a href="addNewQuote.jsp">Add New Customer</a>
+			
+			
+ <br/><br/>
+ 
+   
+  
+<tr>
+				<td><b> <h:outputLabel value="Customer Type"
+							for="customer_Type" /> </b>
+				</td>
+				<td><h:selectOneMenu value="#{quote.searchName1}" >
+						<f:selectItem itemValue="" itemLabel="" />
+						<f:selectItem itemValue="All" itemLabel="All" />
+						<f:selectItem itemValue="New" itemLabel="New" />
+
+						<f:selectItem itemValue="Existing" itemLabel="Existing" />
+						<f:selectItem itemValue="InterCompany" itemLabel="InterCompany" />
+					</h:selectOneMenu> <h:message id="quotecustomerTypeMessage" for="customer_Type" /></td>
+			</tr>
+
+			<tr>
+				<td><b> <h:outputLabel value="Region" for="region" /> </b>
+				</td>
+				<td><h:selectOneMenu value="#{quote.searchName2}">
+						<f:selectItem itemValue="" itemLabel="" />
+						<f:selectItem itemValue="Aerospace" itemLabel="Aerospace" />
+						<f:selectItem itemValue="C&I (R) " itemLabel="C&I (R) " />
+						<f:selectItem itemValue="Gujarat" itemLabel="Gujarat" />
+						<f:selectItem itemValue="Maharashtra" itemLabel="Maharashtra" />
+						<f:selectItem itemValue="North & East" itemLabel="North & East" />
+						<f:selectItem itemValue="South-1" itemLabel="South-1" />
+						<f:selectItem itemValue="South-2" itemLabel="South-2" />
+					</h:selectOneMenu> <h:message id="quoteregionMessage" for="region" /></td>
+			</tr>
+
+		
+			<tr>
+				<td><b> <h:outputLabel value="Service" for="service" /> </b>
+				</td>
+				<td><h:selectOneMenu value="#{quote.searchName4}">
+				<f:selectItem itemValue="" itemLabel="" />
+						<f:selectItem itemValue="RA" itemLabel="RA" />
+						
+							<f:selectItem itemValue="GC Mark" itemLabel="GC Mark" />
+							<f:selectItem itemValue="CA" itemLabel="CA" />
+							<f:selectItem itemValue="TRA" itemLabel="TRA" />
+							<f:selectItem itemValue="KSC Inhouse" itemLabel="KSC Inhouse" />
+							<f:selectItem itemValue="KSC Openhouse" itemLabel="KSC Openhouse" />
+							<f:selectItem itemValue="KSC Special assessment"
+								itemLabel="KSC Special assessment" />
+							<f:selectItem itemValue="KSC Solution" itemLabel="KSC Solution" />
+							<f:selectItem itemValue="KSC MTS" itemLabel="KSC MTS" />
+							<f:selectItem itemValue="PPP" itemLabel="PPP" />
+							<f:selectItem itemValue="Safety" itemLabel="Safety" />
+					</h:selectOneMenu> <h:message id="quoteCustomerserviceMessage" for="service" /></td>
+			</tr>	
+			
+
+ <tr>
+				<td><b> <h:outputLabel value="QuoteBy" for="quote_Booked_By" /> </b>
+				</td>
+				<td><h:selectOneMenu value="#{quote.searchName3}">
+				<f:selectItem itemValue="" itemLabel="" />
+						<f:selectItem itemValue="Subhendu " itemLabel="Subhendu " />
+							<f:selectItem itemValue="Avijit Choudary"	itemLabel="Avijit Choudary" />
+							
+							<f:selectItem itemValue="Girish" itemLabel="Girish" />
+							<f:selectItem itemValue="Hema" itemLabel="Hema" />
+							
+							<f:selectItem itemValue="Jawahar" itemLabel="Jawahar" />
+							<f:selectItem itemValue="Manik" itemLabel="Manik" />
+							<f:selectItem itemValue="Rajesh" itemLabel="Rajesh" />
+							<f:selectItem itemValue="Ravi" itemLabel="Ravi" />
+							<f:selectItem itemValue="Shilpa" itemLabel="Shilpa" />
+							<f:selectItem itemValue="Amit Tiwari" itemLabel="Amit Tiwari" />
+							<f:selectItem itemValue="Pramod" itemLabel="Pramod" />
+							<f:selectItem itemValue="Venkat" itemLabel="Venkat" />
+							<f:selectItem itemValue="Cion" itemLabel="Cion" />
+							<f:selectItem itemValue="Ajit" itemLabel="Ajit" />
+							<f:selectItem itemValue="Sreeja" itemLabel="Sreeja" />
+							<f:selectItem itemValue="Arpit" itemLabel="Arpit" />
+							<f:selectItem itemValue="Rohit" itemLabel="Rohit" />
+							<f:selectItem itemValue="Balram Singla" itemLabel="Balram Singla" />
+							<f:selectItem itemValue="Subhash" itemLabel="Subhash" />
+							<f:selectItem itemValue="Subhendu " itemLabel="Subhendu " />
+							<f:selectItem itemValue="Avijit Choudary" itemLabel="Avijit Choudary" />
+							<f:selectItem itemValue="Girish " itemLabel="Girish " />
+							<f:selectItem itemValue="Naveen" itemLabel="Naveen" />
+							<f:selectItem itemValue="Rashmi" itemLabel="Rashmi" />
+							<f:selectItem itemValue="Hema" itemLabel="Hema" />
+							<f:selectItem itemValue="Amit Jani" itemLabel="Amit Jani" />
+							<f:selectItem itemValue="Bharathi" itemLabel="Bharathi" />
+							<f:selectItem itemValue="Juhi" itemLabel="Juhi" />
+							<f:selectItem itemValue="Bharathi" itemLabel="Bharathi" />
+							<f:selectItem itemValue="Madhura Joshi" itemLabel="Madhura Joshi" />
+							<f:selectItem itemValue="Vibha" itemLabel="Vibha" />
+							<f:selectItem itemValue="Baldau Ji" itemLabel="Baldau Ji" />
+							<f:selectItem itemValue="G Ramanathan" itemLabel="G Ramanathan" />
+							<f:selectItem itemValue="Sunil Korde" itemLabel="Sunil Korde" />
+							<f:selectItem itemValue="Varun Kamble" itemLabel="Varun Kamble" />
+							<f:selectItem itemValue="Dhanalakshmi " itemLabel="Dhanalakshmi " />
+							<f:selectItem itemValue="Anil" itemLabel="Anil" />
+							<f:selectItem itemValue="Dwarakanath" itemLabel="Dwarakanath" />
+							<f:selectItem itemValue="Mukesh" itemLabel="Mukesh" />
+							<f:selectItem itemValue="Anisha " itemLabel="Anisha " />
+							<f:selectItem itemValue="Sumanth Kulkarni" itemLabel="Sumanth Kulkarni" />
+							<f:selectItem itemValue="Nurani S Venkatachalam" itemLabel="Nurani S Venkatachalam" />
+							<f:selectItem itemValue="Ajay Mathur" itemLabel="Ajay Mathur" />
+							<f:selectItem itemValue="Baldau Ji" itemLabel="Baldau Ji" />
+							<f:selectItem itemValue="Girish Silswal" itemLabel="Girish Silswal" />
+							<f:selectItem itemValue="Peyali Dutta" itemLabel="Peyali Dutta" />
+							<f:selectItem itemValue="Rajendra Pradhan" itemLabel="Rajendra Pradhan" />
+							<f:selectItem itemValue="Avijit Choudhury" itemLabel="Avijit Choudhury" />
+							<f:selectItem itemValue="Suman Yadav" itemLabel="Suman Yadav" />
+							<f:selectItem itemValue="Krishna Kamath" itemLabel="Krishna Kamath" />
+							<f:selectItem itemValue="Manvendra Singh Chauhan" itemLabel="Manvendra Singh Chauhan" />
+							<f:selectItem itemValue="Sujith Baby Kurian" itemLabel="Sujith Baby Kurian" />
+							<f:selectItem itemValue="Sumant Kulkarni" itemLabel="Sumant Kulkarni" />
+							<f:selectItem itemValue="Rajesh Kharde" itemLabel="Rajesh Kharde" />
+							<f:selectItem itemValue="Meena Chaugule" itemLabel="Meena Chaugule" />
+							<f:selectItem itemValue="Kedar Kulkarni" itemLabel="Kedar Kulkarni" />
+							<f:selectItem itemValue="Sunil Korde Lahanu" itemLabel="Sunil Korde Lahanu" />
+							<f:selectItem itemValue="Varun Kamble" itemLabel="Varun Kamble" />
+							<f:selectItem itemValue="Shankaranarayana" itemLabel="Shankaranarayana" />
+							<f:selectItem itemValue="Hemalatha T" itemLabel="Hemalatha T" />
+							<f:selectItem itemValue="Venkatesh Nagaraja Rao" itemLabel="Venkatesh Nagaraja Rao" />
+							<f:selectItem itemValue="Raghavendra H S" itemLabel="Raghavendra H S" />
+							<f:selectItem itemValue="Shubham Bannerjee" itemLabel="Shubham Bannerjee" />
+							<f:selectItem itemValue="Sandesh" itemLabel="Sandesh" />
+								<f:selectItem itemValue="Supritha" itemLabel="Supritha" />
+									<f:selectItem itemValue="Swetha Iyer" itemLabel="Swetha Iyer" />
+							<f:selectItem itemValue="Ashok Majumdar" itemLabel="Ashok Majumdar" />
+												</h:selectOneMenu> <h:message id="quote_Booked_ByMessage" for="quote_Booked_By" /></td>
+			</tr>
+			 
+ 
+  <h:outputLabel value="StartDate" for="startDatePicker" />
+
+			<h:inputText id="startdate" onfocus="calendar()"
+				value="#{quote.startDate}"     ></h:inputText>
+			<h:outputLabel value="EndDate" for="endDatePicker" />
+			<h:inputText id="enddate" value="#{quote.endDate}"    >
+			</h:inputText>
+			
+			<h:commandButton value="Go" action="#{quote.DropDowns}" />
+			 
+
+			<br/>
+			<br/>
+			<br/>
+<div style="height:300px;overflow-x:auto;overflow-y:scroll;">
+
+                               
+			<h:dataTable value="#{quote.custInfoAll}" var="custInfo"
+				styleClass="order-table" headerClass="order-table-header" border="5"
+				rowClasses="order-table-odd-row,order-table-even-row"  footerClass="order-table-footer" >
+
+				
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="BR" />
+					</f:facet>
+					<h:outputText value="#{custInfo.bR}">
+					</h:outputText>
+				</h:column>
+				
+				
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="customer Name" />
+					</f:facet>
+					<h:outputText value="#{custInfo.customer_Name}">
+					</h:outputText>
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="customer Type" />
+					</f:facet>
+					<h:outputText value="#{custInfo.customer_Type}">
+					</h:outputText>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Region" />
+					</f:facet>
+					<h:outputText value="#{custInfo.region}">
+					</h:outputText>
+				</h:column>
+
+
+
+				
+
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Service" />
+					</f:facet>
+					<h:outputText value="#{custInfo.service}">
+
+					</h:outputText>
+
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Product" />
+					</f:facet>
+					<h:outputText value="#{custInfo.product}">
+
+					</h:outputText>
+				</h:column>
+				
+
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Designation" />
+					</f:facet>
+					<h:outputText value="#{custInfo.designation}">
+
+					</h:outputText>
+
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Quote Booked By" />
+					</f:facet>
+					<h:outputText value="#{custInfo.quote_Booked_By}">
+
+					</h:outputText>
+
+				</h:column>
+
+			
+
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Currency" />
+					</f:facet>
+					<h:outputText value="#{custInfo.currency}">
+					</h:outputText>
+				</h:column>
+
+				
+
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Exchange Rate" />
+					</f:facet>
+					<h:outputText value="#{custInfo.exchange_Rate}">
+					</h:outputText>
+				</h:column>
+
+				
+
+				
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Start Month " />
+					</f:facet>
+					<h:outputText value="#{custInfo.starting_month}">
+					</h:outputText>
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="QuoteDate " />
+					</f:facet>
+					<h:outputText value="#{custInfo.quote_Date}">
+					</h:outputText>
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Quote Value " />
+					</f:facet>
+					<h:outputText value="#{custInfo.quote_Value}">
+					</h:outputText>
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Quoted Mandays " />
+					</f:facet>
+					<h:outputText value="#{custInfo.quoted_Mandays}">
+					</h:outputText>
+					<f:facet name="footer">
+						<h:outputText value="#{quote.sum_qm}" />
+
+					</f:facet>
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="updated QuoteValue " />
+					</f:facet>
+					<h:outputText value="#{custInfo.updated_Quote_Value}">
+					</h:outputText>
+					<f:facet name="footer">
+						<h:outputText value="#{quote.sum_up}" />
+
+					</f:facet>
+				</h:column>
+				
+				<h:column>
+			<h:outputText value="#{rowCounter.row}" />
+		</h:column>
+<%-- 		<h:column> --%>
+<%-- 			<h:outputText value="#{custInfo}" /> --%>
+<%-- 		</h:column> --%>
+
+				<h:column>
+
+					<f:facet name="header">
+
+						<h:outputLabel value="Edit" />
+
+					</f:facet>
+
+					<h:commandButton value="edit" action="#{quote.EditCustomer}"
+						image="css/images/edit.gif">
+						<f:setPropertyActionListener target="#{quote}"
+							value="#{custInfo}" />
+
+					</h:commandButton>
+
+				</h:column>
+
+				
+
+  	 	
+			</h:dataTable>
+			
+		
+				
+				
+			
+			 </div>
+			 <b> <h:outputLabel value="Count"
+							for="row" /> </b> <h:message id="rowMessage"
+						for="row" /> <h:outputText id="row"
+						value="#{rowCounter.row}" />
+		
+			<br/>
+
+
+
+		</h:form>
+		
+	</f:view>
+
+	
+	<br/>
+	<br/>
+	
+	<!-- Footer -->
+	<div id="footer">
+		<div class="shell">
+			<span class="left"><font face="Times New Roman"
+				color="SteelBlue">© 2014 UL DQS. All rights reserved</font> </span> <br/>
+
+		</div>
+	</div>
+	<!-- End Footer -->
+
+</body>
+
+</html>
