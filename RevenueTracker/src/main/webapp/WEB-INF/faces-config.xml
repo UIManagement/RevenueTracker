@@ -45,51 +45,51 @@
 
 <navigation-rule>
 
-  <from-view-id>/searc.jsp</from-view-id> 
+  <from-view-id>/searc.xhtml</from-view-id> 
   
 <navigation-case>
 
   <from-action>#{customer1.addCustomer}</from-action> 
   <from-outcome>add</from-outcome> 
    
-  <to-view-id>/searc.jsp</to-view-id> 
+  <to-view-id>/searc.xhtml</to-view-id> 
     
   </navigation-case>
 <navigation-case>
   <from-action>#{customer.ResultCustomer}</from-action> 
   <from-outcome>result</from-outcome> 
-  <to-view-id>/searc.jsp</to-view-id> 
+  <to-view-id>/searc.xhtml</to-view-id> 
   </navigation-case>
  <navigation-case>
   <from-action>#{customer.EditCustomer}</from-action> 
   <from-outcome>edit</from-outcome> 
-  <to-view-id>/insert.jsp</to-view-id> 
+  <to-view-id>/insert.xhtml</to-view-id> 
   </navigation-case>
   <navigation-case>
   <from-action>#{customer.MandayEntryCustomer}</from-action> 
   <from-outcome>company</from-outcome> 
-  <to-view-id>/mandayEntry.jsp</to-view-id> 
+  <to-view-id>/mandayEntry.xhtml</to-view-id> 
   </navigation-case> 
  <navigation-case>
   <from-action>#{customer.ResultAll}</from-action> 
   <from-outcome>all</from-outcome> 
-  <to-view-id>/searc.jsp</to-view-id> 
+  <to-view-id>/searc.xhtml</to-view-id> 
   </navigation-case>
  <navigation-case>
   <from-action>#{customer.DropDowns}</from-action> 
   <from-outcome>values</from-outcome> 
-  <to-view-id>/searc.jsp</to-view-id> 
+  <to-view-id>/searc.xhtml</to-view-id> 
   </navigation-case>
   
    <navigation-case>
   <from-action>#{customer.Calendarcustomer}</from-action> 
   <from-outcome>calendar</from-outcome> 
-  <to-view-id>/searc.jsp</to-view-id> 
+  <to-view-id>/searc.xhtml</to-view-id> 
   </navigation-case>
 <navigation-case>
   <from-action>#{customer.NavigCustomer}</from-action> 
   <from-outcome>sub</from-outcome> 
-  <to-view-id>/Home.jsp</to-view-id> 
+  <to-view-id>/Home.xhtml</to-view-id> 
   </navigation-case>
   </navigation-rule>
   
@@ -97,97 +97,97 @@
   
   
   <navigation-rule>
-  <from-view-id>/report.jsp</from-view-id> 
+  <from-view-id>/report.xhtml</from-view-id> 
 <navigation-case>
   <from-action>#{customer.addCustomer}</from-action> 
   <from-outcome>add</from-outcome> 
-  <to-view-id>/report.jsp</to-view-id> 
+  <to-view-id>/report.xhtml</to-view-id> 
   </navigation-case>
 <navigation-case>
   <from-action>#{customer.ResultCustomer}</from-action> 
   <from-outcome>result</from-outcome> 
-  <to-view-id>/report.jsp</to-view-id> 
+  <to-view-id>/report.xhtml</to-view-id> 
   </navigation-case>
   <navigation-case>
   <from-action>#{customer.EditCustomer}</from-action> 
   <from-outcome>edit</from-outcome> 
-  <to-view-id>/insert.jsp</to-view-id> 
+  <to-view-id>/insert.xhtml</to-view-id> 
   </navigation-case>
   <navigation-case>
   <from-action>#{customer.MandayEntryCustomer}</from-action> 
   <from-outcome>company</from-outcome> 
-  <to-view-id>/mandayEntry.jsp</to-view-id> 
+  <to-view-id>/mandayEntry.xhtml</to-view-id> 
   </navigation-case>
  <navigation-case>
   <from-action>#{customer.ResultAll}</from-action> 
   <from-outcome>all</from-outcome> 
-  <to-view-id>/report.jsp</to-view-id> 
+  <to-view-id>/report.xhtml</to-view-id> 
   </navigation-case>
  <navigation-case>
   <from-action>#{customer.DropDowns}</from-action> 
   <from-outcome>values</from-outcome> 
-  <to-view-id>/report.jsp</to-view-id> 
+  <to-view-id>/report.xhtml</to-view-id> 
   </navigation-case>
     <navigation-case>
   <from-action>#{customer.Calendarcustomer}</from-action> 
   <from-outcome>calendar</from-outcome> 
-  <to-view-id>/report.jsp</to-view-id> 
+  <to-view-id>/report.xhtml</to-view-id> 
   </navigation-case>
   
   <navigation-case>
   <from-action>#{customer.NavigCustomer}</from-action> 
   <from-outcome>sub</from-outcome> 
-  <to-view-id>/Home.jsp</to-view-id> 
+  <to-view-id>/Home.xhtml</to-view-id> 
   </navigation-case>
    </navigation-rule>
   
   
   
 <navigation-rule>
-  <from-view-id>/insert.jsp</from-view-id> 
+  <from-view-id>/insert.xhtml</from-view-id> 
  <navigation-case>
   <from-action>#{customer.addAction}</from-action> 
   <from-outcome>insert</from-outcome> 
-  <to-view-id>/searc.jsp</to-view-id> 
+  <to-view-id>/searc.xhtml</to-view-id> 
   </navigation-case>
   <navigation-case>
   <from-action>#{customer.NavigCustomer}</from-action> 
   <from-outcome>sub</from-outcome> 
-  <to-view-id>/Home.jsp</to-view-id> 
+  <to-view-id>/Home.xhtml</to-view-id> 
   </navigation-case>
   </navigation-rule>
    <navigation-rule>
-  <from-view-id>/addNew.jsp</from-view-id> 
+  <from-view-id>/addNew.xhtml</from-view-id> 
  <navigation-case>
   <from-action>#{customer.addCustomer}</from-action> 
   <from-outcome>add</from-outcome> 
-  <to-view-id>/searc.jsp</to-view-id> 
+  <to-view-id>/searc.xhtml</to-view-id> 
   </navigation-case>
   <navigation-case>
   <from-action>#{customer.NavigCustomer}</from-action> 
   <from-outcome>sub</from-outcome> 
-  <to-view-id>/Home.jsp</to-view-id> 
+  <to-view-id>/Home.xhtml</to-view-id> 
   </navigation-case>
   </navigation-rule>
   
   
   
   <navigation-rule>
-  <from-view-id>/mandayEntry.jsp</from-view-id> 
+  <from-view-id>/mandayEntry.xhtml</from-view-id> 
  <navigation-case>
   <from-action>#{customer.Entrycustomer}</from-action> 
   <from-outcome>entry</from-outcome> 
-  <to-view-id>/mandayEntry.jsp</to-view-id> 
+  <to-view-id>/mandayEntry.xhtml</to-view-id> 
   </navigation-case>
   <navigation-case>
   <from-action>#{customer.updateAction}</from-action> 
   <from-outcome>update</from-outcome> 
-  <to-view-id>/mandayEntry.jsp</to-view-id> 
+  <to-view-id>/mandayEntry.xhtml</to-view-id> 
   </navigation-case>
   <navigation-case>
   <from-action>#{customer.NavigCustomer}</from-action> 
   <from-outcome>sub</from-outcome> 
-  <to-view-id>/Home.jsp</to-view-id> 
+  <to-view-id>/Home.xhtml</to-view-id> 
   </navigation-case>
   </navigation-rule>
 
@@ -195,116 +195,116 @@
 
 <navigation-rule>
 
-  <from-view-id>/quote.jsp</from-view-id> 
+  <from-view-id>/quote.xhtml</from-view-id> 
   
 <navigation-case>
 <from-action>#{quote.ResultQuote}</from-action> 
   <from-outcome>result</from-outcome> 
-   <to-view-id>/quote.jsp</to-view-id> 
+   <to-view-id>/quote.xhtml</to-view-id> 
     </navigation-case>
 <navigation-case>
 <from-action>#{quote.EditCustomer}</from-action> 
   <from-outcome>edit</from-outcome> 
-  <to-view-id>/insertQuote.jsp</to-view-id> 
+  <to-view-id>/insertQuote.xhtml</to-view-id> 
   </navigation-case>
   <navigation-case>
   <from-action>#{quote1.addCustomer}</from-action> 
   <from-outcome>add</from-outcome>   
-  <to-view-id>/quote.jsp</to-view-id> 
+  <to-view-id>/quote.xhtml</to-view-id> 
   </navigation-case>
   <navigation-case>
   <from-action>#{quote.NavigQuote}</from-action> 
   <from-outcome>sub</from-outcome> 
-  <to-view-id>/Home.jsp</to-view-id> 
+  <to-view-id>/Home.xhtml</to-view-id> 
   </navigation-case>
 </navigation-rule>
 
 <navigation-rule>
-  <from-view-id>/insertQuote.jsp</from-view-id> 
+  <from-view-id>/insertQuote.xhtml</from-view-id> 
  <navigation-case>
   <from-action>#{quote.addAction}</from-action> 
   <from-outcome>insert</from-outcome> 
-  <to-view-id>/quote.jsp</to-view-id> 
+  <to-view-id>/quote.xhtml</to-view-id> 
   </navigation-case>
   <navigation-case>
   <from-action>#{quote.NavigQuote}</from-action> 
   <from-outcome>sub</from-outcome> 
-  <to-view-id>/Home.jsp</to-view-id> 
+  <to-view-id>/Home.xhtml</to-view-id> 
   </navigation-case>
   </navigation-rule>
   
 <navigation-rule>
-  <from-view-id>/addNewQuote.jsp</from-view-id> 
+  <from-view-id>/addNewQuote.xhtml</from-view-id> 
  <navigation-case>
   <from-action>#{quote1.addCustomer}</from-action> 
   <from-outcome>add</from-outcome> 
-  <to-view-id>/quote.jsp</to-view-id> 
+  <to-view-id>/quote.xhtml</to-view-id> 
   </navigation-case>
   <navigation-case>
   <from-action>#{quote.NavigQuote}</from-action> 
   <from-outcome>sub</from-outcome> 
-  <to-view-id>/Home.jsp</to-view-id> 
+  <to-view-id>/Home.xhtml</to-view-id> 
   </navigation-case>
   </navigation-rule>
 
 
 <navigation-rule>
 
-  <from-view-id>/Order.jsp</from-view-id> 
+  <from-view-id>/Order.xhtml</from-view-id> 
   
 <navigation-case>
 <from-action>#{orderBooking.ResultOrder}</from-action> 
   <from-outcome>result</from-outcome> 
-   <to-view-id>/Order.jsp</to-view-id> 
+   <to-view-id>/Order.xhtml</to-view-id> 
     </navigation-case>
 <navigation-case>
 <from-action>#{orderBooking.EditCustomer}</from-action> 
   <from-outcome>edit</from-outcome> 
-  <to-view-id>/insertOrder.jsp</to-view-id> 
+  <to-view-id>/insertOrder.xhtml</to-view-id> 
   </navigation-case>
   <navigation-case>
   <from-action>#{orderBooking1.addCustomer}</from-action> 
   <from-outcome>add</from-outcome>   
-  <to-view-id>/Order.jsp</to-view-id> 
+  <to-view-id>/Order.xhtml</to-view-id> 
   </navigation-case>
   <navigation-case>
   <from-action>#{orderBooking.NavigQuote}</from-action> 
   <from-outcome>sub</from-outcome> 
-  <to-view-id>/Home.jsp</to-view-id> 
+  <to-view-id>/Home.xhtml</to-view-id> 
   </navigation-case>
    <navigation-case>
   <from-action>#{orderBooking.DropDowns}</from-action> 
   <from-outcome>values</from-outcome> 
-  <to-view-id>/Order.jsp</to-view-id> 
+  <to-view-id>/Order.xhtml</to-view-id> 
   </navigation-case>
 </navigation-rule>
 
 
 <navigation-rule>
-  <from-view-id>/insertOrder.jsp</from-view-id> 
+  <from-view-id>/insertOrder.xhtml</from-view-id> 
  <navigation-case>
   <from-action>#{orderBooking.addAction}</from-action> 
   <from-outcome>insert</from-outcome> 
-  <to-view-id>/Order.jsp</to-view-id> 
+  <to-view-id>/Order.xhtml</to-view-id> 
   </navigation-case>
   <navigation-case>
   <from-action>#{orderBooking.NavigQuote}</from-action> 
   <from-outcome>sub</from-outcome> 
-  <to-view-id>/Home.jsp</to-view-id> 
+  <to-view-id>/Home.xhtml</to-view-id> 
   </navigation-case>
   </navigation-rule>
   
   <navigation-rule>
-  <from-view-id>/addNewOrder.jsp</from-view-id> 
+  <from-view-id>/addNewOrder.xhtml</from-view-id> 
  <navigation-case>
   <from-action>#{orderBooking1.addCustomer}</from-action> 
   <from-outcome>add</from-outcome> 
-  <to-view-id>/Order.jsp</to-view-id> 
+  <to-view-id>/Order.xhtml</to-view-id> 
   </navigation-case>
   <navigation-case>
   <from-action>#{orderBooking.NavigQuote}</from-action> 
   <from-outcome>sub</from-outcome> 
-  <to-view-id>/Home.jsp</to-view-id> 
+  <to-view-id>/Home.xhtml</to-view-id> 
   </navigation-case>
   </navigation-rule>
 
