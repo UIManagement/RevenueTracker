@@ -1,76 +1,314 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+
 <faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
 	version="2.2">
 
-	<managed-bean>
+<managed-bean>
 		<managed-bean-name>customer</managed-bean-name>
 		<managed-bean-class>bean.Customer</managed-bean-class>
-		<managed-bean-scope>request</managed-bean-scope>
+		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
-
-
 	<managed-bean>
 		<managed-bean-name>customer1</managed-bean-name>
 		<managed-bean-class>bean.Customer1</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
-	
-	<navigation-rule>
-		<from-view-id>/search.xhtml</from-view-id>
-		<navigation-case>
-			<from-action>#{customer.addCustomer}</from-action>
-			<from-outcome>add</from-outcome>
-			<to-view-id>/insert.xhtml</to-view-id>
-		</navigation-case>
-		<navigation-case>
-			<from-action>#{customer.ResultCustomer}</from-action>
-			<from-outcome>result</from-outcome>
-			<to-view-id>/search.xhtml</to-view-id>
-		</navigation-case>
-		<navigation-case>
-			<from-action>#{customer.Month}</from-action>
-			<from-outcome>mon</from-outcome>
-			<to-view-id>/search.xhtml</to-view-id>
-		</navigation-case>
-		<navigation-case>
-			<from-action>#{customer.EditCustomer}</from-action>
-			<from-outcome>result1</from-outcome>
-			<to-view-id>/insert.xhtml</to-view-id>
-		</navigation-case>
-		<navigation-case>
-			<from-action>#{customer.Dropcustomer}</from-action>
-			<from-outcome>three</from-outcome>
-			<to-view-id>/insert2.xhtml</to-view-id>
-		</navigation-case>
-		<navigation-case>
-			<from-action>#{customer.ResultAll}</from-action>
-			<from-outcome>all</from-outcome>
-			<to-view-id>/search.xhtml</to-view-id>
-		</navigation-case>
-		<navigation-case>
-			<from-action>#{customer.Twocustomer}</from-action>
-			<from-outcome>two</from-outcome>
-			<to-view-id>/search.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
-		<from-view-id>/search.xhtml</from-view-id>
-		<navigation-case>
-			<from-action>#{customer1.EditCustomer}</from-action>
-			<from-outcome>result1</from-outcome>
-			<to-view-id>/insert1.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
-		<from-view-id>/insert.xhtml</from-view-id>
-		<navigation-case>
-			<from-action>#{customer.addAction}</from-action>
-			<from-outcome>insert</from-outcome>
-			<to-view-id>/search.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
+	<managed-bean>
+		<managed-bean-name>orderBooking</managed-bean-name>
+		<managed-bean-class>bean.OrderBooking</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>orderBooking1</managed-bean-name>
+		<managed-bean-class>bean.OrderBooking1</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>quote</managed-bean-name>
+		<managed-bean-class>bean.Quote</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>quote1</managed-bean-name>
+		<managed-bean-class>bean.Quote1</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>rowCounter</managed-bean-name>
+		<managed-bean-class>bean.RowCounter</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
 
-</faces-config>
+
+<navigation-rule>
+
+  <from-view-id>/searc.jsp</from-view-id> 
+  
+<navigation-case>
+
+  <from-action>#{customer1.addCustomer}</from-action> 
+  <from-outcome>add</from-outcome> 
+   
+  <to-view-id>/searc.jsp</to-view-id> 
+    
+  </navigation-case>
+<navigation-case>
+  <from-action>#{customer.ResultCustomer}</from-action> 
+  <from-outcome>result</from-outcome> 
+  <to-view-id>/searc.jsp</to-view-id> 
+  </navigation-case>
+ <navigation-case>
+  <from-action>#{customer.EditCustomer}</from-action> 
+  <from-outcome>edit</from-outcome> 
+  <to-view-id>/insert.jsp</to-view-id> 
+  </navigation-case>
+  <navigation-case>
+  <from-action>#{customer.MandayEntryCustomer}</from-action> 
+  <from-outcome>company</from-outcome> 
+  <to-view-id>/mandayEntry.jsp</to-view-id> 
+  </navigation-case> 
+ <navigation-case>
+  <from-action>#{customer.ResultAll}</from-action> 
+  <from-outcome>all</from-outcome> 
+  <to-view-id>/searc.jsp</to-view-id> 
+  </navigation-case>
+ <navigation-case>
+  <from-action>#{customer.DropDowns}</from-action> 
+  <from-outcome>values</from-outcome> 
+  <to-view-id>/searc.jsp</to-view-id> 
+  </navigation-case>
+  
+   <navigation-case>
+  <from-action>#{customer.Calendarcustomer}</from-action> 
+  <from-outcome>calendar</from-outcome> 
+  <to-view-id>/searc.jsp</to-view-id> 
+  </navigation-case>
+<navigation-case>
+  <from-action>#{customer.NavigCustomer}</from-action> 
+  <from-outcome>sub</from-outcome> 
+  <to-view-id>/Home.jsp</to-view-id> 
+  </navigation-case>
+  </navigation-rule>
+  
+  
+  
+  
+  <navigation-rule>
+  <from-view-id>/report.jsp</from-view-id> 
+<navigation-case>
+  <from-action>#{customer.addCustomer}</from-action> 
+  <from-outcome>add</from-outcome> 
+  <to-view-id>/report.jsp</to-view-id> 
+  </navigation-case>
+<navigation-case>
+  <from-action>#{customer.ResultCustomer}</from-action> 
+  <from-outcome>result</from-outcome> 
+  <to-view-id>/report.jsp</to-view-id> 
+  </navigation-case>
+  <navigation-case>
+  <from-action>#{customer.EditCustomer}</from-action> 
+  <from-outcome>edit</from-outcome> 
+  <to-view-id>/insert.jsp</to-view-id> 
+  </navigation-case>
+  <navigation-case>
+  <from-action>#{customer.MandayEntryCustomer}</from-action> 
+  <from-outcome>company</from-outcome> 
+  <to-view-id>/mandayEntry.jsp</to-view-id> 
+  </navigation-case>
+ <navigation-case>
+  <from-action>#{customer.ResultAll}</from-action> 
+  <from-outcome>all</from-outcome> 
+  <to-view-id>/report.jsp</to-view-id> 
+  </navigation-case>
+ <navigation-case>
+  <from-action>#{customer.DropDowns}</from-action> 
+  <from-outcome>values</from-outcome> 
+  <to-view-id>/report.jsp</to-view-id> 
+  </navigation-case>
+    <navigation-case>
+  <from-action>#{customer.Calendarcustomer}</from-action> 
+  <from-outcome>calendar</from-outcome> 
+  <to-view-id>/report.jsp</to-view-id> 
+  </navigation-case>
+  
+  <navigation-case>
+  <from-action>#{customer.NavigCustomer}</from-action> 
+  <from-outcome>sub</from-outcome> 
+  <to-view-id>/Home.jsp</to-view-id> 
+  </navigation-case>
+   </navigation-rule>
+  
+  
+  
+<navigation-rule>
+  <from-view-id>/insert.jsp</from-view-id> 
+ <navigation-case>
+  <from-action>#{customer.addAction}</from-action> 
+  <from-outcome>insert</from-outcome> 
+  <to-view-id>/searc.jsp</to-view-id> 
+  </navigation-case>
+  <navigation-case>
+  <from-action>#{customer.NavigCustomer}</from-action> 
+  <from-outcome>sub</from-outcome> 
+  <to-view-id>/Home.jsp</to-view-id> 
+  </navigation-case>
+  </navigation-rule>
+   <navigation-rule>
+  <from-view-id>/addNew.jsp</from-view-id> 
+ <navigation-case>
+  <from-action>#{customer.addCustomer}</from-action> 
+  <from-outcome>add</from-outcome> 
+  <to-view-id>/searc.jsp</to-view-id> 
+  </navigation-case>
+  <navigation-case>
+  <from-action>#{customer.NavigCustomer}</from-action> 
+  <from-outcome>sub</from-outcome> 
+  <to-view-id>/Home.jsp</to-view-id> 
+  </navigation-case>
+  </navigation-rule>
+  
+  
+  
+  <navigation-rule>
+  <from-view-id>/mandayEntry.jsp</from-view-id> 
+ <navigation-case>
+  <from-action>#{customer.Entrycustomer}</from-action> 
+  <from-outcome>entry</from-outcome> 
+  <to-view-id>/mandayEntry.jsp</to-view-id> 
+  </navigation-case>
+  <navigation-case>
+  <from-action>#{customer.updateAction}</from-action> 
+  <from-outcome>update</from-outcome> 
+  <to-view-id>/mandayEntry.jsp</to-view-id> 
+  </navigation-case>
+  <navigation-case>
+  <from-action>#{customer.NavigCustomer}</from-action> 
+  <from-outcome>sub</from-outcome> 
+  <to-view-id>/Home.jsp</to-view-id> 
+  </navigation-case>
+  </navigation-rule>
+
+
+
+<navigation-rule>
+
+  <from-view-id>/quote.jsp</from-view-id> 
+  
+<navigation-case>
+<from-action>#{quote.ResultQuote}</from-action> 
+  <from-outcome>result</from-outcome> 
+   <to-view-id>/quote.jsp</to-view-id> 
+    </navigation-case>
+<navigation-case>
+<from-action>#{quote.EditCustomer}</from-action> 
+  <from-outcome>edit</from-outcome> 
+  <to-view-id>/insertQuote.jsp</to-view-id> 
+  </navigation-case>
+  <navigation-case>
+  <from-action>#{quote1.addCustomer}</from-action> 
+  <from-outcome>add</from-outcome>   
+  <to-view-id>/quote.jsp</to-view-id> 
+  </navigation-case>
+  <navigation-case>
+  <from-action>#{quote.NavigQuote}</from-action> 
+  <from-outcome>sub</from-outcome> 
+  <to-view-id>/Home.jsp</to-view-id> 
+  </navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+  <from-view-id>/insertQuote.jsp</from-view-id> 
+ <navigation-case>
+  <from-action>#{quote.addAction}</from-action> 
+  <from-outcome>insert</from-outcome> 
+  <to-view-id>/quote.jsp</to-view-id> 
+  </navigation-case>
+  <navigation-case>
+  <from-action>#{quote.NavigQuote}</from-action> 
+  <from-outcome>sub</from-outcome> 
+  <to-view-id>/Home.jsp</to-view-id> 
+  </navigation-case>
+  </navigation-rule>
+  
+<navigation-rule>
+  <from-view-id>/addNewQuote.jsp</from-view-id> 
+ <navigation-case>
+  <from-action>#{quote1.addCustomer}</from-action> 
+  <from-outcome>add</from-outcome> 
+  <to-view-id>/quote.jsp</to-view-id> 
+  </navigation-case>
+  <navigation-case>
+  <from-action>#{quote.NavigQuote}</from-action> 
+  <from-outcome>sub</from-outcome> 
+  <to-view-id>/Home.jsp</to-view-id> 
+  </navigation-case>
+  </navigation-rule>
+
+
+<navigation-rule>
+
+  <from-view-id>/Order.jsp</from-view-id> 
+  
+<navigation-case>
+<from-action>#{orderBooking.ResultOrder}</from-action> 
+  <from-outcome>result</from-outcome> 
+   <to-view-id>/Order.jsp</to-view-id> 
+    </navigation-case>
+<navigation-case>
+<from-action>#{orderBooking.EditCustomer}</from-action> 
+  <from-outcome>edit</from-outcome> 
+  <to-view-id>/insertOrder.jsp</to-view-id> 
+  </navigation-case>
+  <navigation-case>
+  <from-action>#{orderBooking1.addCustomer}</from-action> 
+  <from-outcome>add</from-outcome>   
+  <to-view-id>/Order.jsp</to-view-id> 
+  </navigation-case>
+  <navigation-case>
+  <from-action>#{orderBooking.NavigQuote}</from-action> 
+  <from-outcome>sub</from-outcome> 
+  <to-view-id>/Home.jsp</to-view-id> 
+  </navigation-case>
+   <navigation-case>
+  <from-action>#{orderBooking.DropDowns}</from-action> 
+  <from-outcome>values</from-outcome> 
+  <to-view-id>/Order.jsp</to-view-id> 
+  </navigation-case>
+</navigation-rule>
+
+
+<navigation-rule>
+  <from-view-id>/insertOrder.jsp</from-view-id> 
+ <navigation-case>
+  <from-action>#{orderBooking.addAction}</from-action> 
+  <from-outcome>insert</from-outcome> 
+  <to-view-id>/Order.jsp</to-view-id> 
+  </navigation-case>
+  <navigation-case>
+  <from-action>#{orderBooking.NavigQuote}</from-action> 
+  <from-outcome>sub</from-outcome> 
+  <to-view-id>/Home.jsp</to-view-id> 
+  </navigation-case>
+  </navigation-rule>
+  
+  <navigation-rule>
+  <from-view-id>/addNewOrder.jsp</from-view-id> 
+ <navigation-case>
+  <from-action>#{orderBooking1.addCustomer}</from-action> 
+  <from-outcome>add</from-outcome> 
+  <to-view-id>/Order.jsp</to-view-id> 
+  </navigation-case>
+  <navigation-case>
+  <from-action>#{orderBooking.NavigQuote}</from-action> 
+  <from-outcome>sub</from-outcome> 
+  <to-view-id>/Home.jsp</to-view-id> 
+  </navigation-case>
+  </navigation-rule>
+
+
+
+
+	</faces-config>
