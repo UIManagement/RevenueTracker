@@ -981,69 +981,7 @@ public class Customer {
 
 		return "insert";
 	}
-//addcustomer
-//	public String addCustomer() throws SQLException {
-//		try {
-//			this.custInfoAll.clear();
-//			Labcon lc = new Labcon();
-//			MySQLcon = lc.getLocalConnection();
-//			stmt = MySQLcon.createStatement();
-//			String dbcustid = this.customer_Name1;
-//			String dbcustname = this.customer_Type1;
-//			String dbcustadd = this.region1;
-//			String dbcustwrk = this.workOrder1;
-//			String dbcustver = this.vertical1;
-//			String dbcustind = this.industry1;
-//			String dbcustser = this.service1;
-//			String dbcuststa = this.stage1;
-//			String dbcustpro = this.product1;
-//			String dbcustdes = this.designation1;
-//			String dbcustoby = this.order_Booked_By1;
-//			String dbcustwod = this.work_Order_Date1;
-//			String dbcustcurr = this.currency1;
-//			double dbcustwo = this.work_Order_Value1;
-//			double dbcuster = this.exchange_Rate1;
-//			
-//			String dbcustsrv = this.shared_Revenue1;
-//			double dbcustwoas = this.work_Order_Assessment_fee1;
-//			double dbcustwls = this.work_Order_Logo_fee1;
-//			double dbcustupwo = this.updated_Work_Order1;
-//			double dbcustuws = this.updated_WO_Assessment_fee1;
-//			String dbcustwomd = this.work_Order_Mandays1;
-//			double dbcustdm = this.dm1;//period_Mandays
-//			String dbcustsdat = this.startDate1;
-//			String dbcusten = this.endDate1;
-//			String dbcustinv = this.invoice1;
-//			String dbcustivd = this.invoice_Date1;
-//			double dbcustass = this.assessment_Fees1;
-//			double dbcustlog = this.logo_Fee_Database1;
-//			double dbcusttl = this.t_L1;
-//			int dbcustbr = this.bR1;
-//			int dbcustmand = this.mandayvalue1;
-//			
-//			double dbcuststax = this.service_Tax1;
-//			double dbcusttia = this.total_Invoice_Amount1;
-//			String c = "INR";
-//			if (dbcustcurr.equals(c)) {
-//			String query = "insert into revenue.master(bR,customer_Name,customer_Type,region,workOrder,vertical,industry,service,stage,product,designation,order_Booked_By,work_Order_Date,currency,work_Order_Value,exchange_Rate,shared_Revenue,work_Order_Assessment_fee,work_Order_Logo_fee,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,service_Tax,total_Invoice_Amount,period_Mandays) values('" + dbcustbr + "','" + dbcustid + "','" + dbcustname + "','" + dbcustadd + "','" + dbcustwrk + "','" + dbcustver + "','" + dbcustind + "','" + dbcustser + "','" + dbcuststa + "','" + dbcustpro + "','" + dbcustdes + "','" + dbcustoby + "','" + dbcustwod + "','" + dbcustcurr + "',('" + dbcustwoas+ "' + '" + dbcustwls+ "' ),'" + dbcuster + "','" + dbcustsrv + "','" + dbcustwoas + "','" + dbcustwls+ "' ,('" + dbcustwoas+ "' + '" + dbcustwls+ "' ),'" + dbcustwoas + "','" + dbcustwomd + "','" + dbcustdm + "','" + dbcustsdat + "','" + dbcusten + "','" + dbcustinv + "','" + dbcustivd + "','" + dbcustass + "','" + dbcustlog + "','" + dbcusttl + "','" + dbcuststax + "',('" + dbcustass + "' + '"+ dbcustlog + "'+'"+ dbcusttl + "'+'"+ dbcuststax + "'),'"+ dbcustmand + "' )";
-//			System.out.println("Update in SearchCustomer Table–" + query);
-//			stmt.executeUpdate(query);
-//			}
-//			else{
-//
-//				String query = "insert into revenue.master(bR,customer_Name,customer_Type,region,workOrder,vertical1,industry,service1,stage,product,designation,order_Booked_By,work_Order_Date,currency,work_Order_Value,exchange_Rate,shared_Revenue,work_Order_Assessment_fee,work_Order_Logo_fee,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Manday,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,service_Tax,total_Invoice_Amount,period_Mandays) values('" + dbcustbr + "','" + dbcustid + "','" + dbcustname + "','" + dbcustadd + "','" + dbcustwrk + "','" + dbcustver + "','" + dbcustind + "','" + dbcustser + "','" + dbcuststa + "','" + dbcustpro + "','" + dbcustdes + "','" + dbcustoby + "','" + dbcustwod + "','" + dbcustcurr + "',('" + dbcustwoas+ "' + '" + dbcustwls+ "' ),'" + dbcuster + "','" + dbcustsrv + "','" + dbcustwoas + "','" + dbcustwls+ "' ,('" + dbcuster+ "' * ('" + dbcustwoas+ "' + '" + dbcustwls+ "' ) ),('" + dbcustwoas + "' * '"+ dbcuster + "'),'" + dbcustwomd + "','" + dbcustdm + "','" + dbcustsdat + "','" + dbcusten + "','" + dbcustinv + "','" + dbcustivd + "','" + dbcustass + "','" + dbcustlog + "','" + dbcusttl + "','" + dbcuststax + "',('" + dbcustass + "' + '"+ dbcustlog + "'+'"+ dbcusttl + "'+'"+ dbcuststax + "'),'"+ dbcustmand + "' )";
-//				System.out.println("Update in SearchCustomer Table–" + query);
-//				stmt.executeUpdate(query);
-//					
-//			}
-//			
-//		} catch (Exception ex) {
-//			ex.printStackTrace();
-//			System.out.println("Exception in addAction:-" + ex.getMessage());
-//		}
-//
-//		return "add";
-//	}
+
 	// adddateaction
 
 	public String updateAction() throws SQLException {
