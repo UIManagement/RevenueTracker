@@ -7,7 +7,7 @@
 	
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
-<title>Home Page </title>
+<title>Home Page</title>
 <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
 <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
 
@@ -100,7 +100,7 @@
 		<div class="shell">
 			<br/> <br/> <span class="right"><font
 				face="Times New Roman" size="5" color="SteelBlue"> Revenue
-					 Tracker</font> 
+					Tracker</font> 
 					</span> 
 					
 				<span class="right">	<h:commandLink id="next" action="#{customer.NavigCustomer}">
@@ -112,6 +112,9 @@
 					
 					
 					
+<!-- 					<a href="Home.jsp"><img -->
+<!-- 					src="css/images/hom.png"></img> </a>  -->
+
 
 	
 					
@@ -162,12 +165,12 @@
 				
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				
-				<a href="addNew.xhtml">Add New Customer</a>
+				<a href="addNew.jsp">Add New Customer</a>
 			
 			
 
 			<!--  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-		
+			
  <br/><br/>
  
    
@@ -207,11 +210,11 @@
 				<td><h:selectOneMenu value="#{customer.searchName3}">
 				<f:selectItem itemValue="" itemLabel="" />
 						<f:selectItem itemValue="Aerospace" itemLabel="Aerospace" />
-							<f:selectItem itemValue="Medical  Healthcare"
-								itemLabel="Medical  Healthcare" />
+							<f:selectItem itemValue="Medical Healthcare"
+								itemLabel="Medical Healthcare" />
 							<f:selectItem itemValue="Energy" itemLabel="Energy" />
 							<f:selectItem itemValue="RC 14001" itemLabel="RC 14001" />
-							<f:selectItem itemValue="CI (V)" itemLabel="CI (V)" />
+							<f:selectItem itemValue="C&I (V)" itemLabel="C&I (V)" />
 							<f:selectItem itemValue="Others" itemLabel="Others" />
 												</h:selectOneMenu> <h:message id="CustomerverticalMessage" for="vertical" /></td>
 			</tr>
@@ -219,22 +222,12 @@
 			<tr>
 				<td><b> <h:outputLabel value="Service" for="service" /> </b>
 				</td>
-				<td><h:selectOneMenu value="#{customer.searchName4}">
-				<f:selectItem itemValue="" itemLabel="" />
-						<f:selectItem itemValue="RA" itemLabel="RA" />
-						<f:selectItem itemValue="1st Annual Assessment" itemLabel="1st Annual Assessment" />
-							<f:selectItem itemValue="GC Mark" itemLabel="GC Mark" />
-							<f:selectItem itemValue="CA" itemLabel="CA" />
-							<f:selectItem itemValue="TRA" itemLabel="TRA" />
-							<f:selectItem itemValue="KSC Inhouse" itemLabel="KSC Inhouse" />
-							<f:selectItem itemValue="KSC Openhouse" itemLabel="KSC Openhouse" />
-							<f:selectItem itemValue="KSC Special assessment"
-								itemLabel="KSC Special assessment" />
-							<f:selectItem itemValue="KSC Solution" itemLabel="KSC Solution" />
-							<f:selectItem itemValue="KSC MTS" itemLabel="KSC MTS" />
-							<f:selectItem itemValue="PPP" itemLabel="PPP" />
-							<f:selectItem itemValue="Safety" itemLabel="Safety" />
-					</h:selectOneMenu> <h:message id="CustomerserviceMessage" for="service" /></td>
+				<td><h:selectManyCheckbox value="#{customer.searchName4}">
+				
+				<f:selectItem itemValue="RA" itemLabel="RA" />
+				<f:selectItem itemValue="1st Annual Assessment" itemLabel="1st Annual Assessment" />
+
+					</h:selectManyCheckbox> <h:message id="CustomerserviceMessage" for="service" /></td>
 			</tr>	
 			
 
@@ -248,7 +241,6 @@
 			<h:outputLabel value="EndDate" for="endDatePicker" />
 			<h:inputText id="enddate" value="#{customer.dateb}"    >
 			</h:inputText>
-
 			<h:commandButton value="Go" action="#{customer.DropDowns}" />
 			
 			 &nbsp;&nbsp;
@@ -258,7 +250,13 @@
 
 			<br/>
 			<br/>
-			<br/><h:dataTable value="#{customer.custInfoAll}" var="custInfo" styleClass="order-table" headerClass="order-table-header" border="5" rowClasses="order-table-odd-row,order-table-even-row" footerClass="order-table-footer">
+			<br/>
+<div style="height:300px;overflow-x:auto;overflow-y:scroll;">
+
+                               
+			<h:dataTable value="#{customer.custInfoAll}" var="custInfo"
+				styleClass="order-table" headerClass="order-table-header" border="5"
+				rowClasses="order-table-odd-row,order-table-even-row"  footerClass="order-table-footer" >
 
 				<h:column>
 					<f:facet name="header">
@@ -590,8 +588,10 @@
 
 					</f:facet>
 
-					<h:commandButton value="edit" action="#{customer.EditCustomer}" image="css/images/edit.gif">
-						<f:setPropertyActionListener target="#{customer}" value="#{custInfo}" />
+					<h:commandButton value="edit" action="#{customer.EditCustomer}"
+						image="css/images/edit.gif">
+						<f:setPropertyActionListener target="#{customer}"
+							value="#{custInfo}" />
 
 					</h:commandButton>
 
@@ -605,8 +605,11 @@
 
 					</f:facet>
 
-					<h:commandButton value="edit" action="#{customer.MandayEntryCustomer}" image="css/images/edit.gif">
-						<f:setPropertyActionListener target="#{customer}" value="#{custInfo}" />
+					<h:commandButton value="edit"
+						action="#{customer.MandayEntryCustomer}"
+						image="css/images/edit.gif">
+						<f:setPropertyActionListener target="#{customer}"
+							value="#{custInfo}" />
 
 
 					</h:commandButton>
@@ -615,12 +618,8 @@
 
   	 	
 			</h:dataTable>
-<div style="height:300px;overflow-x:auto;overflow-y:scroll;">
-
-                               
 			
-			
-	
+		
 				
 			
 			 </div>
