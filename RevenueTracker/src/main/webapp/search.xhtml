@@ -170,7 +170,9 @@
 		
  <br/><br/>
  
-  <tr>
+   
+  
+<tr>
 				<td><b> <h:outputLabel value="Customer Type"
 							for="customer_Type" /> </b>
 				</td>
@@ -190,7 +192,7 @@
 				<td><h:selectOneMenu value="#{customer.searchName2}">
 						<f:selectItem itemValue="" itemLabel="" />
 						<f:selectItem itemValue="Aerospace" itemLabel="Aerospace" />
-						<f:selectItem itemValue="C&amp;I (R) " itemLabel="C&amp;I (R) " />
+						<f:selectItem itemValue="CI (R) " itemLabel="CI (R) " />
 						<f:selectItem itemValue="Gujarat" itemLabel="Gujarat" />
 						<f:selectItem itemValue="Maharashtra" itemLabel="Maharashtra" />
 						<f:selectItem itemValue="North &amp; East" itemLabel="North &amp; East" />
@@ -205,11 +207,11 @@
 				<td><h:selectOneMenu value="#{customer.searchName3}">
 				<f:selectItem itemValue="" itemLabel="" />
 						<f:selectItem itemValue="Aerospace" itemLabel="Aerospace" />
-							<f:selectItem itemValue="Medical &amp; Healthcare"
-								itemLabel="Medical &amp; Healthcare" />
+							<f:selectItem itemValue="Medical  Healthcare"
+								itemLabel="Medical  Healthcare" />
 							<f:selectItem itemValue="Energy" itemLabel="Energy" />
 							<f:selectItem itemValue="RC 14001" itemLabel="RC 14001" />
-							<f:selectItem itemValue="C&amp;I (V)" itemLabel="C&amp;I (V)" />
+							<f:selectItem itemValue="CI (V)" itemLabel="CI (V)" />
 							<f:selectItem itemValue="Others" itemLabel="Others" />
 												</h:selectOneMenu> <h:message id="CustomerverticalMessage" for="vertical" /></td>
 			</tr>
@@ -217,17 +219,24 @@
 			<tr>
 				<td><b> <h:outputLabel value="Service" for="service" /> </b>
 				</td>
-				<td><h:selectManyCheckbox value="#{customer.searchName4}">
-				
-				<f:selectItem itemValue="RA" itemLabel="RA" />
-				<f:selectItem itemValue="1st Annual Assessment" itemLabel="1st Annual Assessment" />
-
-					</h:selectManyCheckbox> <h:message id="CustomerserviceMessage" for="service" /></td>
+				<td><h:selectOneMenu value="#{customer.searchName4}">
+				<f:selectItem itemValue="" itemLabel="" />
+						<f:selectItem itemValue="RA" itemLabel="RA" />
+						<f:selectItem itemValue="1st Annual Assessment" itemLabel="1st Annual Assessment" />
+							<f:selectItem itemValue="GC Mark" itemLabel="GC Mark" />
+							<f:selectItem itemValue="CA" itemLabel="CA" />
+							<f:selectItem itemValue="TRA" itemLabel="TRA" />
+							<f:selectItem itemValue="KSC Inhouse" itemLabel="KSC Inhouse" />
+							<f:selectItem itemValue="KSC Openhouse" itemLabel="KSC Openhouse" />
+							<f:selectItem itemValue="KSC Special assessment"
+								itemLabel="KSC Special assessment" />
+							<f:selectItem itemValue="KSC Solution" itemLabel="KSC Solution" />
+							<f:selectItem itemValue="KSC MTS" itemLabel="KSC MTS" />
+							<f:selectItem itemValue="PPP" itemLabel="PPP" />
+							<f:selectItem itemValue="Safety" itemLabel="Safety" />
+					</h:selectOneMenu> <h:message id="CustomerserviceMessage" for="service" /></td>
 			</tr>	
 			
-
-  
-  
 
  
  &nbsp;&nbsp;
@@ -508,7 +517,7 @@
 				
 				<h:column>
 					<f:facet name="header">
-						<h:outputText value="T&amp;L " />
+						<h:outputText value="TL " />
 					</f:facet>
 					<h:outputText value="#{custInfo.t_L}">
 					</h:outputText>
