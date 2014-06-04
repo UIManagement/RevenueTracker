@@ -45,20 +45,20 @@
 
 <navigation-rule>
 
-  <from-view-id>/searc.xhtml</from-view-id> 
+  <from-view-id>/search.xhtml</from-view-id> 
   
 <navigation-case>
 
   <from-action>#{customer1.addCustomer}</from-action> 
   <from-outcome>add</from-outcome> 
    
-  <to-view-id>/searc.xhtml</to-view-id> 
+  <to-view-id>/search.xhtml</to-view-id> 
     
   </navigation-case>
 <navigation-case>
   <from-action>#{customer.ResultCustomer}</from-action> 
   <from-outcome>result</from-outcome> 
-  <to-view-id>/searc.xhtml</to-view-id> 
+  <to-view-id>/search.xhtml</to-view-id> 
   </navigation-case>
  <navigation-case>
   <from-action>#{customer.EditCustomer}</from-action> 
@@ -73,18 +73,18 @@
  <navigation-case>
   <from-action>#{customer.ResultAll}</from-action> 
   <from-outcome>all</from-outcome> 
-  <to-view-id>/searc.xhtml</to-view-id> 
+  <to-view-id>/search.xhtml</to-view-id> 
   </navigation-case>
  <navigation-case>
   <from-action>#{customer.DropDowns}</from-action> 
   <from-outcome>values</from-outcome> 
-  <to-view-id>/searc.xhtml</to-view-id> 
+  <to-view-id>/search.xhtml</to-view-id> 
   </navigation-case>
   
    <navigation-case>
   <from-action>#{customer.Calendarcustomer}</from-action> 
   <from-outcome>calendar</from-outcome> 
-  <to-view-id>/searc.xhtml</to-view-id> 
+  <to-view-id>/search.xhtml</to-view-id> 
   </navigation-case>
 <navigation-case>
   <from-action>#{customer.NavigCustomer}</from-action> 
@@ -148,7 +148,7 @@
  <navigation-case>
   <from-action>#{customer.addAction}</from-action> 
   <from-outcome>insert</from-outcome> 
-  <to-view-id>/searc.xhtml</to-view-id> 
+  <to-view-id>/search.xhtml</to-view-id> 
   </navigation-case>
   <navigation-case>
   <from-action>#{customer.NavigCustomer}</from-action> 
@@ -161,7 +161,7 @@
  <navigation-case>
   <from-action>#{customer.addCustomer}</from-action> 
   <from-outcome>add</from-outcome> 
-  <to-view-id>/searc.xhtml</to-view-id> 
+  <to-view-id>/search.xhtml</to-view-id> 
   </navigation-case>
   <navigation-case>
   <from-action>#{customer.NavigCustomer}</from-action> 
