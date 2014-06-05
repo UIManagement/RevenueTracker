@@ -11,11 +11,6 @@ import javax.faces.context.FacesContext;
 
 public class Customer {
 	
-	
-	
-	
-	
-	
 	private String customer_Name;
 	private String customer_Type;
 	private String region;
@@ -1014,7 +1009,7 @@ public class Customer {
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
-			System.out.println("Exception in addAction:-" + ex.getMessage());
+			System.out.println("Exception in add:-" + ex.getMessage());
 		}
 
 		return "update";
@@ -4347,6 +4342,7 @@ public class Customer {
 					
 					System.out.println(rs.getDouble(4) + "manday");
 					cust.setdm(rs.getDouble(4));
+					
 					System.out.println(rs.getDouble(5) + "periodrev");
 					cust.setperiod_rev(rs.getDouble(5));
 					
