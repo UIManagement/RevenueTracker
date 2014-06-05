@@ -938,7 +938,7 @@ public class Customer {
 						+ dbcuststa + "',designation='" + dbcustdes
 						+ "',order_Booked_By='" + dbcustoby
 						+ "',work_Order_Date='" + dbcustwod + "',currency='"+ dbcustcurr + "',work_Order_Assessment_fee='"+ dbcustwoas + "',work_Order_Logo_fee='" + dbcustwls+ "',shared_Revenue='" + dbcustsrv+ "',work_Order_Value=('" + dbcustwoas+ "' + '" + dbcustwls+ "' ),exchange_Rate='" + dbcuster+ "',updated_Work_Order=('" + dbcustwoas+ "' + '" + dbcustwls+ "' ),updated_WO_Assessment_fee='" + dbcustwoas+ "',work_Order_Mandays='" + dbcustwomd+ "',start_month='" + dbcustsm+ "',delivered_Mandays='" + dbcustdm + "',startDate='"+ dbcustsdat + "',endDate='" + dbcusten + "',invoice='"+ dbcustinv + "',invoice_Date='" + dbcustivd+ "',assessment_Fees='" + dbcustass+ "',logo_Fee_Database='" + dbcustlog + "',t_L='"+ dbcusttl + "',period_Mandays='" + dbcustmand+ "',workOrder='" + dbcustwrk + "',service_Tax='" + dbcuststax + "',total_Invoice_Amount=('" + dbcustass + "' + '"+ dbcustlog + "'+'"+ dbcusttl + "'+'"+ dbcuststax + "'),Period_Revenue= ((('" + dbcustwoas+ "' + '" + dbcustwls+ "' )/'" + dbcustdm + "')* '" + dbcustmand+ "') where masterid = '"+ dbcustmid + "' ";
-				System.out.println("Update in SearchCustomer Table–" + query);
+				System.out.println("update in SearchCustomer Table–" +query);
 				stmt.executeUpdate(query);// rs=stmt.executeQuery(strSql);
 			}
 
@@ -984,7 +984,7 @@ public class Customer {
 
 			Labcon lc = new Labcon();
 			MySQLcon = lc.getLocalConnection();
-			stmt = MySQLcon.createStatement();
+			stmt=MySQLcon.createStatement();
 			
 			String dbcustmid = this.masterid;
 			;
@@ -1132,15 +1132,17 @@ public class Customer {
 
 
 
-			String strSql = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database, t_L,service_Tax,total_Invoice_Amount,period_Mandays,workOrder,SUM(table.mandayvalue) from revenue.master left join  revenue.table on (master.masterid=table.master_masterid) where customer_Name like '"+ searchName + "%'  group by master.masterid ";
+			String strSql = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database, t_L,service_Tax,ROUND(service_Tax,2),total_Invoice_Amount,period_Mandays,workOrder,SUM(table.mandayvalue) from revenue.master left join  revenue.table on (master.masterid=table.master_masterid) where customer_Name like '"+ searchName + "%'  group by master.masterid ";
 			System.err.println("Search2 query:-" + strSql);
 			rs = stmt.executeQuery(strSql);
 
 			System.out.println(strSql);
 			while (rs.next()) {
-				Customer cust = new Customer();
+				Customer cust = new Customer();//ROUND(service_Tax,2)
 				System.out.println(rs.getDouble("SUM(table.mandayvalue)") + "manday");
 				cust.setmandayvalue(rs.getDouble("SUM(table.mandayvalue)"));
+				
+				
 			
 				
 				System.out.println(rs.getDouble("SUM(table.mandayvalue)") + "manday");
@@ -1221,8 +1223,12 @@ public class Customer {
 				cust.setLogo_Fee_Database(rs.getDouble("logo_Fee_Database"));
 				System.out.println(rs.getDouble("t_L") + "custname");
 				cust.sett_L(rs.getDouble("t_L"));
-				System.out.println(rs.getDouble("service_Tax") + "custname");
-				cust.setservice_Tax(rs.getDouble("service_Tax"));
+//				System.out.println(rs.getDouble("service_Tax") + "custname");
+//				cust.setservice_Tax(rs.getDouble("service_Tax"));
+				
+				System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+				cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
+				
 				System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
 				cust.settotal_Invoice_Amount(rs.getDouble("total_Invoice_Amount"));
 				
@@ -1338,8 +1344,9 @@ public class Customer {
 				cust.setperiod_Mandays(rs.getString("period_Mandays"));
 				
 				
-				System.out.println(rs.getDouble("service_Tax ") + "custname");
-				cust.setservice_Tax (rs.getDouble("service_Tax "));
+				System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+				cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
+				
 				System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
 				cust.settotal_Invoice_Amount(rs.getDouble("total_Invoice_Amount"));
 				
@@ -1446,8 +1453,9 @@ public class Customer {
 						cust.sett_L(rs.getDouble("t_L"));
 						System.out.println(rs.getString("period_Mandays")+ "custname");		
 						cust.setperiod_Mandays(rs.getString("period_Mandays"));
-						System.out.println(rs.getDouble("service_Tax") + "custname");
-						cust.setservice_Tax(rs.getDouble("service_Tax"));
+						System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+						cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
+						
 						System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
 						cust.settotal_Invoice_Amount(rs.getDouble("total_Invoice_Amount"));
 						
@@ -1582,8 +1590,8 @@ public class Customer {
 						System.out.println(rs.getString("period_Mandays")
 								+ "custname");
 						cust.setperiod_Mandays(rs.getString("period_Mandays"));
-						System.out.println(rs.getDouble("service_Tax") + "custname");
-						cust.setservice_Tax(rs.getDouble("service_Tax"));
+						System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+						cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
 						
 						
 						System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
@@ -1710,8 +1718,9 @@ public class Customer {
 					System.out.println(rs.getString("period_Mandays")
 							+ "custname");
 					cust.setperiod_Mandays(rs.getString("period_Mandays"));
-					System.out.println(rs.getDouble("service_Tax") + "custname");
-					cust.setservice_Tax(rs.getDouble("service_Tax"));
+					System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+					cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
+					
 					System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
 					cust.settotal_Invoice_Amount(rs.getDouble("total_Invoice_Amount"));
 					double c = rs.getDouble(20);
@@ -1835,8 +1844,9 @@ public class Customer {
 					System.out.println(rs.getString("period_Mandays")
 							+ "custname");
 					cust.setperiod_Mandays(rs.getString("period_Mandays"));
-					System.out.println(rs.getDouble("service_Tax") + "custname");
-					cust.setservice_Tax(rs.getDouble("service_Tax"));
+					System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+					cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
+					
 					System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
 					cust.settotal_Invoice_Amount(rs.getDouble("total_Invoice_Amount"));
 					double c = rs.getDouble(20);
@@ -1959,8 +1969,9 @@ public class Customer {
 					System.out.println(rs.getString("period_Mandays")
 							+ "custname");
 					cust.setperiod_Mandays(rs.getString("period_Mandays"));
-					System.out.println(rs.getDouble("service_Tax") + "custname");
-					cust.setservice_Tax(rs.getDouble("service_Tax"));
+					System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+					cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
+					
 					System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
 					cust.settotal_Invoice_Amount(rs.getDouble("total_Invoice_Amount"));
 					double c = rs.getDouble(20);
@@ -2083,8 +2094,9 @@ public class Customer {
 					System.out.println(rs.getString("period_Mandays")
 							+ "custname");
 					cust.setperiod_Mandays(rs.getString("period_Mandays"));
-					System.out.println(rs.getDouble("service_Tax") + "custname");
-					cust.setservice_Tax(rs.getDouble("service_Tax"));
+					System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+					cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
+					
 					System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
 					cust.settotal_Invoice_Amount(rs.getDouble("total_Invoice_Amount"));
 					double c = rs.getDouble(20);
@@ -2207,8 +2219,9 @@ public class Customer {
 					System.out.println(rs.getString("period_Mandays")
 							+ "custname");
 					cust.setperiod_Mandays(rs.getString("period_Mandays"));
-					System.out.println(rs.getDouble("service_Tax") + "custname");
-					cust.setservice_Tax(rs.getDouble("service_Tax"));
+					System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+					cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
+					
 					System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
 					cust.settotal_Invoice_Amount(rs.getDouble("total_Invoice_Amount"));
 					double c = rs.getDouble(20);
@@ -2331,8 +2344,9 @@ public class Customer {
 					System.out.println(rs.getString("period_Mandays")
 							+ "custname");
 					cust.setperiod_Mandays(rs.getString("period_Mandays"));
-					System.out.println(rs.getDouble("service_Tax") + "custname");
-					cust.setservice_Tax(rs.getDouble("service_Tax"));
+					System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+					cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
+					
 					System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
 					cust.settotal_Invoice_Amount(rs.getDouble("total_Invoice_Amount"));
 					double c = rs.getDouble(20);
@@ -2474,8 +2488,9 @@ public class Customer {
 								+ "custname");
 						cust.setperiod_Mandays(rs.getString("period_Mandays"));
 						
-						System.out.println(rs.getDouble("service_Tax") + "custname");
-						cust.setservice_Tax(rs.getDouble("service_Tax"));
+						System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+						cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
+						
 						System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
 						cust.settotal_Invoice_Amount(rs.getDouble("total_Invoice_Amount"));
 						
@@ -2610,8 +2625,8 @@ public class Customer {
 						System.out.println(rs.getString("period_Mandays")
 								+ "custname");
 						cust.setperiod_Mandays(rs.getString("period_Mandays"));
-						System.out.println(rs.getDouble("service_Tax") + "custname");
-						cust.setservice_Tax(rs.getDouble("service_Tax"));
+						System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+						cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
 						
 						
 						System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
@@ -2758,8 +2773,9 @@ public class Customer {
 								+ "custname");
 						cust.setperiod_Mandays(rs.getString("period_Mandays"));
 						
-						System.out.println(rs.getDouble("service_Tax") + "custname");
-						cust.setservice_Tax(rs.getDouble("service_Tax"));
+						System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+						cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
+						
 						System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
 						cust.settotal_Invoice_Amount(rs.getDouble("total_Invoice_Amount"));
 						
@@ -2894,8 +2910,8 @@ public class Customer {
 						System.out.println(rs.getString("period_Mandays")
 								+ "custname");
 						cust.setperiod_Mandays(rs.getString("period_Mandays"));
-						System.out.println(rs.getDouble("service_Tax") + "custname");
-						cust.setservice_Tax(rs.getDouble("service_Tax"));
+						System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+						cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
 						
 						
 						System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
@@ -3024,8 +3040,9 @@ public class Customer {
 					System.out.println(rs.getString("period_Mandays")
 							+ "custname");
 					cust.setperiod_Mandays(rs.getString("period_Mandays"));
-					System.out.println(rs.getDouble("service_Tax") + "custname");
-					cust.setservice_Tax(rs.getDouble("service_Tax"));
+					System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+					cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
+					
 					System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
 					cust.settotal_Invoice_Amount(rs.getDouble("total_Invoice_Amount"));
 					double c = rs.getDouble(20);
@@ -3169,8 +3186,9 @@ public class Customer {
 								+ "custname");
 						cust.setperiod_Mandays(rs.getString("period_Mandays"));
 						
-						System.out.println(rs.getDouble("service_Tax") + "custname");
-						cust.setservice_Tax(rs.getDouble("service_Tax"));
+						System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+						cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
+						
 						System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
 						cust.settotal_Invoice_Amount(rs.getDouble("total_Invoice_Amount"));
 						
@@ -3305,8 +3323,8 @@ public class Customer {
 						System.out.println(rs.getString("period_Mandays")
 								+ "custname");
 						cust.setperiod_Mandays(rs.getString("period_Mandays"));
-						System.out.println(rs.getDouble("service_Tax") + "custname");
-						cust.setservice_Tax(rs.getDouble("service_Tax"));
+						System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+						cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
 						
 						
 						System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
@@ -3452,8 +3470,9 @@ public class Customer {
 								+ "custname");
 						cust.setperiod_Mandays(rs.getString("period_Mandays"));
 						
-						System.out.println(rs.getDouble("service_Tax") + "custname");
-						cust.setservice_Tax(rs.getDouble("service_Tax"));
+						System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+						cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
+						
 						System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
 						cust.settotal_Invoice_Amount(rs.getDouble("total_Invoice_Amount"));
 						
@@ -3588,9 +3607,8 @@ public class Customer {
 						System.out.println(rs.getString("period_Mandays")
 								+ "custname");
 						cust.setperiod_Mandays(rs.getString("period_Mandays"));
-						System.out.println(rs.getDouble("service_Tax") + "custname");
-						cust.setservice_Tax(rs.getDouble("service_Tax"));
-						
+						System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+						cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
 						
 						System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
 						cust.settotal_Invoice_Amount(rs.getDouble("total_Invoice_Amount"));
@@ -3734,8 +3752,9 @@ public class Customer {
 								+ "custname");
 						cust.setperiod_Mandays(rs.getString("period_Mandays"));
 						
-						System.out.println(rs.getDouble("service_Tax") + "custname");
-						cust.setservice_Tax(rs.getDouble("service_Tax"));
+						System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+						cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
+						
 						System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
 						cust.settotal_Invoice_Amount(rs.getDouble("total_Invoice_Amount"));
 						
@@ -3870,8 +3889,8 @@ public class Customer {
 						System.out.println(rs.getString("period_Mandays")
 								+ "custname");
 						cust.setperiod_Mandays(rs.getString("period_Mandays"));
-						System.out.println(rs.getDouble("service_Tax") + "custname");
-						cust.setservice_Tax(rs.getDouble("service_Tax"));
+						System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+						cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
 						
 						
 						System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
@@ -4015,8 +4034,8 @@ public class Customer {
 						System.out.println(rs.getString("period_Mandays")
 								+ "custname");
 						cust.setperiod_Mandays(rs.getString("period_Mandays"));
-						System.out.println(rs.getDouble("service_Tax") + "custname");
-						cust.setservice_Tax(rs.getDouble("service_Tax"));
+						System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+						cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
 						
 						System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
 						cust.settotal_Invoice_Amount(rs.getDouble("total_Invoice_Amount"));
@@ -4153,8 +4172,9 @@ public class Customer {
 								+ "custname");
 						cust.setperiod_Mandays(rs.getString("period_Mandays"));
 						
-						System.out.println(rs.getDouble("service_Tax") + "custname");
-						cust.setservice_Tax(rs.getDouble("service_Tax"));
+						System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+						cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
+						
 						
 						System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
 						cust.settotal_Invoice_Amount(rs.getDouble("total_Invoice_Amount"));
@@ -4177,7 +4197,7 @@ public class Customer {
 //date starts // method for start and end date for report generation
 			else if (searchName1 != "" && searchName2 != "" && datea != "" && dateb != "" &&  searchName3 == ""&& searchName4== "" ) {
 				
-				String strSq = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,service_Tax,total_Invoice_Amount,period_Mandays,workOrder,table.mandayvalue,( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ),(updated_Work_Order/( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ) *(table.mandayvalue))   from revenue.master  left join  revenue.table on (master.masterid=table.master_masterid)    where  datec  BETWEEN '" +datea + "' AND '" +dateb + "' and mandayvalue IS NOT NULL and customer_Type='"+ searchName1+ "' and region= '"+ searchName2+ "' ";   
+				String strSq = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,service_Tax,total_Invoice_Amount,period_Mandays,workOrder,table.mandayvalue,( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ),ROUND((updated_Work_Order/( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ) *(table.mandayvalue)),2 ) from revenue.master  left join  revenue.table on (master.masterid=table.master_masterid)    where  datec  BETWEEN '" +datea + "' AND '" +dateb + "' and mandayvalue IS NOT NULL and customer_Type='"+ searchName1+ "' and region= '"+ searchName2+ "' ";   
 
 				System.err.println("Search query for start date:-" + strSq);
 				rs = stmt.executeQuery(strSq);
@@ -4304,8 +4324,9 @@ public class Customer {
 							+ "custname");
 					cust.setperiod_Mandays(rs.getString("period_Mandays"));
 					
-					System.out.println(rs.getDouble("service_Tax") + "custname");
-					cust.setservice_Tax(rs.getDouble("service_Tax"));
+					System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+					cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
+					
 					System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
 					cust.settotal_Invoice_Amount(rs.getDouble("total_Invoice_Amount"));
 					System.out.println(rs.getDouble(38) + "periodrev");
@@ -4320,7 +4341,7 @@ public class Customer {
 				}
 
 				
-				String strSq11 = "select masterid,customer_Name,updated_Work_Order,( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ),(updated_Work_Order/( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ) *(table.mandayvalue)) from revenue.master  left join  revenue.table on (master.masterid=table.master_masterid)   where datec  BETWEEN '" +datea + "' AND '" +dateb + "' and mandayvalue IS NOT NULL   and customer_Type='"+ searchName1+ "' and region= '"+ searchName2+ "' group by masterid ";   
+				String strSq11 = "select masterid,customer_Name,updated_Work_Order,( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ),ROUND((updated_Work_Order/( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ) *(table.mandayvalue)),2) from revenue.master  left join  revenue.table on (master.masterid=table.master_masterid)   where datec  BETWEEN '" +datea + "' AND '" +dateb + "' and mandayvalue IS NOT NULL   and customer_Type='"+ searchName1+ "' and region= '"+ searchName2+ "' group by masterid ";   
 
 				System.err.println("Search query for start date:-" + strSq11);
 				rs = stmt.executeQuery(strSq11);
@@ -4367,7 +4388,7 @@ public class Customer {
 
 			{	{
 
-					String strSq = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,service_Tax,total_Invoice_Amount,period_Mandays,workOrder,table.mandayvalue,( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ),(updated_Work_Order/( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ) *(table.mandayvalue))  from revenue.master  left join  revenue.table on (master.masterid=table.master_masterid)    where datec  BETWEEN '" +datea + "' AND '" +dateb + "' and mandayvalue IS NOT NULL  ";   
+					String strSq = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,service_Tax,total_Invoice_Amount,period_Mandays,workOrder,table.mandayvalue,( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ),ROUND((updated_Work_Order/( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ) *(table.mandayvalue)),2 ) from revenue.master  left join  revenue.table on (master.masterid=table.master_masterid)    where datec  BETWEEN '" +datea + "' AND '" +dateb + "' and mandayvalue IS NOT NULL  ";   
 
 					System.err.println("Search query for start date:-" + strSq);
 					rs = stmt.executeQuery(strSq);
@@ -4484,8 +4505,9 @@ public class Customer {
 						System.out.println(rs.getDouble("t_L") + "custname");
 						cust.sett_L(rs.getDouble("t_L"));
 
-						System.out.println(rs.getDouble("service_Tax") + "custname");
-						cust.setservice_Tax(rs.getDouble("service_Tax"));
+						System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+						cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
+						
 						System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
 						cust.settotal_Invoice_Amount(rs.getDouble("total_Invoice_Amount"));
 
@@ -4505,7 +4527,7 @@ public class Customer {
 
 					}}
 					{
-						String strSq11 = "select masterid,customer_Name,updated_Work_Order,( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ),(updated_Work_Order/( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ) *(table.mandayvalue)) from revenue.master  left join  revenue.table on (master.masterid=table.master_masterid)    where datec  BETWEEN '" +datea + "' AND '" +dateb + "' and mandayvalue IS NOT NULL group by masterid ";   
+						String strSq11 = "select masterid,customer_Name,updated_Work_Order,( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ),ROUND((updated_Work_Order/( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ) *(table.mandayvalue)),2)  from revenue.master  left join  revenue.table on (master.masterid=table.master_masterid)    where datec  BETWEEN '" +datea + "' AND '" +dateb + "' and mandayvalue IS NOT NULL group by masterid ";   
 
 						System.err.println("Search query for start date:-" + strSq11);
 						rs = stmt.executeQuery(strSq11);
@@ -4546,7 +4568,7 @@ public class Customer {
 
 			else if (searchName1 == "" && searchName2 != ""  &&  searchName3 == ""&& searchName4== "" && datea != "" && dateb != "") {
 
-				String strSq = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,service_Tax,total_Invoice_Amount,period_Mandays,workOrder,table.mandayvalue,( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ),(updated_Work_Order/( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ) *(table.mandayvalue))   from revenue.master  left join  revenue.table on (master.masterid=table.master_masterid)    where datec  BETWEEN '" +datea + "' AND '" +dateb + "' and mandayvalue IS NOT NULL and  region= '"+ searchName2+ "' ";   
+				String strSq = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,service_Tax,total_Invoice_Amount,period_Mandays,workOrder,table.mandayvalue,( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ),ROUND((updated_Work_Order/( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ) *(table.mandayvalue)),2 ) from revenue.master  left join  revenue.table on (master.masterid=table.master_masterid)    where datec  BETWEEN '" +datea + "' AND '" +dateb + "' and mandayvalue IS NOT NULL and  region= '"+ searchName2+ "' ";   
 
 				System.err.println("Search query for start date:-" + strSq);
 				rs = stmt.executeQuery(strSq);
@@ -4670,8 +4692,9 @@ public class Customer {
 							+ "custname");
 					cust.setperiod_Mandays(rs.getString("period_Mandays"));
 					
-					System.out.println(rs.getDouble("service_Tax") + "custname");
-					cust.setservice_Tax(rs.getDouble("service_Tax"));
+					System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+					cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
+					
 					System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
 					cust.settotal_Invoice_Amount(rs.getDouble("total_Invoice_Amount"));
 					System.out.println(rs.getDouble(38) + "periodrev");
@@ -4727,7 +4750,7 @@ public class Customer {
 			// last
 			else if (searchName1 != "" && searchName2 == ""  &&  searchName3 == ""&& searchName4== "" && datea != "" && dateb != "") {
 				if (searchName1.equals(All) && datea != "" && dateb != "") {
-					String strSq = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,service_Tax,total_Invoice_Amount,period_Mandays,workOrder,table.mandayvalue,( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ),(updated_Work_Order/( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ) *(table.mandayvalue))   from revenue.master  left join  revenue.table on (master.masterid=table.master_masterid)    where datec  BETWEEN '" +datea + "' AND '" +dateb + "' and mandayvalue IS NOT NULL and  customer_Type in ('New', 'Existing','Inter Company') ";   
+					String strSq = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,service_Tax,total_Invoice_Amount,period_Mandays,workOrder,table.mandayvalue,( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ),ROUND((updated_Work_Order/( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ) *(table.mandayvalue)),2 ) from revenue.master  left join  revenue.table on (master.masterid=table.master_masterid)    where datec  BETWEEN '" +datea + "' AND '" +dateb + "' and mandayvalue IS NOT NULL and  customer_Type in ('New', 'Existing','Inter Company') ";   
 
 					System.err.println("Search5 query for start date:-" + strSq);
 					rs = stmt.executeQuery(strSq);
@@ -4851,8 +4874,9 @@ public class Customer {
 						System.out.println(rs.getString("period_Mandays")
 								+ "custname");
 						cust.setperiod_Mandays(rs.getString("period_Mandays"));
-						System.out.println(rs.getDouble("service_Tax") + "custname");
-						cust.setservice_Tax(rs.getDouble("service_Tax"));
+						System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+						cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
+						
 						System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
 						cust.settotal_Invoice_Amount(rs.getDouble("total_Invoice_Amount"));
 						System.out.println(rs.getDouble(38) + "periodrev");
@@ -4904,7 +4928,7 @@ public class Customer {
 					
 				}
 				else {
-					String strSq = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,service_Tax,total_Invoice_Amount,period_Mandays,workOrder,table.mandayvalue,( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ),(updated_Work_Order/( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ) *(table.mandayvalue))   from revenue.master  left join  revenue.table on (master.masterid=table.master_masterid)    where  datec  BETWEEN '" +datea + "' AND '" +dateb + "' and mandayvalue IS NOT NULL and customer_Type='"+ searchName1+ "' ";   
+					String strSq = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,service_Tax,total_Invoice_Amount,period_Mandays,workOrder,table.mandayvalue,( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ),ROUND((updated_Work_Order/( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ) *(table.mandayvalue)),2 ) from revenue.master  left join  revenue.table on (master.masterid=table.master_masterid)    where  datec  BETWEEN '" +datea + "' AND '" +dateb + "' and mandayvalue IS NOT NULL and customer_Type='"+ searchName1+ "' ";   
 
 					System.err.println("Search query for start date:-" + strSq);
 					rs = stmt.executeQuery(strSq);
@@ -5028,8 +5052,9 @@ public class Customer {
 								+ "custname");
 						cust.setperiod_Mandays(rs.getString("period_Mandays"));
 						
-						System.out.println(rs.getDouble("service_Tax") + "custname");
-						cust.setservice_Tax(rs.getDouble("service_Tax"));
+						System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+						cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
+						
 						System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
 						cust.settotal_Invoice_Amount(rs.getDouble("total_Invoice_Amount"));
 						System.out.println(rs.getDouble(38) + "periodrev");
@@ -5089,7 +5114,7 @@ public class Customer {
 	////date & vertical
 else if (searchName1 == "" && searchName2 == "" && datea != "" && dateb != "" &&  searchName3 != ""&& searchName4== "" ) {
 				
-				String strSq = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,service_Tax,total_Invoice_Amount,period_Mandays,workOrder,table.mandayvalue,( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ),(updated_Work_Order/( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ) *(table.mandayvalue))   from revenue.master  left join  revenue.table on (master.masterid=table.master_masterid)    where  datec  BETWEEN '" +datea + "' AND '" +dateb + "' and mandayvalue IS NOT NULL and vertical='"+ searchName3+ "'  ";   
+				String strSq = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,updated_Work_Order,updated_WO_Assessment_fee,work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database,t_L,service_Tax,total_Invoice_Amount,period_Mandays,workOrder,table.mandayvalue,( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ),ROUND((updated_Work_Order/( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ) *(table.mandayvalue)),2 ) from revenue.master  left join  revenue.table on (master.masterid=table.master_masterid)    where  datec  BETWEEN '" +datea + "' AND '" +dateb + "' and mandayvalue IS NOT NULL and vertical='"+ searchName3+ "'  ";   
 
 				System.err.println("Search query for start date:-" + strSq);
 				rs = stmt.executeQuery(strSq);
@@ -5215,8 +5240,9 @@ else if (searchName1 == "" && searchName2 == "" && datea != "" && dateb != "" &&
 							+ "custname");
 					cust.setperiod_Mandays(rs.getString("period_Mandays"));
 					
-					System.out.println(rs.getDouble("service_Tax") + "custname");
-					cust.setservice_Tax(rs.getDouble("service_Tax"));
+					System.out.println(rs.getDouble("ROUND(service_Tax,2)") + "Roundevalue");
+					cust.setservice_Tax(rs.getDouble("ROUND(service_Tax,2)"));
+					
 					System.out.println(rs.getDouble("total_Invoice_Amount") + "custname");
 					cust.settotal_Invoice_Amount(rs.getDouble("total_Invoice_Amount"));
 					System.out.println(rs.getDouble(38) + "periodrev");
