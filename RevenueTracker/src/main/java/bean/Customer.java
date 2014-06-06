@@ -5152,7 +5152,6 @@ else if (searchName1 == "" && searchName2 == "" && datea != "" && dateb != "" &&
 
 				}
 
-				
 				String strSq11 = "select masterid,customer_Name,updated_Work_Order,( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ),(updated_Work_Order/( select sum(table.mandayvalue) from revenue.table where master.masterid=table.master_masterid  group by master.masterid ) *(table.mandayvalue)) from revenue.master  left join  revenue.table on (master.masterid=table.master_masterid)    where datec  BETWEEN '" +datea + "' AND '" +dateb + "' and mandayvalue IS NOT NULL   and  vertical= '"+ searchName3+ "' group by masterid ";   
 
 				System.err.println("Search query for start date:-" + strSq11);
