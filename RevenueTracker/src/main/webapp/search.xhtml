@@ -620,14 +620,14 @@
 			</h:dataTable></div>
 
 
-      <h:panel header="Export Data">
+      <p:panel header="Export Data">
             <h:commandLink>
-                <h:graphicImage value="css/images/excel.jpg" />
-                <h:dataExporter type="xls" postProcessor="#{manager.postProcessXLS}"
+                <p:graphicImage value="css/images/excel.jpg" />
+                <p:dataExporter type="xls" postProcessor="#{customer.postProcessXLS}"
                     target="mydata" fileName="myexcel" />
             </h:commandLink>
             
-        </h:panel>                         
+        </p:panel>                         
 			
 			
 	
