@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 	
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
@@ -313,48 +314,48 @@
 <div style="height:300px;overflow-x:auto;overflow-y:scroll;">
 
                                
-			<h:dataTable value="#{quote.custInfoAll}" var="custInfo"
+			<p:dataTable value="#{quote.custInfoAll}" var="custInfo"
 				styleClass="order-table" headerClass="order-table-header" border="5"
 				rowClasses="order-table-odd-row,order-table-even-row"  footerClass="order-table-footer" >
 
 				
-				<h:column>
+				<p:column>
 					<f:facet name="header">
 						<h:outputText value="BR" />
 					</f:facet>
 					<h:outputText value="#{custInfo.bR}">
 					</h:outputText>
-				</h:column>
+				</p:column>
 				
 				
-				<h:column>
+				<p:column>
 					<f:facet name="header">
 						<h:outputText value="customer Name" />
 					</f:facet>
 					<h:outputText value="#{custInfo.customer_Name}">
 					</h:outputText>
-				</h:column>
+				</p:column>
 
-				<h:column>
+				<p:column>
 					<f:facet name="header">
 						<h:outputText value="customer Type" />
 					</f:facet>
 					<h:outputText value="#{custInfo.customer_Type}">
 					</h:outputText>
-				</h:column>
-				<h:column>
+				</p:column>
+				<p:column>
 					<f:facet name="header">
 						<h:outputText value="Region" />
 					</f:facet>
 					<h:outputText value="#{custInfo.region}">
 					</h:outputText>
-				</h:column>
+				</p:column>
 
 
 
 				
 
-				<h:column>
+				<p:column>
 					<f:facet name="header">
 						<h:outputText value="Service" />
 					</f:facet>
@@ -362,19 +363,19 @@
 
 					</h:outputText>
 
-				</h:column>
+				</p:column>
 
-				<h:column>
+				<p:column>
 					<f:facet name="header">
 						<h:outputText value="Product" />
 					</f:facet>
 					<h:outputText value="#{custInfo.product}">
 
 					</h:outputText>
-				</h:column>
+				</p:column>
 				
 
-				<h:column>
+				<p:column>
 					<f:facet name="header">
 						<h:outputText value="Designation" />
 					</f:facet>
@@ -382,9 +383,9 @@
 
 					</h:outputText>
 
-				</h:column>
+				</p:column>
 
-				<h:column>
+				<p:column>
 					<f:facet name="header">
 						<h:outputText value="Quote Booked By" />
 					</f:facet>
@@ -392,56 +393,56 @@
 
 					</h:outputText>
 
-				</h:column>
+				</p:column>
 
 			
 
-				<h:column>
+				<p:column>
 					<f:facet name="header">
 						<h:outputText value="Currency" />
 					</f:facet>
 					<h:outputText value="#{custInfo.currency}">
 					</h:outputText>
-				</h:column>
+				</p:column>
 
 				
 
-				<h:column>
+				<p:column>
 					<f:facet name="header">
 						<h:outputText value="Exchange Rate" />
 					</f:facet>
 					<h:outputText value="#{custInfo.exchange_Rate}">
 					</h:outputText>
-				</h:column>
+				</p:column>
 
 				
 
 				
-				<h:column>
+				<p:column>
 					<f:facet name="header">
 						<h:outputText value="Start Month " />
 					</f:facet>
 					<h:outputText value="#{custInfo.starting_month}">
 					</h:outputText>
-				</h:column>
+				</p:column>
 
-				<h:column>
+				<p:column>
 					<f:facet name="header">
 						<h:outputText value="QuoteDate " />
 					</f:facet>
 					<h:outputText value="#{custInfo.quote_Date}">
 					</h:outputText>
-				</h:column>
+				</p:column>
 				
-				<h:column>
+				<p:column>
 					<f:facet name="header">
 						<h:outputText value="Quote Value " />
 					</f:facet>
 					<h:outputText value="#{custInfo.quote_Value}">
 					</h:outputText>
-				</h:column>
+				</p:column>
 				
-				<h:column>
+				<p:column>
 					<f:facet name="header">
 						<h:outputText value="Quoted Mandays " />
 					</f:facet>
@@ -451,9 +452,9 @@
 						<h:outputText value="#{quote.sum_qm}" />
 
 					</f:facet>
-				</h:column>
+				</p:column>
 				
-				<h:column>
+				<p:column>
 					<f:facet name="header">
 						<h:outputText value="updated QuoteValue " />
 					</f:facet>
@@ -463,13 +464,13 @@
 						<h:outputText value="#{quote.sum_up}" />
 
 					</f:facet>
-				</h:column>
+				</p:column>
 				
-				<h:column>
+				<p:column>
 			<h:outputText value="#{rowCounter.row}" />
-		</h:column>
+		</p:column>
 
-				<h:column>
+				<p:column>
 
 					<f:facet name="header">
 
@@ -484,12 +485,12 @@
 
 					</h:commandButton>
 
-				</h:column>
+				</p:column>
 
 				
 
   	 	
-			</h:dataTable>
+			</p:dataTable>
 			
 		
 				
