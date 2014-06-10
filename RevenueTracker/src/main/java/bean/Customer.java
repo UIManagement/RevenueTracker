@@ -990,7 +990,7 @@ public class Customer {
 			stmt=MySQLcon.createStatement();
 			
 			String dbcustmid = this.masterid;
-			;
+			
 			//String dbcustda = this.datea;
 			//String dbcustdb = this.dateb;
 
@@ -998,14 +998,13 @@ public class Customer {
 
 				mandayvalue = custInfoAll.get(i).getmandayvalue();
 				datec = custInfoAll.get(i).getdatec();
+				
 
-				// this.mandayvalue = rs.getString("mandayvalue");
+				
 				System.out.println(mandayvalue);
 				System.out.println(datec);
 
-				String query = "UPDATE revenue.table SET mandayvalue = '"
-						+ mandayvalue + "' where  datec='" + datec
-						+ "'    and  master_masterid ='" + dbcustmid + "' ";
+				String query = "UPDATE revenue.table SET mandayvalue = '"+ mandayvalue + "'   where  datec='" + datec+ "'    and  master_masterid ='" + dbcustmid + "'  ";
 				System.out.println("Update in SearchCustomer Table–" + query);
 				stmt.executeUpdate(query);// rs=stmt.executeQuery(strSql);
 
