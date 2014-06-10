@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 	<head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
 <title>Home Page</title>
@@ -223,43 +224,40 @@
 			<br/>
 			<br/>
 <div style="height:200px;overflow-x:auto;overflow-y:scroll;">
-			<h:dataTable value="#{customer.custInfoAll}" var="custInfo"
-				styleClass="order-table" headerClass="order-table-header" border="5"
-				rowClasses="order-table-odd-row,order-table-even-row"   footerClass="order-table-footer"  >
-
-				<h:column>
+			<p:dataTable value="#{customer.custInfoAll}" var="custInfo" styleClass="order-table" headerClass="order-table-header" border="5" rowClasses="order-table-odd-row,order-table-even-row" footerClass="order-table-footer"  id="mydata">
+				<p:column>
 					<f:facet name="header">
 						<h:outputText value="BR " />
 					</f:facet>
 					<h:outputText value="#{custInfo.bR}">
 					</h:outputText>
-				</h:column>
-				<h:column>
+				</p:column>
+				<p:column>
 					<f:facet name="header">
 						<h:outputText value="customer Name" />
 					</f:facet>
 					<h:outputText value="#{custInfo.customer_Name}">
 					</h:outputText>
-				</h:column>
+				</p:column>
 
-				<h:column>
+				<p:column>
 					<f:facet name="header">
 						<h:outputText value="customer Type" />
 					</f:facet>
 					<h:outputText value="#{custInfo.customer_Type}">
 					</h:outputText>
-				</h:column>
-				<h:column>
+				</p:column>
+				<p:column>
 					<f:facet name="header">
 						<h:outputText value="Region" />
 					</f:facet>
 					<h:outputText value="#{custInfo.region}">
 					</h:outputText>
-				</h:column>
+				</p:column>
 
 
 
-				<h:column>
+				<p:column>
 					<f:facet name="header">
 						<h:outputText value="Vertical" />
 					</f:facet>
@@ -267,10 +265,10 @@
 
 					</h:outputText>
 
-				</h:column>
+				</p:column>
 
 				
-				<h:column>
+				<p:column>
 					<f:facet name="header">
 						<h:outputText value="Designation" />
 					</f:facet>
@@ -278,9 +276,9 @@
 
 					</h:outputText>
 
-				</h:column>
+				</p:column>
 
-				<h:column>
+				<p:column>
 					<f:facet name="header">
 						<h:outputText value="Order Booked By" />
 					</f:facet>
@@ -288,32 +286,32 @@
 
 					</h:outputText>
 
-				</h:column>
+				</p:column>
 
 				
-				<h:column>
+				<p:column>
 					<f:facet name="header">
 						<h:outputText value="Start Month " />
 					</f:facet>
 					<h:outputText value="#{custInfo.start_month}">
 					</h:outputText>
-				</h:column>
+				</p:column>
 
-				<h:column>
+				<p:column>
 					<f:facet name="header">
 						<h:outputText value="Start Date" />
 					</f:facet>
 					<h:outputText value="#{custInfo.startDate}">
 					</h:outputText>
-				</h:column>
-				<h:column>
+				</p:column>
+				<p:column>
 					<f:facet name="header">
 						<h:outputText value="End Date" />
 					</f:facet>
 					<h:outputText value="#{custInfo.endDate}">
 					</h:outputText>
-				</h:column>
-				<h:column>
+				</p:column>
+				<p:column>
 					<f:facet name="header">
 						<h:outputText value="Delivered Mandays " />
 					</f:facet>
@@ -322,12 +320,12 @@
 					<f:facet name="footer">
 						<h:outputText value="#{customer.sum_dm}" />
 					</f:facet>
-				</h:column>
+				</p:column>
 
 				
 				
 
-				<h:column>
+				<p:column>
 					<f:facet name="header">
 						<h:outputText value="Period Mandays " />
 					</f:facet>
@@ -339,19 +337,19 @@
 						<h:outputText value="#{customer.sum_pm}" />
 					</f:facet>
 
-				</h:column>
+				</p:column>
 
 
-				<h:column>
+				<p:column>
 					<f:facet name="header">
 						<h:outputText value="Work Order " />
 					</f:facet>
 					<h:outputText value="#{custInfo.workOrder}">
 					</h:outputText>
 
-				</h:column>
+				</p:column>
 
-				<h:column>
+				<p:column>
 
 					<f:facet name="header">
 
@@ -366,9 +364,9 @@
 
 					</h:commandButton>
 
-				</h:column>
+				</p:column>
 
-				<h:column>
+				<p:column>
 
 					<f:facet name="header">
 
@@ -385,11 +383,19 @@
 
 					</h:commandButton>
 
-				</h:column>
+				</p:column>
 
 
-			</h:dataTable>
+			</p:dataTable>
 			  </div>
+			   <p:panel header="Export Data">
+            <h:commandLink>
+                <p:graphicImage value="css/images/excel.jpg" />
+                <p:dataExporter type="xls" postProcessor="#{customer.postProcessXLS}"
+                    target="mydata" fileName="myexcel" />
+            </h:commandLink>
+            
+        </p:panel>     
 			<br/>
 
 

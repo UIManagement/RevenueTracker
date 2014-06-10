@@ -982,12 +982,13 @@ public class Customer {
 
 	// adddateaction
 
+
 	public String updateAction() throws SQLException {
 		try {
 
 			Labcon lc = new Labcon();
 			MySQLcon = lc.getLocalConnection();
-			stmt=MySQLcon.createStatement();
+			stmt = MySQLcon.createStatement();
 			
 			String dbcustmid = this.masterid;
 			;
@@ -999,7 +1000,7 @@ public class Customer {
 				mandayvalue = custInfoAll.get(i).getmandayvalue();
 				datec = custInfoAll.get(i).getdatec();
 
-				
+				// this.mandayvalue = rs.getString("mandayvalue");
 				System.out.println(mandayvalue);
 				System.out.println(datec);
 
@@ -1012,13 +1013,11 @@ public class Customer {
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
-			System.out.println("Exception in add:-" + ex.getMessage());
+			System.out.println("Exception in addAction:-" + ex.getMessage());
 		}
 
 		return "update";
 	}
-
-	
 	public List<Customer> getAllCustomer() {
 
 		Labcon lc = new Labcon();
