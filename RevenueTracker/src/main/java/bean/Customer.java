@@ -4437,6 +4437,7 @@ public class Customer {
 						int p = rs.getInt(38);
 						this.sum_pr = this.sum_pr + p;
 						System.out.println(sum_pr);
+						
 						this.custInfoAll.add(cust);
 						
 
