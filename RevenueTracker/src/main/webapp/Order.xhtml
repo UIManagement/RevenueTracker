@@ -75,9 +75,7 @@
 		});
 	});
 	
-	
-	
-	
+
 </script>
 
 </head>
@@ -145,10 +143,7 @@
 			</tr>
 
 
-
-
-
-			<h:commandButton value="Search" action="#{orderBooking.ResultOrder}"
+	<h:commandButton value="Search" action="#{orderBooking.ResultOrder}"
 				rendered="true" />
 				
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -184,10 +179,10 @@
 				<td><h:selectOneMenu value="#{orderBooking.searchName2}">
 						<f:selectItem itemValue="" itemLabel="" />
 						<f:selectItem itemValue="Aerospace" itemLabel="Aerospace" />
-						<f:selectItem itemValue="CI (R) " itemLabel="CI (R) " />
+						<f:selectItem itemValue="C&amp;I (R) " itemLabel="C&amp;I (R) " />
 						<f:selectItem itemValue="Gujarat" itemLabel="Gujarat" />
 						<f:selectItem itemValue="Maharashtra" itemLabel="Maharashtra" />
-						<f:selectItem itemValue="North  East" itemLabel="North East" />
+						<f:selectItem itemValue="North &amp; East" itemLabel="North &amp; East" />
 						<f:selectItem itemValue="South-1" itemLabel="South-1" />
 						<f:selectItem itemValue="South-2" itemLabel="South-2" />
 					</h:selectOneMenu> <h:message id="orderregionMessage" for="region" /></td>
@@ -203,11 +198,11 @@
 				<td><h:selectOneMenu value="#{orderBooking.searchName3}">
 				<f:selectItem itemValue="" itemLabel="" />
 						<f:selectItem itemValue="Aerospace" itemLabel="Aerospace" />
-							<f:selectItem itemValue="Medical  Healthcare"
-								itemLabel="Medical  Healthcare" />
+							<f:selectItem itemValue="Medical &amp; Healthcare"
+								itemLabel="Medical &amp; Healthcare" />
 							<f:selectItem itemValue="Energy" itemLabel="Energy" />
 							<f:selectItem itemValue="RC 14001" itemLabel="RC 14001" />
-							<f:selectItem itemValue="CI (V)" itemLabel="CI (V)" />
+							<f:selectItem itemValue="C&amp;I (V)" itemLabel="C&amp;I (V)" />
 							<f:selectItem itemValue="Others" itemLabel="Others" />
 							</h:selectOneMenu> <h:message id="verticalMessage" for="vertical" /></td>
 			</tr>
@@ -231,6 +226,7 @@
 							<f:selectItem itemValue="Safety" itemLabel="Safety" />
 					</h:selectOneMenu> <h:message id="orderCustomerserviceMessage" for="service" /></td>
 			</tr>		 
+			
  
   <h:outputLabel value="StartDate" for="startDatePicker" />
 
@@ -256,9 +252,9 @@
 				
 				<p:column>
 					<f:facet name="header">
-						<h:outputText value="BR" />
+						<h:outputText value="br" />
 					</f:facet>
-					<h:outputText value="#{custInfo.bR}">
+					<h:outputText value="#{custInfo.br}">
 					</h:outputText>
 				</p:column>
 				
@@ -437,13 +433,8 @@
 
 				</p:column>
 
-				
-
   	 	
 			</p:dataTable>
-			
-		
-				
 			
 			 </div>
 			 <b> <h:outputLabel value="Count"

@@ -181,16 +181,17 @@
 					</h:selectOneMenu> <h:message id="quotecustomerTypeMessage" for="customer_Type" /></td>
 			</tr>
 
-			<tr>
+	
+	<tr>
 				<td><b> <h:outputLabel value="Region" for="region" /> </b>
 				</td>
 				<td><h:selectOneMenu value="#{quote.searchName2}">
 						<f:selectItem itemValue="" itemLabel="" />
 						<f:selectItem itemValue="Aerospace" itemLabel="Aerospace" />
-						
+						<f:selectItem itemValue="C&amp;I (R) " itemLabel="C&amp;I (R) " />
 						<f:selectItem itemValue="Gujarat" itemLabel="Gujarat" />
 						<f:selectItem itemValue="Maharashtra" itemLabel="Maharashtra" />
-						<f:selectItem itemValue="NorthEast" itemLabel="NorthEast" />
+						<f:selectItem itemValue="North &amp; East" itemLabel="North &amp; East" />
 						<f:selectItem itemValue="South-1" itemLabel="South-1" />
 						<f:selectItem itemValue="South-2" itemLabel="South-2" />
 					</h:selectOneMenu> <h:message id="quoteregionMessage" for="region" /></td>
@@ -217,8 +218,13 @@
 							<f:selectItem itemValue="Safety" itemLabel="Safety" />
 					</h:selectOneMenu> <h:message id="quoteCustomerserviceMessage" for="service" /></td>
 			</tr>	
+	
+	
+	
+	
+	
+	
 			
-
  <tr>
 				<td><b> <h:outputLabel value="QuoteBy" for="quote_Booked_By" /> </b>
 				</td>
@@ -321,9 +327,9 @@
 				
 				<p:column>
 					<f:facet name="header">
-						<h:outputText value="BR" />
+						<h:outputText value="br" />
 					</f:facet>
-					<h:outputText value="#{custInfo.bR}">
+					<h:outputText value="#{custInfo.br}">
 					</h:outputText>
 				</p:column>
 				
@@ -487,15 +493,10 @@
 
 				</p:column>
 
-				
-
-  	 	
+	
 			</p:dataTable>
 			
-		
-				
-				
-			
+	
 			 </div>
 			 <b> <h:outputLabel value="Count"
 							for="row" /> </b> <h:message id="rowMessage"

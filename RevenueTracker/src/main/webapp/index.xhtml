@@ -15,7 +15,7 @@
 			<h:commandButton value="Say Hi">
     			<f:ajax execute="name" render=":jsfForm:nameGroup" />
 			</h:commandButton>
-			<br />
+	
 			<h:panelGroup id="nameGroup">
 				<h:outputText value="Hi #{mainController.name}!!" 
 					rendered="#{not empty mainController.name}"/>
