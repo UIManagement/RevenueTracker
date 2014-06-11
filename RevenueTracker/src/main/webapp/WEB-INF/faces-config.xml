@@ -41,20 +41,21 @@
 		<managed-bean-class>bean.RowCounter</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
-
-
+<managed-bean>
+		<managed-bean-name>bReport</managed-bean-name>
+		<managed-bean-class>bean.BReport</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
 <navigation-rule>
 
   <from-view-id>/search.xhtml</from-view-id> 
   
 <navigation-case>
-
   <from-action>#{customer1.addCustomer}</from-action> 
   <from-outcome>add</from-outcome> 
-   
   <to-view-id>/search.xhtml</to-view-id> 
-    
-  </navigation-case>
+     </navigation-case>
 <navigation-case>
   <from-action>#{customer.ResultCustomer}</from-action> 
   <from-outcome>result</from-outcome> 
@@ -309,6 +310,14 @@
   </navigation-rule>
 
 
+<navigation-rule>
+  <from-view-id>/bi.xhtml</from-view-id> 
+ <navigation-case>
+  <from-action>#{bReport.DropDowns}</from-action> 
+  <from-outcome>values</from-outcome> 
+  <to-view-id>/bi.xhtml</to-view-id> 
+  </navigation-case>
+  </navigation-rule>
 
 
 	</faces-config>

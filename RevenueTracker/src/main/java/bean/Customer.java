@@ -1151,7 +1151,7 @@ public class Customer {
 				
 				System.out.println(rs.getString("masterid") + "custname");
 				cust.setNewtableid(rs.getString("masterid"));
-				System.out.println(rs.getInt("bR") + "custname");
+				System.out.println(rs.getInt("bR") + "br");
 				cust.setbR(rs.getInt("bR"));
 				System.out.println(rs.getString("customer_Name") + "custname");
 				cust.setcustomer_Name(rs.getString("customer_Name"));
@@ -4247,6 +4247,7 @@ public class Customer {
 					
 					System.out.println(rs.getDouble("ROUND(total_Invoice_Amount,2)") + "custname");
 					cust.settotal_Invoice_Amount(rs.getDouble("ROUND(total_Invoice_Amount,2)"));
+					
 					System.out.println(rs.getDouble(38) + "periodrev");
 					cust.setperiod_rev(rs.getDouble(38));
 					
