@@ -5,6 +5,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
+	
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
 <title>Manday Entry Page</title>
@@ -71,6 +72,11 @@
 	
 </script>
 
+
+
+
+
+
 </head>
 <body>
 	<f:view>
@@ -91,7 +97,18 @@
 </h:commandLink>
 	</span>				
 					
+					
+					
+					
+<!-- 					<a href="Home.jsp"><img -->
+<!-- 					src="css/images/hom.png"></img> </a>  -->
 
+
+	
+					
+					
+					
+					
 			<!-- End Logo + Top Nav -->
 			<div id="top">
 
@@ -103,7 +120,7 @@
 					</tr>
 				</table>
 			</div>
-			<br/> <br/> <br/> <br/> <br/> <br/>
+			<br/> <br/> <br/><br/><br/><br/>
 		</div>
 	</div>
 	<br/>
@@ -112,7 +129,7 @@
 	<br/>
 	<br/>
 	<br/>
-	<!-- End Header -->
+	
 	<br/>
 	<br/>
 	<br/>
@@ -152,11 +169,11 @@
 			<br/>
 			<br/>
 			<br/>
-			<p:dataTable value="#{customer.custInfoAll}" var="custInfo"
+			<h:dataTable value="#{customer.custInfoAll}" var="custInfo"
 				styleClass="order-table" headerClass="order-table-header" border="5"
 				rowClasses="order-table-odd-row,order-table-even-row">
 
-				<p:column>
+				<h:column>
 					<f:facet name="header">
 						<h:outputText value="Date" />
 
@@ -170,15 +187,14 @@
 						 />
 
 					
-				</p:column>
-			</p:dataTable>
+				</h:column>
+			</h:dataTable>
 			<br/>
 			<br/>
 			<h:commandButton action="#{customer.updateAction}" value="Update Mandays"   rendered="true"  onclick="box()"  >
 			
 				 <f:setPropertyActionListener target="#{customer.custInfoAll}" value="custInfo" />
 				 </h:commandButton>
-				 
 				 
 				 
   &nbsp;&nbsp;
@@ -193,11 +209,11 @@
 <br/>
 <br/>
 	<br/>
-	<!-- Footer -->
+	
 	<div id="footer">
 		<div class="shell">
 			<span class="left"><font face="Times New Roman"
-				color="SteelBlue">Â© 2014 UL DQS. All rights reserved</font>
+				color="SteelBlue">© 2014 UL DQS. All rights reserved</font>
 			</span> <br/>
 
 		</div>
@@ -205,4 +221,5 @@
 	<!-- End Footer -->
 
 </body>
+
 </html>

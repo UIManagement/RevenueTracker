@@ -1018,6 +1018,8 @@ public class Customer {
 
 		return "update";
 	}
+
+	
 	public List<Customer> getAllCustomer() {
 
 		Labcon lc = new Labcon();
