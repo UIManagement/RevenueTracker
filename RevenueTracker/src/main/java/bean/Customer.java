@@ -68,7 +68,7 @@ public class Customer {
 	private double period_rev;
 	
 	private double mandayvalue;
-	
+	private String auditor_Name;
 	private String foreign;
 	private String masterid;
 	private String period_Mandays;
@@ -874,6 +874,17 @@ public class Customer {
 		this.start_month = start_month;
 	}
 
+	
+	public String getauditor_Name() {
+		return auditor_Name;
+	}
+
+	public void setauditor_Name(String auditor_Name) {
+		this.auditor_Name = auditor_Name;
+	}
+
+	
+	
 	public List<Customer> getCustInfoAll() {
 		return custInfoAll;
 	}
@@ -5229,7 +5240,7 @@ else if (searchName1 == "" && searchName2 == "" && datea != "" && dateb != "" &&
 				System.out.println(masterid);
 			}
 
-			String strSql = "select  date_ID,datec,mandayvalue from revenue.table where datec  BETWEEN '"
+			String strSql = "select  date_ID,datec,mandayvalue,auditor_Name from revenue.mandaytable where datec  BETWEEN '"
 					+ datea
 					+ "' AND '"
 					+ dateb
