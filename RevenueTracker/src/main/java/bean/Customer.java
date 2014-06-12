@@ -3,11 +3,11 @@ package bean;
 import java.awt.event.ActionEvent;
 import java.sql.*;
 import java.sql.Date;
-
 import java.util.*;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+
 import org.apache.poi.hssf.usermodel.HSSFRow;
 
 
@@ -68,6 +68,7 @@ public class Customer {
 	private double period_rev;
 	
 	private double mandayvalue;
+	private double sample_ID;
 	private String auditor_Name;
 	private String foreign;
 	private String masterid;
@@ -421,6 +422,13 @@ public class Customer {
 		this.masterid = masterid;
 	}
 	
+	public double getsample_ID() {
+		return sample_ID;
+	}
+
+	public void setsample_ID(double sample_ID) {
+		this.sample_ID = sample_ID;
+	}
 	
 
 	public double getperiod_rev() {
@@ -5311,7 +5319,19 @@ else if (searchName1 == "" && searchName2 == "" && datea != "" && dateb != "" &&
 
 	}
 
-	
+	public void getCompanyDetail1() {
+
+		try {
+
+			System.out.println("customer" + this.customer_Name);
+			System.out.println("customer" + this.workOrder);
+
+		} catch (Exception e) {
+			System.out.println("Exception in getCustomerDetail::"
+					+ e.getMessage());
+		}
+
+	}	
 	// Search method
 	public String ResultCustomer() {
 		getCustomerDetail();
@@ -5359,6 +5379,57 @@ else if (searchName1 == "" && searchName2 == "" && datea != "" && dateb != "" &&
 	         
 	        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("it worked! "));  
 	    }  
+	 public List<Customer> getAuditDetail() {
+
+			this.custInfoAll.clear();
+			Labcon lc = new Labcon();
+			MySQLcon = lc.getLocalConnection();
+			try {
+				stmt = MySQLcon.createStatement();
+
+				String sql1 = "Select masterid from revenue.master where customer_Name ='"
+						+ customer_Name + "'   ";
+				System.out.println(sql1);
+				rs = stmt.executeQuery(sql1);
+
+				while (rs.next()) {
+					masterid = rs.getString("masterid");
+					System.out.println(masterid);
+				}
+
+				String strSql = "select  sample_ID,mandayvalue,auditor_Name,table.datec from  revenue.master left join  revenue.sampletable on (master.masterid=sampletable.master_masterid)  where datec  BETWEEN '"+ datea+ "' AND '"+ dateb+ "' and auditor_Name='"+ searchName1+ "' and master_masterid='"+ masterid + "'  ";
+				System.err.println("Search5 query:-" + strSql);
+				rs = stmt.executeQuery(strSql);
+
+				System.out.println(strSql);
+				while (rs.next()) {
+					Customer cust = new Customer();
+					// this.mandayvalue = rs.getString("mandayvalue");
+
+					System.out.println(rs.getDouble("sample_ID") + "date_ID");
+					cust.setsample_ID(rs.getDouble("sample_ID"));
+					System.out.println(rs.getString("datec") + "datec");
+					cust.setdatec(rs.getString("datec"));
+
+					System.out.println(rs.getDouble("mandayvalue") + "mandayvalue");
+					cust.setmandayvalue(rs.getDouble("mandayvalue"));
+					
+					System.out.println(rs.getString("auditor_Name") + "auditor_Name");
+					cust.setauditor_Name(rs.getString("auditor_Name"));
+					
+					int p = rs.getInt(3);
+
+					this.sum_up = this.sum_up + p;
+
+					this.custInfoAll.add(cust);
+				}
+			} catch (SQLException e) {
+				System.out.println("Exception in getCustomerDetail::"
+						+ e.getMessage());
+			}
+
+			return this.custInfoAll;
+		}
 	
 	
 	public String ResultAll() {
@@ -5378,14 +5449,24 @@ else if (searchName1 == "" && searchName2 == "" && datea != "" && dateb != "" &&
 		getCompanyDetail();
 		return "company";
 	}
-
+//second
+	
+	
+	public String MandayEntryCustomer1() {
+		getCompanyDetail1();
+		return "company1";
+	}
+	
 	// Method for Report button in mandatEntry.jsp
 	public String Entrycustomer() {
 		getEntryDetail();
 		return "entry";
 	}
 	
-	
+	public String Auditcustomer() {
+		getAuditDetail();
+		return "entry";
+	}
 	
 	public void postProcessXLS(Object document) {
         HSSFWorkbook wb = (HSSFWorkbook) document;
