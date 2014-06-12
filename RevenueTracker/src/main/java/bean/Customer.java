@@ -5254,13 +5254,17 @@ else if (searchName1 == "" && searchName2 == "" && datea != "" && dateb != "" &&
 				Customer cust = new Customer();
 				// this.mandayvalue = rs.getString("mandayvalue");
 
-				System.out.println(rs.getString("date_ID") + "custname");
+				System.out.println(rs.getString("date_ID") + "date_ID");
 				cust.setdate_ID(rs.getString("date_ID"));
-				System.out.println(rs.getString("datec") + "custname");
+				System.out.println(rs.getString("datec") + "datec");
 				cust.setdatec(rs.getString("datec"));
 
-				System.out.println(rs.getDouble("mandayvalue") + "custname");
+				System.out.println(rs.getDouble("mandayvalue") + "mandayvalue");
 				cust.setmandayvalue(rs.getDouble("mandayvalue"));
+				
+				System.out.println(rs.getString("auditor_Name") + "auditor_Name");
+				cust.setauditor_Name(rs.getString("auditor_Name"));
+				
 				int p = rs.getInt(3);
 
 				this.sum_up = this.sum_up + p;
