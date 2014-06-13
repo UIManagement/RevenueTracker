@@ -153,23 +153,23 @@
 
 			<h:outputLabel value="StartDate" for="startDatePicker" />
 			<h:inputText id="startdate" onfocus="calendar()"
-				value="#{customer.datea}"></h:inputText>
+				value="#{auditorMT.datea}"></h:inputText>
 			<h:outputLabel value="EndDate" for="endDatePicker" />
-			<h:inputText id="enddate" value="#{customer.dateb}">
+			<h:inputText id="enddate" value="#{auditorMT.dateb}">
 			</h:inputText>
    &nbsp;
   <tr>
 				<td><b> <h:outputLabel value="Auditors"
 							for="auditor_Name" /> </b>
 				</td>
-				<td><h:selectOneMenu value="#{customer.searchName1}" >
+				<td><h:selectOneMenu value="#{auditorMT.searchName1}" >
 						<f:selectItem itemValue="" itemLabel="" />
 						<f:selectItem itemValue="Manik" itemLabel="Manik" />
 						
 					</h:selectOneMenu> <h:message id="auditor_NameeMessage" for="auditor_Name" /></td>
 			</tr>
   
- <h:commandButton value="Report" action="#{customer.Auditcustomer}"   >
+ <h:commandButton value="Report" action="#{auditorMT.insertAction}"   >
 
 			</h:commandButton>
 

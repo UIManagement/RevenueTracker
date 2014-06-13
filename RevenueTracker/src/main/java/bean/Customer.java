@@ -5397,7 +5397,7 @@ else if (searchName1 == "" && searchName2 == "" && datea != "" && dateb != "" &&
 					System.out.println(masterid);
 				}
 
-				String strSql = "select  sample_ID,mandayvalue,auditor_Name,table.datec from  revenue.master left join  revenue.sampletable on (master.masterid=sampletable.master_masterid)  where datec  BETWEEN '"+ datea+ "' AND '"+ dateb+ "' and auditor_Name='"+ searchName1+ "' and master_masterid='"+ masterid + "'  ";
+				String strSql = "select  sample_ID,sampletable.master_masterid,sampletable.mandayvalue,sampletable.auditor_Name,table.datec,table.date_ID from  revenue.table left join  revenue.sampletable on (table.master_masterid=sampletable.master_masterid)  where datec  BETWEEN '"+ datea+ "' AND '"+ dateb+ "' and auditor_Name='"+ searchName1+ "' and sampletable.master_masterid='"+ masterid + "'  ";
 				System.err.println("Search5 query:-" + strSql);
 				rs = stmt.executeQuery(strSql);
 
@@ -5406,7 +5406,7 @@ else if (searchName1 == "" && searchName2 == "" && datea != "" && dateb != "" &&
 					Customer cust = new Customer();
 					// this.mandayvalue = rs.getString("mandayvalue");
 
-					System.out.println(rs.getDouble("sample_ID") + "date_ID");
+					System.out.println(rs.getDouble("sample_ID") + "sample_ID");
 					cust.setsample_ID(rs.getDouble("sample_ID"));
 					System.out.println(rs.getString("datec") + "datec");
 					cust.setdatec(rs.getString("datec"));
@@ -5417,9 +5417,10 @@ else if (searchName1 == "" && searchName2 == "" && datea != "" && dateb != "" &&
 					System.out.println(rs.getString("auditor_Name") + "auditor_Name");
 					cust.setauditor_Name(rs.getString("auditor_Name"));
 					
-					int p = rs.getInt(3);
-
-					this.sum_up = this.sum_up + p;
+					System.out.println(rs.getString("date_ID") + "date_ID");
+					cust.setdate_ID(rs.getString("date_ID"));
+					
+					
 
 					this.custInfoAll.add(cust);
 				}
