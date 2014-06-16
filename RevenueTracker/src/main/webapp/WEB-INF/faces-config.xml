@@ -73,7 +73,7 @@
   <navigation-case>
   <from-action>#{customer.MandayEntryCustomer}</from-action> 
   <from-outcome>company</from-outcome> 
-  <to-view-id>/mandayEntry.xhtml</to-view-id> 
+  <to-view-id>/mandayEntryOld.xhtml</to-view-id> 
   </navigation-case> 
   
  <navigation-case>
@@ -197,11 +197,17 @@
   </navigation-case>
   </navigation-rule>
 
-
+<navigation-rule>
+  <from-view-id>/mandayEntryOld.xhtml</from-view-id> 
+ <navigation-case>
+  <from-action>#{auditorMT.insertAction}</from-action> 
+  <from-outcome>update</from-outcome> 
+  <to-view-id>/mandayEntryOld.xhtml</to-view-id> 
+  </navigation-case>
+</navigation-rule>
 
 <navigation-rule>
-
-  <from-view-id>/quote.xhtml</from-view-id> 
+<from-view-id>/quote.xhtml</from-view-id> 
   
 <navigation-case>
 <from-action>#{quote.ResultQuote}</from-action> 

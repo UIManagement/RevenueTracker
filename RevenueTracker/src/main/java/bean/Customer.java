@@ -5207,12 +5207,7 @@ else if (searchName1 == "" && searchName2 == "" && datea != "" && dateb != "" &&
 					this.sum_dm = this.sum_dm + e;
 				
 				}
-			
-			
-	
-				
-
-				
+		
 			}
 			//date & service
 
@@ -5248,7 +5243,7 @@ else if (searchName1 == "" && searchName2 == "" && datea != "" && dateb != "" &&
 				System.out.println(masterid);
 			}
 
-			String strSql = "select  date_ID,datec,mandayvalue,auditor_Name from revenue.mandaytable where datec  BETWEEN '"
+			String strSql = "select  date_ID,datec,mandayvalue from revenue.table where datec  BETWEEN '"
 					+ datea
 					+ "' AND '"
 					+ dateb

@@ -123,7 +123,8 @@
 	<br/>
 
 	
-			<table >
+			
+  &nbsp;&nbsp;<br/><table >
 
 				<tr>
 					<td><b> <h:outputLabel value="Customer Name::"
@@ -137,7 +138,7 @@
 
 
 			</table>
-  &nbsp;&nbsp;<br/>
+			<br/>
 
 			<h:outputLabel value="StartDate" for="startDatePicker" />
 			<h:inputText id="startdate" onfocus="calendar()"
@@ -167,39 +168,10 @@
 			<br/>
 			<br/>
 			<br/>
-			<h:dataTable value="#{customer.custInfoAll}" var="custInfo"
-				styleClass="order-table" headerClass="order-table-header" border="5"
-				rowClasses="order-table-odd-row,order-table-even-row">
-
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="Date" />
-
-					</f:facet>
-					<h:outputText value="#{custInfo.datec}">
-					</h:outputText>
-
-					<h:outputLabel value="Manday::" for="mandayvalue" />
-					<h:message id="mandayvalueMessage" for="mandayvalue" />
-					<h:inputText id="mandayvalue" value="#{custInfo.mandayvalue}"/>
-					
-					<h:outputLabel value="Auditor::" for="auditor_Name" />
-					<h:message id="auditor_NameMessage" for="auditor_Name" />
-					<h:inputText id="auditor_Name" value="#{custInfo.auditor_Name}"/>
-				
-				</h:column>
-			</h:dataTable>
-			<br/>
-			<br/>
-			<h:commandButton action="#{customer.updateAction}" value="Update Mandays"   rendered="true"  onclick="box()"  >
 			
-				 <f:setPropertyActionListener target="#{customer.custInfoAll}" value="custInfo" />
-				 </h:commandButton>
-				 
-				 
-  &nbsp;&nbsp;
- <h:commandButton value="reset" type="reset" />
-
+			<br/>
+			<br/>
+			
 		</h:form>
 		
 		

@@ -73,23 +73,9 @@
 </script>
 
 
-
-
-
-
 </head>
 <body>
-	<table>
-
-				<tr>
-					<td><b> <h:outputLabel value="Customer Name::" for="customer_Name" />
-					</b></td>
-					<td><h:message id="customerIDMessage" for="customer_Name" /> <h:inputText id="customer_Name" value="#{customer.customer_Name}" required="true" />
-					</td>
-				</tr>
-
-
-			</table><f:view>
+	<f:view>
 
 
 		<h:form id="insert">
@@ -146,8 +132,23 @@
 
 	
 			
-  &nbsp;&nbsp;<br/>
+  &nbsp;&nbsp;<br/><table >
 
+				<tr>
+					<td><b> <h:outputLabel value="Customer Name::"
+								for="customer_Name" />
+					</b></td>
+					<td><h:message id="customerIDMessage" for="customer_Name" /> <h:inputText
+							id="customer_Name" value="#{customer.customer_Name}"
+							required="true" />
+					</td>
+				</tr>
+
+
+			</table>
+<br/>
+	<br/>
+	<br/>
 			<h:outputLabel value="StartDate" for="startDatePicker" />
 			<h:inputText id="startdate" onfocus="calendar()"
 				value="#{customer.datea}"></h:inputText>

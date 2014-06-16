@@ -75,7 +75,16 @@
 		});
 	});
 	
-
+$(function() {
+		$("#Search\\:datea").datepicker({
+			showOn : "button",
+			buttonImage : "images/calendar.gif",
+			buttonImageOnly : true,
+			changeMonth : true,
+			changeYear : true,
+			dateFormat : 'yy-mm-dd'
+		});
+	});
 		
 	function dataTableToExcel()  
 	{  
@@ -454,15 +463,21 @@
 					<f:facet name="header">
 						<h:outputText value="Start Date" />
 					</f:facet>
-					<h:outputText value="#{custInfo.startDate}">
-					</h:outputText>
+					<h:message id="startDateMessage" for="startDate" /> 
+							
+					<h:inputText id="startdate" value="#{custInfo.datea}"  />
+							
 				</p:column>
+				
+				
 				<p:column>
 					<f:facet name="header">
 						<h:outputText value="End Date" />
 					</f:facet>
-					<h:outputText value="#{custInfo.endDate}">
-					</h:outputText>
+					<h:message id="endDateMessage" for="endDate" />
+							 
+							<h:inputText id="enddate"
+							value="#{custInfo.dateb}"  />
 				</p:column>
 				<p:column>
 					<f:facet name="header">
