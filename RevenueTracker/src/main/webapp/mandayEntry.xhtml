@@ -79,7 +79,17 @@
 
 </head>
 <body>
-	<f:view>
+	<table>
+
+				<tr>
+					<td><b> <h:outputLabel value="Customer Name::" for="customer_Name" />
+					</b></td>
+					<td><h:message id="customerIDMessage" for="customer_Name" /> <h:inputText id="customer_Name" value="#{customer.customer_Name}" required="true" />
+					</td>
+				</tr>
+
+
+			</table><f:view>
 
 
 		<h:form id="insert">
@@ -135,20 +145,7 @@
 	<br/>
 
 	
-			<table >
-
-				<tr>
-					<td><b> <h:outputLabel value="Customer Name::"
-								for="customer_Name" />
-					</b></td>
-					<td><h:message id="customerIDMessage" for="customer_Name" /> <h:inputText
-							id="customer_Name" value="#{customer.customer_Name}"
-							required="true" />
-					</td>
-				</tr>
-
-
-			</table>
+			
   &nbsp;&nbsp;<br/>
 
 			<h:outputLabel value="StartDate" for="startDatePicker" />

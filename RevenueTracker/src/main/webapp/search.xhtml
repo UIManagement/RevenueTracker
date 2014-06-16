@@ -5,7 +5,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
-	
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
 <title>Home Page </title>
@@ -32,7 +32,7 @@
 		 
 		      
 		                    
-		                                1, offy =   
+		                             1, offy =   
 		                                
 		          
 		                                     -1);
@@ -110,17 +110,7 @@
 </h:commandLink>
 	</span>				
 					
-					
-					
-					
-
-	
-					
-					
-					
-					
-					
-			<!-- Logo + Top Nav -->
+		<!-- Logo + Top Nav -->
 				
 	
 			<div id="top">
@@ -128,9 +118,9 @@
 				<table>
 					<tr>
 						<td><a href="https://ul-dqs.in/" target="_blank"><img
-								src="css/images/copy.png"></img> </a></td>
+			src="css/images/copy.png"></img> </a></td>
 
-					</tr>
+</tr>
 				</table>
 			</div>
 			<br/> <br/> <br/> <br/> <br/> <br/>
@@ -463,15 +453,15 @@
 					<f:facet name="header">
 						<h:outputText value="Start Date" />
 					</f:facet>
-					<h:outputText value="#{custInfo.startDate}">
-					</h:outputText>
+					<h:inputText id="startdate"
+							value="#{custInfo.startDate}"  />
 				</p:column>
 				<p:column>
 					<f:facet name="header">
 						<h:outputText value="End Date" />
 					</f:facet>
-					<h:outputText value="#{custInfo.endDate}">
-					</h:outputText>
+					<h:inputText id="enddate"
+							value="#{custInfo.endDate}"  />
 				</p:column>
 				<p:column>
 					<f:facet name="header">
@@ -605,7 +595,7 @@
 
 					</f:facet>
 
-					<h:commandButton value="edit" action="#{customer.MandayEntryCustomer1}" image="css/images/edit.gif">
+					<h:commandButton value="edit" action="#{customer.MandayEntryCustomer}" image="css/images/edit.gif">
 						<f:setPropertyActionListener target="#{customer}" value="#{custInfo}" />
 
 

@@ -5450,14 +5450,7 @@ else if (searchName1 == "" && searchName2 == "" && datea != "" && dateb != "" &&
 		getCompanyDetail();
 		return "company";
 	}
-//second
-	
-	
-	public String MandayEntryCustomer1() {
-		getCompanyDetail1();
-		return "company1";
-	}
-	
+
 	// Method for Report button in mandatEntry.jsp
 	public String Entrycustomer() {
 		getEntryDetail();
