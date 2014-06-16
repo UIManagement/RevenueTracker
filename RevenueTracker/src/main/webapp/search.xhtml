@@ -75,7 +75,28 @@
 		});
 	});
 	
-	
+$(function() {
+		$("#Search\\:startdate1").datepicker({
+			showOn : "button",
+			buttonImage : "images/calendar.gif",
+			buttonImageOnly : true,
+			changeMonth : true,
+			changeYear : true,
+			dateFormat : 'yy-mm-dd'
+		});
+	});
+
+	$(function() {
+		$("#Search\\:enddate1").datepicker({
+			showOn : "button",
+			buttonImage : "images/calendar.gif",
+			buttonImageOnly : true,
+			changeMonth : true,
+			changeYear : true,
+			dateFormat : 'yy-mm-dd'
+		});
+	});
+		
 	function dataTableToExcel()  
 	{  
 	var strCopy = document.getElementById("MyTable").innerHTML;  
@@ -454,14 +475,14 @@
 						<h:outputText value="Start Date" />
 					</f:facet>
 					<h:inputText id="startdate"
-							value="#{custInfo.startDate}"  />
+							value="#{custInfo.startdate1}"  />
 				</p:column>
 				<p:column>
 					<f:facet name="header">
 						<h:outputText value="End Date" />
 					</f:facet>
 					<h:inputText id="enddate"
-							value="#{custInfo.endDate}"  />
+							value="#{custInfo.endDate1}"  />
 				</p:column>
 				<p:column>
 					<f:facet name="header">
