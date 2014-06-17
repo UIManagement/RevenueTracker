@@ -74,9 +74,6 @@
 
 
 
-
-
-
 </head>
 <body>
 	<f:view>
@@ -124,20 +121,13 @@
 
 	
 			
-  &nbsp;&nbsp;<br/><table >
+  &nbsp;&nbsp;<tr>
+				<td><b> <h:outputLabel value="Customer Name"
+							for="customer_Name" /> </b> <h:message id="customerNameMessage"
+						for="customer_Name" /> <h:inputText id="customer_Name"
+						value="#{auditorMT.searchName}" /></td>
+			</tr>
 
-				<tr>
-					<td><b> <h:outputLabel value="Customer Name::"
-								for="customer_Name" />
-					</b></td>
-					<td><h:message id="customerIDMessage" for="customer_Name" /> <h:inputText
-							id="customer_Name" value="#{customer.customer_Name}"
-							required="true" />
-					</td>
-				</tr>
-
-
-			</table>
 			<br/>
 
 			<h:outputLabel value="StartDate" for="startDatePicker" />

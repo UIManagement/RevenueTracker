@@ -1154,7 +1154,7 @@ public class Customer {
 
 
 
-			String strSql = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,ROUND(updated_Work_Order,2),ROUND(updated_WO_Assessment_fee,2),work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database, t_L,ROUND(service_Tax,2),ROUND(total_Invoice_Amount,2),period_Mandays,workOrder,SUM(table.mandayvalue) from revenue.master left join  revenue.table on (master.masterid=table.master_masterid) where customer_Name like '"+ searchName + "%'  group by master.masterid ";
+			String strSql = "select masterid,bR,customer_Name,customer_Type,region,vertical,industry,service,product,stage,designation,order_Booked_By,work_Order_Date,currency,work_Order_Assessment_fee,work_Order_Logo_fee,shared_Revenue,work_Order_Value,exchange_Rate,ROUND(updated_Work_Order,2),ROUND(updated_WO_Assessment_fee,2),work_Order_Mandays,start_month,delivered_Mandays,startDate,endDate,invoice,invoice_Date,assessment_Fees,logo_Fee_Database, t_L,ROUND(service_Tax,2),ROUND(total_Invoice_Amount,2),period_Mandays,workOrder,SUM(table.mandayvalue) from revenue.master left join  revenue.table on (master.masterid=table.master_masterid) where customer_Name like '"+ searchName + "%' or br like '"+ searchName + "%' group by master.masterid ";
 			System.err.println("Search2 query:-" + strSql);
 			rs = stmt.executeQuery(strSql);
 
@@ -5265,8 +5265,7 @@ else if (searchName1 == "" && searchName2 == "" && datea != "" && dateb != "" &&
 				System.out.println(rs.getDouble("mandayvalue") + "mandayvalue");
 				cust.setmandayvalue(rs.getDouble("mandayvalue"));
 				
-				System.out.println(rs.getString("auditor_Name") + "auditor_Name");
-				cust.setauditor_Name(rs.getString("auditor_Name"));
+				
 				
 				int p = rs.getInt(3);
 

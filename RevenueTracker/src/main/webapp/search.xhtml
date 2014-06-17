@@ -461,11 +461,10 @@ $(function() {
 
 				<p:column>
 					<f:facet name="header">
-						<h:outputText value="Start Date" />
+						<h:outputText value="Start Date"  for="startDatePicker"  />
 					</f:facet>
-					<h:message id="startDateMessage" for="startDate" /> 
-							
-					<h:inputText id="startdate" value="#{custInfo.datea}"  />
+					
+					<h:inputText id="startdate" value="#{custInfo.datea}" onfocus="calendar()" />
 							
 				</p:column>
 				
@@ -474,9 +473,7 @@ $(function() {
 					<f:facet name="header">
 						<h:outputText value="End Date" />
 					</f:facet>
-					<h:message id="endDateMessage" for="endDate" />
-							 
-							<h:inputText id="enddate"
+						<h:inputText id="enddate"
 							value="#{custInfo.dateb}"  />
 				</p:column>
 				<p:column>
@@ -587,6 +584,10 @@ $(function() {
 					</h:outputText>
 
 				</p:column>
+
+
+
+
 
 				<p:column>
 
