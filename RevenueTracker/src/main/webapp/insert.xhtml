@@ -140,7 +140,7 @@ $(function() {
 								for="br" /> </b>
 					</td>
 					<td><h:message id="brMessage" for="br" />
-						<h:inputText id="br" value="#{customer.bR}"/></td>
+						<h:inputText id="br" value="#{updateRevenue.bR}"/></td>
 							 
 				
 				</tr>
@@ -149,7 +149,7 @@ $(function() {
 								for="customer_Name" /> </b>
 					</td>
 					<td><h:message id="customerIDMessage" for="customer_Name" />
-						<h:inputText id="customer_Name" value="#{customer.customer_Name}"
+						<h:inputText id="customer_Name" value="#{updateRevenue.customer_Name}"
 							 /></td>
 				</tr>
 
@@ -157,9 +157,9 @@ $(function() {
 					<td><b> <h:outputLabel value="Customer Type::"
 								for="customer_Type" /> </b></td>
 					<td><h:message id="CustomerTypeMessage" for="customer_Type" />
-						<h:inputText id="customer_Type" value="#{customer.customer_Type}"
-							 rendered="#{customer.customer_Type == 'seven'}" />
-						<h:selectOneMenu value="#{customer.customer_Type}">
+						<h:inputText id="customer_Type" value="#{updateRevenue.customer_Type}"
+							 rendered="#{updateRevenue.customer_Type == 'seven'}" />
+						<h:selectOneMenu value="#{updateRevenue.customer_Type}">
 							<f:selectItem itemValue="New" itemLabel="New" />
 							<f:selectItem itemValue="Existing" itemLabel="Existing" />
 							<f:selectItem itemValue="InterCompany" itemLabel="InterCompany" />
@@ -174,9 +174,9 @@ $(function() {
 					<td><b> <h:outputLabel value="Region::" for="region" /> </b>
 					</td>
 					<td><h:message id="CustomerAddressMessage" for="region" /> <h:inputText
-							id="region" value="#{customer.region}" 
-							rendered="#{customer.region == 'seven'}" /> <h:selectOneMenu
-							value="#{customer.region}">
+							id="region" value="#{updateRevenue.region}" 
+							rendered="#{updateRevenue.region == 'seven'}" /> <h:selectOneMenu
+							value="#{updateRevenue.region}">
 							<f:selectItem itemValue="Aerospace" itemLabel="Aerospace" />
 							<f:selectItem itemValue="C&amp;I(R)" itemLabel="C&amp;I(R)" />
 							<f:selectItem itemValue="Gujarat" itemLabel="Gujarat" />
@@ -197,9 +197,9 @@ $(function() {
 					<td><b> <h:outputLabel value="vertical::" for="vertical" />
 					</b></td>
 					<td><h:message id="CustomerverticalMessage" for="vertical" />
-						<h:inputText id="vertical" value="#{customer.vertical}"
-							 rendered="#{customer.vertical == 'seven'}" /> <h:selectOneMenu
-							value="#{customer.vertical}">
+						<h:inputText id="vertical" value="#{updateRevenue.vertical}"
+							 rendered="#{updateRevenue.vertical == 'seven'}" /> <h:selectOneMenu
+							value="#{updateRevenue.vertical}">
 							<f:selectItem itemValue="Aerospace" itemLabel="Aerospace" />
 							<f:selectItem itemValue="Medical &amp; Healthcare"
 								itemLabel="Medical &amp; Healthcare" />
@@ -219,9 +219,9 @@ $(function() {
 					<td><b> <h:outputLabel value="Industry::" for="industry" />
 					</b></td>
 					<td><h:message id="CustomerindustryMessage" for="industry" />
-						<h:inputText id="industry" value="#{customer.industry}"
-							 rendered="#{customer.industry == 'seven'}" /> <h:selectOneMenu
-							value="#{customer.industry}">
+						<h:inputText id="industry" value="#{updateRevenue.industry}"
+							 rendered="#{updateRevenue.industry == 'seven'}" /> <h:selectOneMenu
+							value="#{updateRevenue.industry}">
 							<f:selectItem itemValue="Aerospace" itemLabel="Aerospace" />
 							<f:selectItem itemValue="Automotive" itemLabel="Automotive" />
 							<f:selectItem itemValue="Banking, Financial Services &amp; Insurance"
@@ -270,9 +270,9 @@ $(function() {
 					<td><b> <h:outputLabel value="Service::" for="service" />
 					</b></td>
 					<td><h:message id="CustomerserviceMessage" for="service" /> <h:inputText
-							id="service" value="#{customer.service}" 
-							rendered="#{customer.service == 'seven'}" /> <h:selectOneMenu
-							value="#{customer.service}">
+							id="service" value="#{updateRevenue.service}" 
+							rendered="#{updateRevenue.service == 'seven'}" /> <h:selectOneMenu
+							value="#{updateRevenue.service}">
 							<f:selectItem itemValue="RA" itemLabel="RA" />
 							<f:selectItem itemValue="GC Mark" itemLabel="GC Mark" />
 							<f:selectItem itemValue="CA" itemLabel="CA" />
@@ -299,9 +299,9 @@ $(function() {
 					<td><b> <h:outputLabel value="Product::" for="product" />
 					</b></td>
 					<td><h:message id="CustomerproductMessage" for="product" /> <h:inputText
-							id="product" value="#{customer.product}" 
-							rendered="#{customer.product == 'seven'}" /> <h:selectOneMenu
-							value="#{customer.product}">
+							id="product" value="#{updateRevenue.product}" 
+							rendered="#{updateRevenue.product == 'seven'}" /> <h:selectOneMenu
+							value="#{updateRevenue.product}">
 							<f:selectItem itemValue="ANSI/ESD S 20.20"
 								itemLabel="ANSI/ESD S 20.20" />
 							<f:selectItem itemValue="AS 9100" itemLabel="AS 9100" />
@@ -360,9 +360,9 @@ $(function() {
 				<tr>
 					<td><b> <h:outputLabel value="Stage::" for="stage" /> </b></td>
 					<td><h:message id="CustomersstageMessage" for="stage" /> <h:inputText
-							id="stage" value="#{customer.stage}" 
-							rendered="#{customer.stage == 'seven'}" /> <h:selectOneMenu
-							value="#{customer.service}">
+							id="stage" value="#{updateRevenue.stage}" 
+							rendered="#{updateRevenue.stage == 'seven'}" /> <h:selectOneMenu
+							value="#{updateRevenue.service}">
 							<f:selectItem itemValue="1st Annual Assessment"
 								itemLabel="1st Annual Assessment" />
 							<f:selectItem
@@ -430,9 +430,9 @@ $(function() {
 								for="designation" /> </b></td>
 					<td><h:message id="CustomerdesignationMessage"
 							for="designation" /> <h:inputText id="designation"
-							value="#{customer.designation}" 
-							rendered="#{customer.designation == 'seven'}" /> <h:selectOneMenu
-							value="#{customer.designation}">
+							value="#{updateRevenue.designation}" 
+							rendered="#{updateRevenue.designation == 'seven'}" /> <h:selectOneMenu
+							value="#{updateRevenue.designation}">
 							<f:selectItem itemValue="Sales Executive - Existing"
 								itemLabel="Sales Executive - Existing" />
 							<f:selectItem itemValue="CSP" itemLabel="CSP" />
@@ -464,9 +464,9 @@ $(function() {
 								for="order_Booked_By" /> </b></td>
 					<td><h:message id="Customerorder_Booked_ByMessage"
 							for="order_Booked_By" /> <h:inputText id="order_Booked_By"
-							value="#{customer.order_Booked_By}" 
-							rendered="#{customer.order_Booked_By == 'seven'}" /> <h:selectOneMenu
-							value="#{customer.order_Booked_By}">
+							value="#{updateRevenue.order_Booked_By}" 
+							rendered="#{updateRevenue.order_Booked_By == 'seven'}" /> <h:selectOneMenu
+							value="#{updateRevenue.order_Booked_By}">
 							<f:selectItem itemValue="Subhendu" itemLabel="Subhendu" />
 							<f:selectItem itemValue="Avijit Choudary"
 								itemLabel="Avijit Choudary" />
@@ -520,7 +520,7 @@ $(function() {
 								for="work_Order_Date" /> </b></td>
 					<td><h:message id="work_Order_DateMessage" for="work_Order_Date" />
 						<h:inputText id="workdate"
-							value="#{customer.work_Order_Date}"  />
+							value="#{updateRevenue.work_Order_Date}"  />
 					</td>
 				</tr>
 
@@ -532,9 +532,9 @@ $(function() {
 				<tr>
 					<td><b> <h:outputLabel value="Shared Revenue::" for="shared_Revenue" /> </b></td>
 					<td><h:message id="shared_RevenueMessage" for="shared_Revenue" />
-						<h:inputText id="shared_Revenue" value="#{customer.shared_Revenue}"
-						 rendered="#{customer.shared_Revenue == 'seven'}" /><h:selectOneMenu
-							value="#{customer.shared_Revenue}">
+						<h:inputText id="shared_Revenue" value="#{updateRevenue.shared_Revenue}"
+						 rendered="#{updateRevenue.shared_Revenue == 'seven'}" /><h:selectOneMenu
+							value="#{updateRevenue.shared_Revenue}">
 							<f:selectItem itemValue="Yes" itemLabel="Yes" />
 							<f:selectItem itemValue="No" itemLabel="No" />
 							
@@ -553,9 +553,9 @@ $(function() {
 					<td><b> <h:outputLabel value="currency::" for="currency" />
 					</b></td>
 					<td><h:message id="CustomercurrencyMessage" for="currency" />
-						<h:inputText id="currency" value="#{customer.currency}"
-							 rendered="#{customer.currency == 'seven'}" /> <h:selectOneMenu
-							value="#{customer.currency}">
+						<h:inputText id="currency" value="#{updateRevenue.currency}"
+							 rendered="#{updateRevenue.currency == 'seven'}" /> <h:selectOneMenu
+							value="#{updateRevenue.currency}">
 							<f:selectItem itemValue="INR" itemLabel="INR" />
 							<f:selectItem itemValue="USD" itemLabel="USD" />
 							<f:selectItem itemValue="EUR" itemLabel="EUR" />
@@ -569,210 +569,7 @@ $(function() {
 					</td>
 				</tr>
 
-				<tr>
-					<td><b> <h:outputLabel value="work Order Assessment fee::"
-								for="work_Order_Assessment_fee" /> </b></td>
-					<td><h:message id="work_Order_Assessment_feeMessage"
-							for="work_Order_Assessment_fee" /> <h:inputText
-							id="work_Order_Assessment_fee"
-							value="#{customer.work_Order_Assessment_fee}"  />
-					</td>
-				</tr>
-
-				<tr>
-					<td><b> <h:outputLabel value="work Order Logo fee::"
-								for="work_Order_Logo_fee" /> </b></td>
-					<td><h:message id="work_Order_Logo_feeMessage"
-							for="work_Order_Logo_fee" /> <h:inputText
-							id="work_Order_Logo_fee" value="#{customer.work_Order_Logo_fee}"
-							/>
-					</td>
-				</tr>
-
-
-				<tr>
-					<td><b> <h:outputLabel value="Work Order Value::"
-								for="work_Order_Value" /> </b></td>
-					<td><h:message id="Customerwork_Order_ValueMessage"
-							for="work_Order_Value" />
-							 <h:inputText id="work_Order_Value"
-							value="#{customer.work_Order_Value}" readonly="true" />
-					</td>
-				</tr>
-
-
-				<tr>
-					<td><b> <h:outputLabel value="Exchange Rate::"
-								for="exchange_Rate" /> </b></td>
-					<td><h:message id="exchange_RateMessage" for="exchange_Rate" />
-						<h:inputText id="exchange_Rate" value="#{customer.exchange_Rate}"
-							 />
-					</td>
-				</tr>
-
-
-				<tr>
-					<td><b> <h:outputLabel value="Updated Work ::"
-								for="updated_Work_Order" /> </b></td>
-					<td><h:message id="updated_Work_OrderMessage"
-							for="updated_Work_Order" /> <h:inputText id="updated_Work_Order"
-							value="#{customer.updated_Work_Order}" readonly="true"   />
-					</td>
-				</tr>
-
-				<tr>
-					<td><b> <h:outputLabel
-								value="Updated WO Assessment fee ::"
-								for="updated_WO_Assessment_fee" /> </b></td>
-					<td><h:message id="updated_WO_Assessment_feeMessage"
-							for="updated_WO_Assessment_fee" /> <h:inputText
-							id="updated_WO_Assessment_fee"
-							value="#{customer.updated_WO_Assessment_fee}"  />
-					</td>
-				</tr>
-
-
-				<tr>
-					<td><b> <h:outputLabel value="work Order Mandays::"
-								for="work_Order_Mandays" /> </b></td>
-					<td><h:message id="work_Order_MandaysMessage"
-							for="work_Order_Mandays" /> <h:inputText id="work_Order_Mandays"
-							value="#{customer.work_Order_Mandays}"  />
-					</td>
-				</tr>
-
-				<tr>
-					<td><b> <h:outputLabel value="StartMonth::"
-								for="start_month" /> </b></td>
-					<td><h:message id="start_monthMessage" for="start_month" /> <h:inputText
-							id="start_month" value="#{customer.start_month}"
-							rendered="#{customer.start_month == 'seven'}" /> <h:selectOneMenu
-							value="#{customer.start_month}">
-							<f:selectItem itemValue="Jan" itemLabel="Jan" />
-							<f:selectItem itemValue="Feb" itemLabel="Feb" />
-							<f:selectItem itemValue="Mar" itemLabel="Mar" />
-							<f:selectItem itemValue="Apr" itemLabel="Apr" />
-							<f:selectItem itemValue="May" itemLabel="May" />
-							<f:selectItem itemValue="June" itemLabel="June" />
-							<f:selectItem itemValue="July" itemLabel="July" />
-							<f:selectItem
-								itemValue="please select any one of the values from the drop down here"
-								itemLabel="please select any one of the values from the drop down here" />
-						</h:selectOneMenu>
-					</td>
-				</tr>
-
-				<tr>
-					<td><b> <h:outputLabel value="start Date::"
-								for="startDate" /> </b></td>
-					<td><h:message id="startDateMessage"
-							for="startDate" /> <h:inputText id="startdate"
-							value="#{customer.startDate}"  />
-					</td>
-				</tr>
-				<tr>
-					<td><b> <h:outputLabel value="end Date::"
-								for="endDate" /> </b></td>
-					<td><h:message id="endMessage"
-							for="endDate" /> <h:inputText id="enddate"
-							value="#{customer.endDate}"  />
-					</td>
-				</tr>
-				<tr>
-					<td><b> <h:outputLabel value="Delivered Mandays::"
-								for="dm" /> </b></td>
-					<td><h:message id="dmMessage"
-							for="dm" /> <h:inputText id="dm"
-							value="#{customer.dm}"  />
-					</td>
-				</tr>
 				
-				
-				<tr>
-					<td><b> <h:outputLabel value="Invoice ::"
-								for="invoice" /> </b></td>
-					<td><h:message id="invoiceMessage"
-							for="invoice" /> <h:inputText id="invoice"
-							value="#{customer.invoice}"  />
-					</td>
-				</tr>
-				<tr>
-					<td><b> <h:outputLabel value="Invoice_Date::"
-								for="invoice_Date" /> </b></td>
-					<td><h:message id="invoice_DateMessage" for="invoice_Date" /> <h:inputText id="invoicedate" value="#{customer.invoice_Date}" />
-					</td>
-				</tr>
-				<tr>
-					<td><b> <h:outputLabel value="assessment_Fees::"
-								for="assessment_Fees" /> </b></td>
-					<td><h:message id="assessment_FeesMessage"
-							for="assessment_Fees" /> <h:inputText id="assessment_Fees"
-							value="#{customer.assessment_Fees}"  />
-					</td>
-				</tr>
-				<tr>
-					<td><b> <h:outputLabel value="logo_Fee_Database::"
-								for="logo_Fee_Database" /> </b></td>
-					<td><h:message id="logo_Fee_DatabaseMessage"
-							for="logo_Fee_Database" /> <h:inputText id="logo_Fee_Database"
-							value="#{customer.logo_Fee_Database}"  />
-					</td>
-				</tr>
-               <tr>
-					<td><b> <h:outputLabel value="T_L::"
-					
-								for="t_L" /> </b></td>
-					<td><h:message id="t_LMessage"
-							for="t_L" /> <h:inputText id="t_L"
-							value="#{customer.t_L}"  />
-					</td>
-				</tr>
-				 <tr>
-					<td><b> <h:outputLabel value="Service Tax::"
-					
-								for="t_L" /> </b></td>
-					<td><h:message id="service_TaxMessage"
-							for="service_Tax" /> <h:inputText id="service_Tax"
-							value="#{customer.service_Tax}"  />
-					</td>
-				</tr>
-				 <tr>
-					<td><b> <h:outputLabel value="Total Invoice Amount::"
-					
-								for="total_Invoice_Amount" /> </b></td>
-					<td><h:message id="total_Invoice_AmountMessage"
-							for="total_Invoice_Amount" /> <h:inputText id="total_Invoice_Amount"
-							value="#{customer.total_Invoice_Amount}" readonly="true" />
-					</td>
-				</tr>
-				
-				<tr>
-					<td><b> <h:outputLabel value="Period Mandays ::"
-								for="mandayvalue" /> </b></td>
-					<td><h:message id="mandayvalueMessage" for="mandayvalue" /> <h:inputText
-							id="mandayvalue" value="#{customer.mandayvalue}" readonly="true" />
-					</td>
-				</tr>
-				
-				<tr>
-					<td><b> <h:outputLabel value="Period Revenue ::"
-								for="period_rev" /> </b></td>
-					<td><h:message id="period_revMessage" for="period_rev" /> <h:inputText
-							id="period_rev" value="#{customer.period_rev}" readonly="true" />
-					</td>
-				</tr>
-				
-				
-				
-				
-				
-				<tr>
-					<td><b> <h:outputLabel value="work Order ::"
-								for="work_Order" /> </b></td>
-					<td><h:message id="work_OrderMessage" for="work_Order" /> <h:inputText
-							id="work_Order" value="#{customer.workOrder}"  />
-					</td>
-				</tr>
 
 
 

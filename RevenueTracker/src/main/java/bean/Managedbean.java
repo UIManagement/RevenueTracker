@@ -6,7 +6,7 @@ import java.util.List;
 public class Managedbean   {
 	
 	
-	
+	public String c = "INR";
 	public String customer_Name;
 	public String customer_Type;
 	public String region;

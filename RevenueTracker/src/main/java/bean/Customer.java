@@ -122,7 +122,7 @@ public class Customer extends  Managedbean{
 //
 //		return "insert";
 //	}
-//
+
 //	// adddateaction
 //
 //
@@ -4406,7 +4406,7 @@ else if (searchName1 == "" && searchName2 == "" && datea != "" && dateb != "" &&
 	// over
 
 	public void getEditDetail() {
-		this.custInfoAll.clear();
+		this.custInfoAl.clear();
 		try {
 
 			System.out.println("customer" + this.workOrder);
