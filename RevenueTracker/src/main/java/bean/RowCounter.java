@@ -6,7 +6,7 @@ public class RowCounter   {
     public int getRow()
     
     {
-    	return ++row-1;
+    	return ++row;
     }
 
 }

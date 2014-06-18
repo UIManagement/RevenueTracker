@@ -11,6 +11,20 @@
 		<managed-bean-class>bean.Customer</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>managedbean</managed-bean-name>
+		<managed-bean-class>bean.Managedbean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	
+	<managed-bean>
+		<managed-bean-name>updateRevenue</managed-bean-name>
+		<managed-bean-class>bean.UpdateRevenue</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
 	<managed-bean>
 		<managed-bean-name>customer1</managed-bean-name>
 		<managed-bean-class>bean.Customer1</managed-bean-class>
@@ -157,7 +171,7 @@
 <navigation-rule>
   <from-view-id>/insert.xhtml</from-view-id> 
  <navigation-case>
-  <from-action>#{customer.addAction}</from-action> 
+  <from-action>#{updateRevenue.addAction}</from-action> 
   <from-outcome>insert</from-outcome> 
   <to-view-id>/search.xhtml</to-view-id> 
   </navigation-case>
@@ -215,10 +229,15 @@
 <navigation-rule>
   <from-view-id>/Auditor.xhtml</from-view-id> 
  <navigation-case>
-  <from-action>#{auditor.AuditAuditor}</from-action> 
+  <from-action>#{auditor.ResultCustomer}</from-action> 
   <from-outcome>audit</from-outcome> 
   <to-view-id>/Auditor.xhtml</to-view-id> 
   </navigation-case>
+  <navigation-case>
+  <from-action>#{auditor.AuditNameCustomer}</from-action> 
+  <from-outcome>company</from-outcome> 
+  <to-view-id>/AuditEntry.xhtml</to-view-id> 
+  </navigation-case> 
 </navigation-rule>
 
 
