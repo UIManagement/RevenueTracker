@@ -108,24 +108,27 @@ $(function() {
 	<br/>
 
 	
-			<table  >
+			<table >
 
+			
 				<tr>
-					<td><b> <h:outputLabel value="br::"for="br" /> </b>
+					<td><b> <h:outputLabel value="BR::"
+								for="bR" /> </b></td>
+					<td><h:message id="bRMessage" for="bR" />
+						<h:inputText id="bR" value="#{quote.bR}"
+							 />
 					</td>
-					<td><h:message id="brMessage" for="br" />
-						<h:inputText id="br1" value="#{quote.bR}"
-							 /></td>
-				</tr>
+				</tr>	
+				
+				
 				<tr>
 					<td><b> <h:outputLabel value="Customer Name::"
-								for="customer_Name" /> </b>
-					</td>
-					<td><h:message id="customerIDMessage" for="customer_Name" />
+								for="customer_Name" /> </b></td>
+					<td><h:message id="customer_NameMessage" for="customer_Name" />
 						<h:inputText id="customer_Name" value="#{quote.customer_Name}"
-							 /></td>
-				</tr>
-
+							 />
+					</td>
+				</tr>	
 				<tr>
 					<td><b> <h:outputLabel value="Customer Type::"
 								for="customer_Type" /> </b></td>

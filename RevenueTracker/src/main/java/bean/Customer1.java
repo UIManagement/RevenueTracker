@@ -629,7 +629,7 @@ public String addCustomer() throws SQLException {
 		     
 		 // String mandayvalue = "";
 		  for (int i = 0; i < arrl.size(); i++) {
-		 String sql1 = "INSERT  INTO revenue.table(master_masterid,datec) VALUES('"+ arrl.get(i) +"','"+incDate+"')";
+		 String sql1 = "INSERT  INTO revenue.manday(master_masterid,datec) VALUES('"+ arrl.get(i) +"','"+incDate+"')";
 		 System.out.println(sql);
       
       pstm = (PreparedStatement) MySQLcon.prepareStatement(sql1);
@@ -706,7 +706,7 @@ public String addCustomer() throws SQLException {
 //		     
 //		 // String mandayvalue = "";
 //		  for (int i = 0; i < arrl.size(); i++) {
-//		 String sql1 = "INSERT  INTO revenue.table(master_masterid,datec) VALUES('"+ arrl.get(i) +"','"+incDate+"')";
+//		 String sql1 = "INSERT  INTO revenue.manday(master_masterid,datec) VALUES('"+ arrl.get(i) +"','"+incDate+"')";
 //		 System.out.println(sql);
 //         
 //         pstm = (PreparedStatement) MySQLcon.prepareStatement(sql1);

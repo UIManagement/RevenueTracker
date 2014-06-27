@@ -85,7 +85,7 @@
   <to-view-id>/search.xhtml</to-view-id> 
   </navigation-case>
  <navigation-case>
-  <from-action>#{updateRevenue.EditCustomer}</from-action> 
+  <from-action>#{customer.EditCustomer}</from-action> 
   <from-outcome>edit</from-outcome> 
   <to-view-id>/insert.xhtml</to-view-id> 
   </navigation-case>
@@ -207,7 +207,7 @@
   <navigation-case>
   <from-action>#{customer.updateAction}</from-action> 
   <from-outcome>update</from-outcome> 
-  <to-view-id>/Home.xhtml</to-view-id> 
+  <to-view-id>/mandayEntry.xhtml</to-view-id> 
   </navigation-case>
   <navigation-case>
   <from-action>#{customer.NavigCustomer}</from-action> 
@@ -216,14 +216,6 @@
   </navigation-case>
   </navigation-rule>
 
-<navigation-rule>
-  <from-view-id>/mandayEntryOld.xhtml</from-view-id> 
- <navigation-case>
-  <from-action>#{auditorMT.insertAction}</from-action> 
-  <from-outcome>update</from-outcome> 
-  <to-view-id>/mandayEntryOld.xhtml</to-view-id> 
-  </navigation-case>
-</navigation-rule>
 
 
 <navigation-rule>
@@ -243,8 +235,20 @@
 
 
 
-
-
+<navigation-rule>
+  <from-view-id>/AuditEntry.xhtml</from-view-id> 
+ <navigation-case>
+  <from-action>#{auditor.Reportcustomer}</from-action> 
+  <from-outcome>entry</from-outcome> 
+  <to-view-id>/AuditEntry.xhtml</to-view-id> 
+  </navigation-case>
+  
+  <navigation-case>
+  <from-action>#{auditor.NavigCustomer}</from-action> 
+  <from-outcome>sub</from-outcome> 
+  <to-view-id>/Home.xhtml</to-view-id> 
+  </navigation-case>
+  </navigation-rule>
 
 
 <navigation-rule>

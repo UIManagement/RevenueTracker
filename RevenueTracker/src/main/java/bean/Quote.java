@@ -53,7 +53,7 @@ private String customer_Type;
 	private String searchName3;
 	private String searchName4;
 	
-	private List<Quote> custInfoAll = new ArrayList<Quote>();
+	private List<Quote> quoteInfo = new ArrayList<Quote>();
 	
 	public String getEndDate() {
 		return endDate;
@@ -110,7 +110,10 @@ private String customer_Type;
 	public void setbR(int bR) {
 		this.bR = bR;
 	}
-	
+	//count
+	public Integer getQuoteCount() {
+		return quoteInfo.size();
+	}
 	
 	public double getquoted_Mandays() {
 		return quoted_Mandays;
@@ -276,12 +279,12 @@ private String customer_Type;
 		this.starting_month = starting_month;
 	}
 
-	public List<Quote> getCustInfoAll() {
-		return custInfoAll;
+	public List<Quote> getquoteInfo() {
+		return quoteInfo;
 	}
 
-	public void setCustInfoAll(List<Quote> custInfoAll) {
-		this.custInfoAll = custInfoAll;
+	public void setquoteInfo(List<Quote> quoteInfo) {
+		this.quoteInfo = quoteInfo;
 	}
 
 	Connection MySQLcon = null;
@@ -353,7 +356,7 @@ private String customer_Type;
 	
 	public List<Quote> getQuoteDetail() {
 
-		this.custInfoAll.clear();
+		this.quoteInfo.clear();
 		Labcon lc = new Labcon();
 		MySQLcon = lc.getLocalConnection();
 		this.sum_up=0;
@@ -414,20 +417,20 @@ private String customer_Type;
 				cust.setquoted_Mandays(rs.getDouble("quoted_Mandays"));
 				System.out.println(rs.getDouble("updated_Quote_Value") + "custname");
 				cust.setupdated_Quote_Value(rs.getDouble("updated_Quote_Value"));
-				this.custInfoAll.add(cust);
+				this.quoteInfo.add(cust);
 			}
 		} catch (SQLException e) {
 			System.out.println("Exception in getQuoteDetail::"
 					+ e.getMessage());
 		}
 
-		return this.custInfoAll;
+		return this.quoteInfo;
 	}
 
 	public List<Quote> getDropDownQuotes(){
 
 
-		this.custInfoAll.clear();
+		this.quoteInfo.clear();
 		Labcon lc = new Labcon();
 		MySQLcon = lc.getLocalConnection();
 
@@ -500,7 +503,7 @@ private String customer_Type;
 						this.sum_qm = this.sum_qm + d;
 						
 
-						this.custInfoAll.add(cust);
+						this.quoteInfo.add(cust);
 					}
 
 				} else {
@@ -563,7 +566,7 @@ private String customer_Type;
 						this.sum_up = this.sum_up + c;
 						
 
-						this.custInfoAll.add(cust);
+						this.quoteInfo.add(cust);
 					}
 				}
 			}
@@ -630,7 +633,7 @@ private String customer_Type;
 					this.sum_qm = this.sum_qm + d;
 					System.out.println("sum_qm"+sum_qm);
 
-					this.custInfoAll.add(cust);
+					this.quoteInfo.add(cust);
 				}
 			}
 //only order starts
@@ -696,7 +699,7 @@ private String customer_Type;
 					this.sum_qm = this.sum_qm + d;
 					
 
-					this.custInfoAll.add(cust);
+					this.quoteInfo.add(cust);
 				}
 			}
 
@@ -761,7 +764,7 @@ private String customer_Type;
 					this.sum_qm = this.sum_qm + d;
 					
 
-					this.custInfoAll.add(cust);
+					this.quoteInfo.add(cust);
 
 				}
 			}
@@ -826,7 +829,7 @@ private String customer_Type;
 					this.sum_qm = this.sum_qm + d;
 					
 
-					this.custInfoAll.add(cust);
+					this.quoteInfo.add(cust);
 				}
 			}
 
@@ -891,7 +894,7 @@ private String customer_Type;
 					this.sum_qm = this.sum_qm + d;
 					
 
-					this.custInfoAll.add(cust);
+					this.quoteInfo.add(cust);
 				}
 			}
 		
@@ -954,7 +957,7 @@ private String customer_Type;
 					this.sum_qm = this.sum_qm + d;
 					
 
-					this.custInfoAll.add(cust);
+					this.quoteInfo.add(cust);
 				}
 			}
 			
@@ -1019,7 +1022,7 @@ private String customer_Type;
 
 						this.sum_qm = this.sum_qm + d;
 
-						this.custInfoAll.add(cust);
+						this.quoteInfo.add(cust);
 					}
 
 				} else {
@@ -1081,7 +1084,7 @@ private String customer_Type;
 						this.sum_qm = this.sum_qm + d;
 						
 
-						this.custInfoAll.add(cust);
+						this.quoteInfo.add(cust);
 					}
 				}
 			}
@@ -1148,7 +1151,7 @@ private String customer_Type;
 						this.sum_qm = this.sum_qm + d;
 						
 
-						this.custInfoAll.add(cust);	
+						this.quoteInfo.add(cust);	
 					}
 
 				} else {
@@ -1210,7 +1213,7 @@ private String customer_Type;
 						this.sum_qm = this.sum_qm + d;
 						
 
-						this.custInfoAll.add(cust);
+						this.quoteInfo.add(cust);
 					}
 				}
 			}
@@ -1278,7 +1281,7 @@ private String customer_Type;
 					this.sum_qm = this.sum_qm + d;
 					
 
-					this.custInfoAll.add(cust);
+					this.quoteInfo.add(cust);
 				}
 			}
 
@@ -1346,7 +1349,7 @@ private String customer_Type;
 						this.sum_qm = this.sum_qm + d;
 						
 
-						this.custInfoAll.add(cust);
+						this.quoteInfo.add(cust);
 					}
 
 				} else {
@@ -1408,7 +1411,7 @@ private String customer_Type;
 						this.sum_qm = this.sum_qm + d;
 						
 
-						this.custInfoAll.add(cust);
+						this.quoteInfo.add(cust);
 
 					}
 				}
@@ -1475,7 +1478,7 @@ private String customer_Type;
 						this.sum_qm = this.sum_qm + d;
 						
 
-						this.custInfoAll.add(cust);
+						this.quoteInfo.add(cust);
 					}
 
 				} else {
@@ -1539,7 +1542,7 @@ private String customer_Type;
 						this.sum_qm = this.sum_qm + d;
 						
 
-						this.custInfoAll.add(cust);
+						this.quoteInfo.add(cust);
 					}
 				}
 			}
@@ -1605,7 +1608,7 @@ private String customer_Type;
 						this.sum_qm = this.sum_qm + d;
 						
 
-						this.custInfoAll.add(cust);
+						this.quoteInfo.add(cust);
 					}
 
 				} else {
@@ -1669,7 +1672,7 @@ private String customer_Type;
 						this.sum_qm = this.sum_qm + d;
 						
 
-						this.custInfoAll.add(cust);
+						this.quoteInfo.add(cust);
 					}
 				}
 			}
@@ -1735,7 +1738,7 @@ private String customer_Type;
 						this.sum_qm = this.sum_qm + d;
 						
 
-						this.custInfoAll.add(cust);
+						this.quoteInfo.add(cust);
 					}
 
 				} else {
@@ -1797,7 +1800,7 @@ private String customer_Type;
 						this.sum_qm = this.sum_qm + d;
 						
 
-						this.custInfoAll.add(cust);
+						this.quoteInfo.add(cust);
 
 					}
 				}
@@ -1865,7 +1868,7 @@ private String customer_Type;
 						this.sum_qm = this.sum_qm + d;
 						
 
-						this.custInfoAll.add(cust);
+						this.quoteInfo.add(cust);
 					}
 
 				} else {
@@ -1931,7 +1934,7 @@ private String customer_Type;
 						this.sum_qm = this.sum_qm + d;
 						
 
-						this.custInfoAll.add(cust);					}
+						this.quoteInfo.add(cust);					}
 				}
 
 			}
@@ -1999,7 +2002,7 @@ private String customer_Type;
 					this.sum_qm = this.sum_qm + d;
 					
 
-					this.custInfoAll.add(cust);
+					this.quoteInfo.add(cust);
 				}}
 
 				
@@ -2072,7 +2075,7 @@ else if (searchName1 == "" && searchName2 == "" && startDate != "" && endDate !=
 					this.sum_qm = this.sum_qm + d;
 					
 
-					this.custInfoAll.add(cust);
+					this.quoteInfo.add(cust);
 
 				}}
 
@@ -2140,7 +2143,7 @@ else if (searchName1 == "" && searchName2 != "" && startDate != "" && endDate !=
 					this.sum_qm = this.sum_qm + d;
 					
 
-					this.custInfoAll.add(cust);
+					this.quoteInfo.add(cust);
 
 				}}
 
@@ -2208,7 +2211,7 @@ else	if (searchName1 != "" && searchName2== "" && startDate != "" && endDate != 
 						this.sum_qm = this.sum_qm + d;
 						
 
-						this.custInfoAll.add(cust);
+						this.quoteInfo.add(cust);
 					}
 
 				} else {
@@ -2272,7 +2275,7 @@ else	if (searchName1 != "" && searchName2== "" && startDate != "" && endDate != 
 						this.sum_qm = this.sum_qm + d;
 						
 
-						this.custInfoAll.add(cust);
+						this.quoteInfo.add(cust);
 					}
 				}
 			}
@@ -2284,12 +2287,12 @@ else	if (searchName1 != "" && searchName2== "" && startDate != "" && endDate != 
 			System.out.println("Exception in getCustomerDetail::"
 					+ e.getMessage());
 		}
-		return this.custInfoAll;
+		return this.quoteInfo;
 		
 	}
 	
 	public void getEditDetail() {
-		this.custInfoAll.clear();
+		this.quoteInfo.clear();
 		try {
 
 		
@@ -2326,11 +2329,11 @@ else	if (searchName1 != "" && searchName2== "" && startDate != "" && endDate != 
 	
 	
 	public int getRowCount() {
-    	return custInfoAll.size();
+    	return quoteInfo.size();
     }
 
 	public String NavigQuote() {
-		this.custInfoAll.clear();
+		this.quoteInfo.clear();
 		this.sum_up=0;
 		this.sum_qm=0;
 		startDate="";

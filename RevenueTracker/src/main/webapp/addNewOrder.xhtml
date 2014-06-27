@@ -54,10 +54,6 @@ $(function() {
 
 
 
-
-
-
-
 </script>
 
 </head>
@@ -104,10 +100,10 @@ $(function() {
 			<table >
 
 				<tr>
-					<td><b> <h:outputLabel value="br::" for="br1" />
+					<td><b> <h:outputLabel value="br::" for="bR1" />
 					</b></td>
-					<td><h:message id="br1Message" for="br1" /> <h:inputText
-							id="br1" value="#{orderBooking1.br1}"
+					<td><h:message id="bR1Message" for="br1" /> <h:inputText
+							id="bR1" value="#{orderBooking1.bR1}"
 						/></td>
 				</tr>
 				<tr>
@@ -326,10 +322,7 @@ $(function() {
 						</h:selectOneMenu>
 					</td>
 				</tr>
-
-
-
-				
+		
 
 				<tr>
 					<td><b> <h:outputLabel value="Designation::"
@@ -360,10 +353,7 @@ $(function() {
 						</h:selectOneMenu>
 					</td>
 				</tr>
-
-
-
-				<tr>
+		<tr>
 					<td><b> <h:outputLabel value="Quote Booked By::"
 								for="orderBooking1_Booked_By1" /> </b></td>
 					<td><h:message id="orderBooking1_Booked_By1Message"
@@ -419,20 +409,6 @@ $(function() {
 				</tr>
 
 
-
-
-
-
-
-
-
-
-
-
-				
-
-
-				
 <tr>
 					<td><b> <h:outputLabel value="currency::" for="currency1" />
 					</b></td>
@@ -527,11 +503,9 @@ $(function() {
 			</table>
 			
 			<h:commandButton action="#{orderBooking1.addCustomer}" value="Add New Customer"     />
-			
 		
   &nbsp;&nbsp;
  <h:commandButton value="reset" type="reset" />
-
 
 		</h:form>
 	</f:view>

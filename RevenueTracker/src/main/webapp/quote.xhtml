@@ -76,7 +76,17 @@
 	});
 	
 	
-	
+function dataTableToExcel()  
+	{  
+	var strCopy = document.getElementById("MyTable").innerHTML;  
+	window.clipboardData.setData("Text", strCopy);  
+	var objExcel = new ActiveXObject ("Excel.Application");  
+	objExcel.visible = true;  
+	  
+	var objWorkbook = objExcel.Workbooks.Add;  
+	var objWorksheet = objWorkbook.Worksheets(1);  
+	objWorksheet.Paste;  
+	}  	
 	
 </script>
 
@@ -137,8 +147,6 @@
 	<!-- End Header -->
 	
 	
-
- 
 
 			<tr>
 				<td><b> <h:outputLabel value="Customer Name"
@@ -214,9 +222,6 @@
 							<f:selectItem itemValue="Safety" itemLabel="Safety" />
 					</h:selectOneMenu> <h:message id="quoteCustomerserviceMessage" for="service" /></td>
 			</tr>	
-	
-	
-	
 	
 	
 	
@@ -316,9 +321,9 @@
 <div style="height:300px;overflow-x:auto;overflow-y:scroll;">
 
                                
-			<p:dataTable value="#{quote.custInfoAll}" var="custInfo"
+			<p:dataTable value="#{quote.quoteInfo}" var="custInfo" rowIndexVar="rowIndex" 
 				styleClass="order-table" headerClass="order-table-header" border="5"
-				rowClasses="order-table-odd-row,order-table-even-row"  footerClass="order-table-footer" >
+				rowClasses="order-table-odd-row,order-table-even-row"  footerClass="order-table-footer" id="mydata">
 
 				
 				<p:column>
@@ -468,9 +473,10 @@
 					</f:facet>
 				</p:column>
 				
-				<p:column>
-			<h:outputText value="#{rowCounter.row}" />
-		</p:column>
+			<p:column headerText="Count">
+        #{rowIndex+1}
+    </p:column>	
+	
 
 				<p:column>
 
@@ -494,13 +500,16 @@
 			
 	
 			 </div>
-			 <b> <h:outputLabel value="Count"
-							for="row" /> </b> <h:message id="rowMessage"
-						for="row" /> <h:outputText id="row"
-						value="#{rowCounter.row}" />
-		
+			 
+		 <p:panel header="Export Data">
+            <h:commandLink>
+                <p:graphicImage value="css/images/excel.jpg" />
+                <p:dataExporter type="xls" postProcessor="#{customer.postProcessXLS}"
+                    target="mydata" fileName="myexcel" />
+            </h:commandLink>
+            
+        </p:panel>     
 			<br/>
-
 
 
 		</h:form>

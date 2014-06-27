@@ -199,7 +199,7 @@ textarea.size1 { height:180px; }
 
 
 @CHARSET "ISO-8859-1";
-order-table{
+p:dataTable.order-table{
  border-collapse:collapse;
  }
 
@@ -230,7 +230,7 @@ order-table{
  
  }
  
- 
+
  body {
 
 background-color: #FFFFFF ;

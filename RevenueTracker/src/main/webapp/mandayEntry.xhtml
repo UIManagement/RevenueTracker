@@ -72,7 +72,6 @@
 	
 </script>
 
-
 </head>
 <body>
 	<f:view>
@@ -99,11 +98,6 @@
 <!-- 					<a href="Home.jsp"><img -->
 <!-- 					src="css/images/hom.png"></img> </a>  -->
 
-
-	
-					
-					
-					
 					
 			<!-- End Logo + Top Nav -->
 			<div id="top">
@@ -161,9 +155,6 @@
 
 			</h:commandButton>
 
-
-
-
 			<br/>
 			<br/>
 			<br/>
@@ -183,9 +174,7 @@
 					<h:message id="mandayvalueMessage" for="mandayvalue" />
 					<h:inputText id="mandayvalue" value="#{custInfo.mandayvalue}"/>
 					
-					<h:outputLabel value="Auditor::" for="auditor_Name" />
-					<h:message id="auditor_NameMessage" for="auditor_Name" />
-					<h:inputText id="auditor_Name" value="#{custInfo.auditor_Name}"/>
+					
 						
 
 					
@@ -193,7 +182,7 @@
 			</h:dataTable>
 			<br/>
 			<br/>
-			<h:commandButton action="#{customer.updateAction}" value="Update Mandays"   rendered="true"  >
+			<h:commandButton action="#{customer.updateAction}" value="Update Mandays"   rendered="true" onclick="box()" >
 			
 				 
 				 </h:commandButton>

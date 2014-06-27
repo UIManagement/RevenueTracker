@@ -4,7 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Managedbean   {
+public List<Managedbean> mbean = new ArrayList<Managedbean>();
 	
+	public List<Managedbean> getmbean() {
+		return mbean;
+	}
+
+	public void setmbean(List<Managedbean> mbean) {
+		this.mbean = mbean;
+	}	
 	
 	public String c = "INR";
 	public String customer_Name;
@@ -539,15 +547,7 @@ public class Managedbean   {
 
 	
 	
-public List<Managedbean> custInfoAl = new ArrayList<Managedbean>();
-	
-	public List<Managedbean> getCustInfoAl() {
-		return custInfoAl;
-	}
 
-	public void setCustInfoAl(List<Managedbean> custInfoAl) {
-		this.custInfoAl = custInfoAl;
-	}
 	
 	
 	

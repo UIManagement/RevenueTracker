@@ -140,7 +140,7 @@ $(function() {
 								for="br" /> </b>
 					</td>
 					<td><h:message id="brMessage" for="br" />
-						<h:inputText id="br" value="#{updateRevenue.bR}"/></td>
+						<h:inputText id="br" value="#{customer.bR}"/></td>
 							 
 				
 				</tr>
@@ -149,7 +149,7 @@ $(function() {
 								for="customer_Name" /> </b>
 					</td>
 					<td><h:message id="customerIDMessage" for="customer_Name" />
-						<h:inputText id="customer_Name" value="#{updateRevenue.customer_Name}"
+						<h:inputText id="customer_Name" value="#{customer.customer_Name}"
 							 /></td>
 				</tr>
 
@@ -157,9 +157,9 @@ $(function() {
 					<td><b> <h:outputLabel value="Customer Type::"
 								for="customer_Type" /> </b></td>
 					<td><h:message id="CustomerTypeMessage" for="customer_Type" />
-						<h:inputText id="customer_Type" value="#{updateRevenue.customer_Type}"
-							 rendered="#{updateRevenue.customer_Type == 'seven'}" />
-						<h:selectOneMenu value="#{updateRevenue.customer_Type}">
+						<h:inputText id="customer_Type" value="#{customer.customer_Type}"
+							 rendered="#{customer.customer_Type == 'seven'}" />
+						<h:selectOneMenu value="#{customer.customer_Type}">
 							<f:selectItem itemValue="New" itemLabel="New" />
 							<f:selectItem itemValue="Existing" itemLabel="Existing" />
 							<f:selectItem itemValue="InterCompany" itemLabel="InterCompany" />
@@ -174,9 +174,9 @@ $(function() {
 					<td><b> <h:outputLabel value="Region::" for="region" /> </b>
 					</td>
 					<td><h:message id="CustomerAddressMessage" for="region" /> <h:inputText
-							id="region" value="#{updateRevenue.region}" 
-							rendered="#{updateRevenue.region == 'seven'}" /> <h:selectOneMenu
-							value="#{updateRevenue.region}">
+							id="region" value="#{customer.region}" 
+							rendered="#{customer.region == 'seven'}" /> <h:selectOneMenu
+							value="#{customer.region}">
 							<f:selectItem itemValue="Aerospace" itemLabel="Aerospace" />
 							<f:selectItem itemValue="C&amp;I(R)" itemLabel="C&amp;I(R)" />
 							<f:selectItem itemValue="Gujarat" itemLabel="Gujarat" />
@@ -192,14 +192,13 @@ $(function() {
 				</tr>
 
 
-
 				<tr>
 					<td><b> <h:outputLabel value="vertical::" for="vertical" />
 					</b></td>
 					<td><h:message id="CustomerverticalMessage" for="vertical" />
-						<h:inputText id="vertical" value="#{updateRevenue.vertical}"
-							 rendered="#{updateRevenue.vertical == 'seven'}" /> <h:selectOneMenu
-							value="#{updateRevenue.vertical}">
+						<h:inputText id="vertical" value="#{customer.vertical}"
+							 rendered="#{customer.vertical == 'seven'}" /> <h:selectOneMenu
+							value="#{customer.vertical}">
 							<f:selectItem itemValue="Aerospace" itemLabel="Aerospace" />
 							<f:selectItem itemValue="Medical &amp; Healthcare"
 								itemLabel="Medical &amp; Healthcare" />
@@ -219,9 +218,9 @@ $(function() {
 					<td><b> <h:outputLabel value="Industry::" for="industry" />
 					</b></td>
 					<td><h:message id="CustomerindustryMessage" for="industry" />
-						<h:inputText id="industry" value="#{updateRevenue.industry}"
-							 rendered="#{updateRevenue.industry == 'seven'}" /> <h:selectOneMenu
-							value="#{updateRevenue.industry}">
+						<h:inputText id="industry" value="#{customer.industry}"
+							 rendered="#{customer.industry == 'seven'}" /> <h:selectOneMenu
+							value="#{customer.industry}">
 							<f:selectItem itemValue="Aerospace" itemLabel="Aerospace" />
 							<f:selectItem itemValue="Automotive" itemLabel="Automotive" />
 							<f:selectItem itemValue="Banking, Financial Services &amp; Insurance"
@@ -270,9 +269,9 @@ $(function() {
 					<td><b> <h:outputLabel value="Service::" for="service" />
 					</b></td>
 					<td><h:message id="CustomerserviceMessage" for="service" /> <h:inputText
-							id="service" value="#{updateRevenue.service}" 
-							rendered="#{updateRevenue.service == 'seven'}" /> <h:selectOneMenu
-							value="#{updateRevenue.service}">
+							id="service" value="#{customer.service}" 
+							rendered="#{customer.service == 'seven'}" /> <h:selectOneMenu
+							value="#{customer.service}">
 							<f:selectItem itemValue="RA" itemLabel="RA" />
 							<f:selectItem itemValue="GC Mark" itemLabel="GC Mark" />
 							<f:selectItem itemValue="CA" itemLabel="CA" />
@@ -299,9 +298,9 @@ $(function() {
 					<td><b> <h:outputLabel value="Product::" for="product" />
 					</b></td>
 					<td><h:message id="CustomerproductMessage" for="product" /> <h:inputText
-							id="product" value="#{updateRevenue.product}" 
-							rendered="#{updateRevenue.product == 'seven'}" /> <h:selectOneMenu
-							value="#{updateRevenue.product}">
+							id="product" value="#{customer.product}" 
+							rendered="#{customer.product == 'seven'}" /> <h:selectOneMenu
+							value="#{customer.product}">
 							<f:selectItem itemValue="ANSI/ESD S 20.20"
 								itemLabel="ANSI/ESD S 20.20" />
 							<f:selectItem itemValue="AS 9100" itemLabel="AS 9100" />
@@ -360,9 +359,9 @@ $(function() {
 				<tr>
 					<td><b> <h:outputLabel value="Stage::" for="stage" /> </b></td>
 					<td><h:message id="CustomersstageMessage" for="stage" /> <h:inputText
-							id="stage" value="#{updateRevenue.stage}" 
-							rendered="#{updateRevenue.stage == 'seven'}" /> <h:selectOneMenu
-							value="#{updateRevenue.service}">
+							id="stage" value="#{customer.stage}" 
+							rendered="#{customer.stage == 'seven'}" /> <h:selectOneMenu
+							value="#{customer.service}">
 							<f:selectItem itemValue="1st Annual Assessment"
 								itemLabel="1st Annual Assessment" />
 							<f:selectItem
@@ -430,9 +429,9 @@ $(function() {
 								for="designation" /> </b></td>
 					<td><h:message id="CustomerdesignationMessage"
 							for="designation" /> <h:inputText id="designation"
-							value="#{updateRevenue.designation}" 
-							rendered="#{updateRevenue.designation == 'seven'}" /> <h:selectOneMenu
-							value="#{updateRevenue.designation}">
+							value="#{customer.designation}" 
+							rendered="#{customer.designation == 'seven'}" /> <h:selectOneMenu
+							value="#{customer.designation}">
 							<f:selectItem itemValue="Sales Executive - Existing"
 								itemLabel="Sales Executive - Existing" />
 							<f:selectItem itemValue="CSP" itemLabel="CSP" />
@@ -464,9 +463,9 @@ $(function() {
 								for="order_Booked_By" /> </b></td>
 					<td><h:message id="Customerorder_Booked_ByMessage"
 							for="order_Booked_By" /> <h:inputText id="order_Booked_By"
-							value="#{updateRevenue.order_Booked_By}" 
-							rendered="#{updateRevenue.order_Booked_By == 'seven'}" /> <h:selectOneMenu
-							value="#{updateRevenue.order_Booked_By}">
+							value="#{customer.order_Booked_By}" 
+							rendered="#{customer.order_Booked_By == 'seven'}" /> <h:selectOneMenu
+							value="#{customer.order_Booked_By}">
 							<f:selectItem itemValue="Subhendu" itemLabel="Subhendu" />
 							<f:selectItem itemValue="Avijit Choudary"
 								itemLabel="Avijit Choudary" />
@@ -520,7 +519,7 @@ $(function() {
 								for="work_Order_Date" /> </b></td>
 					<td><h:message id="work_Order_DateMessage" for="work_Order_Date" />
 						<h:inputText id="workdate"
-							value="#{updateRevenue.work_Order_Date}"  />
+							value="#{customer.work_Order_Date}"  />
 					</td>
 				</tr>
 
@@ -532,9 +531,9 @@ $(function() {
 				<tr>
 					<td><b> <h:outputLabel value="Shared Revenue::" for="shared_Revenue" /> </b></td>
 					<td><h:message id="shared_RevenueMessage" for="shared_Revenue" />
-						<h:inputText id="shared_Revenue" value="#{updateRevenue.shared_Revenue}"
-						 rendered="#{updateRevenue.shared_Revenue == 'seven'}" /><h:selectOneMenu
-							value="#{updateRevenue.shared_Revenue}">
+						<h:inputText id="shared_Revenue" value="#{customer.shared_Revenue}"
+						 rendered="#{customer.shared_Revenue == 'seven'}" /><h:selectOneMenu
+							value="#{customer.shared_Revenue}">
 							<f:selectItem itemValue="Yes" itemLabel="Yes" />
 							<f:selectItem itemValue="No" itemLabel="No" />
 							
@@ -553,9 +552,9 @@ $(function() {
 					<td><b> <h:outputLabel value="currency::" for="currency" />
 					</b></td>
 					<td><h:message id="CustomercurrencyMessage" for="currency" />
-						<h:inputText id="currency" value="#{updateRevenue.currency}"
-							 rendered="#{updateRevenue.currency == 'seven'}" /> <h:selectOneMenu
-							value="#{updateRevenue.currency}">
+						<h:inputText id="currency" value="#{customer.currency}"
+							 rendered="#{customer.currency == 'seven'}" /> <h:selectOneMenu
+							value="#{customer.currency}">
 							<f:selectItem itemValue="INR" itemLabel="INR" />
 							<f:selectItem itemValue="USD" itemLabel="USD" />
 							<f:selectItem itemValue="EUR" itemLabel="EUR" />
@@ -571,12 +570,10 @@ $(function() {
 
 			
 			</table>
-			<h:commandButton action="#{updateRevenue.addAction}" value="Update" />&nbsp;&nbsp;
-			
-			
+			<h:commandButton action="#{customer.addAction}" value="Update" />&nbsp;&nbsp;
 		
   &nbsp;&nbsp;
- <h:commandButton value="reset" type="reset" />
+ <h:commandButton value="reset" type="reset"/>
 
 
 		</h:form>

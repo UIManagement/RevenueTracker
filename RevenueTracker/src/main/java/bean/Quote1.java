@@ -46,7 +46,7 @@ public class Quote1 {
 		private String searchName3;
 		private String searchName4;
 		
-		private List<Quote1> custInfoA = new ArrayList<Quote1>();
+		private List<Quote1> quoteInfo = new ArrayList<Quote1>();
 		
 		
 		
@@ -256,12 +256,12 @@ public class Quote1 {
 			this.starting_month1 = starting_month1;
 		}
 
-		public List<Quote1> getCustInfoAll() {
-			return custInfoA;
+		public List<Quote1> getquoteInfo() {
+			return quoteInfo;
 		}
 
-		public void setCustInfoAll(List<Quote1> custInfoA) {
-			this.custInfoA = custInfoA;
+		public void setquoteInfo(List<Quote1> quoteInfo) {
+			this.quoteInfo = quoteInfo;
 		}
 
 		Connection MySQLcon = null;
@@ -277,7 +277,7 @@ public class Quote1 {
 				
 				
 				
-				this.custInfoA.clear();
+				this.quoteInfo.clear();
 				Labcon lc = new Labcon();
 				MySQLcon = lc.getLocalConnection();
 				stmt = MySQLcon.createStatement();

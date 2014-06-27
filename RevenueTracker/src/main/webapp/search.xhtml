@@ -10,8 +10,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
 <title>Home Page </title>
 <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
-<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
-
 <link rel="stylesheet"
 	href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -140,7 +138,6 @@ $(function() {
 	<br/>
 	<br/>
 	
-	
 	<!-- End Header -->
 	
 
@@ -150,9 +147,6 @@ $(function() {
 						for="customer_Name" /> <h:inputText id="customer_Name"
 						value="#{customer.searchName}" /></td>
 			</tr>
-
-
-
 
 
 			<h:commandButton value="Search" action="#{customer.ResultCustomer}"
@@ -567,14 +561,7 @@ $(function() {
 					</f:facet>
 				</p:column>
 				
-
-
-
-
-
-
-
-				<p:column>
+		<p:column>
 					<f:facet name="header">
 						<h:outputText value="Work Order " />
 					</f:facet>
@@ -582,9 +569,6 @@ $(function() {
 					</h:outputText>
 
 				</p:column>
-
-
-
 
 
 				<p:column>
@@ -595,10 +579,9 @@ $(function() {
 
 					</f:facet>
 
-					<h:commandButton value="edit" action="#{updateRevenue.EditCustomer}" image="css/images/edit.gif">
-						<f:setPropertyActionListener target="#{updateRevenue}" value="#{custInfo}" />
-
-					</h:commandButton>
+					<h:commandButton value="edit" action="#{customer.EditCustomer}" image="css/images/edit.gif">
+						<f:setPropertyActionListener target="#{customer}" value="#{custInfo}" />
+			         </h:commandButton>
 
 				</p:column>
 
@@ -612,17 +595,9 @@ $(function() {
 
 					<h:commandButton value="edit" action="#{customer.MandayEntryCustomer}" image="css/images/edit.gif">
 						<f:setPropertyActionListener target="#{customer}" value="#{custInfo}" />
-
-
 					</h:commandButton>
 
 				</p:column>
-
-
-
-
-
-
 
 
 			</p:dataTable></div>
@@ -642,7 +617,6 @@ $(function() {
 		
 	</f:view>
 
-	
 	<br/>
 	<br/>
 	<!-- Footer -->
@@ -656,5 +630,4 @@ $(function() {
 	<!-- End Footer -->
 
 </body>
-
 </html>

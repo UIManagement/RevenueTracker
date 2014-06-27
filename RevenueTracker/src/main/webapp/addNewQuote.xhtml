@@ -69,7 +69,7 @@ $(function() {
 	<div id="header">
 		<div class="shell">
 			<br/> <br/> <span class="right"><font
-				face="Times New Roman" size="5" color="SteelBlue"> Revenue
+				face="Times New Roman" size="5" color="SteelBlue"> Quote
 					Tracker</font> 
 					</span> 
 					
@@ -103,19 +103,19 @@ $(function() {
 			<table >
 
 				<tr>
-					<td><b> <h:outputLabel value="br::" for="br1" />
-					</b></td>
-					<td><h:message id="br1Message" for="br1" /> <h:inputText
-							id="br1" value="#{quote1.br1}"
-						/></td>
+					<td><b> <h:outputLabel value="br::" for="br" /> </b>
+					</td>
+					<td><h:message id="brMessage" for="br" />
+						<h:inputText id="br" value="#{quote1.bR1}"/></td>
+							 
+				
 				</tr>
 				<tr>
-					<td><b> <h:outputLabel value="Customer Name::"
-								for="customer_Name1" /> </b>
+					<td><b> <h:outputLabel value="Customer Name::" for="customer_Name1" /> </b>
+								
 					</td>
 					<td><h:message id="customerID1Message" for="customer_Name1" />
-						<h:inputText id="customer_Name1" value="#{quote1.customer_Name1}"
-							 /></td>
+						<h:inputText id="customer_Name1" value="#{quote1.customer_Name1}" /></td>
 				</tr>
 
 				<tr>

@@ -39,9 +39,6 @@ public class OrderBooking1 {
 		private double sum_up;
 		private double sum_om;
 		
-		
-		
-
 		private String searchName;
 		private String searchName1;
 		private String searchName2;

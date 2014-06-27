@@ -9,9 +9,7 @@ import javax.faces.context.FacesContext;
 
 public class OrderBooking {
 	
-	
 
-	
 	
 	//private String work_Order_Date;order_booking_tracker_id2	
 private String customer_Name;
